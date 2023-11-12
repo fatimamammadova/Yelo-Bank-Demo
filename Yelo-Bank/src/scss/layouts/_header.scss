@@ -1,0 +1,821 @@
+.search {
+    position: fixed;
+    top: 0;
+    left: 0;
+    z-index: 99999;
+    width: 100%;
+    height: 100%;
+    background-color: $main-text-color;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+    &.show{
+        opacity: 1;
+        visibility: visible;
+        .search-inner{
+            height: 100px;
+        }
+    }
+    .search-inner {
+        height: 0;
+        overflow: hidden;
+        background-color: $white-color;
+        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+        .container {
+            position: relative;
+            display: block;
+            form {
+                input {
+                    width: 100%;
+                    padding: 35px 140px 35px 0;
+                    font-size: 25px;
+                    border: none;
+                
+                }
+                .search-btn {
+                    height: 100%;
+                    width: 50px;
+                    opacity: .4;
+                    position: absolute;
+                    top: 0px;
+                    right: 70px;
+                    cursor: pointer;
+                    img {
+                        width: 24px;
+                        height: 24px;
+                    }
+                }
+
+            }
+            .search-close-btn {
+                width: 50px;
+                height: 100%;
+                position: absolute;
+                top: 0px;
+                right: 20px;
+                cursor: pointer;
+                img {
+                    width: 20px;
+                    height: 19px;
+                }
+            }
+        }
+    }
+}
+
+header {
+    transition: all .3s linear;
+    position: fixed;
+    top: 0px;
+    left: 0;
+    z-index: 10;
+    width: 100%;
+    .header-top {
+        background-color: $white-color;
+        border-bottom: 1px solid $main-border-color;
+        .ht-left {
+            .category-menu {
+                @include Flex(center,space-between,null,null);
+                li {
+                    margin-right: 15px;
+                    &:last-child {
+                        display: none;
+                        @media (min-width: 450px) {
+                            display: inline-block;
+                        }
+                    }
+                    &:nth-child(2) {
+                        display: none;
+                        @media (min-width: 250px) {
+                            display: inline-block;
+                        }
+                    }
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        padding: 10px 7px;
+                        color: $main-text-color;
+                        &::after {
+                            content: "";
+                            position: absolute;
+                            bottom: 0;
+                            left: 0;
+                            width: 100%;
+                            height: 3px;
+                            background-color: $main-color;
+                            transition: all 0.2s ease-out;
+                            opacity: 0;
+                        }
+                        &.active {
+                            font-weight: 600;
+                            color: $secondary-color;
+                            &:after {
+                               opacity: 1;
+                            }
+                        }
+                        &:hover {
+                            &::after {
+                                opacity: 1;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .ht-right {
+            ul {
+                @include Flex(center,space-between);
+                li {
+                    margin-left: 10px;
+                    @media (min-width: 992px) {
+                        margin-left: 30px;
+                    }
+                    padding-top: 5px;
+                    a {
+                        color: $main-text-color;
+                        padding-left: 20px;
+                    }
+                    &:first-child {
+                        display: none;
+                        @media (min-width: 992px) {
+                            display: inline-block;
+                        }
+                    }
+                    &.location {
+                        display: none;
+                        @media (min-width: 992px) {
+                            display: inline-block;
+                        }
+                        a {
+                            position: relative;
+                            &::before {
+                                content: "";
+                                width: 11px;
+                                height: 13px;
+                                position: absolute;
+                                left: 0;
+                                top: -1px;
+                                background: url("https://www.yelo.az/site/assets/files/1251/ht_location.svg") no-repeat left center;
+                            }
+                        }
+                    }
+                    &.contact {
+                        a {
+                            position: relative;
+                            span {
+                                display: none;
+                                @media (min-width: 992px) {
+                                    display: inline-block;
+                                }
+                            }
+                            &::before {
+                                content: "";
+                                width: 12px;
+                                height: 14px;
+                                position: absolute;
+                                left: 0;
+                                top: -1px;
+                                background: url("https://www.yelo.az/site/templates/style/img/ht_call.svg") no-repeat left center;
+                            }
+                        }
+                    }
+                    &.search-icon {
+                        position: relative;
+                        width: 20px;
+                        height: 45px;
+                        margin-left: 10px;
+                        @media (min-width: 992px) {
+                            width: 45px;
+                        }
+                        img {
+                            opacity: .5;
+                            @include Position(absolute,50%,50%,translate(-50%,-50%));
+                        }
+                    }
+                    &.lang-selection {
+                        margin-left: 10px;
+                        padding: 0;
+                        .ls-wrapper {
+                            position: relative;
+                            .ls-header {
+                                @include Flex(center,space-between,null,null);
+                                color: $main-text-color;
+                                cursor: pointer;
+                                .default-lang {
+                                    position: relative;
+                                    display: inline-block;
+                                    line-height: 1;
+                                    padding: 5px 0 0 0;
+                                    span {
+                                        display: inline-block;
+                                        padding: 0 15px 0 0;
+                                    }
+                                    &::after {
+                                        content: "";
+                                        position: absolute;
+                                        top: 50%;
+                                        transform: translateY(-50%);
+                                        right: 0;
+                                        background: url("https://www.yelo.az/site/templates/style/img/active_lang.svg") no-repeat left center;
+                                        width: 8px;
+                                        height: 3px;
+                                    }
+                                }
+                            }
+                            .ls-content {
+                                position: absolute;
+                                top: 0;
+                                left: auto;
+                                right: 0;
+                                z-index: 9999;
+                                width: 60px;
+                                padding: 10px 0;
+                                border-radius: 5px;
+                                background-color: $white-color;
+                                box-shadow: 0 2px 14px 0 rgba(0,0,0,0.17);
+                                transition: all 0.2s cubic-bezier(1.000, 0.000, 0.000, 1.000);
+                                opacity: 0;
+                                transform: scale(0);
+                                visibility: hidden;
+                                &.show {
+                                    opacity: 1;
+                                    transform: scale(1);
+                                    visibility: visible;
+                                }
+                                .lang {
+                                    padding: 0 20px;
+                                    display: block;
+                                    span {
+                                        font-size: 1rem;
+                                        color: $main-text-color;
+                                        &.active-lang {
+                                            color: $secondary-color;
+                                        }
+                                    } 
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .header-bottom {
+        background-color: transparent;
+        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+        // box-shadow: 0 10px 20px rgba(0,0,0,0);
+        padding: 10px 0;
+        @media (min-width: 992px) {
+            padding: 18px 0;
+            
+        }
+        .navbar-left {
+            @include Flex(center,space-between,null,null);
+            .logo {
+                padding: 10px 0;
+                line-height: 1;
+                img {
+                    line-height: 1;
+                    width: 94px;
+                    @media (min-width: 992px) {
+                        width: 144px;
+                    }
+                }
+            }
+            .main-menu {
+                display: none;
+                @media (min-width: 992px) {
+                    display: block;
+                }
+                ul {
+                    @include Flex(center,space-between,null,null);
+                    padding: 0 40px;
+                    li {
+                        margin-right: 30px;
+                        a {
+                            position: relative;
+                            font-family: "TT Commons Medium";
+                            padding: 14px 0;
+                            display: inline-block;
+                            font-size: 20px;
+                            &:hover {
+                                &::after {
+                                    width: 100%;
+                                }
+                            }
+                            &::after {
+                                content: "";
+                                position: absolute;
+                                bottom: 14px;
+                                left: 0;
+                                width: 0;
+                                height: 3px;
+                                background-color: $secondary-color;
+                                transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .navbar-right {
+            @include Flex(center,center,null,null);
+            .message-button {
+                position: relative;
+                width: 45px;
+                height: 45px;
+                background-color: $main-color;
+                border-radius: 50%;
+                display: inline-block;
+                cursor: pointer;
+                @media (min-width: 992px) {
+                    display: none;
+                }
+                img {
+                    width: 26px;
+                    height: 20px;
+                    @include Position(absolute,50%,50%,translate(-50%,-50%));
+                }
+            }
+            .login-button {
+                position: relative;
+                overflow: hidden;
+                font-size: 18px;
+                height: 45px;
+                width: 45px;
+                border: 1px solid rgba(0,0,0,0.1);
+                border-radius: 30px;
+                padding: 0;
+                margin-left: 10px;
+                &:hover {
+                    span {
+                        @media (min-width: 992px) {
+                            color: $white-color;
+                        }
+                        color: $secondary-color;
+                        &::before {
+                            background: url("https://www.yelo.az/site/templates/style/img/o_banking_white.svg") no-repeat left center;
+                        }
+                    }
+                }
+                @media (min-width: 992px) {
+                    width: auto;
+                    height: 55px;
+                    padding: 9px 25px;
+                }
+                span {
+                    position: relative;
+                    padding: 5px 0 2px 25px;
+                    display: block;
+                    color: $main-color;
+                    transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                    @media (min-width: 992px) {
+                        color: $secondary-color;
+                    }
+                    &::before {
+                        content: "";
+                        width: 13px;
+                        height: 15px;
+                        color: $secondary-color;
+                        background: url("https://www.yelo.az/site/templates/style/img/o_banking.svg") no-repeat left center;
+                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                        @include Position(absolute,45%,50%,translate(-50%,-50%));
+                        @media (min-width: 992px) {
+                            @include Position(absolute,50%,0,translateY(-50%));
+                        }
+                    }
+                }
+            }
+            .hm-button {
+                position: relative;
+                background-color: $white-color;
+                width: 45px;
+                height: 45px;
+                border: 1px solid $main-border-color;
+                border-radius: 50%;
+                margin-left: 10px;
+                cursor: pointer;
+                @media (min-width: 992px) {
+                    width: 55px;
+                    height: 55px;
+                }
+                &::after {
+                    content: "";
+                    @include Position(absolute,50%,50%,translate(-50%,-50%));
+                    background: url("https://www.yelo.az/site/templates/style/img/menu_toggle.svg") no-repeat left center;
+                    width: 15px;
+                    height: 12px;
+                    transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+                }
+                &.close-active {
+                    &::after {
+                        content: "";
+                        @include Position(absolute,50%,50%,translate(-50%,-50%));
+                        background: url("https://www.yelo.az/site/templates/style/img/menu_toggle_close.svg") no-repeat left center;
+                        width: 15px;
+                        height: 12px;
+                    }
+                }
+            }
+        }
+    }
+
+    .hamburger-menu {
+        position: fixed;
+        z-index: 9999;
+        width: 100%;
+        overflow-y: scroll;
+        background-color: $white-color;
+        height: 0;
+        max-height: 0;
+        opacity: 0;
+        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+        &::-webkit-scrollbar {
+            width: 4px;
+            &-thumb{
+                background-color: #a8a8a8;
+                border-radius: 3px;
+
+            }
+        }
+        .container {
+            padding: 10px 20px 50px;
+            align-items: flex-start;
+            flex-direction: column;
+            @media (min-width: 1024px) {
+                flex-direction: row;
+            }
+
+            .mobile-buttons {
+                width: 100%;
+                display: block;
+                margin-bottom: 20px;
+                @media (min-width: 1024px) {
+                    display: none;
+                }
+                ul {
+                    border: 1px solid $main-border-color;
+                    border-radius: 10px;
+                    @include Flex(center,center,null,null);
+                    li {
+                        width: 50%;
+                        a {
+                            padding: 10px 0;
+                            color: $main-text-color;
+                            font-size: 18px;
+                            width: 100%;
+                            display: block;
+                            text-align: center;
+                        }
+                        &.location {
+                            border-left: 1px solid $main-border-color;
+                            a {
+                                img {
+                                    width: 11px;
+                                    height: 13px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            .hm-left {
+                padding-right: 30px;
+                width: 100%;
+                .hm-contents {
+                    display: grid;
+                    grid-template-columns: repeat(1,1fr);
+                    @media (min-width: 1024px) {
+                        grid-template-columns: repeat(3,1fr);
+                    }
+                    grid-gap: 10px;
+                    .content-col {
+                        &:nth-child(4) {
+                            display: grid;
+                            grid-row-end: 2 span;
+                        }
+                        .content-title {
+                            margin-bottom: 5px;
+                            a {
+                                display: block;
+                                font-family: "TT Commons Medium";
+                                font-weight: 400;
+                                font-size: 27px;
+                                color: $secondary-color;
+                            }
+    
+                        }
+                        .hm-submenu {
+                            li {
+                                margin-bottom: 5px;
+                                a {
+                                    color: $main-text-color;
+                                }
+                            }
+                        }
+    
+                    }
+                }
+                .hm-info {
+                    margin-top: 15px;
+                    padding-top: 25px;
+                    border-top: 1px solid $main-border-color;
+                    display: none;
+                    @media (min-width: 1024px) {
+                        @include Flex(center,space-between,null,null);
+                    }
+                    .info {
+                        width: 100%;
+                        .info-title {
+                            font-weight: 400;
+                            color: $main-text-color;
+                        }
+                        span {
+                            font-family: "TT Commons Medium";
+                        }
+                    }
+                }
+            }
+            .hm-right {
+                display: none;
+                @media (min-width: 1024px) {
+                    display: block;
+                }
+                a {
+                    img {
+                        width: 345px;
+                        height: 345px;
+                        border-radius: 10px;
+                        border: 1px solid $main-border-color;
+                    }
+                }
+            }
+        }
+    }
+
+}
+
+
+.message-modal {
+    @include Position(fixed,0,0);
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background-color: $main-text-color;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+    &.show-popup {
+        opacity: 1;
+        visibility: visible;
+    }
+    .modal-popup {
+        @include Position(absolute,50%,50%,translate(-50%,-30%));
+        max-width: 705px;
+        width: 100%;
+        height: 83vh;
+        padding: 0 10px;
+        transition: all 0.3s cubic-bezier(.52, .01, .16, 1);
+        &.show-modal {
+            transform: translate(-50%,-50%);
+        }
+        .modal-inner {
+            position: relative;
+            width: 100%;
+            height: 100%;
+            background-color: $white-color;
+            border-radius: 20px;
+            padding: 40px 10px 10px 10px; 
+            .close-popup {
+                height: 70px;
+                width: 70px;
+                cursor: pointer;
+                @include PositionR(absolute,0,0);
+                @media (min-width: 992px) {
+                    @include PositionR(absolute,0,-70px);
+                }
+                .close-img {
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        @include Position(absolute,50%,50%,translate(-50%,-50%));
+                        z-index: 99999;
+                        width: 23px;
+                        height: 23px;
+    
+                        &.mobile-close {
+                            display: block;
+                            @media (min-width: 992px) {
+                                display: none;
+                            }
+                        }
+                        &.desktop-close {
+                            display: none;
+                            @media (min-width: 992px) {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            .modal {
+                overflow-y: scroll;
+                height: 100%;
+                position: relative;
+                &::-webkit-scrollbar {
+                    width: 4px;
+                    &-thumb{
+                        background-color: #a8a8a8;
+                        border-radius: 3px;
+                    }
+                }
+                .modal-title {
+                    h3 {
+                        font-family: "TT Commons Bold";
+                        font-size: 25px;
+                        display: block;
+                        margin: 0 0 25px 0;
+                        text-align: center;
+                    }
+                }
+                .modal-content {
+                    form {
+                        max-width: 600px;
+                        margin: 0 auto;
+                        .form-col {
+                            &:first-child {
+                                .form-item {
+                                   &:nth-child(2) {
+                                        border-left:  1px solid $main-border-color;
+                                        border-right:  1px solid $main-border-color;
+                                   }
+                                }
+                            }
+                            &:nth-child(2), &:nth-child(3) {
+                                .form-item {
+                                   &:first-child {
+                                        border-right:  1px solid $main-border-color;
+                                   }
+                                }
+                            }
+                            .form-inner {
+                                .form-content {
+                                    .content-inner {
+                                        margin-bottom: 20px;
+                                        border: 1px solid $main-border-color;
+                                        border-radius: 10px;
+                                        @include Flex(center,space-between);
+                                        overflow: hidden;
+                                        .form-item {
+                                            display: inline-block;
+                                            padding: 20px 0;
+                                            height: 65px;
+                                            text-align: center;
+                                            font-size: 18px;
+                                            width: 100%;
+                                            background-color: $white-color;
+                                            &.active-btn {
+                                                background-color: $main-color;
+                                            }
+                                        }
+                                    }
+                                }
+        
+                                .form-input-tripl {
+                                    margin-bottom: 20px;
+                                    .input-inner {
+                                        @include Flex(center,space-between,column);
+                                        @media (min-width: 992px) {
+                                            flex-direction: row;
+                                        }
+                                        border: 1px solid $main-border-color;
+                                        border-radius: 10px;
+                                        overflow: hidden;
+                                        input {
+                                            height: 65px;
+                                            padding: 0 20px;
+                                            width: 100%;
+                                            border: none;
+                                            font-size: 18px;
+                                            &:first-child {
+                                                border-bottom: 1px solid $main-border-color;
+                                                @media (min-width: 992px) {
+                                                    border-bottom: none;
+    
+                                                }
+                                            }
+                                            &:last-child {
+                                                border-top: 1px solid $main-border-color;
+                                                @media (min-width: 992px) {
+                                                    border-top: none;
+                                                }
+                                                
+                                            }
+                                            &.user-info:nth-child(2) {
+                                                @media (min-width: 992px) {
+                                                    border-left: 1px solid $main-border-color;
+                                                    border-right: 1px solid $main-border-color;
+                                                }
+                                            }
+    
+                                            &.fin {
+                                                @media (min-width: 992px) {
+                                                    border-right: 1px solid $main-border-color;
+                                                }
+                                            }
+    
+                                        }
+                                        .form-file {
+                                            width: 100%;
+                                            position: relative;
+                                            padding: 0 20px;
+                                            span {
+                                                @include Position(absolute,50%,50%,translate(-50%,-50%));
+                                                z-index: 0;
+                                                padding: 5px 0 0 27px;
+                                                color: $blue-text-color;
+                                            }
+                                            .file {
+                                                opacity: 0;
+                                                width: 100%;
+                                                padding: 0;
+                                                &::-webkit-file-upload-button {
+                                                    visibility: hidden;
+                                                    width: 100%;
+                                                    height: 100%;
+                                                }
+                                            }
+                                        }
+                                    }
+                                }
+        
+                                .form-input-line {
+                                    margin-bottom: 20px;
+                                    .input-inner {
+                                        @include Flex(center,space-between,column);
+                                        @media (min-width: 992px) {
+                                            flex-direction: row;
+                                        }
+                                        .form-input {
+                                            width: 100%;
+                                            &:first-child {
+                                                margin-bottom: 15px;
+                                                @media (min-width: 992px) {
+                                                    padding-right: 10px;
+                                                    margin-bottom: 0px;
+                                                }
+                                            }
+                                            &:last-child {
+                                                @media (min-width: 992px) {
+                                                    padding-left: 10px;
+                                                }
+                                            }
+                                            input {
+    
+                                                border: 1px solid $main-border-color;
+                                                border-radius: 10px;
+                                                padding: 0 20px;
+                                                height: 65px;
+                                                width: 100%;
+                                                font-size: 18px;
+                                            }
+                                        }
+        
+                                        textarea {
+                                            width: 100%;
+                                            resize: none;
+                                            border: 1px solid $main-border-color;
+                                            border-radius: 10px;
+                                            padding: 20px;
+                                            font-size: 18px;
+                                        }
+                                    }
+                                }
+                            }
+                            .submit-button {
+                                width: 100%;
+                                text-align: end;
+                                padding: 30px 0;
+                                border-top: 1px solid $main-border-color;
+                                .message-submit {
+                                    font-family: "TT Commons Bold";
+                                    width: 100%;
+                                    @media (min-width: 992px) {
+                                        width: 33.333%;
+                                    }
+                                    height: 65px;
+                                    border-radius: 10px;
+                                    font-size: 18px;
+                                    padding: 13px 25px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}

@@ -1,0 +1,207 @@
+.mobile-app-promotion {
+    background-color: #F8F8F8;
+    background-repeat: no-repeat;
+    background-position: 100% 0;
+    height: 0;
+    transition: all 0.3s linear;
+    overflow: hidden;
+    position: fixed;
+    z-index: 999;
+    width: 100%;
+    &.show {
+        height: 120px;
+    }
+    display: none;
+    @media (min-width: 576px) {
+        display: block;
+    }
+    .promotion-inner {
+        max-width: 1440px;
+        margin: 0 auto;
+        height: 100%;
+        @include Flex(center,space-between);
+        padding: 0 20px;
+        box-sizing: content-box;
+        .app-logo {
+            line-height: 1;
+            padding: 10px 0;
+            @include Flex(center,space-between,null,null);
+            .logo-img {
+                padding-right: 10px;
+                @media (min-width: 768px) {
+                    padding-right: 20px;
+                }
+                img {
+                    background-color: $main-color;
+                    padding: 20px 10px;
+                    border-radius: 12px;
+                }
+            }
+            p {
+                @media (min-width: 1150px) {
+                    display: block;
+                }
+                display: none;
+                color: $secondary-color;
+                font-size: 20px;
+            }
+        }
+        .app-links {
+            margin-right: 0px;
+            @media (min-width: 775px) {
+                margin-right: 24%;
+            }
+            .download-apps {
+                @include Flex(center,center,null,null);
+                background-color: $white-color;
+                border: 1px solid rgba(0,0,0, 0.15);
+                border-radius: 5px;
+                padding: 10px 0;
+                li {
+                    position: relative;
+                    padding: 0 16px;
+                    &::before {
+                        content: "";
+                        position: absolute;
+                        left: 0;
+                        top: 50%;
+                        transform: translateY(-50%);
+                        display: block;
+                        width: 1px;
+                        height: 60%;
+                        background-color: rgba(0,0,0, 0.15);
+                    }
+                    &:first-child {
+                        &::before {
+                            display: none;
+                        }
+                    }
+                    a {
+                        @include Flex(center,center,null,null);
+                        img {
+                            width: 24px;
+                            margin-right: 10px;
+                        }
+
+                        .content {
+                            line-height: 1;
+                            span {
+                                font-size: 10px;
+                                @media (min-width: 768px) {
+                                    font-size: 12px;
+                                }
+                            }
+                            p {
+                                letter-spacing: -0.4px;
+                                font-family: "TT Commons Medium";
+                                font-size: 12px;
+                                @media (min-width: 768px) {
+                                    font-size: 16px;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        .app-close {
+            .close-img {
+                width: 52px;
+                height: 52px;
+                border: 1px solid rgba(0, 0, 0, 0.1);
+                border-radius: 50%;
+                position: relative;
+                cursor: pointer;
+                img {
+                    width: 18px;
+                    height: 18px;
+                    @include Position(absolute,50%,50%,translate(-50%,-50%));
+                    
+                }
+            }
+        }
+    }
+}
+
+.mobile-promotion {
+    position: fixed;
+    z-index: 10;
+    bottom: 20px;
+    left: 50%;
+    transform: translateX(-50%);
+    width: calc(100% - 24px);
+    max-width: 400px;
+    background-color: $white-color;
+    box-shadow: 0 4px 12px 0 rgba(0,0,0, 0.3);
+    border-radius: 12px;
+    opacity: 0;
+    visibility: hidden;
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    display: block;
+    @media (min-width: 576px) {
+        display: none;
+    }
+    .promotion-inner {
+        @include Flex(center,space-between);
+        padding: 12px 20px;
+        .mp-left {
+            padding-right: 15px;
+            .mp-close-btn {
+                width: 20px;
+                height: 20px;
+                position: relative;
+                &::before {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #b6b6b6;
+                    position: absolute;
+                    left: 0;
+                    top: calc(50% - 1px);
+                    transform: rotate(45deg);
+                }
+                &::after {
+                    content: "";
+                    display: block;
+                    width: 100%;
+                    height: 2px;
+                    background-color: #b6b6b6;
+                    position: absolute;
+                    left: 0;
+                    top: calc(50% - 1px);
+                    transform: rotate(-45deg);
+                }
+            }
+        }
+        .mp-right {
+            @include Flex(center,space-between);
+            .mobile-logo {
+                img {
+                    background-color: $main-color;
+                    padding: 20px 10px;
+                    border-radius: 12px;
+                }
+            }
+            .slogan {
+                width: calc(100% - 180px);
+                line-height: 1.3;
+            }
+            .download-btn {
+                button {
+                    background-color: $blue-text-color;
+                    padding: 6px 15px;
+                    font-size: 13px;
+                    font-weight: 600;
+                    color: $white-color;
+                    text-align: center;
+                    border-radius: 71px;
+                }
+            }
+        }
+
+    }
+}

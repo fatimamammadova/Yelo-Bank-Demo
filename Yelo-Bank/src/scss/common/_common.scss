@@ -1,0 +1,64 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+body {
+    font-size: 16px;
+    line-height: 1.6;
+    font-family: "TT Commons Regular";
+}
+a {
+    text-decoration: none;
+    color: #000;
+}
+ul {
+    list-style: none;
+}
+button {
+    background-color: transparent;
+    border: none;
+}
+input:focus {
+    outline:none;
+} 
+input,button,textarea {
+    font-family: "TT Commons Regular";
+}
+.container {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.wrapper {
+    max-width: 1140px;
+    margin: 0 auto;
+    padding: 0 20px;
+}
+
+
+@font-face {
+    font-family: "TT Commons Medium";
+    src: url("../fonts/subset-TTCommons-Medium.woff2");
+}  
+@font-face {
+    font-family: "TT Commons Regular";
+    src: url("../fonts/subset-TTCommons-Regular.woff2") ;
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "TT Commons Bold";
+    src: url("../fonts/subset-TTCommons-DemiBold.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
+@font-face {
+    font-family: "TTFirsNeue Medium";
+    src: url("../fonts/subset-TTFirsNeue-Medium.woff2");
+    font-weight: normal;
+    font-style: normal;
+}
