@@ -89,7 +89,7 @@ button {
   border: none;
 }
 
-input:focus {
+input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
@@ -101,15 +101,19 @@ input, button, textarea {
   max-width: 1140px;
   margin: 0 auto;
   padding: 0 20px;
+}
+.container .row {
+  width: 100%;
   display: flex;
   justify-content: space-between;
-  align-items: center;
 }
-
-.wrapper {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
+.container .row.mobile-row {
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  .container .row.mobile-row {
+    flex-direction: row;
+  }
 }
 
 @font-face {
@@ -1232,72 +1236,75 @@ header .hamburger-menu .container .mobile-buttons ul li.location a img {
   width: 11px;
   height: 13px;
 }
-header .hamburger-menu .container .hm-left {
+header .hamburger-menu .container .row {
+  align-items: flex-start;
+}
+header .hamburger-menu .container .row .hm-left {
   padding-right: 30px;
   width: 100%;
 }
-header .hamburger-menu .container .hm-left .hm-contents {
+header .hamburger-menu .container .row .hm-left .hm-contents {
   display: grid;
   grid-template-columns: repeat(1, 1fr);
   grid-gap: 10px;
 }
 @media (min-width: 1024px) {
-  header .hamburger-menu .container .hm-left .hm-contents {
+  header .hamburger-menu .container .row .hm-left .hm-contents {
     grid-template-columns: repeat(3, 1fr);
   }
 }
-header .hamburger-menu .container .hm-left .hm-contents .content-col:nth-child(4) {
+header .hamburger-menu .container .row .hm-left .hm-contents .content-col:nth-child(4) {
   display: grid;
   grid-row-end: 2 span;
 }
-header .hamburger-menu .container .hm-left .hm-contents .content-col .content-title {
+header .hamburger-menu .container .row .hm-left .hm-contents .content-col .content-title {
   margin-bottom: 5px;
 }
-header .hamburger-menu .container .hm-left .hm-contents .content-col .content-title a {
+header .hamburger-menu .container .row .hm-left .hm-contents .content-col .content-title a {
   display: block;
   font-family: "TT Commons Medium";
   font-weight: 400;
   font-size: 27px;
   color: #000;
 }
-header .hamburger-menu .container .hm-left .hm-contents .content-col .hm-submenu li {
+header .hamburger-menu .container .row .hm-left .hm-contents .content-col .hm-submenu li {
   margin-bottom: 5px;
 }
-header .hamburger-menu .container .hm-left .hm-contents .content-col .hm-submenu li a {
+header .hamburger-menu .container .row .hm-left .hm-contents .content-col .hm-submenu li a {
   color: rgba(0, 0, 0, 0.5);
 }
-header .hamburger-menu .container .hm-left .hm-info {
+header .hamburger-menu .container .row .hm-left .hm-info {
   margin-top: 15px;
   padding-top: 25px;
   border-top: 1px solid #ECECEC;
   display: none;
 }
 @media (min-width: 1024px) {
-  header .hamburger-menu .container .hm-left .hm-info {
+  header .hamburger-menu .container .row .hm-left .hm-info {
     display: flex;
     align-items: center;
     justify-content: space-between;
   }
 }
-header .hamburger-menu .container .hm-left .hm-info .info {
+header .hamburger-menu .container .row .hm-left .hm-info .info {
   width: 100%;
 }
-header .hamburger-menu .container .hm-left .hm-info .info .info-title {
+header .hamburger-menu .container .row .hm-left .hm-info .info .info-title {
   font-weight: 400;
   color: rgba(0, 0, 0, 0.5);
 }
-header .hamburger-menu .container .hm-left .hm-info .info span {
+header .hamburger-menu .container .row .hm-left .hm-info .info span {
   font-family: "TT Commons Medium";
 }
-header .hamburger-menu .container .hm-right {
+header .hamburger-menu .container .row .hm-right {
   display: none;
 }
 @media (min-width: 1024px) {
-  header .hamburger-menu .container .hm-right {
+  header .hamburger-menu .container .row .hm-right {
     display: block;
   }
 }
-header .hamburger-menu .container .hm-right a img {
+header .hamburger-menu .container .row .hm-right a img {
   width: 345px;
   height: 345px;
   border-radius: 10px;
@@ -1429,12 +1436,18 @@ header .hamburger-menu .container .hm-right a img {
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-content .content-inner .form-item {
   display: inline-block;
-  padding: 20px 0;
-  height: 65px;
+  height: 55px;
+  padding: 16px 0;
   text-align: center;
   font-size: 18px;
   width: 100%;
   background-color: #fff;
+}
+@media (min-width: 992px) {
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-content .content-inner .form-item {
+    padding: 20px 0;
+    height: 65px;
+  }
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-content .content-inner .form-item.active-btn {
   background-color: #FFC628;
@@ -1456,46 +1469,78 @@ header .hamburger-menu .container .hm-right a img {
     flex-direction: row;
   }
 }
-.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input {
-  height: 65px;
-  padding: 0 20px;
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input {
+  height: 55px;
   width: 100%;
-  border: none;
-  font-size: 18px;
 }
-.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input:first-child {
+@media (min-width: 992px) {
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input {
+    height: 65px;
+  }
+}
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input:first-child {
   border-bottom: 1px solid #ECECEC;
 }
 @media (min-width: 992px) {
-  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input:first-child {
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input:first-child {
     border-bottom: none;
   }
 }
-.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input:last-child {
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input:last-child {
   border-top: 1px solid #ECECEC;
 }
 @media (min-width: 992px) {
-  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input:last-child {
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input:last-child {
     border-top: none;
   }
 }
 @media (min-width: 992px) {
-  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input.user-info:nth-child(2) {
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input:nth-child(2) {
     border-left: 1px solid #ECECEC;
     border-right: 1px solid #ECECEC;
   }
 }
 @media (min-width: 992px) {
-  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner input.fin {
-    border-right: 1px solid #ECECEC;
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input.file-input {
+    border-right: none;
   }
 }
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input.fin-input {
+  border-bottom: none;
+}
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-input input {
+  height: 100%;
+  padding: 0 20px;
+  width: 100%;
+  border: none;
+  font-size: 18px;
+}
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file {
+  height: 100%;
   width: 100%;
   position: relative;
   padding: 0 20px;
 }
-.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file span {
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file .file {
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  position: absolute;
+  z-index: 3;
+  top: 0px;
+  left: 0px;
+  text-align: center;
+  cursor: pointer;
+}
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file .file::-webkit-file-upload-button {
+  visibility: hidden;
+  width: 100%;
+  height: 100%;
+}
+.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file .form-file-content span {
+  background-size: cover;
+  background-position: center;
   position: absolute;
   top: 50%;
   left: 50%;
@@ -1503,16 +1548,6 @@ header .hamburger-menu .container .hm-right a img {
   z-index: 0;
   padding: 5px 0 0 27px;
   color: #0091FE;
-}
-.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file .file {
-  opacity: 0;
-  width: 100%;
-  padding: 0;
-}
-.message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-tripl .input-inner .form-file .file::-webkit-file-upload-button {
-  visibility: hidden;
-  width: 100%;
-  height: 100%;
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-line {
   margin-bottom: 20px;
@@ -1529,7 +1564,13 @@ header .hamburger-menu .container .hm-right a img {
   }
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-line .input-inner .form-input {
+  height: 55px;
   width: 100%;
+}
+@media (min-width: 992px) {
+  .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-line .input-inner .form-input {
+    height: 65px;
+  }
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-line .input-inner .form-input:first-child {
   margin-bottom: 15px;
@@ -1546,20 +1587,22 @@ header .hamburger-menu .container .hm-right a img {
   }
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-line .input-inner .form-input input {
-  border: 1px solid #ECECEC;
   border-radius: 10px;
   padding: 0 20px;
-  height: 65px;
+  border: 1px solid #ECECEC;
+  height: 100%;
   width: 100%;
   font-size: 18px;
+  border-radius: 10px;
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .form-inner .form-input-line .input-inner textarea {
   width: 100%;
+  height: 100px;
   resize: none;
-  border: 1px solid #ECECEC;
   border-radius: 10px;
   padding: 20px;
   font-size: 18px;
+  border: 1px solid #ECECEC;
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button {
   width: 100%;
@@ -1714,6 +1757,9 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
   }
 }
 main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
   position: relative;
 }
 @media (min-width: 1000px) {
@@ -1981,39 +2027,19 @@ main #stories .container .stories-wrapper .swiper .swiper-wrapper .swiper-slide 
 main #credit-calculator {
   margin-bottom: 50px;
 }
-main #credit-calculator .calculator-inner {
-  height: 100%;
-}
-main #credit-calculator .calculator-inner .container {
-  height: 100%;
-  align-items: stretch;
-  flex-direction: column;
-}
-@media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container {
-    flex-direction: row;
-  }
-}
-main #credit-calculator .calculator-inner .container .calculator-col {
-  height: 100%;
+main #credit-calculator .container .row .calculator-left {
   width: 100%;
-}
-@media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col {
-    width: 50%;
-  }
-}
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left {
   padding-right: 0;
   margin-bottom: 15px;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left {
+  main #credit-calculator .container .row .calculator-left {
+    width: 50%;
     padding-right: 15px;
     margin-bottom: 0;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper {
+main #credit-calculator .container .row .calculator-left .cl-wrapper {
   height: 100%;
   position: relative;
   border-radius: 10px;
@@ -2022,55 +2048,55 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
   background-color: #F3F1F7;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper {
     overflow: hidden;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper:hover .cl-right {
+main #credit-calculator .container .row .calculator-left .cl-wrapper:hover .cl-right {
   top: 20px;
   box-shadow: 70px 80px 100px rgba(0, 0, 0, 0.2);
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left {
   width: 100%;
   padding: 280px 20px 20px;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left {
     width: 50%;
     padding: 30px 0 30px 30px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left h3 {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left h3 {
   font-size: 20px;
   color: #000;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left h3 {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left h3 {
     font-size: 22px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .cl-items {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items {
   display: flex;
   align-items: center;
   justify-content: space-between;
   margin: 10px 0;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .cl-items {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items {
     margin: 15px 0 25px 0;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .cl-items .item {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items .item {
   width: 50%;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .cl-items .item .item-title {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items .item .item-title {
   display: block;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .cl-items .item .item-text {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items .item .item-text {
   font-size: 22px;
   font-family: "TT Commons Medium";
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .main-button {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .main-button {
   padding: 13px 25px;
   font-family: "TT Commons Bold";
   width: 100%;
@@ -2078,26 +2104,26 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
   border-radius: 10px;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-left .main-button {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .main-button {
     height: 55px;
     width: 200px;
     font-size: 18px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-right {
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-right {
+  position: absolute;
   width: 190px;
   height: 300px;
   top: 30px;
   right: 40px;
+  border-radius: 10px;
   box-shadow: 50px 60px 80px rgba(0, 0, 0, 0.2);
   background-position: center;
   background-size: cover;
   transition: all 0.4s cubic-bezier(0.52, 0.01, 0.16, 1);
-  border-radius: 10px;
-  position: absolute;
 }
 @media (max-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-left .cl-wrapper .cl-right {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-right {
     top: 20px;
     left: -30%;
     width: 150px;
@@ -2106,104 +2132,136 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
     transform-origin: center;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right {
+main #credit-calculator .container .row .calculator-right {
+  align-self: center;
+  width: 100%;
   padding-left: 0;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right {
+  main #credit-calculator .container .row .calculator-right {
+    width: 50%;
     padding-left: 15px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper {
+main #credit-calculator .container .row .calculator-right .cr-wrapper {
+  height: 100%;
   border-radius: 10px;
   border: 1px solid #ECECEC;
   overflow: hidden;
   padding: 20px;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper {
     padding: 30px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title {
   display: flex;
   align-items: center;
   justify-content: space-between;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title h2 {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title h2 {
   font-size: 20px;
   color: #000;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title h2 {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title h2 {
     font-size: 22px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title .secondary-button {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title .secondary-button {
   display: none;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title .secondary-button {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title .secondary-button {
     display: block;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title .secondary-button span {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title .secondary-button span {
   color: #0091FE;
   font-size: 16px;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-title .secondary-button span::after {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-title .secondary-button span::after {
   background: url("../../public/img/blue_arrow.svg") no-repeat right center;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content {
   padding-top: 10px;
   width: 100%;
   height: 100%;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content {
     padding-top: 30px;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs {
-  height: 70px;
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs {
+  height: 100%;
   border: 1px solid #E7E7E7;
   border-radius: 10px 10px 10px 0;
   display: block;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs {
+    height: 70px;
+  }
+}
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs {
     display: flex;
     align-items: center;
     justify-content: space-between;
     flex-direction: row;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input {
   position: relative;
   padding: 10px 10px;
   height: 100%;
   width: 100%;
-  border-left: 1px solid #E7E7E7;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:first-child {
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input {
+    border-left: 1px solid #E7E7E7;
+  }
+}
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:first-child {
   border-left: none;
+  border-bottom: 1px solid #E7E7E7;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:last-child {
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:first-child {
+    border-bottom: none;
+  }
+}
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:last-child {
   border-bottom-right-radius: 10px;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .calculator-title {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:nth-child(2) {
+  border-bottom: 1px solid #E7E7E7;
+}
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:nth-child(2) {
+    border-bottom: none;
+  }
+}
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .calculator-title {
   font-size: 15px;
   line-height: 15px;
   display: block;
   margin: 0 0 4px 0;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .number-range {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .number-range {
   width: 100%;
   font-size: 26px;
   font-family: "TT Commons Medium";
   border: none;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .title-exponent {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .number-range::-webkit-outer-spin-button, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .number-range::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .title-exponent {
   position: absolute;
   right: 17px;
   bottom: 10px;
@@ -2211,7 +2269,7 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
   font-family: "TT Commons Bold";
   color: rgba(0, 0, 0, 0.5);
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range {
   -webkit-appearance: none;
      -moz-appearance: none;
           appearance: none;
@@ -2219,18 +2277,18 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
   position: absolute;
   left: 0px;
   bottom: 0px;
-  background-color: #ffffff;
+  background-color: transparent;
   --range: calc(var(--max) - var(--min));
   --ratio: calc((var(--val) - var(--min))/var(--range));
   --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em));
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-webkit-slider-runnable-track {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-webkit-slider-runnable-track {
   width: 100%;
   height: 4px;
   cursor: pointer;
   background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-webkit-slider-thumb {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-webkit-slider-thumb {
   height: 24px;
   width: 24px;
   border-radius: 50%;
@@ -2241,13 +2299,13 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
   border: 5px solid #FFC628;
   margin: -10px 0 0 0;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-moz-range-track {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-moz-range-track {
   width: 100%;
   height: 3px;
   cursor: pointer;
   background-color: #FFC628;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-moz-range-thumb {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-moz-range-thumb {
   height: 20px;
   width: 20px;
   border-radius: 100%;
@@ -2257,12 +2315,12 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
        appearance: none;
   border: 3px solid #FFC628;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-ms-track {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-ms-track {
   width: 100%;
   height: 3px;
   cursor: pointer;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result {
   width: 100%;
   display: flex;
   justify-content: space-between;
@@ -2270,50 +2328,377 @@ main #credit-calculator .calculator-inner .container .calculator-col.calculator-
   margin: 45px 0 0 0;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result {
     flex-direction: row;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-content {
-  width: calc(100% - 50px);
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content {
+  width: 100%;
   display: flex;
   justify-content: center;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner {
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content {
+    width: calc(100% - 50px);
+  }
+}
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner {
   text-align: center;
-  width: 50%;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner {
     text-align: right;
   }
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .calculator-title {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .calculator-title {
   display: block;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .result {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .result {
   text-align: right;
   width: 33%;
   font-size: 26px;
   font-family: "TT Commons Medium";
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner span {
-  font-family: "TT Commons Medium";
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .result span {
   font-size: 18px;
 }
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-button {
-  width: 100%;
-}
-@media (min-width: 1000px) {
-  main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-button {
-    width: 166px;
-  }
-}
-main #credit-calculator .calculator-inner .container .calculator-col.calculator-right .cr-wrapper .cr-content .cr-result .result-button .main-button {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .main-button {
   width: 100%;
   padding: 13px 25px;
   border-radius: 10px;
   font-size: 18px;
   font-family: "TT Commons Bold";
   height: 55px;
+}
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .main-button {
+    width: 210px;
+  }
+}
+main #currency {
+  margin-bottom: 50px;
+}
+main #currency .currency-title {
+  margin-bottom: 10px;
+}
+main #currency .currency-title h2 {
+  font-size: 25px;
+  font-family: "TT Commons Bold";
+}
+main #currency .currency-left {
+  width: 100%;
+  margin-bottom: 15px;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left {
+    width: 66.6666%;
+    padding-right: 15px;
+    margin-bottom: 0;
+  }
+}
+main #currency .currency-left .cl-wrapper {
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ECECEC;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper {
+    background: url("../../public/img/currency-card-bg-img.svg") no-repeat right center/contain;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-content {
+  position: relative;
+  z-index: 2;
+  padding: 45px;
+  width: 100%;
+  height: 100%;
+  background-color: #fff;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content {
+    width: 50%;
+    background-color: transparent;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-content .cl-title {
+  margin-bottom: 10px;
+}
+main #currency .currency-left .cl-wrapper .cl-content .cl-title h3 {
+  font-size: 34px;
+  font-family: "TT Commons Bold";
+}
+main #currency .currency-left .cl-wrapper .cl-content .cl-text p {
+  font-size: 18px;
+  line-height: 26px;
+  color: rgba(0, 0, 0, 0.5);
+}
+main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links {
+  width: 100%;
+  height: 55px;
+  border: 1px solid #ECECEC;
+  border-radius: 5px;
+  background-color: #fff;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  margin-top: 10px;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links {
+    position: absolute;
+    bottom: 45px;
+    left: 45px;
+  }
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links {
+    margin-top: 0;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li {
+  width: 33%;
+}
+main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a {
+  display: block;
+  white-space: nowrap;
+  text-align: center;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a {
+    padding: 0 6px;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content {
+  display: inline-block;
+  color: #505050;
+  padding-left: 24px;
+  background-position: left 10px;
+  background-size: 15px;
+  background-repeat: no-repeat;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content {
+    padding: 6px 0 6px 34px;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content span {
+  opacity: 0.5;
+  font-size: 11px;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content span {
+    font-size: 12px;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content p {
+  opacity: 0.5;
+  letter-spacing: -0.4px;
+  line-height: 9px;
+  font-family: "TT Commons Medium";
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content:first-child {
+    background-position: left 11px;
+  }
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content:nth-child(2) {
+    background-position: left 13px;
+  }
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-content .mobile-app-links li a .link-content:last-child {
+    background-position: left 14px;
+    background-size: 24px;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-img {
+  width: 100%;
+  position: relative;
+  bottom: 0px;
+  right: 0px;
+  height: 200px;
+  background-size: 80%;
+  background-position: 17% 14px;
+  background-repeat: no-repeat;
+  background-color: #ffc629;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-img {
+    position: absolute;
+    bottom: 0px;
+    right: 30px;
+    width: 50%;
+    height: 115%;
+    overflow: hidden;
+    background-color: transparent;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-img .phone-img {
+  position: relative;
+  width: 180px;
+  left: -22px;
+  z-index: 2;
+  margin: 0 auto;
+  height: 100%;
+  background-repeat: no-repeat;
+  background-position: bottom right;
+  background-size: contain;
+  overflow: hidden;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-img .phone-img {
+    position: absolute;
+    width: 100%;
+    top: 0;
+    left: 0;
+    margin: 0;
+  }
+}
+main #currency .currency-left .cl-wrapper .cl-img .app-img {
+  position: absolute;
+  width: 120px;
+  height: 213px;
+  left: 50%;
+  bottom: 0;
+  top: 20px;
+  background-size: cover;
+  margin: 0 0 0 -60px;
+  background-color: #ffc629;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-left .cl-wrapper .cl-img .app-img {
+    top: 75px;
+    left: 95px;
+    width: 247px;
+    height: 375px;
+    margin: 0;
+  }
+}
+main #currency .currency-right {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  main #currency .currency-right {
+    width: 33.333%;
+    padding-left: 15px;
+  }
+}
+main #currency .currency-right .cr-wrapper {
+  width: 100%;
+  border-radius: 10px;
+  border: 1px solid #ECECEC;
+  padding: 30px;
+  overflow: hidden;
+}
+main #currency .currency-right .cr-wrapper .cr-title {
+  display: flex;
+  justify-content: space-between;
+}
+main #currency .currency-right .cr-wrapper .cr-title h3 {
+  font-size: 22px;
+  font-family: "TT Commons Bold";
+}
+main #currency .currency-right .cr-wrapper .cr-title .change-rates {
+  position: relative;
+  padding-top: 5px;
+}
+main #currency .currency-right .cr-wrapper .cr-title .change-rates .default-rate {
+  display: inline-block;
+  color: rgba(0, 0, 0, 0.5);
+  padding: 5px 15px 0 0;
+}
+main #currency .currency-right .cr-wrapper .cr-title .change-rates .rate-select-box {
+  position: absolute;
+  right: 0;
+  left: auto;
+  top: 0;
+  z-index: 9;
+  transform-origin: right top;
+  background-color: #fff;
+  box-shadow: 0 2px 14px 0 rgba(0, 0, 0, 0.17);
+  transition: all 0.2s cubic-bezier(1, 0, 0, 1);
+  padding: 10px 0;
+  border-radius: 5px;
+  transform: scale(0);
+  opacity: 0;
+  visibility: hidden;
+}
+main #currency .currency-right .cr-wrapper .cr-title .change-rates .rate-select-box.show {
+  transform: scale(1);
+  opacity: 1;
+  visibility: visible;
+}
+main #currency .currency-right .cr-wrapper .cr-title .change-rates .rate-select-box .select-content li a {
+  display: inline-block;
+  padding: 0 20px;
+  color: rgba(0, 0, 0, 0.5);
+}
+main #currency .currency-right .cr-wrapper .cr-title .change-rates .rate-select-box .select-content li a.active {
+  color: #000;
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-line {
+  display: flex;
+  justify-content: space-between;
+  border-bottom: 3px solid #FFC628;
+  padding-top: 10px;
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-line .cur-value {
+  width: 100%;
+  height: 40px;
+  font-size: 25px;
+  border: none;
+  font-family: "TT Commons Bold";
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-line select {
+  border: none;
+  font-family: "TT Commons Bold";
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  background: url("../../public/img/currency-arrow.svg") no-repeat right 40%;
+  padding: 0 12px 0 0;
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-result {
+  margin: 25px 0 0 0;
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-result .result-item {
+  width: 33.333%;
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-result .result-item span {
+  display: block;
+  font-size: 18px;
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-result .result-item span.result-title {
+  color: rgba(0, 0, 0, 0.5);
+}
+main #currency .currency-right .cr-wrapper .currency-calculator .currency-result .result-item span.result-value {
+  font-family: "TT Commons Bold";
+}
+main #currency .currency-right .cr-wrapper .extra-info {
+  padding: 10px 0 0;
+  color: rgba(0, 0, 0, 0.9);
+  font-size: 14px;
+}
+main #currency .currency-right .cr-wrapper .all-currency {
+  margin: 15px -30px -30px;
+  border-top: 1px solid #ECECEC;
+  background: url("../../public/img/blue_arrow.svg") no-repeat 91% 21px;
+  display: block;
+  padding: 17px 30px;
+  font-family: "TT Commons Bold";
+  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
+  background-color: #fff;
+  color: #0091FE;
+}
+main #currency .currency-right .cr-wrapper .all-currency:hover {
+  background: url("../../public/img/white-arrow.svg") no-repeat 91% 21px;
+  color: #fff;
+  background-color: #0091FE;
 }/*# sourceMappingURL=style.css.map */

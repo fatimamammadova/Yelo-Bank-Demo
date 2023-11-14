@@ -106,6 +106,7 @@ main {
     
                             }
                             .container {
+                                @include Flex(center,space-between);
                                 @media (min-width: 1000px) {
                                     height: 505px;
                                 }
@@ -372,380 +373,623 @@ main {
 
     #credit-calculator {
         margin-bottom: 50px;
-        .calculator-inner {
-            height: 100%;
-            .container {
-                height: 100%;
-                align-items: stretch;
-                flex-direction: column;
-                @media (min-width: 1000px) {
-                    flex-direction: row;
-                    
-                }
-                .calculator-col {
-                    height: 100%;
+        .container {
+            .row {
+                .calculator-left {
                     width: 100%;
+                    padding-right: 0;
+                    margin-bottom: 15px;
                     @media (min-width: 1000px) {
                         width: 50%;
+                        padding-right: 15px;
+                        margin-bottom: 0;
                     }
-                    &.calculator-left {
-                        padding-right: 0;
-                        margin-bottom: 15px;
+                    .cl-wrapper {
+                        height: 100%;
+                        position: relative;
+                        border-radius: 10px;
+                        border: 1px solid $main-border-color;
+                        overflow: visible;
+                        background-color: $main-gray-bg-color;
                         @media (min-width: 1000px) {
-                            padding-right: 15px;
-                            margin-bottom: 0;
+                            overflow: hidden;
                         }
-                        .cl-wrapper {
-                            height: 100%;
-                            position: relative;
-                            border-radius: 10px;
-                            border: 1px solid $main-border-color;
-                            overflow: visible;
-                            background-color: $main-gray-bg-color;
-                            @media (min-width: 1000px) {
-                                overflow: hidden;
-                            }
-                           
-                            &:hover {
-                                .cl-right {
-                                    top: 20px;
-                                    box-shadow: 70px 80px 100px rgba(0,0,0,0.2);
-
-                                }
-                            }
-                            .cl-left {
-                                width: 100%;
-                                padding: 280px 20px 20px;
-                                @media (min-width: 1000px) {
-                                    width: 50%;
-                                    padding: 30px 0 30px 30px;
-                                }
-                                h3 {
-                                    font-size: 20px;
-                                    color: $secondary-color;
-                                    @media (min-width: 1000px) {
-                                        font-size: 22px;
-                                    }
-                                }
-                                .cl-items {
-                                    @include Flex(center,space-between);
-                                    margin: 10px 0;
-                                    @media (min-width: 1000px) {
-                                        margin: 15px 0 25px 0;
-                                        
-                                    }
-                                    .item {
-                                        width: 50%;
-                                        .item-title {
-                                            display: block;
-                                        }
-                                        .item-text {
-                                            font-size: 22px;
-                                            font-family: "TT Commons Medium";
-                                        }
-                                    }
-                                }
-                                .main-button {
-                                    padding: 13px 25px;
-                                    font-family: "TT Commons Bold";
-                                    width: 100%;
-                                    font-size: 16px;
-                                    border-radius: 10px;
-                                    @media (min-width: 1000px) {
-                                        height: 55px;
-                                        width: 200px;
-                                        font-size: 18px;
-                                    }
-
-                                }
-                            }
+                        &:hover {
                             .cl-right {
-                                width: 190px;
-                                height: 300px;
-                                top: 30px;
-                                right: 40px;
-                                @media (max-width: 1000px) {
-                                    top: 20px;
-                                    left: -30%;
-                                    width: 150px;
-                                    height: 240px;
-                                    transform: matrix3d(0.858606, 0.298387, 0, -0.000414946, -0.651602, 0.939378, 0, -4.94499e-05, 0, 0, 1, 0, 216, -3, 0, 1);
-                                    transform-origin: center;
+                                top: 20px;
+                                box-shadow: 70px 80px 100px rgba(0,0,0,0.2);
+                            }
+                        }
+                        .cl-left {
+                            width: 100%;
+                            padding: 280px 20px 20px;
+                            @media (min-width: 1000px) {
+                                width: 50%;
+                                padding: 30px 0 30px 30px;
+                            }
+                            h3 {
+                                font-size: 20px;
+                                color: $secondary-color;
+                                @media (min-width: 1000px) {
+                                    font-size: 22px;
+                                }
+                            }
+                            .cl-items {
+                                @include Flex(center,space-between);
+                                margin: 10px 0;
+                                @media (min-width: 1000px) {
+                                    margin: 15px 0 25px 0;
                                     
                                 }
-                                box-shadow: 50px 60px 80px rgba(0,0,0,0.2);
-                                background-position: center;
-                                background-size: cover;
-                                transition: all 0.4s cubic-bezier(.52, .01, .16, 1);
+                                .item {
+                                    width: 50%;
+                                    .item-title {
+                                        display: block;
+                                    }
+                                    .item-text {
+                                        font-size: 22px;
+                                        font-family: "TT Commons Medium";
+                                    }
+                                }
+                            }
+                            .main-button {
+                                padding: 13px 25px;
+                                font-family: "TT Commons Bold";
+                                width: 100%;
+                                font-size: 16px;
                                 border-radius: 10px;
-                                position: absolute;
+                                @media (min-width: 1000px) {
+                                    height: 55px;
+                                    width: 200px;
+                                    font-size: 18px;
+                                }
+                            }
+                        }
+                        .cl-right {
+                            position: absolute;
+                            width: 190px;
+                            height: 300px;
+                            top: 30px;
+                            right: 40px;
+                            border-radius: 10px;
+                            box-shadow: 50px 60px 80px rgba(0,0,0,0.2);
+                            background-position: center;
+                            background-size: cover;
+                            transition: all 0.4s cubic-bezier(.52, .01, .16, 1);
+                            @media (max-width: 1000px) {
+                                top: 20px;
+                                left: -30%;
+                                width: 150px;
+                                height: 240px;
+                                transform: matrix3d(0.858606, 0.298387, 0, -0.000414946, -0.651602, 0.939378, 0, -4.94499e-05, 0, 0, 1, 0, 216, -3, 0, 1);
+                                transform-origin: center;
                             }
                         }
                     }
-                    &.calculator-right {
-                        padding-left: 0;
+                }
+                .calculator-right {
+                    align-self: center;
+                    width: 100%;
+                    padding-left: 0;
+                    @media (min-width: 1000px) {
+                        width: 50%;
+                        padding-left: 15px;
+                    }
+                    .cr-wrapper {
+                        height: 100%;
+                        border-radius: 10px;
+                        border: 1px solid $main-border-color;
+                        overflow: hidden;
+                        padding: 20px;
                         @media (min-width: 1000px) {
-                            padding-left: 15px;
+                            padding: 30px;
                         }
-                        .cr-wrapper {
-                            border-radius: 10px;
-                            border: 1px solid $main-border-color;
-                            overflow: hidden;
-                            padding: 20px;
-                            @media (min-width: 1000px) {
-                                padding: 30px;
-                            }
-                            .cr-title {
-                                @include Flex(center,space-between);
-                                h2 {
-                                    font-size: 20px;
-                                    color: $secondary-color;
-                                    @media (min-width: 1000px) {
-                                        font-size: 22px;
-                                    }
-                                }
-                                .secondary-button {
-                                    display: none;
-                                    @media (min-width: 1000px) {
-                                        display: block;
-                                    }
-                                    span {
-                                        color: $blue-text-color;
-                                        font-size: 16px;
-                                        &::after {
-                                            background: url("../../public/img/blue_arrow.svg") no-repeat right center;
-                                        }
-                                    }
-                                }
-                            }
-                            .cr-content {
-                                padding-top: 10px;
+                        .cr-title {
+                            @include Flex(center,space-between);
+                            h2 {
+                                font-size: 20px;
+                                color: $secondary-color;
                                 @media (min-width: 1000px) {
-                                    padding-top: 30px;  
+                                    font-size: 22px;
                                 }
-                                width: 100%;
-                                height: 100%;
-                                .cr-inputs {
-                                    height: 70px;
-                                    border: 1px solid $secondary-border-color;
-                                    border-radius: 10px 10px 10px 0;
+                            }
+                            .secondary-button {
+                                display: none;
+                                @media (min-width: 1000px) {
                                     display: block;
-                                    @media (min-width: 1000px) {
-                                        @include Flex(center,space-between,row);
+                                }
+                                span {
+                                    color: $blue-text-color;
+                                    font-size: 16px;
+                                    &::after {
+                                        background: url("../../public/img/blue_arrow.svg") no-repeat right center;
                                     }
-                                    .cr-input {
-                                        position: relative;
-                                        padding: 10px 10px;
-                                        height: 100%;
-                                        width: 100%;
+                                }
+                            }
+                        }
+                        .cr-content {
+                            padding-top: 10px;
+                            @media (min-width: 1000px) {
+                                padding-top: 30px;  
+                            }
+                            width: 100%;
+                            height: 100%;
+                            .cr-inputs {
+                                height: 100%;
+                                @media (min-width: 1000px) {
+                                    height: 70px;
+                                }
+                                border: 1px solid $secondary-border-color;
+                                border-radius: 10px 10px 10px 0;
+                                display: block;
+                                @media (min-width: 1000px) {
+                                    @include Flex(center,space-between,row);
+                                }
+                                .cr-input {
+                                    position: relative;
+                                    padding: 10px 10px;
+                                    height: 100%;
+                                    width: 100%;
+                                    @media (min-width: 1000px) {
                                         border-left: 1px solid $secondary-border-color;
-                                        &:first-child {
-                                            border-left: none;
+                                            
+                                    }
+                                    &:first-child {
+                                        border-left: none;
+                                        border-bottom: 1px solid $secondary-border-color;
+                                        @media (min-width: 1000px) {
+                                            border-bottom: none;
                                         }
-                                        &:last-child {
-                                            border-bottom-right-radius: 10px;
+                                    }
+                                    &:last-child {
+                                        border-bottom-right-radius: 10px;
+                                    }
+                                    &:nth-child(2) {
+                                        border-bottom: 1px solid $secondary-border-color;
+                                        @media (min-width: 1000px) {
+                                            border-bottom: none;
+                                        }
+                                    }
+                                    .calculator-title {
+                                        font-size: 15px;
+                                        line-height: 15px;
+                                        display: block;
+                                        margin: 0 0 4px 0;
+                                    }
+                                    .number-range {
+                                        width: 100%;
+                                        font-size: 26px;
+                                        font-family: "TT Commons Medium";
+                                        border: none;
+                                        &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+                                            appearance: none;
+                                            margin: 0;
+                                        }
+                                    }
+                                    .title-exponent {
+                                        position: absolute;
+                                        right: 17px;
+                                        bottom: 10px;
+                                        font-size: 15px;
+                                        font-family: "TT Commons Bold";
+                                        color: $main-text-color;
+                                    }
+                                    .range {
+                                        appearance: none;
+                                        width: 100%;
+                                        position: absolute;
+                                        left: 0px;
+                                        bottom: 0px;
+                                        background-color: transparent;
+                                        --range: calc(var(--max) - var(--min));
+                                        --ratio: calc((var(--val) - var(--min))/var(--range));
+                                        --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em)); 
+                                        &::-webkit-slider-runnable-track {
+                                            width: 100%;
+                                            height: 4px;
+                                            cursor: pointer;
+                                            background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
+                                        }
+                                            
+                                        &::-webkit-slider-thumb {
+                                            height: 24px;
+                                            width: 24px;
+                                            border-radius: 50%;
+                                            background-color: #ffffff;
+                                            cursor: pointer;
+                                            appearance: none;
+                                            border: 5px solid #FFC628;
+                                            margin: -10px 0 0 0;
+                                        }
+                                        &::-moz-range-track {
+                                            width: 100%;
+                                            height: 3px;
+                                            cursor: pointer;
+                                            background-color: #FFC628;
+                                        }
+                                        &::-moz-range-thumb {
+                                            height: 20px;
+                                            width: 20px;
+                                            border-radius: 100%;
+                                            background-color: #ffffff;
+                                            cursor: pointer;
+                                            appearance: none;
+                                            border: 3px solid #FFC628;
+                                        }
+                                        &::-ms-track {
+                                            width: 100%;
+                                            height: 3px;
+                                            cursor: pointer;
+                                        }
+                                    }
+                                }
+                            }
+                            .cr-result {
+                                width: 100%;
+                                display: flex;
+                                justify-content: space-between;
+                                flex-direction: column;
+                                @media (min-width: 1000px) {
+                                    flex-direction: row;
+                                    
+                                }
+                                margin: 45px 0 0 0;
+                                .result-content {
+                                    width: 100%;
+                                    @media (min-width: 1000px) {
+                                        width: calc(100% - 50px);
+                                    }
+                                    display: flex;
+                                    justify-content: center;
+                                    .content-inner {
+                                        text-align: center;
+                                        @media (min-width: 1000px) {
+                                            text-align: right;
                                         }
                                         .calculator-title {
-                                            font-size: 15px;
-                                            line-height: 15px;
                                             display: block;
-                                            margin: 0 0 4px 0;
                                         }
-                                        .number-range {
-                                            width: 100%;
+                                        .result {
+                                            text-align: right;
+                                            width: 33%;
                                             font-size: 26px;
                                             font-family: "TT Commons Medium";
-                                            border: none;
-                                        }
-                                        .title-exponent {
-                                            position: absolute;
-                                            right: 17px;
-                                            bottom: 10px;
-                                            font-size: 15px;
-                                            font-family: "TT Commons Bold";
-                                            color: $main-text-color;
-                                        }
-                                        .range {
-                                            appearance: none;
-                                            width: 100%;
-                                            position: absolute;
-                                            left: 0px;
-                                            bottom: 0px;
-                                            background-color: #ffffff;
-                                            --range: calc(var(--max) - var(--min));
-                                            --ratio: calc((var(--val) - var(--min))/var(--range));
-                                            --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em)); 
-                                            &::-webkit-slider-runnable-track {
-                                                width: 100%;
-                                                height: 4px;
-                                                cursor: pointer;
-                                                background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
-                                            }
-                                                
-                                            &::-webkit-slider-thumb {
-                                                height: 24px;
-                                                width: 24px;
-                                                border-radius: 50%;
-                                                background-color: #ffffff;
-                                                cursor: pointer;
-                                                appearance: none;
-                                                border: 5px solid #FFC628;
-                                                margin: -10px 0 0 0;
-                                            }
-                                            &::-moz-range-track {
-                                                width: 100%;
-                                                height: 3px;
-                                                cursor: pointer;
-                                                background-color: #FFC628;
-                                            }
-                                            &::-moz-range-thumb {
-                                                height: 20px;
-                                                width: 20px;
-                                                border-radius: 100%;
-                                                background-color: #ffffff;
-                                                cursor: pointer;
-                                                appearance: none;
-                                                border: 3px solid #FFC628;
-                                            }
-                                            &::-ms-track {
-                                                width: 100%;
-                                                height: 3px;
-                                                cursor: pointer;
-                                            }
-                                        }
-                                    }
-                                }
-                                .cr-result {
-                                    width: 100%;
-                                    display: flex;
-                                    justify-content: space-between;
-                                    flex-direction: column;
-                                    @media (min-width: 1000px) {
-                                        flex-direction: row;
-                                        
-                                    }
-                                    margin: 45px 0 0 0;
-                                    .result-content {
-                                        width: calc(100% - 50px);
-                                        display: flex;
-                                        justify-content: center;
-                                        .content-inner {
-                                            text-align: center;
-                                            @media (min-width: 1000px) {
-                                                text-align: right;
-                                            }
-                                            width: 50%;
-                                            .calculator-title {
-                                                display: block;
-                                            }
-                                            .result {
-                                                text-align: right;
-                                                width: 33%;
-                                                font-size: 26px;
-                                                font-family: "TT Commons Medium";
-                                            }
                                             span {
-                                                font-family: "TT Commons Medium";
                                                 font-size: 18px;
                                             }
                                         }
                                     }
-                                    .result-button {
-                                        width: 100%;
-                                        @media (min-width: 1000px) {
-                                            width: 166px;
-                                        }
-                                        .main-button {
-                                            width: 100%;
-                                            padding: 13px 25px;
-                                            border-radius: 10px;
-                                            font-size: 18px;
-                                            font-family: "TT Commons Bold";
-                                            height: 55px;
-                                        }
-                                    }
                                 }
+                                .main-button {
+                                    width: 100%;
+                                    @media (min-width: 1000px) {
+                                        width: 210px;
+                                    }
+                                    padding: 13px 25px;
+                                    border-radius: 10px;
+                                    font-size: 18px;
+                                    font-family: "TT Commons Bold";
+                                    height: 55px;
+                                }
+                                
                             }
                         }
                     }
                 }
             }
         }
+    }//*//
+
+    #currency {
+        margin-bottom: 50px;
+        .currency-title {
+            margin-bottom: 10px;
+            h2 {
+                font-size: 25px;
+                font-family: "TT Commons Bold";
+            }
+        }
+        .currency-left {
+            width: 100%;
+            margin-bottom: 15px;
+            @media (min-width: 1000px) {
+                width: 66.6666%;
+                padding-right: 15px;
+                margin-bottom: 0;
+            }
+            .cl-wrapper {
+                height: 100%;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid $main-border-color;
+                @media (min-width: 1000px) {
+                    background: url('../../public/img/currency-card-bg-img.svg') no-repeat right center/contain;
+                }
+                .cl-content {
+                    position: relative;
+                    z-index: 2;
+                    padding: 45px;
+                    width: 100%;
+                    height: 100%;
+                    background-color: $white-color;
+                    @media (min-width: 1000px) {
+                        width: 50%;
+                        background-color: transparent;
+                        
+                    }
+                    .cl-title {
+                        margin-bottom: 10px;
+                        h3 {
+                            font-size: 34px;
+                            font-family: "TT Commons Bold";
+                        }
+                    }
+                    .cl-text {
+                        p {
+                            font-size: 18px;
+                            line-height: 26px;
+                            color: $main-text-color;
+                        }
+                    }
+                    .mobile-app-links {
+                        @media (min-width: 1000px) {
+                            position: absolute;
+                            bottom: 45px;
+                            left: 45px;
+                        }
+                        width: 100%;
+                        height: 55px;
+                        border: 1px solid $main-border-color;
+                        border-radius: 5px;
+                        background-color: $white-color;
+                        @include Flex(center,space-between);
+                        margin-top: 10px;
+                        @media (min-width: 1000px) {
+                            margin-top: 0;
+                            
+                        }
+                        li {
+                            width: 33%;
+                            a {
+                                display: block;
+                                white-space: nowrap;
+                                @media (min-width: 1000px) {
+                                    padding: 0 6px;
+                                }
+                                text-align: center;
+                                .link-content {
+                                    display: inline-block;
+                                    color: #505050;
+                                    padding-left: 24px;
+                                    background-position: left 10px;
+                                    background-size: 15px;
+                                    background-repeat: no-repeat;
+                                    @media (min-width: 1000px) {
+                                        padding: 6px 0 6px 34px;
+                                    }
+                                    span {
+                                        opacity: .5;
+                                        font-size: 11px;
+                                        @media (min-width: 1000px) {
+                                            font-size: 12px;
+                                        }
+                                    }
+                                    p {
+                                        opacity: .5;
+                                        letter-spacing: -0.4px;
+                                        line-height: 9px;
+                                        font-family: "TT Commons Medium";
+                                    }
+
+                                    &:first-child {
+                                        @media (min-width: 1000px) {
+                                            background-position: left 11px;
+                                        }
+                                    }
+                                    &:nth-child(2) {
+                                        @media (min-width: 1000px) {
+                                            background-position: left 13px;
+                                        }
+                                        
+                                    }
+                                    &:last-child {
+                                        @media (min-width: 1000px) {
+                                            background-position: left 14px;
+                                            background-size: 24px;
+                                        }
+                                        
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+                .cl-img {
+                    width: 100%;
+                    position: relative;
+                    bottom: 0px;
+                    right: 0px;
+                    height: 200px;
+                    background-size: 80%;
+                    background-position: 17% 14px;
+                    background-repeat: no-repeat;
+                    background-color: #ffc629;
+                    @media (min-width: 1000px){
+                        position: absolute;
+                        bottom: 0px;
+                        right: 30px;
+                        width: 50%;
+                        height: 115%;
+                        overflow: hidden;
+                        background-color: transparent;
+                    }
+                    .phone-img {
+                        position: relative;
+                        width: 180px;
+                        left: -22px;
+                        z-index: 2;
+                        margin: 0 auto;
+                        height: 100%;
+                        background-repeat: no-repeat;
+                        background-position: bottom right;
+                        background-size: contain;
+                        overflow: hidden;
+                        @media (min-width: 1000px) {
+                            position: absolute;
+                            width: 100%;
+                            top: 0;
+                            left: 0;
+                            margin: 0;
+                        }
+                    }
+                    .app-img {
+                        position: absolute;
+                        width: 120px;
+                        height: 213px;
+                        left: 50%;
+                        bottom: 0;
+                        top: 20px;
+                        background-size: cover;
+                        margin: 0 0 0 -60px;
+                        background-color: #ffc629;  
+                        @media (min-width: 1000px) {
+                            top: 75px;
+                            left: 95px;
+                            width: 247px;
+                            height: 375px;
+                            margin: 0;
+                        }
+                    }
+
+                }
+            }
+        }
+        .currency-right {
+            width: 100%;
+            @media (min-width: 1000px) {
+                width: 33.333%;
+                padding-left: 15px;
+            }
+            .cr-wrapper {
+                width: 100%;
+                border-radius: 10px;
+                border: 1px solid $main-border-color;
+                padding: 30px;
+                overflow: hidden;
+                .cr-title {
+                    @include Flex(null,space-between);
+                    h3 {
+                        font-size: 22px;
+                        font-family: "TT Commons Bold";
+                    }
+                    .change-rates {
+                        position: relative;
+                        padding-top: 5px;
+                        .default-rate {
+                            display: inline-block;
+                            color: $main-text-color;
+                            padding: 5px 15px 0 0;
+
+                        }
+                        .rate-select-box {
+                            position: absolute;
+                            right: 0;
+                            left: auto;
+                            top: 0;
+                            z-index: 9;
+                            transform-origin: right top;
+                            background-color: $white-color;
+                            box-shadow: 0 2px 14px 0 rgba(0,0,0,0.17);
+                            transition: all 0.2s cubic-bezier(1.000, 0.000, 0.000, 1.000);
+                            padding: 10px 0;
+                            border-radius: 5px;
+                            transform: scale(0);
+                            opacity: 0;
+                            visibility: hidden;
+                            &.show {
+                                transform: scale(1);
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                            .select-content {
+                                li {
+                                    a {
+                                        display: inline-block;
+                                        padding: 0 20px;
+                                        color: $main-text-color;
+                                        &.active {
+                                            color: $secondary-color
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+
+                }
+                .currency-calculator {
+                    .currency-line {        
+                        @include Flex(null,space-between);
+                        border-bottom: 3px solid $main-color;
+                        padding-top: 10px;
+                        .cur-value {
+                            width: 100%;
+                            height: 40px;
+                            font-size: 25px;
+                            border: none;
+                            font-family: "TT Commons Bold";
+                        }
+                        select {
+                            border: none;
+                            font-family: "TT Commons Bold";
+                            appearance: none;
+                            background: url('../../public/img/currency-arrow.svg') no-repeat right 40%;
+                            padding: 0 12px 0 0;
+                        }
+                    }
+                    .currency-result {
+                        margin: 25px 0 0 0;
+                        width: 100%;
+                        @include Flex(null,space-between);
+                        .result-item {
+                            width: 33.333%;
+                            span {
+                                display: block;
+                                font-size: 18px;
+                                &.result-title {
+                                    color: $main-text-color;
+                                }
+                                &.result-value {
+                                    font-family: "TT Commons Bold";
+                                }
+                            }
+                        }
+                    }
+                }
+                .extra-info {
+                    padding: 10px 0 0;
+                    color: rgba(0,0,0, 0.9);
+                    font-size: 14px;
+                }
+                .all-currency {
+                    margin: 15px -30px -30px;
+                    border-top: 1px solid #ECECEC;
+                    background: url('../../public/img/blue_arrow.svg') no-repeat 91% 21px;
+                    display: block;
+                    padding: 17px 30px;
+                    font-family: "TT Commons Bold";
+                    transition: all .2s cubic-bezier(.52,.01,.16,1);
+                    background-color: $white-color;
+                    color: $blue-text-color;
+                    &:hover {
+                        background: url('../../public/img/white-arrow.svg') no-repeat 91% 21px;
+                        color: $white-color;
+                        background-color: $blue-text-color;
+                    }
+                }
+            }
+        }
     }
 }
-
-
-
-
-// input[type=range] {
-//     -webkit-appearance: none;
-//     width: 100%;
-//     position: absolute;
-//     left: 0px;
-//     bottom: 0px;
-//     --range: calc(var(--max) - var(--min));
-//     --ratio: calc((var(--val) - var(--min))/var(--range));
-//     --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em));
-
-
-//     &[type=range]:focus {
-//     outline: none;
-//     }
-    
-//     &[type=range]::-webkit-slider-runnable-track {
-//     width: 100%;
-//     height: 4px;
-//     cursor: pointer;
-//     background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
-//     }
-    
-//     &[type=range]::-webkit-slider-thumb {
-//     height: 24px;
-//     width: 24px;
-//     border-radius: 100%;
-//     background: #ffffff;
-//     cursor: pointer;
-//     -webkit-appearance: none;
-//     background: #FFFFFF;
-//     border: 5px solid #FFC628;
-//     margin: -10px 0 0 0;
-//     box-sizing: border-box;
-//     }
-    
-    
-//     &[type=range]::-moz-range-track {
-//     width: 100%;
-//     height: 3px;
-//     cursor: pointer;
-//     }
-    
-//     &[type=range]::-moz-range-thumb {
-//     height: 20px;
-//     width: 20px;
-//     border-radius: 100%;
-//     background: #ffffff;
-//     cursor: pointer;
-//     -webkit-appearance: none;
-//     background: #FFFFFF;
-//     border: 3px solid #FFC628;
-//     }
-    
-//     &[type=range]::-ms-track {
-//     width: 100%;
-//     height: 3px;
-//     cursor: pointer;
-//     }
-    
-    
-//     &[type=range]::-ms-thumb {
-//     height: 20px;
-//     width: 20px;
-//     border-radius: 100%;
-//     background: #ffffff;
-//     cursor: pointer;
-//     -webkit-appearance: none;
-//     background: #FFFFFF;
-//     border: 3px solid #FFC628;
-//     }
-// }
-    

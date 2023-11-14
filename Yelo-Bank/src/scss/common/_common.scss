@@ -19,7 +19,7 @@ button {
     background-color: transparent;
     border: none;
 }
-input:focus {
+input:focus,textarea:focus,select:focus {
     outline:none;
 } 
 input,button,textarea {
@@ -29,16 +29,19 @@ input,button,textarea {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
-    display: flex;
-    justify-content: space-between;
-    align-items: center;
-}
-.wrapper {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-}
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        &.mobile-row {
+            flex-direction: column;
+            @media (min-width: 1000px) {
+                flex-direction: row;
+            }
+        }
+    }
 
+}
 
 @font-face {
     font-family: "TT Commons Medium";

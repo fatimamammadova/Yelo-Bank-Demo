@@ -480,74 +480,77 @@ header {
                     }
                 }
             }
-            .hm-left {
-                padding-right: 30px;
-                width: 100%;
-                .hm-contents {
-                    display: grid;
-                    grid-template-columns: repeat(1,1fr);
-                    @media (min-width: 1024px) {
-                        grid-template-columns: repeat(3,1fr);
-                    }
-                    grid-gap: 10px;
-                    .content-col {
-                        &:nth-child(4) {
-                            display: grid;
-                            grid-row-end: 2 span;
+            .row {
+                align-items: flex-start;
+                .hm-left {
+                    padding-right: 30px;
+                    width: 100%;
+                    .hm-contents {
+                        display: grid;
+                        grid-template-columns: repeat(1,1fr);
+                        @media (min-width: 1024px) {
+                            grid-template-columns: repeat(3,1fr);
                         }
-                        .content-title {
-                            margin-bottom: 5px;
-                            a {
-                                display: block;
-                                font-family: "TT Commons Medium";
-                                font-weight: 400;
-                                font-size: 27px;
-                                color: $secondary-color;
+                        grid-gap: 10px;
+                        .content-col {
+                            &:nth-child(4) {
+                                display: grid;
+                                grid-row-end: 2 span;
                             }
-    
-                        }
-                        .hm-submenu {
-                            li {
+                            .content-title {
                                 margin-bottom: 5px;
                                 a {
-                                    color: $main-text-color;
+                                    display: block;
+                                    font-family: "TT Commons Medium";
+                                    font-weight: 400;
+                                    font-size: 27px;
+                                    color: $secondary-color;
+                                }
+        
+                            }
+                            .hm-submenu {
+                                li {
+                                    margin-bottom: 5px;
+                                    a {
+                                        color: $main-text-color;
+                                    }
                                 }
                             }
+        
                         }
-    
+                    }
+                    .hm-info {
+                        margin-top: 15px;
+                        padding-top: 25px;
+                        border-top: 1px solid $main-border-color;
+                        display: none;
+                        @media (min-width: 1024px) {
+                            @include Flex(center,space-between,null,null);
+                        }
+                        .info {
+                            width: 100%;
+                            .info-title {
+                                font-weight: 400;
+                                color: $main-text-color;
+                            }
+                            span {
+                                font-family: "TT Commons Medium";
+                            }
+                        }
                     }
                 }
-                .hm-info {
-                    margin-top: 15px;
-                    padding-top: 25px;
-                    border-top: 1px solid $main-border-color;
+                .hm-right {
                     display: none;
                     @media (min-width: 1024px) {
-                        @include Flex(center,space-between,null,null);
+                        display: block;
                     }
-                    .info {
-                        width: 100%;
-                        .info-title {
-                            font-weight: 400;
-                            color: $main-text-color;
+                    a {
+                        img {
+                            width: 345px;
+                            height: 345px;
+                            border-radius: 10px;
+                            border: 1px solid $main-border-color;
                         }
-                        span {
-                            font-family: "TT Commons Medium";
-                        }
-                    }
-                }
-            }
-            .hm-right {
-                display: none;
-                @media (min-width: 1024px) {
-                    display: block;
-                }
-                a {
-                    img {
-                        width: 345px;
-                        height: 345px;
-                        border-radius: 10px;
-                        border: 1px solid $main-border-color;
                     }
                 }
             }
@@ -671,8 +674,12 @@ header {
                                         overflow: hidden;
                                         .form-item {
                                             display: inline-block;
-                                            padding: 20px 0;
-                                            height: 65px;
+                                            height: 55px;
+                                            padding: 16px 0;
+                                            @media (min-width: 992px) {
+                                                padding: 20px 0;
+                                                height: 65px;
+                                            }
                                             text-align: center;
                                             font-size: 18px;
                                             width: 100%;
@@ -694,17 +701,16 @@ header {
                                         border: 1px solid $main-border-color;
                                         border-radius: 10px;
                                         overflow: hidden;
-                                        input {
-                                            height: 65px;
-                                            padding: 0 20px;
+                                        .form-input {
+                                            height: 55px;
+                                            @media (min-width: 992px) {
+                                                height: 65px;
+                                            }
                                             width: 100%;
-                                            border: none;
-                                            font-size: 18px;
                                             &:first-child {
                                                 border-bottom: 1px solid $main-border-color;
                                                 @media (min-width: 992px) {
                                                     border-bottom: none;
-    
                                                 }
                                             }
                                             &:last-child {
@@ -714,38 +720,58 @@ header {
                                                 }
                                                 
                                             }
-                                            &.user-info:nth-child(2) {
+                                            &:nth-child(2) {
                                                 @media (min-width: 992px) {
                                                     border-left: 1px solid $main-border-color;
                                                     border-right: 1px solid $main-border-color;
                                                 }
                                             }
-    
-                                            &.fin {
+                                            &.file-input {
                                                 @media (min-width: 992px) {
-                                                    border-right: 1px solid $main-border-color;
+                                                    border-right: none;
                                                 }
                                             }
-    
+                                            &.fin-input {
+                                                border-bottom: none;
+                                            }
+                                            input {
+                                                height: 100%;
+                                                padding: 0 20px;
+                                                width: 100%;
+                                                border: none;
+                                                font-size: 18px;
+                                            }
                                         }
                                         .form-file {
+                                            height: 100%;
                                             width: 100%;
                                             position: relative;
                                             padding: 0 20px;
-                                            span {
-                                                @include Position(absolute,50%,50%,translate(-50%,-50%));
-                                                z-index: 0;
-                                                padding: 5px 0 0 27px;
-                                                color: $blue-text-color;
-                                            }
                                             .file {
                                                 opacity: 0;
                                                 width: 100%;
+                                                height: 100%;
                                                 padding: 0;
+                                                position: absolute;
+                                                z-index: 3;
+                                                top: 0px;
+                                                left: 0px;
+                                                text-align: center;
+                                                cursor: pointer;
                                                 &::-webkit-file-upload-button {
                                                     visibility: hidden;
                                                     width: 100%;
                                                     height: 100%;
+                                                }
+                                            }
+                                            .form-file-content {
+                                                span {
+                                                    background-size: cover;
+                                                    background-position: center;
+                                                    @include Position(absolute,50%,50%,translate(-50%,-50%));
+                                                    z-index: 0;
+                                                    padding: 5px 0 0 27px;
+                                                    color: $blue-text-color;
                                                 }
                                             }
                                         }
@@ -760,6 +786,10 @@ header {
                                             flex-direction: row;
                                         }
                                         .form-input {
+                                            height: 55px;
+                                            @media (min-width: 992px) {
+                                                height: 65px;
+                                            }
                                             width: 100%;
                                             &:first-child {
                                                 margin-bottom: 15px;
@@ -774,23 +804,23 @@ header {
                                                 }
                                             }
                                             input {
-    
-                                                border: 1px solid $main-border-color;
                                                 border-radius: 10px;
                                                 padding: 0 20px;
-                                                height: 65px;
+                                                border: 1px solid $main-border-color;   
+                                                height: 100%;
                                                 width: 100%;
                                                 font-size: 18px;
+                                                border-radius: 10px;
                                             }
                                         }
-        
                                         textarea {
                                             width: 100%;
+                                            height: 100px;
                                             resize: none;
-                                            border: 1px solid $main-border-color;
                                             border-radius: 10px;
                                             padding: 20px;
                                             font-size: 18px;
+                                            border: 1px solid $main-border-color;
                                         }
                                     }
                                 }

@@ -213,20 +213,80 @@ function creditCalc() {
   let amount = parseFloat(document.querySelector('input[name=credit]').value);
 
   const result = document.querySelector('.result')
-  const monthly = (percent / 12) / 100;
-  const monthlyPayment = amount * (monthly * Math.pow(1 + monthly, period)) / (Math.pow(1 + monthly, period) - 1);
-  result.innerText = Math.floor(parseInt(monthlyPayment))
+
+  let month = (percent / 12) / 100;
+  
+  if(amount > 50000) {
+    amount = 50000
+    document.querySelector('input[name=credit]').value = amount
+  } else if(amount < 400) {
+    amount = 400
+  }
+
+  if(period > 59) {
+    period = 59
+    document.querySelector('input[name=month]').value = period
+  } else if(period < 6) {
+    period = 6
+  }
+
+  if(percent > 20) {
+    percent = 20
+    document.querySelector('input[name=percent]').value=percent
+  } else if(percent < 9.9) {
+    percent = 9.9
+  }
+
+  const monthlyPayment = amount * (month * Math.pow(1 + month, period)) / (Math.pow(1 + month, period) - 1);
+  result.innerHTML = `${Math.floor(parseInt(monthlyPayment))} <span> AZN</span>`
+
 }
 
 
-rangeInput.forEach(input => {
+creditCalc()
+loanInputs.forEach(input => {
   input.addEventListener('input',() => {
     creditCalc()
   })
 })
 
-numberInput.forEach(input => {
-  input.addEventListener('input',() => {
-    creditCalc()
-  })
+
+
+const defaultRate = document.querySelector('.default-rate')
+const selectRates = document.querySelectorAll('.select-item')
+const selectBoxRate = document.querySelector('.rate-select-box')
+
+
+defaultRate.addEventListener("click",(e) => {
+  selectBoxRate.classList.add('show')
+})
+
+
+function removeActiveRate() {
+  selectRates.forEach((item) => {
+    item.classList.remove("active");
+  });
+}
+
+selectRates.forEach((rate) => {
+  rate.addEventListener("click", () => {
+    defaultRate.innerText = rate.innerText;
+    removeActiveRate();
+    rate.classList.add("active");
+  });
+});
+
+window.addEventListener("click", (e) => {
+  if (e.target != defaultRate) {
+    selectBoxRate.classList.remove("show");
+  }
+});
+
+const currencyInput = document.querySelector('.currency-input')
+
+
+window.addEventListener('keydown',(e)=> {
+  let key = e.key
+  
+
 })
