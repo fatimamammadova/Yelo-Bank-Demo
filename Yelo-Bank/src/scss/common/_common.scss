@@ -33,6 +33,7 @@ input,button,textarea {
         width: 100%;
         display: flex;
         justify-content: space-between;
+        flex-wrap: wrap;
         &.mobile-row {
             flex-direction: column;
             @media (min-width: 1000px) {
@@ -41,6 +42,12 @@ input,button,textarea {
         }
     }
 
+}
+.col-3 {
+    width: 100%;
+    @media (min-width: 1000px) {
+        width: 33.333%;  
+    }
 }
 
 @font-face {

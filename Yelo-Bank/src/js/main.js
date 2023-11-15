@@ -113,6 +113,8 @@ window.addEventListener("resize", () => {
   } else {
     header.style.top = "120px";
     mainSlider.style.paddingTop = "120px";
+    promotion.classList.add("show");
+    mobilePromotion.classList.add("show");
     console.log("1");
   }
 });
@@ -187,6 +189,7 @@ const numberAmount = document.querySelector('.loan-amount input[type="number"]')
 const numberTerm = document.querySelector('.loan-term input[type="number"]');
 const numberPercent = document.querySelector('.loan-percent input[type="number"]');
 const loanInputs = document.querySelectorAll('.cr-input input')
+
 function handleRangeInput(rangeInput) {
   rangeInput.style.setProperty('--val', rangeInput.value);
   rangeInput.previousElementSibling.previousElementSibling.value = rangeInput.value;
@@ -250,8 +253,6 @@ loanInputs.forEach(input => {
   })
 })
 
-
-
 const defaultRate = document.querySelector('.default-rate')
 const selectRates = document.querySelectorAll('.select-item')
 const selectBoxRate = document.querySelector('.rate-select-box')
@@ -283,10 +284,85 @@ window.addEventListener("click", (e) => {
 });
 
 const currencyInput = document.querySelector('.currency-input')
+const inputSelect = document.querySelector('.input-select')
+const outputSelect = document.querySelector('.output-select')
+
+currencyInput.addEventListener('input',(e)=> {
+  let inputValue = e.target.value;
+  inputValue = inputValue.replace(/[^0-9.]/g, '');
+  const dotIndex = inputValue.indexOf('.');
+    if (dotIndex !== -1) {
+        const afterDot = inputValue.substring(dotIndex + 1);
+        if (afterDot.includes('.')) {
+          inputValue = inputValue.substring(0, dotIndex + afterDot.indexOf('.') + 1);
+        }
+        console.log(dotIndex,afterDot,afterDot.indexOf('.'),dotIndex + afterDot.indexOf('.') + 1)
+      }
+  e.target.value = inputValue;
 
 
-window.addEventListener('keydown',(e)=> {
-  let key = e.key
+  const sellValue = currencyInput.value
   
+  const fromRate = inputSelect.value
+  const toRate = outputSelect.value
+  
+  if(sellValue.length != 0) {
+    fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
+    .then(res=> res.json())
+    .then(data=> {
+      let fromRateValue = data.conversion_rates[fromRate.toUpperCase()]
+      let toRateValue = data.conversion_rates[toRate.toUpperCase()]
 
+      let conversion = (sellValue / fromRateValue) * toRateValue
+
+      
+      document.querySelector('.currency-output').innerText = conversion.toFixed(2)
+    })
+  } else {
+    
+    document.querySelector('.currency-output').innerText = "Alıram" 
+  }
 })
+
+
+
+
+inputSelect.addEventListener('input',(e) => {
+  const selectedOption = e.target.value
+  if(selectedOption !== 'azn') {
+    outputSelect.innerHTML=""
+    outputSelect.innerHTML += `<option value="azn" selected class="output-option">AZN</option>`
+  } else {
+    outputSelect.innerHTML=""
+    outputSelect.innerHTML += `<option value="usd" selected class="output-option">USD</option>
+    <option value="eur" class="output-option">EUR</option>`
+  }
+
+  let inputValue = inputSelect.value
+  console.log(inputValue)
+
+  
+})
+
+
+
+// function convertCurrency() {
+//   const inputValue = document.querySelector('.currency-input').value
+
+//   console.log(inputValue)
+
+
+// }
+// convertCurrency()
+
+// fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
+// .then(res=> res.json())
+// .then(data=> {
+//   let inputRate = inputSelect.value
+//   let outputRate = outputSelect.value
+//   const conversionRates = data.conversion_rates
+//   console.log(conversionRates)
+//   conversionRates.forEach(rate => {
+//     console.log(rate)
+//   })
+// })

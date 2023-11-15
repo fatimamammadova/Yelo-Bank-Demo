@@ -14,6 +14,7 @@
 }
 
 .secondary-button span {
+  font-family: "TT Commons Bold";
   display: inline-block;
   padding: 5px 38px 5px 0;
   position: relative;
@@ -106,6 +107,7 @@ input, button, textarea {
   width: 100%;
   display: flex;
   justify-content: space-between;
+  flex-wrap: wrap;
 }
 .container .row.mobile-row {
   flex-direction: column;
@@ -113,6 +115,15 @@ input, button, textarea {
 @media (min-width: 1000px) {
   .container .row.mobile-row {
     flex-direction: row;
+  }
+}
+
+.col-3 {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .col-3 {
+    width: 33.333%;
   }
 }
 
@@ -1628,7 +1639,7 @@ header .hamburger-menu .container .row .hm-right a img {
   position: absolute;
   top: 0;
   left: 0;
-  z-index: -2;
+  z-index: 0;
   width: 100%;
   height: 100%;
   background-color: #000;
@@ -2277,10 +2288,15 @@ main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-conten
   position: absolute;
   left: 0px;
   bottom: 0px;
-  background-color: transparent;
+  background-color: rgba(0, 0, 0, 0.1);
   --range: calc(var(--max) - var(--min));
   --ratio: calc((var(--val) - var(--min))/var(--range));
   --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em));
+}
+@media (min-width: 1000px) {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range {
+    background-color: transparent;
+  }
 }
 main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input .range::-webkit-slider-runnable-track {
   width: 100%;
@@ -2700,5 +2716,82 @@ main #currency .currency-right .cr-wrapper .all-currency {
 main #currency .currency-right .cr-wrapper .all-currency:hover {
   background: url("../../public/img/white-arrow.svg") no-repeat 91% 21px;
   color: #fff;
+  background-color: #0091FE;
+}
+main #news {
+  margin-bottom: 200px;
+}
+main #news .news-wrapper .news-title {
+  margin-bottom: 10px;
+}
+main #news .news-wrapper .news-title h2 {
+  font-family: "TT Commons Bold";
+  font-size: 25px;
+  font-weight: 400;
+}
+main #news .news-wrapper .news {
+  margin: 0 -15px;
+}
+main #news .news-wrapper .news .news-item {
+  padding: 0 15px;
+  margin-bottom: 15px;
+}
+@media (min-width: 1000px) {
+  main #news .news-wrapper .news .news-item {
+    margin-bottom: 0;
+  }
+}
+main #news .news-wrapper .news .news-item .news-inner {
+  border-radius: 10px;
+  border: 1px solid #ECECEC;
+  padding: 30px 30px 20px 30px;
+  height: 100%;
+}
+main #news .news-wrapper .news .news-item .news-inner .news-heading h3 {
+  display: inline-block;
+  min-height: 72px;
+  font-family: "TT Commons Bold";
+  font-size: 20px;
+  line-height: 24px;
+}
+main #news .news-wrapper .news .news-item .news-inner .news-footer {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+}
+main #news .news-wrapper .news .news-item .news-inner .news-footer .arrow-btn {
+  display: inline-block;
+  font-family: "TT Commons Bold";
+  font-size: 16px;
+  color: #0091FE;
+  padding: 5px 38px 5px 0;
+  margin-top: 10px;
+  background: url("../../public/img/blue_arrow.svg") no-repeat right center;
+}
+main #news .news-wrapper .news .news-item .news-inner .news-footer .time {
+  display: inline-block;
+  margin: 13px 0 0;
+  color: rgba(0, 0, 0, 0.6);
+}
+main #news .news-wrapper .news .more-news-link {
+  text-align: center;
+  padding-top: 25px;
+}
+main #news .news-wrapper .news .more-news-link a {
+  display: inline-block;
+  height: 48px;
+  font-family: "TT Commons Bold";
+  padding: 0 54px 0 20px;
+  border-radius: 6px;
+  border: 1px solid #0091FE;
+  line-height: 50px;
+  color: #0091FE;
+  background: url("../../public/img/blue_arrow.svg") no-repeat calc(100% - 12px) 50%;
+  background-color: #fff;
+  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+main #news .news-wrapper .news .more-news-link a:hover {
+  color: #fff;
+  background: url("../../public/img/white-arrow.svg") no-repeat calc(100% - 12px) 50%;
   background-color: #0091FE;
 }/*# sourceMappingURL=style.css.map */
