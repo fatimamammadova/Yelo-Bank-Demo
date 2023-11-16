@@ -38,8 +38,7 @@ window.addEventListener("click", (e) => {
 const hamburgerMenuBtn = document.querySelector(".hm-button");
 const hamburgerMenuContent = document.querySelector(".hamburger-menu");
 const contentContainer = document.querySelector(".hamburger-menu .container");
-let scrollBar =
-  hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
+let scrollBar = hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
 const bgColor = document.querySelector(".bg-color");
 const headerTop = document.querySelector(".header-bottom");
 
@@ -75,6 +74,7 @@ const mobilePromotion = document.querySelector(".mobile-promotion");
 const mobileCloseBtn = document.querySelector(".mp-close-btn");
 
 const mainSlider = document.querySelector("#main-slider");
+
 
 CloseBtn.addEventListener("click", () => {
   sessionStorage.setItem("status", "hide");
@@ -166,6 +166,8 @@ formContent.forEach((item) => {
     });
   });
 });
+
+///////////////////////////////////////////
 
 const storyClose = document.querySelector(".story-close");
 const modalContainer = document.querySelector(".story-modal");

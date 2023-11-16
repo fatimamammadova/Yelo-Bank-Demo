@@ -13,8 +13,7 @@
 }
 
 
-.secondary-button {
-    
+.secondary-button {  
     span {
         font-family: "TT Commons Bold";
         display: inline-block;
@@ -124,6 +123,86 @@
                     }
                     
                 }
+            }
+        }
+    }
+}
+
+.news {
+    margin: 0 -15px;
+    .news-item {
+        padding: 0 15px;
+        margin-bottom: 15px;
+        @media (min-width: 1000px) {
+            margin-bottom: 0;
+        }
+        .news-inner {
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid $main-border-color;
+            padding: 30px 30px 20px 30px;
+            height: 100%;
+            
+            .news-heading {
+
+                h3 {
+                    display: inline-block;
+                    min-height: 72px;
+                    font-family: "TT Commons Bold";
+                    font-size: 20px;
+                    line-height: 24px;
+                }
+            }
+            .news-footer {
+                @include Flex(flex-start,space-between);
+                
+                .arrow-btn {
+                    display: inline-block;
+                    font-family: "TT Commons Bold";
+                    font-size: 16px;
+                    color: $blue-text-color;
+                    padding: 5px 38px 5px 0;
+                    margin-top: 10px;
+                    background: url("../../public/img/blue_arrow.svg") no-repeat right center;
+                    
+                }
+                .time {
+                    display: inline-block;
+                    margin: 13px 0 0;
+                    color: rgba(0,0,0, 0.6);
+                }
+            }
+            .news-link {
+                position: absolute;
+                top: 0;
+                left: 0;
+                width: 100%;
+                height: 100%;
+                z-index: 1;
+            }
+        }
+    }
+
+    .more-news-link {
+        text-align: center;
+        padding-top: 25px;
+        a {
+            display: inline-block;
+            height: 48px;
+            font-family: "TT Commons Bold";
+            padding: 0 54px 0 20px;
+            border-radius: 6px;
+            border: 1px solid $blue-text-color;
+            line-height: 50px;
+            color: $blue-text-color;
+            background: url('../../public/img/blue_arrow.svg') no-repeat calc(100% - 12px) 50%;
+            background-color: $white-color;
+            transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+
+            &:hover {
+                color: $white-color;
+                background: url('../../public/img/white-arrow.svg') no-repeat calc(100% - 12px) 50%;
+                background-color: $blue-text-color;
             }
         }
     }
