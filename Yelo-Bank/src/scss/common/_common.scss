@@ -29,19 +29,26 @@ input,button,textarea {
     max-width: 1140px;
     margin: 0 auto;
     padding: 0 20px;
-    .row {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        &.mobile-row {
-            flex-direction: column;
-            @media (min-width: 1000px) {
-                flex-direction: row;
-            }
+    
+}
+.row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &.mobile-row {
+        flex-direction: column;
+        @media (min-width: 1000px) {
+            flex-direction: row;
         }
     }
+}
 
+.col-2 {
+    width: 100%;
+    @media (min-width: 1000px) {
+        width: 50%;  
+    }
 }
 .col-3 {
     width: 100%;
@@ -49,6 +56,8 @@ input,button,textarea {
         width: 33.333%;  
     }
 }
+
+
 
 @font-face {
     font-family: "TT Commons Medium";

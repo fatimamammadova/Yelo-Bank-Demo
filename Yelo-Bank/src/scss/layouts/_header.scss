@@ -349,40 +349,48 @@ header {
                 padding: 0;
                 margin-left: 10px;
                 &:hover {
-                    span {
-                        @media (min-width: 992px) {
+                    .button-content {
+                        img {
+                            &.black-img {
+                                display: none;
+                            }
+                            &.white-img {
+                                display: block;
+                            }
+                        }
+                        span {
                             color: $white-color;
                         }
-                        color: $secondary-color;
-                        &::before {
-                            background: url("https://www.yelo.az/site/templates/style/img/o_banking_white.svg") no-repeat left center;
+                    }
+                }
+                @media (min-width: 1000px) {
+                    width: 175px;
+                    height: 55px;
+                }
+                .button-content {
+                    width: 100%;
+                    @include Flex(center,center);
+                    img {   
+                        @media (min-width: 1000px) {
+                            transform: translateY(-2px);
+                            margin-right: 12px;
+                        }
+                        transform: translateY(0);
+                        margin-right: 0;
+                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                        &.black-img {
+                            display: block;
+                        }
+                        &.white-img {
+                            display: none;
                         }
                     }
-                }
-                @media (min-width: 992px) {
-                    width: auto;
-                    height: 55px;
-                    padding: 9px 25px;
-                }
-                span {
-                    position: relative;
-                    padding: 5px 0 2px 25px;
-                    display: block;
-                    color: $main-color;
-                    transition: all .3s cubic-bezier(.52, .01, .16, 1);
-                    @media (min-width: 992px) {
+                    span {
+                        transition: all .1s cubic-bezier(.52, .01, .16, 1);
                         color: $secondary-color;
-                    }
-                    &::before {
-                        content: "";
-                        width: 13px;
-                        height: 15px;
-                        color: $secondary-color;
-                        background: url("https://www.yelo.az/site/templates/style/img/o_banking.svg") no-repeat left center;
-                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
-                        @include Position(absolute,45%,50%,translate(-50%,-50%));
-                        @media (min-width: 992px) {
-                            @include Position(absolute,50%,0,translateY(-50%));
+                        display: none;
+                        @media (min-width: 1000px) {
+                            display: block;
                         }
                     }
                 }

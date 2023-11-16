@@ -1,0 +1,158 @@
+footer {
+    border-top: 1px solid $main-border-color;
+    .footer-nav {
+        .grid-row {
+            display: grid;
+            @media (min-width: 1000px) {
+                grid-template-columns: repeat(4,1fr);
+            }
+            grid-template-columns: repeat(2,1fr);
+            grid-gap: 24px;
+            padding: 32px 0;
+            .nav-col {
+                h3 {
+                    padding: 0 0 16px;
+                    a {
+                        font-size: 18px;
+                        @media (min-width: 1000px) {
+                            font-size: 27px;
+                        }
+                        line-height: 1.5;
+                        &:hover {
+                            text-decoration: underline;
+                        }
+                    }
+
+                }
+                .nav-list {
+                    li {
+                        padding: 0 0 8px;
+                        a {
+                            font-size: 16px;
+                            line-height: 1.43;
+                            color: $main-text-color;
+                            &:hover {
+                                color: rgba(0,0,0, .75);
+                                text-decoration: underline;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+    .footer-top {
+        @include Flex(null,space-between,column);
+        @media (min-width: 1000px) {
+            flex-direction: row;         
+        }
+        padding: 15px 0;
+        border-bottom: 1px solid $main-border-color;
+        text-align: center;
+        .social-link {
+            ul {
+                li {
+                    display: inline-block;
+                    margin-right: 8px;
+                    a {
+                        position: relative;
+                        display: inline-block;
+                        width: 40px;
+                        height: 40px;
+                        background-color: $main-gray-bg-color;
+                        border-radius: 50%;
+                        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+                        &:hover {
+                            box-shadow: 0 0 2px 0 rgba(0,0,0, 0.35);
+                        }
+                        img {
+                            @include Position(absolute,50%,50%,translate(-50%,-50%))
+                        }
+                    }
+                }
+            }
+        }
+        .app-link {
+            padding: 20px;
+            @media (min-width: 480px) {
+                display: none;
+            }
+
+        }
+        .contact-info {
+            @include Flex(null,space-between);
+            width: 100%;
+            @media (min-width: 1000px) {        
+                text-align: left;
+                width: 50%;
+            }
+
+            .contact-item {
+                @media (min-width: 1000px) {   
+                    width: auto;
+                    padding-top: 0;
+                }
+                width: 50%;
+                padding-top: 20px;
+                &.location-item {
+                    display: none;
+                    @media (min-width: 1000px) {        
+                        display: block;
+                    }
+                }
+                .contact-title {
+                    display: block;
+                    color: $main-text-color;
+                }
+                a {
+                    font-family: "TT Commons Medium";
+                    color: $secondary-color;
+                }
+            }
+
+        }
+        
+    }
+    .footer-bottom {
+        padding: 30px 0 40px;
+        text-align: center;
+        .logo {
+            margin-bottom: 10px;
+            img {
+                width: 144px;
+                height: 36px;
+            }
+        }
+        .last-info {
+            li {
+                display: inline-block;
+                margin: 0 10px;
+                p {
+                    color: $main-text-color;
+                }
+                a {
+                    color: $main-text-color;
+                    text-decoration: underline;
+                    &:hover {
+                        text-decoration: none;
+                    }
+                }
+            }
+        }
+        .site-by{
+            span {
+                color: $main-text-color;
+            }
+            a {
+                display: inline-block;
+                margin-left: 9px;
+                padding-left: 22px;
+                color: $main-text-color;
+                text-decoration: underline;
+                &:hover {
+                    text-decoration: none;
+                }
+            }
+        }
+    }
+}
