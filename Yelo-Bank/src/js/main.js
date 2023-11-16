@@ -300,32 +300,32 @@ currencyInput.addEventListener('input',(e)=> {
       }
   e.target.value = inputValue;
 
-
-  const sellValue = currencyInput.value
-  
-  const fromRate = inputSelect.value
-  const toRate = outputSelect.value
-  
-  if(sellValue.length != 0) {
-    fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
-    .then(res=> res.json())
-    .then(data=> {
-      let fromRateValue = data.conversion_rates[fromRate.toUpperCase()]
-      let toRateValue = data.conversion_rates[toRate.toUpperCase()]
-
-      let conversion = (sellValue / fromRateValue) * toRateValue
-
-      
-      document.querySelector('.currency-output').innerText = conversion.toFixed(2)
-    })
-  } else {
-    
-    document.querySelector('.currency-output').innerText = "Alıram" 
-  }
+  // renderExchange()
 })
 
+function renderExchange() {
+    const sellValue = currencyInput.value
+    const fromRate = inputSelect.value
+    const toRate = outputSelect.value
+    
+    if(sellValue.length != 0) {
+      fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
+      .then(res=> res.json())
+      .then(data=> {
+        let fromRateValue = data.conversion_rates[fromRate.toUpperCase()]
+        let toRateValue = data.conversion_rates[toRate.toUpperCase()]
+  
+        let conversion = (sellValue / fromRateValue) * toRateValue
+  
+        
+        document.querySelector('.currency-output').innerText = conversion.toFixed(2)
+      })
+    } else {
+      
+      document.querySelector('.currency-output').innerText = "Alıram" 
+    }
 
-
+}
 
 inputSelect.addEventListener('input',(e) => {
   const selectedOption = e.target.value
@@ -339,30 +339,6 @@ inputSelect.addEventListener('input',(e) => {
   }
 
   let inputValue = inputSelect.value
-  console.log(inputValue)
-
+  // renderExchange()
   
 })
-
-
-
-// function convertCurrency() {
-//   const inputValue = document.querySelector('.currency-input').value
-
-//   console.log(inputValue)
-
-
-// }
-// convertCurrency()
-
-// fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
-// .then(res=> res.json())
-// .then(data=> {
-//   let inputRate = inputSelect.value
-//   let outputRate = outputSelect.value
-//   const conversionRates = data.conversion_rates
-//   console.log(conversionRates)
-//   conversionRates.forEach(rate => {
-//     console.log(rate)
-//   })
-// })

@@ -30,16 +30,16 @@ input,button,textarea {
     margin: 0 auto;
     padding: 0 20px;
     
-}
-.row {
-    width: 100%;
-    display: flex;
-    justify-content: space-between;
-    flex-wrap: wrap;
-    &.mobile-row {
-        flex-direction: column;
-        @media (min-width: 1000px) {
-            flex-direction: row;
+    .row {
+        width: 100%;
+        display: flex;
+        justify-content: space-between;
+        flex-wrap: wrap;
+        &.mobile-row {
+            flex-direction: column;
+            @media (min-width: 1000px) {
+                flex-direction: row;
+            }
         }
     }
 }
