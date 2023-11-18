@@ -344,3 +344,89 @@ inputSelect.addEventListener('input',(e) => {
   // renderExchange()
   
 })
+
+
+function formatDate(time) {
+  const months = [
+      "Yanvar",
+      "Fevral",
+      "Mart",
+      "Aprel",
+      "May",
+      "İyun",
+      "İyul",
+      "Avqust",
+      "Sentyabr",
+      "Oktyabr",
+      "Noyabr",
+      "Dekabr"
+  ];
+
+  const date = new Date(time);
+  const day = date.getDate();
+  const month = months[date.getMonth()];
+  const year = date.getFullYear();
+
+  return `${day} ${month} ${year}`;
+}
+
+const news = document.querySelector('.news .row')
+
+fetch('http://localhost:3000/NEWS')
+.then(res => res.json())
+.then(data => {
+    for(let i=0;i < 3;i++) {
+      news.innerHTML += 
+      `<div class="news-item col-3">
+      <div class="news-inner">
+          <div class="news-heading">
+              <h3>${data[i].title}</h3>
+              <div class="edit-news">
+                  <button type="button" class="edit-button">
+                      <i class="fa-solid fa-ellipsis-vertical"></i>
+                  </button>
+  
+                  <div class="edit-dropdown">
+                      <div class="dropdown-item">
+                          <i class="fa-solid fa-trash-can"></i>
+                          <span>Sil</span>
+                      </div>
+                      <div class="dropdown-item">
+                          <i class="fa-solid fa-pen"></i>
+                          <span>Düzəliş et</span>
+                      </div>
+                      <div class="dropdown-item"></div>
+                  </div>
+  
+              </div>
+          </div>
+          <div class="news-footer">
+              <a href="javascript:void(0)" class="arrow-btn">Daha ətraflı</a>
+              <span class="time">${formatDate(data[i].date)}</span>
+          </div>
+      </div>
+      </div>`
+    }
+
+
+    const newsItem = document.querySelectorAll('.news-item')
+
+    newsItem.forEach(item => {
+      const editBtn = item.querySelector('.edit-button')
+      const editDropDown = item.querySelector('.edit-dropdown')
+      item.addEventListener("click",() => {
+        editBtn.addEventListener("click",() => {
+          editDropDown.classList.add('show')
+        })
+      })
+      window.addEventListener("click", (e) => {
+        console.log(e.target)
+        if (e.target != editBtn && e.target != editBtn.firstElementChild && editDropDown.classList.contains('show')) {
+            editDropDown.classList.remove("show")
+        }
+      })
+    })
+
+    
+
+  })

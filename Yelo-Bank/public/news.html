@@ -4,6 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Xəbərləri - Son Xəbərlər</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../src/scss/style.css">
 </head>
 <body>
@@ -243,6 +244,9 @@
             <div class="container">
                 <div class="main-title">
                     <h1>Xəbərlər</h1>
+                    <button class="main-button add-news">
+                        Xəbər Əlavə et
+                    </button>
                 </div>
                 <div class="news">
                     <div class="row">
@@ -252,6 +256,43 @@
             </div>
         </section>
     </main>
+
+    <div class="news-modal">
+        <div class="modal">
+            <div class="modal-inner">
+                <div class="close-news-modal">
+                    <button type="button" class="close-button">
+                        <img src="img/close.svg" alt="" class="desktop-close">
+                        <img src="img/close_black.svg" alt="" class="mobile-close">
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <div class="content-title">
+                        <h2>Xəbər Əlavə et</h2>
+                    </div>
+                    <div class="content-text">
+
+                        <div class="content-item">
+                            <form>
+                                <label for="newsname">Xəbər başlığı</label>
+                                <input type="text" id="newsname" class="nameinput" placeholder="Xəbərin adı" value="">
+                            </form>
+                        </div>
+                        
+
+                        <div class="content-item">
+                            <div class="item-button">
+                                <button class="main-button add-button">
+                                    Əlavə et
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
 
     <footer>
@@ -414,6 +455,43 @@
         </div>
     </footer>
 
+
+    <div class="edit-modal">
+        <div class="modal">
+            <div class="modal-inner">
+                <div class="close-edit-modal">
+                    <button type="button" class="close-button">
+                        <img src="img/close.svg" alt="" class="desktop-close">
+                        <img src="img/close_black.svg" alt="" class="mobile-close">
+                    </button>
+                </div>
+                <div class="modal-content">
+                    <div class="content-title">
+                        <h2>Düzəliş et</h2>
+                    </div>
+                    <div class="content-text">
+
+                        <div class="content-item">
+                            <form>
+                                <label for="newsname">Xəbər başlığı</label>
+                                <input type="text" id="newsname" class="nameinput" placeholder="Xəbərin adı" value="">
+                            </form>
+                        </div>
+                        
+
+                        <div class="content-item">
+                            <div class="item-button">
+                                <button class="main-button edit-news-button">
+                                    Saxla
+                                </button>
+                            </div>
+                        </div>
+
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <script src="../src/js/news.js"></script>
 </body>
