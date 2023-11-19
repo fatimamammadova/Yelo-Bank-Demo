@@ -107,11 +107,13 @@
                     }
                 }
                 .content-text {
-                    .content-item {
+                    form {
                         max-width: 600px;
                         margin: 0 auto;
-                        form {
-                            padding-bottom: 40px;
+                        .content-item {
+                            &:first-child {
+                                padding-bottom: 40px;
+                            }
                             label {
                                 display: block;
                                 line-height: 1;
@@ -128,25 +130,24 @@
                                     padding: 20px 16px;
                                 }
                             }
-                        }
-                        .item-button {
-                            width: 100%;
-                            text-align: end;
-                            padding: 30px 0 15px 0;
-                            border-top: 1px solid $main-border-color;
-                            .add-button {
+                            .item-button {
                                 width: 100%;
-                                @media (min-width: 1000px) {
-                                    width: 33.333%;
+                                text-align: end;
+                                padding: 30px 0 15px 0;
+                                border-top: 1px solid $main-border-color;
+                                .add-button {
+                                    width: 100%;
+                                    @media (min-width: 1000px) {
+                                        width: 33.333%;
+                                    }
+                                    padding: 13px 25px;
+                                    font-family:  "TT Commons Medium";
+                                    font-size: 18px;
+                                    border-radius: 10px;
                                 }
-                                padding: 13px 25px;
-                                font-family:  "TT Commons Medium";
-                                font-size: 18px;
-                                border-radius: 10px;
                             }
                         }
                     }
-
                 }
             }
         }

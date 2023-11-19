@@ -71,6 +71,14 @@ header {
     z-index: 10;
     width: 100%;
     .header-top {
+        height: 100%;
+        max-height: 100%;
+        display: block;
+        &.scrolling {
+            height: 0;
+            max-height: 0;
+            display: none;
+        }
         background-color: $white-color;
         border-bottom: 1px solid $main-border-color;
         .ht-left {
@@ -264,7 +272,12 @@ header {
     .header-bottom {
         background-color: transparent;
         transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-        // box-shadow: 0 10px 20px rgba(0,0,0,0);
+        
+        &.main-header {
+            background-color: $white-color;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.1);
+
+        }
         padding: 10px 0;
         @media (min-width: 992px) {
             padding: 18px 0;
@@ -339,6 +352,24 @@ header {
                 }
             }
             .login-button {
+                &.scroll-btn {
+                    height: 45px;
+                    width: 45px;
+                    @media (min-width: 1000px) {
+                        height: 55px;
+                        width: 55px;
+                    }
+                    .button-content {
+                        img {
+                            transform: translateY(0);
+                            margin-right: 0;
+                            width: 15px;
+                        }
+                        span {
+                            display: none;
+                        }
+                    }
+                }
                 position: relative;
                 overflow: hidden;
                 font-size: 18px;

@@ -40,12 +40,12 @@ const hamburgerMenuContent = document.querySelector(".hamburger-menu");
 const contentContainer = document.querySelector(".hamburger-menu .container");
 let scrollBar = hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
 const bgColor = document.querySelector(".bg-color");
-const headerTop = document.querySelector(".header-bottom");
+const headerBg = document.querySelector(".header-bottom");
 
 hamburgerMenuBtn.addEventListener("click", () => {
   hamburgerMenuBtn.classList.toggle("close-active");
   if (hamburgerMenuBtn.classList.contains("close-active")) {
-    headerTop.style.backgroundColor = "#fff";
+    headerBg.style.backgroundColor = "#fff";
     if (document.documentElement.scrollWidth <= 1096) {
       hamburgerMenuContent.style.maxHeight = "calc(100vh - 150px)";
     } else {
@@ -61,9 +61,38 @@ hamburgerMenuBtn.addEventListener("click", () => {
     hamburgerMenuContent.style.height = "0";
     bgColor.style.visibility = "hidden";
     bgColor.style.opacity = "0";
-    headerTop.style.backgroundColor = "transparent";
+    headerBg.style.backgroundColor = "transparent";
   }
 });
+
+
+
+const headerBottom = document.querySelector('.header-bottom')
+const headerTop = document.querySelector('.header-top')
+let windowScroll = window.scrollY
+const loginBtn = document.querySelector('.login-button')
+window.addEventListener('scroll',() => {
+  let scrollH = window.scrollY
+  if(scrollH > windowScroll && scrollH > 20) {
+    headerTop.classList.add('scrolling')
+    headerBottom.classList.add('main-header')
+    loginBtn.classList.add('scroll-btn')
+  } else {
+    headerTop.classList.remove('scrolling')
+    headerBottom.classList.remove('main-header')
+    loginBtn.classList.remove('scroll-btn')
+  }
+
+  if(window.scrollY > 20) {
+    headerBottom.classList.add('main-header')
+  } else {
+    headerBottom.classList.remove('main-header')
+
+  }
+  windowScroll = scrollH
+  console.log(windowScroll)
+})
+
 
 const CloseBtn = document.querySelector(".close-img");
 const promotion = document.querySelector(".mobile-app-promotion");
@@ -414,11 +443,10 @@ fetch('http://localhost:3000/NEWS')
     newsItem.forEach(item => {
       const editBtn = item.querySelector('.edit-button')
       const editDropDown = item.querySelector('.edit-dropdown')
-      item.addEventListener("click",() => {
-        editBtn.addEventListener("click",() => {
-          editDropDown.classList.add('show')
-        })
+      editBtn.addEventListener("click",() => {
+        editDropDown.classList.add('show')
       })
+      
       window.addEventListener("click", (e) => {
         console.log(e.target)
         if (e.target != editBtn && e.target != editBtn.firstElementChild && editDropDown.classList.contains('show')) {
