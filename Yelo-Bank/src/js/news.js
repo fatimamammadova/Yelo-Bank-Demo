@@ -66,7 +66,6 @@ window.addEventListener('scroll',() => {
 
   }
   windowScroll = scrollH
-  console.log(windowScroll)
 })
 
 
@@ -134,6 +133,9 @@ closeNewsModal.addEventListener('click',() => {
 })
 const newsNameInput = document.querySelector('.nameinput')
 const news = document.querySelector('.news .row')
+const saveBtn = document.querySelector('.edit-news-button')
+const closeEditModal = document.querySelector('.close-edit-modal')
+const editInput = document.querySelector('.editinput')
 
 
 function convertToISOFormat(dateString) {
@@ -187,14 +189,13 @@ function formatDate(time) {
 }
 let number = 15
 let initalNumber = 0
-let dataLength = 0
+let dataLength,updateId,updateTitle,updateDate;
 async function getData() {
   try {
     const res = await  fetch("http://localhost:3000/NEWS");
     const data = await res.json();
     dataLength = data.length
-    console.log(initalNumber)
-    for(let i=initalNumber;i<number; i++) {
+    for(let i=dataLength - initalNumber-1;i>=dataLength - number; i--) {
       const newsItem = `<div class="news-item col-3">
       <div class="news-inner">
         <div class="news-heading">
@@ -226,12 +227,9 @@ async function getData() {
       </div>`
       news.insertAdjacentHTML('beforeend',newsItem)
     }
-    const editInput = document.querySelector('.editinput')
     const editModalBg = document.querySelector('.edit-modal')
     const editModal = document.querySelector('.edit-modal .modal')
-    const closeEditModal = document.querySelector('.close-edit-modal')
     const newsItem = document.querySelectorAll('.news-item')
-    const saveBtn = document.querySelector('.edit-news-button')
     
     const deleteButtons = document.querySelectorAll('.delete-item')
 
@@ -255,19 +253,12 @@ async function getData() {
       const editBtn = item.querySelector('.edit-button')
       const editItem = item.querySelector('.edit-item')
       const editDropDown = item.querySelector('.edit-dropdown')
-      const itemTitle = item.querySelector('.news-heading h3')
+      // const itemTitle = item.querySelector('.news-heading h3')
 
       editBtn.addEventListener("click",() => {
         editDropDown.classList.add('show')
       })
       
-      saveBtn.addEventListener("click", async (e) => {
-        const date = new Date()
-        putData(editItem.dataset.id,itemTitle.innerText,date)
-        
-        closeEditModal.click()
-      })
-
 
       window.addEventListener("click", (e) => {
         if (e.target != editBtn && e.target != editBtn.firstElementChild && editDropDown.classList.contains('show')) {
@@ -278,9 +269,15 @@ async function getData() {
       editItem.addEventListener("click",() => {
         editModalBg.classList.add('show')
         editModal.classList.add('show-modal')
-        editInput.value = itemTitle.innerText
+        editInput.value = data[editItem.dataset.id-1].title
+        // updateId = editItem.dataset.id
+        // updateDate = data[editItem.dataset.id-1].date
+        // updateTitle = data[editItem.dataset.id-1].date
+        
       })
-    
+      
+      
+
       closeEditModal.addEventListener("click", () => {
         editModalBg.classList.remove('show')
         editModal.classList.remove('show-modal')
@@ -288,6 +285,7 @@ async function getData() {
     })
   }
   catch(err) {
+    
     console.log('GET request error: ', err)
   }
 }
@@ -370,15 +368,17 @@ function putData(updateId,updateTitle,updateDate) {
   })
 }
 
+
 const moreNewsBtn = document.querySelector('.more-news-button')
 
 moreNewsBtn.addEventListener("click", () => {
   initalNumber = number
   number += 15
+  console.log(number)
   if(number < dataLength) {
     getData()
   }
-  else if(number - dataLength>0 && initalNumber < dataLength) {
+  else if(number - dataLength>=0 && initalNumber < dataLength) {
     number = number + (dataLength % 15)
     getData()
   }
