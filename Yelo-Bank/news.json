@@ -375,5 +375,43 @@
       "title": "Yelo Bank-da növbəti sağlamlıq tədbiri",
       "date": "2023-11-03T20:00:00.000Z"
     }
+  ],
+  "cards": [
+    {
+      "name": "Yelo Light",
+      "description": "Yelo kart rahatlıq anlayışını dəyişəcək - rahat xərcləyəcəksən, rahat izləyəcəksən, qazanacaqsan, endirimlər alacaqsan.",
+      "period": "1 il / 3 il",
+      "currency": "AZN / USD / EUR",
+      "type": "Cashback",
+      "typeText": "30%-dək",
+      "img": "../public/img/yelo.webp"
+    },
+    {
+      "name": "Yelo Premium",
+      "description": "Yelo kart rahatlıq anlayışını dəyişəcək - rahat xərcləyəcəksən, rahat izləyəcəksən, qazanacaqsan, endirimlər alacaqsan.",
+      "period": "3 il",
+      "currency": "AZN / USD / EUR",
+      "type": "Cashback",
+      "typeText": "30%-dək",
+      "img": "../public/img/visa-platinum.svg"
+    },
+    {
+      "name": "Yelo kredit/taksit kartı",
+      "description": "Yelo kredit kartı ilə istədiyin ödənişləri his-sə-lə!",
+      "period": "5 il",
+      "currency": "AZN",
+      "type": "Güzəşt müddəti",
+      "typeText": "70 günədək",
+      "img": "../public/img/yelo_light-visa.webp"
+    },
+    {
+      "name": "Yelo Digital Card",
+      "description": "Rəqəmsal bank kartına sahib ol - üstəlik tamamilə pulsuz",
+      "period": "1 il",
+      "currency": "AZN",
+      "type": "Qiyməti",
+      "typeText": "Pulsuz",
+      "img": "../public/img/yelo_digital-210x333.webp"
+    }
   ]
 }

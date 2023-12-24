@@ -1,17 +1,46 @@
 .main-button {
-    background-color: $main-color;
-    color: $secondary-color;
+    position: relative;
+    display: inline-block;
+    width: 225px;
+    height: 60px;
+    padding: 15px 20px;
+    font-size: 20px;
+    font-family: "TT Commons Bold";
     cursor: pointer;
     transition: all .3s cubic-bezier(.52, .01, .16, 1);
-    &:hover {
-        color: $white-color;
-        background-color: $secondary-color;
+    span {
+        position: relative;
+        z-index: 2;
+        color: $secondary-color;
+        text-align: center;
+        transition: all .3s cubic-bezier(.52, .01, .16, 1);
     }
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: $main-color;
+        transform: skew(-14deg, 0);
+        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+    }
+    &:hover {
+        span {
+            color: $white-color;
+        }
+        &::after {
+            background-color: $secondary-color;
+        }
+    }
+    
 }
+
 .calculator-title {
     color: $main-text-color;
 }
-
 
 .secondary-button {  
     span {
@@ -43,17 +72,15 @@
             @include PositionR(absolute,50%,0,translate(0,-50%));
             background: url("../../public/img/white-arrow.svg") no-repeat right center;
             background-size: 20px;
+            display: block;
+            transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
             @media (min-width:1000px) {
                 background-size: auto;
 
             }
-            
-            display: block;
-            transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
         }
     }
 }
-
 
 .mobile-app-links {
     @media (min-width: 1000px) {
@@ -387,4 +414,113 @@
             }
         }
     }
+}
+
+%main-button {
+    position: relative;
+    display: inline-block;
+    padding: 13px 20px;
+    height: auto;
+    @media (min-width: 1000px) {
+        height: 60px;
+        padding: 15px 20px;
+    }
+    font-family: "TT Commons Bold";
+    cursor: pointer;
+    transition: all .3s cubic-bezier(.52, .01, .16, 1);
+    span {
+        position: relative;
+        z-index: 2;
+        font-size: 16px;
+        @media (min-width: 1000px) {
+            font-size: 20px;
+        }
+        color: $white-color;
+        @media (min-width: 1000px) {
+            color: $secondary-color;
+        }
+        text-align: center;
+        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+    }
+    &::after {
+        content: '';
+        display: block;
+        position: absolute;
+        top: 0px;
+        left: 0px;
+        width: 100%;
+        height: 100%;
+        background-color: $secondary-color;
+        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+        transform: skew(0);
+        border-radius: 6px;
+        @media (min-width: 1000px) {
+            border-radius: 0px;
+            background-color: $main-color;
+            transform: skew(-14deg, 0);
+            border-radius: none;
+        }
+    }
+    &:hover {
+        span {
+            color: $secondary-color;
+            @media (min-width: 1000px) {
+                color: $white-color;
+            }
+        }
+        &::after {
+            background-color: $main-color;
+            @media (min-width: 1000px) {
+                background-color: $secondary-color;
+            }
+        }
+    }
+    
+}
+
+%secondary-button {
+    height: 60px;
+    display: inline-block;
+    padding: 15px 20px;
+    font-family: "TT Commons Bold";
+    color: $secondary-color;
+    cursor: pointer;
+    span {
+        position: relative;
+        display: inline-block;
+        font-size: 16px;
+        @media (min-width: 1000px) {
+            font-size: 20px;
+            padding: 0 45px 0 0;
+        }
+        padding: 0 30px 0 0;
+        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+        &::after {
+            content: "";
+            width: 35px;
+            height: 16px;
+            background: url('../../public/img/arrow-btn.svg') no-repeat right 6px;
+            background-size: 20px;
+            @include PositionR(absolute,0,0,translate(0,-3px));
+            display: block;
+            transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+            
+            @media (min-width: 1000px) {
+                background: url('../../public/img/arrow-btn.svg') no-repeat right center;
+                @include PositionR(absolute,0,0,translate(0,3px));
+            }
+
+        }
+    }
+    &:hover {
+        span {
+            &::after {
+                transform: translate(5px,-3px); 
+                @media (min-width: 1000px) {
+                    transform: translate(5px,3px);
+                }
+            }
+        }
+    }
+
 }

@@ -1,8 +1,53 @@
 const langSelectionHeader = document.querySelector(".ls-header");
 const langSelectionContent = document.querySelector(".ls-content");
 const language = document.querySelector(".language");
-
 const languages = document.querySelectorAll(".lang");
+const headerBottom = document.querySelector('.header-bottom')
+const headerTop = document.querySelector('.header-top')
+const loginBtn = document.querySelector('.login-button')
+const hamburgerMenuBtn = document.querySelector(".hm-button");
+const hamburgerMenuContent = document.querySelector(".hamburger-menu");
+const contentContainer = document.querySelector(".hamburger-menu .container");
+const bgColor = document.querySelector(".bg-color");
+const headerBg = document.querySelector(".header-bottom");
+const CloseBtn = document.querySelector(".close-img");
+const promotion = document.querySelector(".mobile-app-promotion");
+const header = document.querySelector("header");
+const mobilePromotion = document.querySelector(".mobile-promotion");
+const mobileCloseBtn = document.querySelector(".mp-close-btn");
+const mainSlider = document.querySelector("#main-slider");
+const search = document.querySelector(".search");
+const searchInput = document.querySelector(".search-inner");
+const searchOpenBtn = document.querySelector(".search-icon");
+const searchBtn = document.querySelector(".search-btn");
+const searchCloseBtn = document.querySelector(".search-close-btn");
+const closeMessagePopup = document.querySelector(".close-popup");
+const messageBtn = document.querySelector(".message-button");
+const messageModal = document.querySelector(".message-modal");
+const modal = document.querySelector(".modal-popup");
+const formContent = document.querySelectorAll(".form-content .content-inner");
+const storyClose = document.querySelector(".story-close");
+const modalContainer = document.querySelector(".story-modal");
+const storyModal = document.querySelector(".story-modal .modal");
+const rangeInput = document.querySelectorAll('.range')
+const numberInput = document.querySelectorAll('.number-range')
+const rangeAmount = document.querySelector('.loan-amount input[type="range"]');
+const rangeTerm = document.querySelector('.loan-term input[type="range"]');
+const rangePercent = document.querySelector('.loan-percent input[type="range"]');
+const numberAmount = document.querySelector('.loan-amount input[type="number"]');
+const numberTerm = document.querySelector('.loan-term input[type="number"]');
+const numberPercent = document.querySelector('.loan-percent input[type="number"]');
+const loanInputs = document.querySelectorAll('.cr-input input')
+const defaultRate = document.querySelector('.default-rate')
+const selectRates = document.querySelectorAll('.select-item')
+const currencyInput = document.querySelector('.currency-input')
+const inputSelect = document.querySelector('.input-select')
+const outputSelect = document.querySelector('.output-select')
+const selectBoxRate = document.querySelector('.rate-select-box')
+const news = document.querySelector('.news .row')
+let windowScroll = window.scrollY
+let scrollBar = hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
+
 
 languages.forEach((item) => {
   const langText = item.querySelector(".lang-text");
@@ -35,42 +80,32 @@ window.addEventListener("click", (e) => {
   }
 });
 
-const hamburgerMenuBtn = document.querySelector(".hm-button");
-const hamburgerMenuContent = document.querySelector(".hamburger-menu");
-const contentContainer = document.querySelector(".hamburger-menu .container");
-let scrollBar = hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
-const bgColor = document.querySelector(".bg-color");
-const headerBg = document.querySelector(".header-bottom");
 
 hamburgerMenuBtn.addEventListener("click", () => {
   hamburgerMenuBtn.classList.toggle("close-active");
-  if (hamburgerMenuBtn.classList.contains("close-active")) {
-    headerBg.style.backgroundColor = "#fff";
+  if (!hamburgerMenuBtn.classList.contains("close-active")) {
+    hamburgerMenuContent.style.maxHeight = "0";
+    hamburgerMenuContent.classList.remove('active')
+    bgColor.classList.remove('active')
+    window.addEventListener('scroll',() => {
+      if(window.scrollY < 20) {
+        headerBg.style.backgroundColor = "transparent";
+      } else {
+        headerBg.style.backgroundColor = "#fff";
+      }
+    })
+  } else {
     if (document.documentElement.scrollWidth <= 1096) {
       hamburgerMenuContent.style.maxHeight = "calc(100vh - 150px)";
     } else {
       hamburgerMenuContent.style.maxHeight = "calc(100vh - 140px)";
     }
-    hamburgerMenuContent.style.height = "auto";
-    hamburgerMenuContent.style.opacity = "1";
-    bgColor.style.visibility = "visible";
-    bgColor.style.opacity = ".5";
-  } else {
-    hamburgerMenuContent.style.maxHeight = "0";
-    hamburgerMenuContent.style.opacity = "0";
-    hamburgerMenuContent.style.height = "0";
-    bgColor.style.visibility = "hidden";
-    bgColor.style.opacity = "0";
-    headerBg.style.backgroundColor = "transparent";
+    headerBg.style.backgroundColor = "#fff";
+    hamburgerMenuContent.classList.add('active')
+    bgColor.classList.remove('active')
   }
 });
 
-
-
-const headerBottom = document.querySelector('.header-bottom')
-const headerTop = document.querySelector('.header-top')
-let windowScroll = window.scrollY
-const loginBtn = document.querySelector('.login-button')
 window.addEventListener('scroll',() => {
   let scrollH = window.scrollY
   if(scrollH > windowScroll && scrollH > 20) {
@@ -87,23 +122,10 @@ window.addEventListener('scroll',() => {
     headerBottom.classList.add('main-header')
   } else {
     headerBottom.classList.remove('main-header')
-
   }
   windowScroll = scrollH
   console.log(windowScroll)
 })
-
-
-const CloseBtn = document.querySelector(".close-img");
-const promotion = document.querySelector(".mobile-app-promotion");
-
-const header = document.querySelector("header");
-
-const mobilePromotion = document.querySelector(".mobile-promotion");
-const mobileCloseBtn = document.querySelector(".mp-close-btn");
-
-const mainSlider = document.querySelector("#main-slider");
-
 
 CloseBtn.addEventListener("click", () => {
   sessionStorage.setItem("status", "hide");
@@ -148,14 +170,6 @@ window.addEventListener("resize", () => {
   }
 });
 
-const search = document.querySelector(".search");
-const searchInput = document.querySelector(".search-inner");
-
-const searchOpenBtn = document.querySelector(".search-icon");
-
-const searchBtn = document.querySelector(".search-btn");
-const searchCloseBtn = document.querySelector(".search-close-btn");
-
 searchOpenBtn.addEventListener("click", () => {
   search.classList.add("show");
 });
@@ -164,17 +178,11 @@ searchCloseBtn.addEventListener("click", () => {
   search.classList.remove("show");
 });
 
-const closeMessagePopup = document.querySelector(".close-popup");
-const messageBtn = document.querySelector(".message-button");
-const messageModal = document.querySelector(".message-modal");
-const modal = document.querySelector(".modal-popup");
-
-const formContent = document.querySelectorAll(".form-content .content-inner");
-
 messageBtn.addEventListener("click", () => {
   messageModal.classList.add("show-popup");
   modal.classList.add("show-modal");
 });
+
 closeMessagePopup.addEventListener("click", () => {
   messageModal.classList.remove("show-popup");
   modal.classList.remove("show-modal");
@@ -196,30 +204,10 @@ formContent.forEach((item) => {
   });
 });
 
-///////////////////////////////////////////
-
-const storyClose = document.querySelector(".story-close");
-const modalContainer = document.querySelector(".story-modal");
-const storyModal = document.querySelector(".story-modal .modal");
-
 storyClose.addEventListener("click", () => {
     modalContainer.classList.remove("show");
     storyModal.classList.remove("show-modal");
 });
-
-
-const rangeInput = document.querySelectorAll('.range')
-const numberInput = document.querySelectorAll('.number-range')
-
-
-const rangeAmount = document.querySelector('.loan-amount input[type="range"]');
-const rangeTerm = document.querySelector('.loan-term input[type="range"]');
-const rangePercent = document.querySelector('.loan-percent input[type="range"]');
-
-const numberAmount = document.querySelector('.loan-amount input[type="number"]');
-const numberTerm = document.querySelector('.loan-term input[type="number"]');
-const numberPercent = document.querySelector('.loan-percent input[type="number"]');
-const loanInputs = document.querySelectorAll('.cr-input input')
 
 function handleRangeInput(rangeInput) {
   rangeInput.style.setProperty('--val', rangeInput.value);
@@ -238,7 +226,6 @@ rangePercent.addEventListener('input', () => handleRangeInput(rangePercent));
 numberAmount.addEventListener('input', () => handleNumberInput(numberAmount));
 numberTerm.addEventListener('input', () => handleNumberInput(numberTerm));
 numberPercent.addEventListener('input', () => handleNumberInput(numberPercent));
-
 
 function creditCalc() {
 
@@ -276,7 +263,6 @@ function creditCalc() {
 
 }
 
-
 creditCalc()
 loanInputs.forEach(input => {
   input.addEventListener('input',() => {
@@ -284,15 +270,9 @@ loanInputs.forEach(input => {
   })
 })
 
-const defaultRate = document.querySelector('.default-rate')
-const selectRates = document.querySelectorAll('.select-item')
-const selectBoxRate = document.querySelector('.rate-select-box')
-
-
 defaultRate.addEventListener("click",(e) => {
   selectBoxRate.classList.add('show')
 })
-
 
 function removeActiveRate() {
   selectRates.forEach((item) => {
@@ -313,10 +293,6 @@ window.addEventListener("click", (e) => {
     selectBoxRate.classList.remove("show");
   }
 });
-
-const currencyInput = document.querySelector('.currency-input')
-const inputSelect = document.querySelector('.input-select')
-const outputSelect = document.querySelector('.output-select')
 
 currencyInput.addEventListener('input',(e)=> {
   let inputValue = e.target.value;
@@ -374,7 +350,6 @@ inputSelect.addEventListener('input',(e) => {
   
 })
 
-
 function formatDate(time) {
   const months = [
       "Yanvar",
@@ -398,8 +373,6 @@ function formatDate(time) {
 
   return `${day} ${month} ${year}`;
 }
-
-const news = document.querySelector('.news .row')
 
 fetch('http://localhost:3000/NEWS')
 .then(res => res.json())
@@ -457,4 +430,4 @@ fetch('http://localhost:3000/NEWS')
 
     
 
-  })
+})
