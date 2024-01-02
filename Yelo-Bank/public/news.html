@@ -4,12 +4,61 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Bank Xəbərləri - Son Xəbərlər</title>
+    <link rel="shortcut icon" href="https://www.yelo.az/site/templates/images/fav/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../src/scss/style.css">
 </head>
 <body>
 
-  
+    <div class="mobile-app-promotion" style="background-image: url('img/modal_bg.webp');">
+        <div class="promotion-inner">
+            <div class="app-logo app-col">
+                <div class="logo-img">
+                    <img src="img/short_logo.svg" alt="">
+                </div>
+                <p>Yelo-dan çoxfunksiyalı mobil əlavə</p>
+            </div>
+            <div class="app-links app-col">
+                <ul class="download-apps">
+                    <li>
+                        <a href="#">
+                            <img src="img/apple_black.svg" alt="">
+                            <div class="content">
+                                <span>Download on the</span>
+                                <p>App Store</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/google_play_black.svg" alt="">
+                            <div class="content">
+                                <span>Get it on</span>
+                                <p>Google Play</p>
+                            </div>
+                        </a>
+                    </li>
+
+                    <li>
+                        <a href="#">
+                            <img src="img/huawei_play_black.svg" alt="">
+                            <div class="content">
+                                <span>Get it on</span>
+                                <p>AppGallery</p>
+                            </div>
+                        </a>
+                    </li>
+                </ul>
+            </div>
+            <div class="app-close app-col">
+                <div class="close-img">
+                    <img src="img/white_close_icon.svg" alt="">
+                </div>
+            </div>
+        </div>
+    </div>
+
     <div class="search">
         <div class="search-inner">
             <div class="container">
@@ -27,7 +76,9 @@
         </div>
     </div>
 
+   
     <header>
+
         <div class="header-top">
             <div class="container">
                 <div class="row">
@@ -55,7 +106,7 @@
                             </li>
                             <li class="search-icon">
                                 <a href="javascript:void(0)">
-                                    <img src="https://www.yelo.az/site/templates/style/img/search_header.svg" alt="">
+                                    <img src="img/search_icon.svg" alt="">
                                 </a>
                             </li>
                             <li class="lang-selection">
@@ -91,19 +142,28 @@
                 </div>
             </div>
         </div>
+
         <div class="header-bottom">
             <div class="container">
                 <div class="row">
                     <div class="navbar-left col">
                         <a href="index.html" class="logo">
-                            <img src="https://www.yelo.az/site/templates/style/img/logo.svg" alt="">
+                            <img src="img/another_logo.svg" alt="">
                         </a>
+                        <nav class="main-menu">
+                            <ul>
+                                <li><a href="#">Kreditlər</a></li>
+                                <li><a href="./cards.html">Kartlar</a></li>
+                                <li><a href="#">Əmanətlər</a></li>
+                                <li><a href="#">Cashback</a></li>
+                            </ul>
+                        </nav>
                     </div>
                     <div class="navbar-right col">
                         <button type="button" class="message-button">
-                            <img src="https://www.yelo.az/site/templates/style/img/message_trigger.svg" alt="">
+                            <img src="img/message_trigger.svg" alt="">
                         </button>
-                        <button type="button" class="login-button main-button">
+                        <button type="button" class="login-button">
                             <div class="button-content">
                                 <img src="img/login-button-img.svg" alt="" class="black-img">
                                 <img src="img/login-button-img-white.svg" alt="" class="white-img">
@@ -116,6 +176,7 @@
                 </div>
             </div>
         </div>
+
     </header>
 
     <div class="message-modal">
@@ -228,7 +289,7 @@
                             </div>
                             <div class="form-col">
                                 <div class="submit-button">
-                                    <button type="submit" class="main-button message-submit">
+                                    <button type="submit" class="message-submit">
                                         Göndər
                                     </button>
                                 </div>
@@ -239,15 +300,21 @@
             </div>
         </div>
     </div>
+
     <main>
-        <section id="all-news">
+        <section id="main-title">
             <div class="container">
                 <div class="main-title">
                     <h1>Xəbərlər</h1>
-                    <button class="main-button add-news">
+                    <button class="add-news">
                         Xəbər Əlavə et
                     </button>
                 </div>
+            </div>
+        </section>
+
+        <section id="all-news">
+            <div class="container">
                 <div class="news">
                     <div class="row">
 
@@ -285,7 +352,7 @@
                             
                             <div class="content-item">
                                 <div class="item-button">
-                                    <button type="button" class="main-button add-button">
+                                    <button type="button" class="add-button">
                                         Əlavə et
                                     </button>
                                 </div>
@@ -297,6 +364,29 @@
         </div>
     </div>
 
+
+    <div class="mobile-promotion">
+        <div class="promotion-inner">
+            <div class="mp-left">
+                <div class="mp-close-btn">
+
+                </div>
+            </div>
+            <div class="mp-right">
+                <div class="mobile-logo">
+                    <img src="img/short_logo.svg" alt="">
+                </div>
+                <p class="slogan">
+                    Yelo-dan çoxfunksiyalı mobil əlavə
+                </p>
+                <div class="download-btn">
+                    <button type="button">
+                        Yüklə
+                    </button>
+                </div>
+            </div>
+        </div>
+    </div>
 
     <footer>
         <div class="container">
@@ -458,7 +548,6 @@
         </div>
     </footer>
 
-
     <div class="edit-modal">
         <div class="modal">
             <div class="modal-inner">
@@ -480,7 +569,7 @@
                             </div>
                             <div class="content-item">
                                 <div class="item-button">
-                                    <button class="main-button edit-news-button">
+                                    <button class="edit-news-button">
                                         Saxla
                                     </button>
                                 </div>
@@ -492,6 +581,7 @@
             </div>
         </div>
     </div>
+
 
     <script src="../src/js/news.js"></script>
 </body>

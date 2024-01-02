@@ -1,87 +1,3 @@
-.main-button {
-  position: relative;
-  display: inline-block;
-  width: 225px;
-  height: 60px;
-  padding: 15px 20px;
-  font-size: 20px;
-  font-family: "TT Commons Bold";
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-.main-button span {
-  position: relative;
-  z-index: 2;
-  color: #000;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-.main-button::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: #FFC628;
-  transform: skew(-14deg, 0);
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-.main-button:hover span {
-  color: #fff;
-}
-.main-button:hover::after {
-  background-color: #000;
-}
-
-.calculator-title {
-  color: rgba(0, 0, 0, 0.5019607843);
-}
-
-.secondary-button span {
-  font-family: "TT Commons Bold";
-  display: inline-block;
-  padding: 5px 38px 5px 0;
-  position: relative;
-  display: inline-block;
-  font-size: 16px;
-  font-family: "TT Commons Bold";
-  color: #000;
-}
-@media (min-width: 1000px) {
-  .secondary-button span {
-    padding: 0 45px 0 0;
-    font-size: 20px;
-  }
-}
-.secondary-button span:hover::after {
-  transform: translate(5px, -50%);
-}
-@media (min-width: 1000px) {
-  .secondary-button span:hover::after {
-    transform: translate(10px, -50%);
-  }
-}
-.secondary-button span::after {
-  content: "";
-  width: 35px;
-  height: 16px;
-  position: absolute;
-  top: 50%;
-  right: 0;
-  transform: translate(0, -50%);
-  background: url("../../public/img/white-arrow.svg") no-repeat right center;
-  background-size: 20px;
-  display: block;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@media (min-width: 1000px) {
-  .secondary-button span::after {
-    background-size: auto;
-  }
-}
-
 .mobile-app-links {
   width: 100%;
   height: 55px;
@@ -98,10 +14,6 @@
     position: absolute;
     bottom: 45px;
     left: 45px;
-  }
-}
-@media (min-width: 1000px) {
-  .mobile-app-links {
     margin-top: 0;
   }
 }
@@ -163,6 +75,233 @@
   }
 }
 
+main #cards .card .card-left .buttons .order-button {
+  position: relative;
+  display: inline-block;
+  padding: 13px 20px;
+  height: auto;
+  font-family: "TT Commons Bold";
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+@media (min-width: 1000px) {
+  main #cards .card .card-left .buttons .order-button {
+    height: 60px;
+    padding: 15px 20px;
+  }
+}
+main #cards .card .card-left .buttons .order-button span {
+  position: relative;
+  z-index: 2;
+  font-size: 16px;
+  color: #fff;
+  text-align: center;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+@media (min-width: 1000px) {
+  main #cards .card .card-left .buttons .order-button span {
+    font-size: 20px;
+  }
+}
+main #cards .card .card-left .buttons .order-button::after {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0px;
+  left: 0px;
+  width: 100%;
+  height: 100%;
+  background-color: #000;
+  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
+  transform: skew(0);
+  border-radius: 6px;
+}
+@media (min-width: 1000px) {
+  main #cards .card .card-left .buttons .order-button::after {
+    border-radius: 0px;
+    transform: skew(-14deg, 0);
+    border-radius: none;
+  }
+}
+main #cards .card .card-left .buttons .order-button:hover span {
+  color: #000;
+}
+main #cards .card .card-left .buttons .order-button:hover::after {
+  background-color: #FFC628;
+}
+
+main #cards .card .card-left .buttons .link-button {
+  height: 60px;
+  display: inline-block;
+  padding: 15px 20px;
+  font-family: "TT Commons Bold";
+  color: #000;
+  cursor: pointer;
+}
+main #cards .card .card-left .buttons .link-button span {
+  position: relative;
+  display: inline-block;
+  font-size: 16px;
+  padding: 0 30px 0 0;
+  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+@media (min-width: 1000px) {
+  main #cards .card .card-left .buttons .link-button span {
+    font-size: 20px;
+    padding: 0 45px 0 0;
+  }
+}
+main #cards .card .card-left .buttons .link-button span::after {
+  content: "";
+  width: 35px;
+  height: 16px;
+  background: url("../../public/img/arrow-btn.svg") no-repeat right 6px;
+  background-size: 20px;
+  position: absolute;
+  top: 0;
+  right: 0;
+  transform: translate(0, -3px);
+  display: block;
+  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+@media (min-width: 1000px) {
+  main #cards .card .card-left .buttons .link-button span::after {
+    background: url("../../public/img/arrow-btn.svg") no-repeat right center;
+    position: absolute;
+    top: 0;
+    right: 0;
+    transform: translate(0, 3px);
+  }
+}
+main #cards .card .card-left .buttons .link-button:hover span::after {
+  transform: translate(5px, -3px);
+}
+@media (min-width: 1000px) {
+  main #cards .card .card-left .buttons .link-button:hover span::after {
+    transform: translate(5px, 3px);
+  }
+}
+
+.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
+  background-color: #FFC628;
+  color: #000;
+  border-radius: 10px;
+  padding: 13px 25px;
+  font-family: "TT Commons Bold";
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
+  background-color: #000;
+  color: #fff;
+}
+
+@keyframes fillBar {
+  0% {
+    width: 0%;
+  }
+  100% {
+    width: 100%;
+  }
+}
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "TT Commons Regular";
+}
+
+a {
+  text-decoration: none;
+  color: #000;
+}
+
+ul {
+  list-style: none;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
+}
+
+button {
+  background-color: transparent;
+  border: none;
+}
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
+}
+
+input, button, textarea {
+  font-family: "TT Commons Regular";
+}
+
+.container {
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+}
+.container .row {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+}
+.container .row.mobile-row {
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  .container .row.mobile-row {
+    flex-direction: row;
+  }
+}
+
+.col-2 {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .col-2 {
+    width: 50%;
+  }
+}
+
+.col-3 {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  .col-3 {
+    width: 33.333%;
+  }
+}
+
+@font-face {
+  font-family: "TT Commons Medium";
+  src: url("../fonts/subset-TTCommons-Medium.woff2");
+}
+@font-face {
+  font-family: "TT Commons Regular";
+  src: url("../fonts/subset-TTCommons-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TT Commons Bold";
+  src: url("../fonts/subset-TTCommons-DemiBold.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+@font-face {
+  font-family: "TTFirsNeue Medium";
+  src: url("../fonts/subset-TTFirsNeue-Medium.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
 .news {
   margin: 0 -15px;
 }
@@ -431,10 +570,7 @@
 }
 .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
   width: 100%;
-  padding: 13px 25px;
-  font-family: "TT Commons Medium";
   font-size: 18px;
-  border-radius: 10px;
 }
 @media (min-width: 1000px) {
   .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
@@ -442,235 +578,6 @@
   }
 }
 
-main #cards .card .card-left .buttons .order-button {
-  position: relative;
-  display: inline-block;
-  padding: 13px 20px;
-  height: auto;
-  font-family: "TT Commons Bold";
-  cursor: pointer;
-  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button {
-    height: 60px;
-    padding: 15px 20px;
-  }
-}
-main #cards .card .card-left .buttons .order-button span {
-  position: relative;
-  z-index: 2;
-  font-size: 16px;
-  color: #fff;
-  text-align: center;
-  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button span {
-    font-size: 20px;
-  }
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button span {
-    color: #000;
-  }
-}
-main #cards .card .card-left .buttons .order-button::after {
-  content: "";
-  display: block;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  width: 100%;
-  height: 100%;
-  background-color: #000;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-  transform: skew(0);
-  border-radius: 6px;
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button::after {
-    border-radius: 0px;
-    background-color: #FFC628;
-    transform: skew(-14deg, 0);
-    border-radius: none;
-  }
-}
-main #cards .card .card-left .buttons .order-button:hover span {
-  color: #000;
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button:hover span {
-    color: #fff;
-  }
-}
-main #cards .card .card-left .buttons .order-button:hover::after {
-  background-color: #FFC628;
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button:hover::after {
-    background-color: #000;
-  }
-}
-
-main #cards .card .card-left .buttons .link-button {
-  height: 60px;
-  display: inline-block;
-  padding: 15px 20px;
-  font-family: "TT Commons Bold";
-  color: #000;
-  cursor: pointer;
-}
-main #cards .card .card-left .buttons .link-button span {
-  position: relative;
-  display: inline-block;
-  font-size: 16px;
-  padding: 0 30px 0 0;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .link-button span {
-    font-size: 20px;
-    padding: 0 45px 0 0;
-  }
-}
-main #cards .card .card-left .buttons .link-button span::after {
-  content: "";
-  width: 35px;
-  height: 16px;
-  background: url("../../public/img/arrow-btn.svg") no-repeat right 6px;
-  background-size: 20px;
-  position: absolute;
-  top: 0;
-  right: 0;
-  transform: translate(0, -3px);
-  display: block;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .link-button span::after {
-    background: url("../../public/img/arrow-btn.svg") no-repeat right center;
-    position: absolute;
-    top: 0;
-    right: 0;
-    transform: translate(0, 3px);
-  }
-}
-main #cards .card .card-left .buttons .link-button:hover span::after {
-  transform: translate(5px, -3px);
-}
-@media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .link-button:hover span::after {
-    transform: translate(5px, 3px);
-  }
-}
-
-@keyframes fillBar {
-  0% {
-    width: 0%;
-  }
-  100% {
-    width: 100%;
-  }
-}
-* {
-  margin: 0;
-  padding: 0;
-  box-sizing: border-box;
-}
-
-body {
-  font-size: 16px;
-  line-height: 1.6;
-  font-family: "TT Commons Regular";
-}
-
-a {
-  text-decoration: none;
-  color: #000;
-}
-
-ul {
-  list-style: none;
-}
-
-h1, h2, h3, h4, h5, h6 {
-  font-weight: 400;
-}
-
-button {
-  background-color: transparent;
-  border: none;
-}
-
-input:focus, textarea:focus, select:focus {
-  outline: none;
-}
-
-input, button, textarea {
-  font-family: "TT Commons Regular";
-}
-
-.container {
-  max-width: 1140px;
-  margin: 0 auto;
-  padding: 0 20px;
-}
-.container .row {
-  width: 100%;
-  display: flex;
-  justify-content: space-between;
-  flex-wrap: wrap;
-}
-.container .row.mobile-row {
-  flex-direction: column;
-}
-@media (min-width: 1000px) {
-  .container .row.mobile-row {
-    flex-direction: row;
-  }
-}
-
-.col-2 {
-  width: 100%;
-}
-@media (min-width: 1000px) {
-  .col-2 {
-    width: 50%;
-  }
-}
-
-.col-3 {
-  width: 100%;
-}
-@media (min-width: 1000px) {
-  .col-3 {
-    width: 33.333%;
-  }
-}
-
-@font-face {
-  font-family: "TT Commons Medium";
-  src: url("../fonts/subset-TTCommons-Medium.woff2");
-}
-@font-face {
-  font-family: "TT Commons Regular";
-  src: url("../fonts/subset-TTCommons-Regular.woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TT Commons Bold";
-  src: url("../fonts/subset-TTCommons-DemiBold.woff2");
-  font-weight: normal;
-  font-style: normal;
-}
-@font-face {
-  font-family: "TTFirsNeue Medium";
-  src: url("../fonts/subset-TTFirsNeue-Medium.woff2");
-  font-weight: normal;
-  font-style: normal;
-}
 .mobile-app-promotion {
   background-color: #F8F8F8;
   background-repeat: no-repeat;
@@ -1246,7 +1153,7 @@ input, button, textarea {
   position: fixed;
   top: 0;
   left: 0;
-  z-index: 99999;
+  z-index: 9999999999;
   width: 100%;
   height: 100%;
   background-color: rgba(0, 0, 0, 0.5019607843);
@@ -1418,7 +1325,7 @@ header .header-top .ht-right ul li.location a::before {
   position: absolute;
   left: 0;
   top: -1px;
-  background: url("https://www.yelo.az/site/assets/files/1251/ht_location.svg") no-repeat left center;
+  background: url("../../public/img/ht_location.svg") no-repeat left center;
 }
 header .header-top .ht-right ul li.contact a {
   position: relative;
@@ -1438,7 +1345,7 @@ header .header-top .ht-right ul li.contact a::before {
   position: absolute;
   left: 0;
   top: -1px;
-  background: url("https://www.yelo.az/site/templates/style/img/ht_call.svg") no-repeat left center;
+  background: url("../../public/img/ht_call.svg") no-repeat left center;
 }
 header .header-top .ht-right ul li.search-icon {
   position: relative;
@@ -1488,7 +1395,7 @@ header .header-top .ht-right ul li.lang-selection .ls-wrapper .ls-header .defaul
   top: 50%;
   transform: translateY(-50%);
   right: 0;
-  background: url("https://www.yelo.az/site/templates/style/img/active_lang.svg") no-repeat left center;
+  background: url("../../public/img/active_lang.svg") no-repeat left center;
   width: 8px;
   height: 3px;
 }
@@ -1624,12 +1531,66 @@ header .header-bottom .navbar-right .login-button {
   position: relative;
   overflow: hidden;
   font-size: 18px;
+  background-color: #FFC628;
   height: 45px;
   width: 45px;
   border: 1px solid rgba(0, 0, 0, 0.1);
   border-radius: 30px;
   padding: 0;
   margin-left: 10px;
+  cursor: pointer;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+@media (min-width: 1000px) {
+  header .header-bottom .navbar-right .login-button {
+    width: 175px;
+    height: 55px;
+  }
+}
+header .header-bottom .navbar-right .login-button:hover {
+  background-color: #000;
+}
+header .header-bottom .navbar-right .login-button:hover .button-content img.black-img {
+  display: none;
+}
+header .header-bottom .navbar-right .login-button:hover .button-content img.white-img {
+  display: block;
+}
+header .header-bottom .navbar-right .login-button:hover .button-content span {
+  color: #fff;
+}
+header .header-bottom .navbar-right .login-button .button-content {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+header .header-bottom .navbar-right .login-button .button-content img {
+  transform: translateY(0);
+  margin-right: 0;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+header .header-bottom .navbar-right .login-button .button-content img.black-img {
+  display: block;
+}
+header .header-bottom .navbar-right .login-button .button-content img.white-img {
+  display: none;
+}
+@media (min-width: 1000px) {
+  header .header-bottom .navbar-right .login-button .button-content img {
+    transform: translateY(-2px);
+    margin-right: 12px;
+  }
+}
+header .header-bottom .navbar-right .login-button .button-content span {
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
+  color: #000;
+  display: none;
+}
+@media (min-width: 1000px) {
+  header .header-bottom .navbar-right .login-button .button-content span {
+    display: block;
+  }
 }
 header .header-bottom .navbar-right .login-button.scroll-btn {
   height: 45px;
@@ -1648,54 +1609,6 @@ header .header-bottom .navbar-right .login-button.scroll-btn .button-content img
 }
 header .header-bottom .navbar-right .login-button.scroll-btn .button-content span {
   display: none;
-}
-header .header-bottom .navbar-right .login-button:hover .button-content img.black-img {
-  display: none;
-}
-header .header-bottom .navbar-right .login-button:hover .button-content img.white-img {
-  display: block;
-}
-header .header-bottom .navbar-right .login-button:hover .button-content span {
-  color: #fff;
-}
-@media (min-width: 1000px) {
-  header .header-bottom .navbar-right .login-button {
-    width: 175px;
-    height: 55px;
-  }
-}
-header .header-bottom .navbar-right .login-button .button-content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header .header-bottom .navbar-right .login-button .button-content img {
-  transform: translateY(0);
-  margin-right: 0;
-  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
-}
-@media (min-width: 1000px) {
-  header .header-bottom .navbar-right .login-button .button-content img {
-    transform: translateY(-2px);
-    margin-right: 12px;
-  }
-}
-header .header-bottom .navbar-right .login-button .button-content img.black-img {
-  display: block;
-}
-header .header-bottom .navbar-right .login-button .button-content img.white-img {
-  display: none;
-}
-header .header-bottom .navbar-right .login-button .button-content span {
-  transition: all 0.1s cubic-bezier(0.52, 0.01, 0.16, 1);
-  color: #000;
-  display: none;
-}
-@media (min-width: 1000px) {
-  header .header-bottom .navbar-right .login-button .button-content span {
-    display: block;
-  }
 }
 header .header-bottom .navbar-right .hm-button {
   position: relative;
@@ -1719,7 +1632,7 @@ header .header-bottom .navbar-right .hm-button::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url("https://www.yelo.az/site/templates/style/img/menu_toggle.svg") no-repeat left center;
+  background: url("../../public/img/menu_toggle.svg") no-repeat left center;
   width: 15px;
   height: 12px;
   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
@@ -1730,7 +1643,7 @@ header .header-bottom .navbar-right .hm-button.close-active::after {
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
-  background: url("https://www.yelo.az/site/templates/style/img/menu_toggle_close.svg") no-repeat left center;
+  background: url("../../public/img/menu_close.svg") no-repeat left center;
   width: 15px;
   height: 12px;
 }
@@ -2201,12 +2114,9 @@ header .hamburger-menu .container .row .hm-right a img {
   border-top: 1px solid #ECECEC;
 }
 .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit {
-  font-family: "TT Commons Bold";
   width: 100%;
   height: 65px;
-  border-radius: 10px;
   font-size: 18px;
-  padding: 13px 25px;
 }
 @media (min-width: 992px) {
   .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit {
@@ -2625,6 +2535,7 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
 }
 main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span::after {
   content: "";
+  display: block;
   width: 35px;
   height: 16px;
   position: absolute;
@@ -2633,7 +2544,6 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
   transform: translate(0, -50%);
   background: url("../../public/img/arrow-btn.svg") no-repeat right center;
   background-size: 20px;
-  display: block;
   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
@@ -2814,6 +2724,9 @@ main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left h3
     font-size: 22px;
   }
 }
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .calculator-title {
+  color: rgba(0, 0, 0, 0.5019607843);
+}
 main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items {
   display: flex;
   align-items: center;
@@ -2830,20 +2743,18 @@ main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .c
 }
 main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items .item .item-title {
   display: block;
+  color: rgba(0, 0, 0, 0.5019607843);
 }
 main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .cl-items .item .item-text {
   font-size: 22px;
   font-family: "TT Commons Medium";
 }
-main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .main-button {
-  padding: 13px 25px;
-  font-family: "TT Commons Bold";
+main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button {
   width: 100%;
   font-size: 16px;
-  border-radius: 10px;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .main-button {
+  main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button {
     height: 55px;
     width: 200px;
     font-size: 18px;
@@ -2962,6 +2873,9 @@ main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-conten
   main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input {
     border-left: 1px solid #E7E7E7;
   }
+}
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input span {
+  color: rgba(0, 0, 0, 0.5019607843);
 }
 main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-inputs .cr-input:first-child {
   border-left: none;
@@ -3094,7 +3008,8 @@ main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-conten
     text-align: right;
   }
 }
-main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .calculator-title {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .title {
+  color: rgba(0, 0, 0, 0.5019607843);
   display: block;
 }
 main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .result {
@@ -3102,20 +3017,19 @@ main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-conten
   width: 33%;
   font-size: 26px;
   font-family: "TT Commons Medium";
+  color: #000;
 }
 main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .result-content .content-inner .result span {
   font-size: 18px;
+  color: #000;
 }
-main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .main-button {
+main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button {
   width: 100%;
-  padding: 13px 25px;
-  border-radius: 10px;
-  font-size: 18px;
-  font-family: "TT Commons Bold";
   height: 55px;
+  font-size: 18px;
 }
 @media (min-width: 1000px) {
-  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .main-button {
+  main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button {
     width: 210px;
   }
 }
@@ -3375,6 +3289,56 @@ main #news .news-wrapper .news-title h2 {
   font-weight: 400;
 }
 
+main #credit-info {
+  padding: 20px 0;
+}
+main #credit-info .partial-content {
+  display: inline;
+}
+main #credit-info .partial-content h2 {
+  font-family: "TT Commons Bold";
+  color: #9d9d9d;
+  font-size: 22.4px;
+}
+main #credit-info .partial-content p {
+  display: inline;
+  color: #9d9d9d;
+}
+main #credit-info .partial-content p a {
+  color: #0091FE;
+}
+main #credit-info .partial-content ul li {
+  color: #9d9d9d;
+}
+main #credit-info .partial-content table {
+  border: 1px solid #ECECEC;
+  margin: 20px 0;
+  border-radius: 10px;
+}
+main #credit-info .partial-content table tr td {
+  padding: 5px 10px;
+}
+main #credit-info .partial-content table tr td:first-child {
+  border-right: 1px solid #ECECEC;
+}
+main #credit-info .partial-content table tr td .table-title {
+  font-family: "TT Commons Medium";
+  color: #9d9d9d;
+  padding: 0 15px;
+}
+main #credit-info .partial-content table tr td .table-amount {
+  display: inline-block;
+  padding: 0 15px;
+}
+main #credit-info .more-button {
+  display: inline;
+  color: #0091FE;
+  cursor: pointer;
+}
+main #credit-info .more-button span {
+  color: #9d9d9d;
+}
+
 main #main-title {
   margin-bottom: 50px;
   padding-top: 120px;
@@ -3382,6 +3346,7 @@ main #main-title {
 main #main-title h1 {
   text-align: center;
   font-size: 20px;
+  margin-top: 30px;
   font-family: "TTFirsNeue Medium";
 }
 @media (min-width: 1000px) {
@@ -3535,14 +3500,15 @@ main #cards .card .card-right {
   }
 }
 main #cards .card .card-right .img {
-  transform: perspective(360px);
+  transform: perspective(630px);
 }
 main #cards .card .card-right .img .img-container {
   position: relative;
   width: 210px;
   height: 333px;
   border-radius: 15px;
-  transition: all 0.2s ease-out;
+  transform-style: preserve-3d;
+  transition: all 0.1s ease-out;
 }
 main #cards .card .card-right .img .img-container .card-img {
   position: relative;
@@ -3571,33 +3537,64 @@ main #cards .card .card-right .img .img-container .shadow-bg {
 main #card-info {
   padding: 20px 0;
 }
-main #card-info p {
+main #card-info .partial-content {
+  display: inline;
+}
+main #card-info .partial-content p {
+  display: inline;
   color: #9d9d9d;
 }
-main #card-info p a {
+main #card-info .partial-content p a {
   color: #0091FE;
 }
+main #card-info .more-button {
+  display: inline;
+  color: #0091FE;
+  cursor: pointer;
+}
+main #card-info .more-button span {
+  color: #9d9d9d;
+}
 
-#all-news {
+main #main-title {
   padding-top: 150px;
 }
-#all-news .main-title {
+main #main-title .main-title {
   text-align: center;
   margin: 0 auto 50px auto;
 }
-#all-news .main-title h1 {
+main #main-title .main-title h1 {
   font-size: 54px;
   font-family: "TTFirsNeue Medium";
   margin-bottom: 10px;
 }
-#all-news .main-title .main-button {
-  padding: 13px 25px;
-  font-family: "TT Commons Medium";
+main #main-title .main-title .add-news {
   font-size: 18px;
-  border-radius: 10px;
 }
-#all-news .news .news-item {
+main #all-news .news .row .news-item {
   padding: 0 15px 30px;
+}
+main #all-news .news .more-news-link {
+  text-align: center;
+  padding-top: 25px;
+}
+main #all-news .news .more-news-link a {
+  display: inline-block;
+  height: 48px;
+  font-family: "TT Commons Bold";
+  padding: 0 54px 0 20px;
+  border-radius: 6px;
+  border: 1px solid #0091FE;
+  line-height: 50px;
+  color: #0091FE;
+  background: url("../../public/img/blue_arrow.svg") no-repeat calc(100% - 12px) 50%;
+  background-color: #fff;
+  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
+}
+main #all-news .news .more-news-link a:hover {
+  color: #fff;
+  background: url("../../public/img/white-arrow.svg") no-repeat calc(100% - 12px) 50%;
+  background-color: #0091FE;
 }
 
 .news-modal {
@@ -3736,10 +3733,7 @@ main #card-info p a {
 }
 .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button {
   width: 100%;
-  padding: 13px 25px;
-  font-family: "TT Commons Medium";
   font-size: 18px;
-  border-radius: 10px;
 }
 @media (min-width: 1000px) {
   .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button {

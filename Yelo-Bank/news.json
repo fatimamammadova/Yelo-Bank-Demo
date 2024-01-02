@@ -364,21 +364,13 @@
       "id": 73,
       "title": "Yelo Bank-da 10-dan sərfəli kredit var!",
       "date": "2023-11-01T20:00:00.000Z"
-    },
-    {
-      "id": 74,
-      "title": "Yelo Bank-ın dəstəyi ilə tələbələr üçün “KaryeramIZ” forumu baş tutub",
-      "date": "2023-11-02T20:00:00.000Z"
-    },
-    {
-      "id": 75,
-      "title": "Yelo Bank-da növbəti sağlamlıq tədbiri",
-      "date": "2023-11-03T20:00:00.000Z"
     }
   ],
+
   "cards": [
     {
       "name": "Yelo Light",
+      "classname": "light",
       "description": "Yelo kart rahatlıq anlayışını dəyişəcək - rahat xərcləyəcəksən, rahat izləyəcəksən, qazanacaqsan, endirimlər alacaqsan.",
       "period": "1 il / 3 il",
       "currency": "AZN / USD / EUR",
@@ -388,6 +380,7 @@
     },
     {
       "name": "Yelo Premium",
+      "classname": "premium",
       "description": "Yelo kart rahatlıq anlayışını dəyişəcək - rahat xərcləyəcəksən, rahat izləyəcəksən, qazanacaqsan, endirimlər alacaqsan.",
       "period": "3 il",
       "currency": "AZN / USD / EUR",
@@ -397,6 +390,7 @@
     },
     {
       "name": "Yelo kredit/taksit kartı",
+      "classname": "taksit",
       "description": "Yelo kredit kartı ilə istədiyin ödənişləri his-sə-lə!",
       "period": "5 il",
       "currency": "AZN",
@@ -406,6 +400,7 @@
     },
     {
       "name": "Yelo Digital Card",
+      "classname": "digital",
       "description": "Rəqəmsal bank kartına sahib ol - üstəlik tamamilə pulsuz",
       "period": "1 il",
       "currency": "AZN",
@@ -413,5 +408,121 @@
       "typeText": "Pulsuz",
       "img": "../public/img/yelo_digital-210x333.webp"
     }
+  ],
+
+  "laons": [
+    {
+      "name": "İstehlak krediti",
+      "description": "Daha yaxşı həyat üçün",
+      "spec_title_1": "Məbləğ",
+      "spec_title_1_desc": "400 - 50 000 AZN",
+      "spec_title_2": "Müddət",
+      "spec_title_2_desc": "6 - 59 ay",
+      "spec_title_3": "İllik faiz dərəcəsi",
+      "spec_title_3_desc": "min. 9.9%",
+      "isOrder": true,
+      "hasAForm": true,
+      "form_class": "call_short_form",
+      "isTheCard": false,
+      "url": "javascript:void(0)",
+      "img": "../public/img/consumer-loan-pic.webp"
+    },
+    {
+      "name": "Biznes krediti",
+      "description": "",
+      "spec_title_1": "Məbləğ",
+      "spec_title_1_desc": "50 000 - 5 000 000 AZN",
+      "spec_title_2": "İllik faiz dərəcəsi",
+      "spec_title_2_desc": "AZN - min. 11% / USD min. 3%",
+      "spec_title_3": "Güzəşt müddəti",
+      "spec_title_3_desc": "18 ayadək",
+      "isOrder": true,
+      "hasAForm": false,
+      "form_class": "",
+      "isTheCard": false,
+      "url": "#",
+      "img": "../public/img/business-loan-pic-1.webp"
+    },
+    {
+      "name": "Onlayn kredit",
+      "description": "Banka gəlmədən, tam onlayn",
+      "spec_title_1": "İllik faiz dərəcəsi",
+      "spec_title_1_desc": "9.9%-dən başlayaraq",
+      "spec_title_2": "Məbləğ",
+      "spec_title_2_desc": "50 000 AZN-dək",
+      "spec_title_3": "Komissiya",
+      "spec_title_3_desc": "0.5 - 1.5 %",
+      "isOrder": true,
+      "hasAForm": true,
+      "form_class": "call_short_form",
+      "isTheCard": false,
+      "url": "javascript:void(0)",
+      "img": "../public/img/onlayn_kredit-sayt-fonsuz.webp"
+    },
+    {
+      "name": "Daşınmaz əmlak girov krediti",
+      "description": "Sərfəli şərtlər ilə istənilən daşınmaz əmlak ilə girovlu pul krediti",
+      "spec_title_1": "Məbləğ",
+      "spec_title_1_desc": "5 000 - 100 000 AZN",
+      "spec_title_2": "Müddət",
+      "spec_title_2_desc": "12 - 54 ay",
+      "spec_title_3": "İllik faiz dərəcəsi",
+      "spec_title_3_desc": "min. 14%",
+      "isOrder": true,
+      "hasAForm": false,
+      "form_class": "",
+      "isTheCard": false,
+      "url": "#",
+      "img": "../public/img/xx-2.webp"
+    },
+    {
+      "name": "Əmanət təminatlı kredit",
+      "description": "Əminliklə istifadən üçün",
+      "spec_title_1": "Müddət",
+      "spec_title_1_desc": "Əmanət müddətinin sonunadək",
+      "spec_title_2": "İllik faiz dərəcəsi",
+      "spec_title_2_desc": "Əmanətin faiz dərəcəsi + 3%",
+      "spec_title_3": "Komissiya",
+      "spec_title_3_desc": "Kassadan / Yelo ATM-lərindən nağdlaşdırma 1 %*",
+      "isOrder": false,
+      "hasAForm": false,
+      "form_class": "",
+      "isTheCard": false,
+      "url": "#",
+      "img": "../public/img/emanet-girovu-kredit-pic-fin.webp"
+    },
+    {
+      "name": "İpoteka krediti",
+      "description": "Arzuladığın ev üçün sərfəli kredit şərtləri",
+      "spec_title_1": "Məbləğ",
+      "spec_title_1_desc": "150 000 AZN-ə dək",
+      "spec_title_2": "Müddət",
+      "spec_title_2_desc": "360 aya qədər",
+      "spec_title_3": "İlkin ödəniş",
+      "spec_title_3_desc": "20%",
+      "isOrder": true,
+      "hasAForm": true,
+      "form_class": "call_long_form",
+      "isTheCard": false,
+      "url": "javascript:void(0)",
+      "img": "../public/img/daxili-ipoteka-pic.webp"
+    },
+    {
+      "name": "Yelo kredit/taksit kartı",
+      "description": "Yelo kredit kartı ilə istədiyin ödənişləri his-sə-lə!",
+      "spec_title_1": "Müddət",
+      "spec_title_1_desc": "5 il",
+      "spec_title_2": "Valyuta",
+      "spec_title_2_desc": "AZN",
+      "spec_title_3": "Güzəşt müddəti",
+      "spec_title_3_desc": "70 günədək",
+      "isOrder": true,
+      "hasAForm": false,
+      "form_class": "",
+      "isTheCard": true,
+      "url": "../cardOrder.html",
+      "img": "../public/img/yelo.webp"
+    }
   ]
+
 }

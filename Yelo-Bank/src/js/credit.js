@@ -3,7 +3,6 @@ const mobilePromotionTwo = document.querySelector(".mobile-promotion");
 const mainTitle = document.querySelector('#main-title')
 const headerTwo = document.querySelector("header");
 
-
 const partialContent = document.querySelector('.partial-content')
 const originalContent = partialContent.innerHTML
 const firstContent = originalContent.slice(0,740)
@@ -11,62 +10,70 @@ const secondContent = originalContent.slice(740)
 const moreBtn = document.querySelector('.more-button')
 
 
+
 window.addEventListener("resize", () => {
-  if (
-    document.documentElement.scrollWidth <= 576 ||
-    sessionStorage.getItem("status") == "hide"
-  ) {
-    headerTwo.style.top = "0";
-    mainTitle.style.paddingTop = "120px";
-  } else {
-    headerTwo.style.top = "120px";
-    mainTitle.style.paddingTop = "240px";
+    if (
+      document.documentElement.scrollWidth <= 576 ||
+      sessionStorage.getItem("status") == "hide"
+    ) {
+      headerTwo.style.top = "0";
+      mainTitle.style.paddingTop = "120px";
+    } else {
+      headerTwo.style.top = "120px";
+      mainTitle.style.paddingTop = "240px";
+      promotionTwo.classList.add("show");
+      mobilePromotionTwo.classList.add("show");
+    }
+  });
+  
+if (sessionStorage.getItem("status") !== "hide") {
     promotionTwo.classList.add("show");
     mobilePromotionTwo.classList.add("show");
-  }
-});
-
-if (sessionStorage.getItem("status") !== "hide") {
-  promotionTwo.classList.add("show");
-  mobilePromotionTwo.classList.add("show");
-  if (!(document.documentElement.scrollWidth <= 576)) {
-    console.log("1");
-    headerTwo.style.top = "120px";
-    mainTitle.style.paddingTop = "240px";
-  }
+    if (!(document.documentElement.scrollWidth <= 576)) {
+      console.log("1");
+      headerTwo.style.top = "120px";
+      mainTitle.style.paddingTop = "240px";
+    }
 }
+
+partialContent.innerHTML = firstContent
+moreBtn.addEventListener("click", () => {
+    partialContent.innerHTML = originalContent;
+    moreBtn.style.display = 'none';
+})
+
 
 async function getCards() {
     try {
-      const res = await fetch("http://localhost:3000/cards");
+      const res = await fetch("http://localhost:3000/laons");
       const data = await res.json();
-      data.forEach(card => {
+      data.forEach(item => {
 
         const cardContainer = document.querySelector('.cards')
 
         cardContainer.innerHTML += `<div class="card" style="background-image: url('./img/yelo_block.svg');">
         <div class="card-left">
             <h2 class="card-title">
-                ${card.name}
+                ${item.name}
             </h2>
             <p>
-                ${card.description}
+                ${item.description}
             </p>
             
             <div class="card-about">
                 <div class="about-col">
-                    <span>Müddət</span>
-                    <p> ${card.period}</p>
+                    <span>${item.spec_title_1}</span>
+                    <p>${item.spec_title_1_desc}</p>
                 </div>
 
                 <div class="about-col">
-                    <span>Valyuta</span>
-                    <p> ${card.currency}</p>
+                <span>${item.spec_title_2}</span>
+                    <p>${item.spec_title_2_desc}</p>
                 </div>
 
                 <div class="about-col">
-                    <span>${card.type}</span>
-                    <p>${card.typeText}</p>
+                <span>${item.spec_title_3}</span>
+                    <p>${item.spec_title_3_desc}</p>
                 </div>
             </div>
 
@@ -88,8 +95,8 @@ async function getCards() {
 
         <div class="card-right">
             <div class="img">
-                <div class="img-container ${card.classname}">
-                    <div class="card-img" style="background-image: url('${card.img}');">
+                <div class="img-container">
+                    <div class="card-img" style="background-image: url('${item.img}');">
                     <div class="gradient-bg"></div>
                     </div>
                     
@@ -100,10 +107,7 @@ async function getCards() {
         </div>`
     })
 
-    const light = document.querySelector(".light");
-    const premium = document.querySelector(".premium");
     const taksit = document.querySelector(".taksit");
-    const digital = document.querySelector(".digital");
 
     function handleMouseMove(event) {
         const boundingRect = this.getBoundingClientRect();
@@ -128,27 +132,12 @@ async function getCards() {
         this.querySelector('.shadow-bg').style.boxShadow = `0 8px 30px rgba(14,21,47,0.6)`
       }
     
-      light.addEventListener("mousemove", handleMouseMove);
-      light.addEventListener("mouseleave", resetTilt);
-    
-      premium.addEventListener("mousemove", handleMouseMove);
-      premium.addEventListener("mouseleave", resetTilt);
-    
       taksit.addEventListener("mousemove", handleMouseMove);
       taksit.addEventListener("mouseleave", resetTilt);
 
-      digital.addEventListener("mousemove", handleMouseMove);
-      digital.addEventListener("mouseleave", resetTilt);
 
     } catch (error) {
       console.error("Error fetching or processing news:", error);
     }
 }
 getCards();
-
-
-partialContent.innerHTML = firstContent
-moreBtn.addEventListener("click", () => {
-    partialContent.innerHTML = originalContent;
-    moreBtn.style.display = 'none';
-})

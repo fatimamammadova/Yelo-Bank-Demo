@@ -1,0 +1,56 @@
+main {
+
+    #credit-info {
+        padding: 20px 0;
+        .partial-content {
+            display: inline;
+            h2 {
+                font-family: "TT Commons Bold";
+                color: $secondary-text-color;
+                font-size: 22.4px;
+            }
+            p { 
+                display: inline;
+                color: $secondary-text-color;
+                a   {
+                    color: $blue-text-color;
+                }
+            }
+            ul {
+                li {
+                    color: $secondary-text-color;
+                }
+            }
+            table {
+                border: 1px solid $main-border-color;
+                margin: 20px 0;
+                border-radius: 10px;
+                tr {
+                    td {
+                        padding: 5px 10px;
+                        &:first-child {
+                            border-right: 1px solid $main-border-color;
+                        }
+                        .table-title {
+                            font-family: "TT Commons Medium";
+                            color: $secondary-text-color; 
+                            padding: 0 15px;  
+                        }
+                        .table-amount {
+                            display: inline-block;
+                            padding: 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .more-button {
+            display: inline;
+            color: $blue-text-color;
+            cursor: pointer;
+            span {
+                color: $secondary-text-color;
+            }
+        }
+    }
+}

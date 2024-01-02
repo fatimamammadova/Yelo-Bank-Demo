@@ -2,14 +2,14 @@
     position: fixed;
     top: 0;
     left: 0;
-    z-index: 99999;
+    z-index: 9999999999;
     width: 100%;
     height: 100%;
     background-color: $main-text-color;
     opacity: 0;
     visibility: hidden;
     transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-    &.show{
+    &.show {
         opacity: 1;
         visibility: visible;
         .search-inner{
@@ -163,7 +163,7 @@ header {
                                 position: absolute;
                                 left: 0;
                                 top: -1px;
-                                background: url("https://www.yelo.az/site/assets/files/1251/ht_location.svg") no-repeat left center;
+                                background: url("../../public/img/ht_location.svg") no-repeat left center;
                             }
                         }
                     }
@@ -183,7 +183,7 @@ header {
                                 position: absolute;
                                 left: 0;
                                 top: -1px;
-                                background: url("https://www.yelo.az/site/templates/style/img/ht_call.svg") no-repeat left center;
+                                background: url("../../public/img/ht_call.svg") no-repeat left center;
                             }
                         }
                     }
@@ -224,7 +224,7 @@ header {
                                         top: 50%;
                                         transform: translateY(-50%);
                                         right: 0;
-                                        background: url("https://www.yelo.az/site/templates/style/img/active_lang.svg") no-repeat left center;
+                                        background: url("../../public/img/active_lang.svg") no-repeat left center;
                                         width: 8px;
                                         height: 3px;
                                     }
@@ -352,6 +352,65 @@ header {
                 }
             }
             .login-button {
+                position: relative;
+                overflow: hidden;
+                font-size: 18px;
+                background-color: $main-color;
+                height: 45px;
+                width: 45px;
+                border: 1px solid rgba(0,0,0,0.1);
+                border-radius: 30px;
+                padding: 0;
+                margin-left: 10px;
+                cursor: pointer;
+                transition: all .3s cubic-bezier(.52, .01, .16, 1); 
+                @media (min-width: 1000px) {
+                    width: 175px;
+                    height: 55px;
+                }
+                &:hover {
+                    background-color: $secondary-color;
+                    .button-content {
+                        img {
+                            &.black-img {
+                                display: none;
+                            }
+                            &.white-img {
+                                display: block;
+                            }
+                        }
+                        span {
+                            color: $white-color;
+                        }
+                    }
+                }
+                .button-content {
+                    width: 100%;
+                    @include Flex(center,center);
+                    img {   
+                        transform: translateY(0);
+                        margin-right: 0;
+                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                        &.black-img {
+                            display: block;
+                        }
+                        &.white-img {
+                            display: none;
+                        }
+                        @media (min-width: 1000px) {
+                            transform: translateY(-2px);
+                            margin-right: 12px;
+                        }
+                    }
+                    span {
+                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                        color: $secondary-color;
+                        display: none;
+                        @media (min-width: 1000px) {
+                            display: block;
+                        }
+                    }
+                }
                 &.scroll-btn {
                     height: 45px;
                     width: 45px;
@@ -367,61 +426,6 @@ header {
                         }
                         span {
                             display: none;
-                        }
-                    }
-                }
-                position: relative;
-                overflow: hidden;
-                font-size: 18px;
-                height: 45px;
-                width: 45px;
-                border: 1px solid rgba(0,0,0,0.1);
-                border-radius: 30px;
-                padding: 0;
-                margin-left: 10px;
-                &:hover {
-                    .button-content {
-                        img {
-                            &.black-img {
-                                display: none;
-                            }
-                            &.white-img {
-                                display: block;
-                            }
-                        }
-                        span {
-                            color: $white-color;
-                        }
-                    }
-                }
-                @media (min-width: 1000px) {
-                    width: 175px;
-                    height: 55px;
-                }
-                .button-content {
-                    width: 100%;
-                    @include Flex(center,center);
-                    img {   
-                        @media (min-width: 1000px) {
-                            transform: translateY(-2px);
-                            margin-right: 12px;
-                        }
-                        transform: translateY(0);
-                        margin-right: 0;
-                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
-                        &.black-img {
-                            display: block;
-                        }
-                        &.white-img {
-                            display: none;
-                        }
-                    }
-                    span {
-                        transition: all .1s cubic-bezier(.52, .01, .16, 1);
-                        color: $secondary-color;
-                        display: none;
-                        @media (min-width: 1000px) {
-                            display: block;
                         }
                     }
                 }
@@ -442,7 +446,7 @@ header {
                 &::after {
                     content: "";
                     @include Position(absolute,50%,50%,translate(-50%,-50%));
-                    background: url("https://www.yelo.az/site/templates/style/img/menu_toggle.svg") no-repeat left center;
+                    background: url("../../public/img/menu_toggle.svg") no-repeat left center;
                     width: 15px;
                     height: 12px;
                     transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
@@ -451,7 +455,7 @@ header {
                     &::after {
                         content: "";
                         @include Position(absolute,50%,50%,translate(-50%,-50%));
-                        background: url("https://www.yelo.az/site/templates/style/img/menu_toggle_close.svg") no-repeat left center;
+                        background: url("../../public/img/menu_close.svg") no-repeat left center;
                         width: 15px;
                         height: 12px;
                     }
@@ -489,7 +493,6 @@ header {
             @media (min-width: 1024px) {
                 flex-direction: row;
             }
-
             .mobile-buttons {
                 width: 100%;
                 display: block;
@@ -606,6 +609,7 @@ header {
     }
 
 }
+
 .bg-color {
     position: fixed;
     top: 0;
@@ -894,15 +898,13 @@ header {
                                 padding: 30px 0;
                                 border-top: 1px solid $main-border-color;
                                 .message-submit {
-                                    font-family: "TT Commons Bold";
                                     width: 100%;
+                                    height: 65px;
+                                    font-size: 18px;
+                                    @extend %tertiary-button;
                                     @media (min-width: 992px) {
                                         width: 33.333%;
                                     }
-                                    height: 65px;
-                                    border-radius: 10px;
-                                    font-size: 18px;
-                                    padding: 13px 25px;
                                 }
                             }
                         }

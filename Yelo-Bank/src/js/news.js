@@ -27,13 +27,51 @@ const editInput = document.querySelector('.editinput')
 const addButton = document.querySelector('.add-button')
 const moreNewsBtn = document.querySelector('.more-news-button')
 const saveBtn = document.querySelector('.edit-news-button')
+const promotion = document.querySelector(".mobile-app-promotion");
+const mobilePromotion = document.querySelector(".mobile-promotion");
+const mainTitle = document.querySelector('#main-title')
+const CloseBtn = document.querySelector(".close-img");
 
 let windowScroll = window.scrollY
 let number = 15
 let initalNumber = 0
 let dataLength,updateId,updateTitle,updateDate;
-
 let isPost = false
+
+
+CloseBtn.addEventListener("click", () => {
+  sessionStorage.setItem("status", "hide");
+  header.style.top = "0";
+  mainTitle.style.paddingTop = "120px";
+  mobilePromotion.classList.remove("show");
+  promotion.classList.remove("show");
+});
+
+window.addEventListener("resize", () => {
+  if (
+    document.documentElement.scrollWidth <= 576 ||
+    sessionStorage.getItem("status") == "hide"
+  ) {
+    header.style.top = "0";
+    mainTitle.style.paddingTop = "120px";
+  } else {
+    header.style.top = "120px";
+    mainTitle.style.paddingTop = "240px";
+    promotion.classList.add("show");
+    mobilePromotion.classList.add("show");
+  }
+});
+
+
+if (sessionStorage.getItem("status") !== "hide") {
+  promotion.classList.add("show");
+  mobilePromotion.classList.add("show");
+  if (!(document.documentElement.scrollWidth <= 576)) {
+    console.log("1");
+    header.style.top = "120px";
+    mainTitle.style.paddingTop = "240px";
+  }
+}
 
 languages.forEach((item) => {
   const langText = item.querySelector(".lang-text");
@@ -346,4 +384,3 @@ moreNewsBtn.addEventListener("click", () => {
   }
 
 })
-
