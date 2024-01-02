@@ -75,7 +75,7 @@
   }
 }
 
-main #cards .card .card-left .buttons .order-button {
+main #cards .card .card-left .buttons .order-button, main #laons .laon .laon-left .buttons .order-button {
   position: relative;
   display: inline-block;
   padding: 13px 20px;
@@ -85,12 +85,12 @@ main #cards .card .card-left .buttons .order-button {
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button {
+  main #cards .card .card-left .buttons .order-button, main #laons .laon .laon-left .buttons .order-button {
     height: 60px;
     padding: 15px 20px;
   }
 }
-main #cards .card .card-left .buttons .order-button span {
+main #cards .card .card-left .buttons .order-button span, main #laons .laon .laon-left .buttons .order-button span {
   position: relative;
   z-index: 2;
   font-size: 16px;
@@ -99,11 +99,11 @@ main #cards .card .card-left .buttons .order-button span {
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button span {
+  main #cards .card .card-left .buttons .order-button span, main #laons .laon .laon-left .buttons .order-button span {
     font-size: 20px;
   }
 }
-main #cards .card .card-left .buttons .order-button::after {
+main #cards .card .card-left .buttons .order-button::after, main #laons .laon .laon-left .buttons .order-button::after {
   content: "";
   display: block;
   position: absolute;
@@ -117,20 +117,20 @@ main #cards .card .card-left .buttons .order-button::after {
   border-radius: 6px;
 }
 @media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .order-button::after {
+  main #cards .card .card-left .buttons .order-button::after, main #laons .laon .laon-left .buttons .order-button::after {
     border-radius: 0px;
     transform: skew(-14deg, 0);
     border-radius: none;
   }
 }
-main #cards .card .card-left .buttons .order-button:hover span {
+main #cards .card .card-left .buttons .order-button:hover span, main #laons .laon .laon-left .buttons .order-button:hover span {
   color: #000;
 }
-main #cards .card .card-left .buttons .order-button:hover::after {
+main #cards .card .card-left .buttons .order-button:hover::after, main #laons .laon .laon-left .buttons .order-button:hover::after {
   background-color: #FFC628;
 }
 
-main #cards .card .card-left .buttons .link-button {
+main #cards .card .card-left .buttons .link-button, main #laons .laon .laon-left .buttons .link-button {
   height: 60px;
   display: inline-block;
   padding: 15px 20px;
@@ -138,7 +138,7 @@ main #cards .card .card-left .buttons .link-button {
   color: #000;
   cursor: pointer;
 }
-main #cards .card .card-left .buttons .link-button span {
+main #cards .card .card-left .buttons .link-button span, main #laons .laon .laon-left .buttons .link-button span {
   position: relative;
   display: inline-block;
   font-size: 16px;
@@ -146,12 +146,12 @@ main #cards .card .card-left .buttons .link-button span {
   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .link-button span {
+  main #cards .card .card-left .buttons .link-button span, main #laons .laon .laon-left .buttons .link-button span {
     font-size: 20px;
     padding: 0 45px 0 0;
   }
 }
-main #cards .card .card-left .buttons .link-button span::after {
+main #cards .card .card-left .buttons .link-button span::after, main #laons .laon .laon-left .buttons .link-button span::after {
   content: "";
   width: 35px;
   height: 16px;
@@ -165,7 +165,7 @@ main #cards .card .card-left .buttons .link-button span::after {
   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .link-button span::after {
+  main #cards .card .card-left .buttons .link-button span::after, main #laons .laon .laon-left .buttons .link-button span::after {
     background: url("../../public/img/arrow-btn.svg") no-repeat right center;
     position: absolute;
     top: 0;
@@ -173,16 +173,16 @@ main #cards .card .card-left .buttons .link-button span::after {
     transform: translate(0, 3px);
   }
 }
-main #cards .card .card-left .buttons .link-button:hover span::after {
+main #cards .card .card-left .buttons .link-button:hover span::after, main #laons .laon .laon-left .buttons .link-button:hover span::after {
   transform: translate(5px, -3px);
 }
 @media (min-width: 1000px) {
-  main #cards .card .card-left .buttons .link-button:hover span::after {
+  main #cards .card .card-left .buttons .link-button:hover span::after, main #laons .laon .laon-left .buttons .link-button:hover span::after {
     transform: translate(5px, 3px);
   }
 }
 
-.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
+.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .main-title .add-news, main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .order-button, main #laons .short-form .laon-form .form-bottom .fb-inner .order-button, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
   background-color: #FFC628;
   color: #000;
   border-radius: 10px;
@@ -191,7 +191,7 @@ main #cards .card .card-left .buttons .link-button:hover span::after {
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
+.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .main-title .add-news:hover, main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .laon-form .form-bottom .fb-inner .order-button:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
   background-color: #000;
   color: #fff;
 }
@@ -3289,6 +3289,719 @@ main #news .news-wrapper .news-title h2 {
   font-weight: 400;
 }
 
+main #laons {
+  padding: 0 0 40px 0;
+}
+main #laons .laon {
+  position: relative;
+  border-radius: 10px;
+  border: 1px solid #ECECEC;
+  background: no-repeat 100px/cover;
+  background-color: #f1f1f1;
+  overflow: hidden;
+  margin: 0 0 45px 0;
+}
+@media (min-width: 1000px) {
+  main #laons .laon {
+    background: no-repeat 117%/contain;
+    background-color: #fff;
+  }
+}
+main #laons .laon .laon-left {
+  background-color: #fff;
+  margin-top: 160px;
+  padding: 20px;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left {
+    margin-top: 0;
+    padding: 45px 40px 45px 60px;
+    width: calc(100% - 475px);
+    background-color: transparent;
+  }
+}
+main #laons .laon .laon-left .laon-title {
+  padding: 0 0 10px;
+  font-family: "TTFirsNeue Medium";
+  font-size: 20px;
+  line-height: 25px;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left .laon-title {
+    font-size: 34px;
+    line-height: 40px;
+  }
+}
+main #laons .laon .laon-left p {
+  font-size: 16px;
+  line-height: 20px;
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left p {
+    font-size: 18px;
+  }
+}
+main #laons .laon .laon-left .laon-about {
+  padding: 20px 0;
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left .laon-about {
+    padding: 40px 0 50px 0;
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+}
+main #laons .laon .laon-left .laon-about .about-col {
+  margin: 0 0 10px 0;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left .laon-about .about-col {
+    margin: 0 20px 0 0;
+  }
+}
+main #laons .laon .laon-left .laon-about .about-col span {
+  font-size: 16px;
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+main #laons .laon .laon-left .laon-about .about-col p {
+  color: #000;
+  font-family: "TT Commons Medium";
+  line-height: 26px;
+  font-size: 18px;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left .laon-about .about-col p {
+    font-size: 21px;
+  }
+}
+main #laons .laon .laon-left .buttons {
+  display: flex;
+  justify-content: flex-start;
+  flex-direction: column;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left .buttons {
+    display: flex;
+    justify-content: flex-start;
+    flex-direction: row;
+  }
+}
+main #laons .laon .laon-left .buttons .order-button {
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-left .buttons .order-button {
+    width: 225px;
+  }
+}
+main #laons .laon .laon-left .buttons .link-button {
+  margin: 0 0 0 20px;
+  opacity: 0.5;
+  transition: all 0.2s ease-out;
+}
+main #laons .laon .laon-left .buttons .link-button:hover {
+  opacity: 1;
+}
+main #laons .laon .right-img {
+  width: 100%;
+  height: 170px;
+  position: absolute;
+  top: -10px;
+  right: 0px;
+  bottom: auto;
+  background-repeat: no-repeat;
+  background-size: contain;
+  background-position: bottom right;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .right-img {
+    width: 40%;
+    height: 110%;
+    top: auto;
+    bottom: 0px;
+    background-position: bottom center;
+  }
+}
+main #laons .laon .laon-right {
+  display: none;
+  position: absolute;
+  top: 20px;
+  right: 135px;
+}
+@media (min-width: 1000px) {
+  main #laons .laon .laon-right {
+    display: block;
+  }
+}
+main #laons .laon .laon-right .img {
+  transform: perspective(630px);
+}
+main #laons .laon .laon-right .img .img-container {
+  position: relative;
+  width: 210px;
+  height: 333px;
+  border-radius: 15px;
+  transform-style: preserve-3d;
+  transition: all 0.1s ease-out;
+}
+main #laons .laon .laon-right .img .img-container .laon-img {
+  position: relative;
+  z-index: 2;
+  width: 100%;
+  height: 100%;
+  background: no-repeat 117%/contain;
+}
+main #laons .laon .laon-right .img .img-container .laon-img .gradient-bg {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: linear-gradient(135deg, rgba(255, 255, 255, 0.25) 0%, rgba(255, 255, 255, 0) 60%);
+}
+main #laons .laon .laon-right .img .img-container .shadow-bg {
+  position: absolute;
+  top: 5%;
+  left: 5%;
+  width: 90%;
+  height: 90%;
+  transition: all 0.2s ease-out;
+  box-shadow: 0 8px 30px rgba(14, 21, 47, 0.6);
+}
+main #laons .short-form {
+  display: none;
+  margin: 0 0 45px;
+}
+main #laons .short-form.active {
+  display: block;
+}
+main #laons .short-form .laon-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+main #laons .short-form .laon-form .form-inputs:first-child {
+  border: 1px solid #E7E7E7;
+  border-radius: 10px 10px 10px 0;
+  margin-bottom: 40px;
+}
+main #laons .short-form .laon-form .form-inputs:nth-child(2) {
+  border: 1px solid #E7E7E7;
+  border-radius: 10px;
+  margin-bottom: 20px;
+}
+main #laons .short-form .laon-form .form-inputs:nth-child(3) {
+  margin-bottom: 40px;
+}
+main #laons .short-form .laon-form .form-inputs.line-input .form-input:first-child {
+  margin: 0 0 15px 0;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs.line-input .form-input:first-child {
+    padding: 0 10px 0 0;
+    margin: 0;
+  }
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs.line-input .form-input:last-child {
+    padding: 0 0 0 10px;
+  }
+}
+main #laons .short-form .laon-form .form-inputs .form-input {
+  position: relative;
+  width: 100%;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner {
+  width: 100%;
+  position: relative;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner.border-input {
+  border-right: none;
+  border-bottom: 1px solid #E7E7E7;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs .form-input .input-inner.border-input {
+    border-right: 1px solid #E7E7E7;
+    border-bottom: none;
+  }
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner.padding-input {
+  padding: 10px;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner span {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  line-height: 15px;
+  display: block;
+  margin: 0 0 4px 0;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .number-range {
+  width: 100%;
+  font-size: 26px;
+  font-family: "TT Commons Medium";
+  border: none;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .number-range::-webkit-outer-spin-button, main #laons .short-form .laon-form .form-inputs .form-input .input-inner .number-range::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .title-exponent {
+  position: absolute;
+  right: 17px;
+  bottom: 10px;
+  line-height: 15px;
+  font-size: 15px;
+  font-family: "TT Commons Bold";
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.1);
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--val) - var(--min))/var(--range));
+  --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em));
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range {
+    background-color: transparent;
+  }
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range::-webkit-slider-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+  border: 5px solid #FFC628;
+  margin: -10px 0 0 0;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background-color: #FFC628;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  cursor: pointer;
+  -moz-appearance: none;
+       appearance: none;
+  border: 3px solid #FFC628;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .range::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .user-info {
+  width: 100%;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  height: 55px;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs .form-input .input-inner .user-info {
+    height: 65px;
+  }
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-inner .line-info {
+  width: 100%;
+  height: 65px;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #E7E7E7;
+  height: 55px;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-inputs .form-input .input-inner .line-info {
+    height: 65px;
+  }
+}
+main #laons .short-form .laon-form .form-inputs .form-input .input-error {
+  display: none;
+  position: absolute;
+  background: #ff7777;
+  color: white;
+  border-radius: 5px;
+  z-index: 2;
+  padding: 3px 10px 0;
+  left: 20px;
+  bottom: -10px;
+  font-size: 14px;
+}
+main #laons .short-form .laon-form .form-bottom {
+  border-top: 1px solid #ECECEC;
+  padding: 30px 0;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-bottom .fb-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+main #laons .short-form .laon-form .form-bottom .fb-inner .form-info {
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-bottom .fb-inner .form-info {
+    max-width: 360px;
+    margin-bottom: 0;
+  }
+}
+main #laons .short-form .laon-form .form-bottom .fb-inner .form-info p {
+  font-size: 15px;
+  color: #000;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url("../../public/img/shield_gray_icon.svg");
+  padding: 0 0 0 50px;
+  height: 50px;
+}
+main #laons .short-form .laon-form .form-bottom .fb-inner .order-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+@media (min-width: 1000px) {
+  main #laons .short-form .laon-form .form-bottom .fb-inner .order-button {
+    height: 65px;
+    font-size: 18px;
+    width: 33.333%;
+  }
+}
+main #laons .long-form {
+  display: none;
+  margin: 0 0 45px;
+}
+main #laons .long-form.active {
+  display: block;
+}
+main #laons .long-form .form-inner {
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+  position: relative;
+  text-align: center;
+  padding: 30px 10px 0;
+}
+main #laons .long-form .form-inner h2 {
+  font-family: "TT Commons Bold";
+  font-size: 25px;
+  margin: 0 0 25px 0;
+}
+main #laons .long-form .form-inner .laon-form {
+  max-width: 600px;
+  margin: 0 auto;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs {
+  margin-bottom: 20px;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs:nth-child(2) {
+  margin-bottom: 0;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs.form-input-line {
+  border: 1px solid #E7E7E7;
+  border-radius: 10px;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs.line-input .form-input:first-child {
+  margin: 0 0 15px 0;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs.line-input .form-input:first-child {
+    padding: 0 10px 0 0;
+    margin: 0;
+  }
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs.line-input .form-input:last-child {
+    padding: 0 0 0 10px;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input {
+  position: relative;
+  width: 100%;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs .form-input.form-inputs-tripl {
+    width: 33.333%;
+    height: 70px;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner {
+  width: 100%;
+  position: relative;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner.border-input {
+  border-right: none;
+  border-bottom: 1px solid #E7E7E7;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner.border-input {
+    border-right: 1px solid #E7E7E7;
+    border-bottom: none;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner.padding-input {
+  padding: 10px;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner span {
+  color: rgba(0, 0, 0, 0.5);
+  font-size: 15px;
+  line-height: 15px;
+  display: block;
+  text-align: left;
+  margin: 0 0 4px 0;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .number-range {
+  width: 100%;
+  font-size: 26px;
+  font-family: "TT Commons Medium";
+  border: none;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .number-range::-webkit-outer-spin-button, main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .number-range::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+          appearance: none;
+  margin: 0;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .title-exponent {
+  position: absolute;
+  right: 17px;
+  bottom: 10px;
+  line-height: 15px;
+  font-size: 15px;
+  font-family: "TT Commons Bold";
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  position: absolute;
+  left: 0px;
+  bottom: 0px;
+  background-color: rgba(0, 0, 0, 0.1);
+  --range: calc(var(--max) - var(--min));
+  --ratio: calc((var(--val) - var(--min))/var(--range));
+  --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em));
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range {
+    background-color: transparent;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range::-webkit-slider-runnable-track {
+  width: 100%;
+  height: 4px;
+  cursor: pointer;
+  background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range::-webkit-slider-thumb {
+  height: 24px;
+  width: 24px;
+  border-radius: 50%;
+  background-color: #ffffff;
+  cursor: pointer;
+  -webkit-appearance: none;
+          appearance: none;
+  border: 5px solid #FFC628;
+  margin: -10px 0 0 0;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range::-moz-range-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+  background-color: #FFC628;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range::-moz-range-thumb {
+  height: 20px;
+  width: 20px;
+  border-radius: 100%;
+  background-color: #ffffff;
+  cursor: pointer;
+  -moz-appearance: none;
+       appearance: none;
+  border: 3px solid #FFC628;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .range::-ms-track {
+  width: 100%;
+  height: 3px;
+  cursor: pointer;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .user-info {
+  width: 100%;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  height: 55px;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .user-info {
+    height: 65px;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .line-info {
+  width: 100%;
+  height: 65px;
+  font-size: 18px;
+  box-sizing: border-box;
+  padding: 0 20px;
+  border: none;
+  border-radius: 10px;
+  border: 1px solid #E7E7E7;
+  height: 55px;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-inner .line-info {
+    height: 65px;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input .input-error {
+  display: none;
+  position: absolute;
+  background: #ff7777;
+  color: white;
+  border-radius: 5px;
+  z-index: 2;
+  padding: 3px 10px 0;
+  left: 20px;
+  bottom: -10px;
+  font-size: 14px;
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input #form-select {
+  font-family: "TT Commons Regular";
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+main #laons .long-form .form-inner .laon-form .form-inputs .form-input #form-select.line-info {
+  padding: 0 10px;
+}
+main #laons .long-form .form-inner .laon-form .credit-result {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  padding: 30px 0;
+}
+main #laons .long-form .form-inner .laon-form .credit-result .result-item:first-child {
+  width: 33.3333%;
+  text-align: right;
+  padding: 0 20px 0 0;
+  border-right: 1px solid #E7E7E7;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .credit-result .result-item:first-child {
+    width: 50%;
+  }
+}
+main #laons .long-form .form-inner .laon-form .credit-result .result-item:nth-child(2) {
+  padding-left: 20px;
+  width: 33.3333%;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .credit-result .result-item:nth-child(2) {
+    width: 25%;
+  }
+}
+main #laons .long-form .form-inner .laon-form .credit-result .result-item:last-child {
+  padding-left: 20px;
+  border-left: 1px solid #E7E7E7;
+  margin-left: 12px;
+  text-align: left;
+  padding: 0 0 0 20px;
+  width: 33.3333%;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .credit-result .result-item:last-child {
+    width: 50%;
+  }
+}
+main #laons .long-form .form-inner .laon-form .credit-result .result-item p {
+  color: rgba(0, 0, 0, 0.5019607843);
+}
+main #laons .long-form .form-inner .laon-form .form-bottom {
+  border-top: 1px solid #ECECEC;
+  padding: 30px 0;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner {
+    display: flex;
+    justify-content: space-between;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .form-info {
+  width: 100%;
+  margin-bottom: 20px;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .form-info {
+    max-width: 360px;
+    margin-bottom: 0;
+  }
+}
+main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .form-info p {
+  text-align: left;
+  font-size: 15px;
+  color: #000;
+  background-repeat: no-repeat;
+  background-position: 0 0;
+  background-image: url("../../public/img/shield_gray_icon.svg");
+  padding: 0 0 0 50px;
+  height: 50px;
+}
+main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .order-button {
+  width: 100%;
+  height: 50px;
+  font-size: 16px;
+}
+@media (min-width: 1000px) {
+  main #laons .long-form .form-inner .laon-form .form-bottom .fb-inner .order-button {
+    height: 65px;
+    font-size: 18px;
+    width: 33.333%;
+  }
+}
 main #credit-info {
   padding: 20px 0;
 }
