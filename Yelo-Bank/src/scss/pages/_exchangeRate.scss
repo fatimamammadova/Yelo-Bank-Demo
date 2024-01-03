@@ -1,0 +1,66 @@
+main {
+
+    #main-title {
+        text-align: center;
+        .filter-cash {
+            display: inline-block;
+            height: 55px;
+            border: 1px solid #ECECEC;
+            border-radius: 10px;
+            white-space: nowrap;
+            margin: 10px 0 0 0;
+            .filter-inner {
+                width: 100%;
+                display: flex;
+                .cash-button {
+                    height: 55px;
+                    display: block;
+                    font-family: "TT Commons Bold";
+                    font-size: 18px;
+                    width: 100%;
+                    padding: 15px 30px;
+                    box-sizing: border-box;
+                    color: black;
+                    transition: all 0.2s ease-out;
+                    background: transparent;
+                    text-align: center;
+                    &.active {
+                        background-color: $main-color;
+                    }
+                    &:hover {
+                        background-color: $main-color;
+                    }
+                    &:first-child {
+                        border-right: 1px solid #ECECEC;
+                        border-radius: 10px 0 0 10px;
+                    }
+                    &:last-child {
+                        border-radius: 0 10px 10px 0;
+                    }
+                }
+            }
+        }
+    }
+
+    #exchante-rate-info {
+        padding: 20px 0;
+        .partial-content {
+            display: inline;
+            p { 
+                display: inline;
+                color: $secondary-text-color;
+                a   {
+                    color: $blue-text-color;
+                }
+            }
+        }
+        .more-button {
+            display: inline;
+            color: $blue-text-color;
+            cursor: pointer;
+            span {
+                color: $secondary-text-color;
+            }
+        }
+    }
+}

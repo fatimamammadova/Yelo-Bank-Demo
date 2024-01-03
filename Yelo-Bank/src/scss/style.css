@@ -3289,6 +3289,69 @@ main #news .news-wrapper .news-title h2 {
   font-weight: 400;
 }
 
+main #main-title {
+  text-align: center;
+}
+main #main-title .filter-cash {
+  display: inline-block;
+  height: 55px;
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+  white-space: nowrap;
+  margin: 10px 0 0 0;
+}
+main #main-title .filter-cash .filter-inner {
+  width: 100%;
+  display: flex;
+}
+main #main-title .filter-cash .filter-inner .cash-button {
+  height: 55px;
+  display: block;
+  font-family: "TT Commons Bold";
+  font-size: 18px;
+  width: 100%;
+  padding: 15px 30px;
+  box-sizing: border-box;
+  color: black;
+  transition: all 0.2s ease-out;
+  background: transparent;
+  text-align: center;
+}
+main #main-title .filter-cash .filter-inner .cash-button.active {
+  background-color: #FFC628;
+}
+main #main-title .filter-cash .filter-inner .cash-button:hover {
+  background-color: #FFC628;
+}
+main #main-title .filter-cash .filter-inner .cash-button:first-child {
+  border-right: 1px solid #ECECEC;
+  border-radius: 10px 0 0 10px;
+}
+main #main-title .filter-cash .filter-inner .cash-button:last-child {
+  border-radius: 0 10px 10px 0;
+}
+main #exchante-rate-info {
+  padding: 20px 0;
+}
+main #exchante-rate-info .partial-content {
+  display: inline;
+}
+main #exchante-rate-info .partial-content p {
+  display: inline;
+  color: #9d9d9d;
+}
+main #exchante-rate-info .partial-content p a {
+  color: #0091FE;
+}
+main #exchante-rate-info .more-button {
+  display: inline;
+  color: #0091FE;
+  cursor: pointer;
+}
+main #exchante-rate-info .more-button span {
+  color: #9d9d9d;
+}
+
 main #laons {
   padding: 0 0 40px 0;
 }
@@ -3298,7 +3361,6 @@ main #laons .laon {
   border: 1px solid #ECECEC;
   background: no-repeat 100px/cover;
   background-color: #f1f1f1;
-  overflow: hidden;
   margin: 0 0 45px 0;
 }
 @media (min-width: 1000px) {

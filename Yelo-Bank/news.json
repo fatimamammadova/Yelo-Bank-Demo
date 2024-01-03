@@ -523,6 +523,35 @@
       "url": "../cardOrder.html",
       "img": "../public/img/yelo.webp"
     }
-  ]
+  ],
+
+  "valute": {
+    "bank": {
+      "USD": {
+        "buy": "1.6950",
+        "sell": "1.7020",
+        "cash_buy": "1.6900",
+        "cash_sell": "1.7010"
+      },
+      "EUR": {
+        "buy": "1.8400",
+        "sell": "1.9400",
+        "cash_buy": "1.8400",
+        "cash_sell": "1.9400"
+      },
+      "RUB": {
+        "buy": "0.0170",
+        "sell": "0.0210",
+        "cash_buy": "0.0170",
+        "cash_sell": "0.0210"
+      },
+      "GBP": {
+        "buy": "2.0800",
+        "sell": "2.2600",
+        "cash_buy": "2.0800",
+        "cash_sell": "2.2600"
+      }
+    }
+  }
 
 }
