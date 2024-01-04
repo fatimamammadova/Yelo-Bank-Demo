@@ -1,8 +1,3 @@
-const promotionOne = document.querySelector(".mobile-app-promotion");
-const mobilePromotionOne = document.querySelector(".mobile-promotion");
-const mainSlider = document.querySelector("#main-slider");
-const headerOne = document.querySelector("header");
-
 const rangeInput = document.querySelectorAll('.range')
 const numberInput = document.querySelectorAll('.number-range')
 const rangeAmount = document.querySelector('.loan-amount input[type="range"]');
@@ -19,47 +14,6 @@ const inputSelect = document.querySelector('.input-select')
 const outputSelect = document.querySelector('.output-select')
 const selectBoxRate = document.querySelector('.rate-select-box')
 const news = document.querySelector('.news .row')
-
-if (sessionStorage.getItem("status") !== "hide") {
-  promotionOne.classList.add("show");
-  mobilePromotionOne.classList.add("show");
-  if (!(document.documentElement.scrollWidth <= 576)) {
-    headerOne.style.top = "120px";
-    mainSlider.style.paddingTop = "120px";
-  }
-}
-
-window.addEventListener("resize", () => {
-  if (
-    document.documentElement.scrollWidth <= 576 ||
-    sessionStorage.getItem("status") == "hide"
-  ) {
-    headerOne.style.top = "0";
-    mainSlider.style.paddingTop = "0";
-  } else {
-    headerOne.style.top = "120px";
-    mainSlider.style.paddingTop = "120px";
-    promotionOne.classList.add("show");
-    mobilePromotionOne.classList.add("show");
-  }
-});
-
-
-CloseBtn.addEventListener("click", () => {
-  sessionStorage.setItem("status", "hide");
-  headerOne.style.top = "0";
-  mainSlider.style.paddingTop = "0";
-  mobilePromotionOne.classList.remove("show");
-  promotionOne.classList.remove("show");
-});
-
-mobileCloseBtn.addEventListener("click", () => {
-  sessionStorage.setItem("status", "hide");
-  headerOne.style.top = "0";
-  mainSlider.style.paddingTop = "120px";
-  mobilePromotionOne.classList.remove("show");
-  promotionOne.classList.remove("show");
-});
 
 function handleRangeInput(rangeInput) {
   rangeInput.style.setProperty('--val', rangeInput.value);

@@ -372,12 +372,7 @@ header {
                     background-color: $secondary-color;
                     .button-content {
                         img {
-                            &.black-img {
-                                display: none;
-                            }
-                            &.white-img {
-                                display: block;
-                            }
+                            filter: brightness(0) invert(1);
                         }
                         span {
                             color: $white-color;
@@ -387,18 +382,10 @@ header {
                 .button-content {
                     width: 100%;
                     @include Flex(center,center);
-                    img {   
-                        transform: translateY(0);
+                    img {
                         margin-right: 0;
                         transition: all .3s cubic-bezier(.52, .01, .16, 1);
-                        &.black-img {
-                            display: block;
-                        }
-                        &.white-img {
-                            display: none;
-                        }
                         @media (min-width: 1000px) {
-                            transform: translateY(-2px);
                             margin-right: 12px;
                         }
                     }
@@ -406,6 +393,7 @@ header {
                         transition: all .3s cubic-bezier(.52, .01, .16, 1);
                         color: $secondary-color;
                         display: none;
+                        transform: translateY(3px);
                         @media (min-width: 1000px) {
                             display: block;
                         }
@@ -476,6 +464,10 @@ header {
         &.active {
             opacity: 1;
             height: auto;
+            max-height: calc(100vh - 140px);
+            @media (min-width: 1096px) {
+                max-height: calc(100vh - 150px);
+            }
         }
         transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
         &::-webkit-scrollbar {

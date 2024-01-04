@@ -1,6 +1,7 @@
 const defaultRate = document.querySelector('.default-rate')
 const selectRates = document.querySelectorAll('.select-item')
 const currencyInput = document.querySelector('.er-input')
+const currencyOutput = document.querySelector('.er-output')
 const inputSelect = document.querySelector('.input-select')
 const outputSelect = document.querySelector('.output-select')
 
@@ -64,29 +65,65 @@ currencyInput.addEventListener('input',(e)=> {
   // renderExchange()
 })
 
-function renderExchange() {
-    const sellValue = currencyInput.value
-    const fromRate = inputSelect.value
-    const toRate = outputSelect.value
-    
-    if(sellValue.length != 0) {
-      fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
-      .then(res=> res.json())
-      .then(data=> {
-        let fromRateValue = data.conversion_rates[fromRate.toUpperCase()]
-        let toRateValue = data.conversion_rates[toRate.toUpperCase()]
-  
-        let conversion = (sellValue / fromRateValue) * toRateValue
-  
-        
-        document.querySelector('.er-output').innerText = conversion.toFixed(2)
-      })
-    } else {
-      
-      document.querySelector('.er-output').innerText = "Alıram" 
+async function renderExchange() {
+  try {
+    const res = await fetch('http://localhost:3000/valute')
+    const data = await res.json()
+    switch(inputSelect.value) {
+      case 'azn':
+        switch(outputSelect.value) {
+          case 'usd':
+            calculate(1/(activeRate==1 ? +data.bank.USD.cash_sell : +data.bank.USD.sell));
+            break;
+          case 'eur':
+            calculate(1/(activeRate==1 ? +data.bank.EUR.cash_sell : +data.bank.EUR.sell));
+            break;
+          case 'rub':
+            calculate(1/(activeRate==1 ? +data.bank.RUB.cash_sell : +data.bank.RUB.sell));
+            break;
+          case 'gbp':
+            calculate(1/(activeRate==1 ? +data.bank.GBP.cash_sell : +data.bank.GBP.sell));
+            break;
+        }
+        break;
+      case "usd":
+        calculate(activeRate == 1 ? +data.bank.USD.cash_buy : +data.bank.USD.buy)
+        break;
+      case "eur":
+          calculate(activeRate == 1 ? +data.bank.EUR.cash_buy : +data.bank.EUR.buy)
+          break;
+      case "rub":
+        calculate(activeRate == 1 ? +data.bank.RUB.cash_buy : +data.bank.RUB.buy)
+          break;
+      case "gbp":
+        calculate(activeRate == 1 ? +data.bank.GBP.cash_buy : +data.bank.GBP.buy)
+        break;
     }
 
+    function calculate(value) {
+      const inputValue = parseFloat(currencyInput.value)
+      const conversionRate = value * inputValue
+      if(currencyInput.value=='') {
+        currencyOutput.innerText = 'Alıram'
+      } else {
+        currencyOutput.innerText = `${conversionRate.toFixed(2)}`
+
+      }
+    }
+  }
+  catch(error){
+    console.error("Error fetching or processing news:", error)
+  }
 }
+
+currencyInput.addEventListener('input', () => {
+  if(currencyInput.value=='') {
+    currencyOutput.innerText = 'Alıram'
+  } else {
+    renderExchange()
+  }
+})
+
 
 inputSelect.addEventListener('input',(e) => {
   const selectedOption = e.target.value
@@ -108,82 +145,43 @@ async function getValute(rate) {
     const res = await fetch('http://localhost:3000/valute')
     const data = await res.json()
 
-    const tableBody = document.querySelector('tbody')
+    document.querySelector('table').innerHTML = `<thead>
+    <tr>
+        <th>
+            <span class="table-title">Valyuta</span>
+        </th>
 
-    tableBody.innerHTML = ''
+        <th>
+            <span class="table-title">Alış</span>
+        </th>
 
-    tableBody.innerHTML += `
-      <tr>
-          <td>
-              <span class="item-title">USD</span>
-          </td>
+        <th>
+            <span class="table-title">Satış</span>
+        </th>
 
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.USD.cash_buy : +data.bank.USD.buy}</span>
-          </td>
+        <th>
+            <span class="table-title">MB</span>
+        </th>
 
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.USD.cash_sell : +data.bank.USD.sell}</span>
-          </td>
+    </tr>
+    </thead>`
 
-          <td>
-              <span class="item-title">${data.mb.USD.buy}</span>
-          </td>
-      </tr>
+    let tableBody = `<tbody>`
+    for (let bank in data) {
+      for (let currency in data[bank]) {
+        if(bank !== 'mb') {
+          tableBody += "<tr>";
+          tableBody += "<td>" + currency + "</td>";
+          tableBody += "<td>" + `<span class="item-title">${rate == 1 ? +data[bank][currency].cash_buy : +data[bank][currency].buy}</span>` + "</td>";
+          tableBody += "<td>" + `<span class="item-title">${rate == 1 ? +data[bank][currency].cash_sell : +data[bank][currency].sell}</span>` + "</td>";
+          tableBody += "<td>" + `<span class="item-title">${data['mb'][currency].buy}</span>` + "</td>";
+          tableBody += "</tr>";
+        }
+      }
+    }
+    tableBody += `</tbody>`
 
-      <tr>
-          <td>
-              <span class="item-title">EUR</span>
-          </td>
-
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.EUR.cash_buy : +data.bank.EUR.buy}</span>
-          </td>
-
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.EUR.cash_sell : +data.bank.EUR.sell}</span>
-          </td>
-
-          <td>
-              <span class="item-title">${data.bank.EUR.buy}</span>
-          </td>
-      </tr>
-
-      <tr>
-          <td>
-              <span class="item-title">RUB*</span>
-          </td>
-
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.RUB.cash_buy : +data.bank.RUB.buy}</span>
-          </td>
-
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.RUB.cash_sell : +data.bank.RUB.sell}</span>
-          </td>
-
-          <td>
-              <span class="item-title">${data.bank.RUB.buy}</span>
-          </td>
-      </tr>
-
-      <tr>
-          <td>
-              <span class="item-title">GBP</span>
-          </td>
-
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.GBP.cash_buy : +data.bank.GBP.buy}</span>
-          </td>
-
-          <td>
-              <span class="item-title">${rate == 1 ? +data.bank.GBP.cash_sell : +data.bank.GBP.sell}</span>
-          </td>
-
-          <td>
-              <span class="item-title">${data.mb.GBP.buy}</span>
-          </td>
-    </tr>`
+    document.querySelector('table').insertAdjacentHTML('beforeend', tableBody)
   }
   catch(error) {
     console.error("Error fetching or processing news:", error)

@@ -1,18 +1,8 @@
 main {
     #main-title {
-        padding-top: 150px;
-        .main-title {
-            text-align: center;
-            margin: 0 auto 50px auto;
-            h1 {
-                font-size: 54px;
-                font-family: "TTFirsNeue Medium";
-                margin-bottom: 10px;
-            }
-            .add-news {
-                font-size: 18px;
-                @extend %tertiary-button;
-            }
+        .add-news {
+            font-size: 18px;
+            @extend %tertiary-button;
         }
     }
 

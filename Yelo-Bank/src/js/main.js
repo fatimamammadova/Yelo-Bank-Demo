@@ -16,6 +16,14 @@ const headerBottom = document.querySelector('.header-bottom')
 const loginBtn = document.querySelector('.login-button')
 const formContent = document.querySelectorAll(".form-content .content-inner");
 
+const promotion = document.querySelector(".mobile-app-promotion");
+const mobilePromotion = document.querySelector(".mobile-promotion");
+const header = document.querySelector("header");
+
+const CloseBtn = document.querySelector(".close-img");
+const mobileCloseBtn = document.querySelector(".mp-close-btn");
+const main = document.querySelector('main')
+
 let windowScroll = window.scrollY
 let number = 15
 let initalNumber = 0
@@ -107,3 +115,48 @@ formContent.forEach((item) => {
     });
   });
 });
+
+
+
+CloseBtn.addEventListener("click", () => {
+  sessionStorage.setItem("status", "hide");
+  header.style.top = "0";
+  main.style.paddingTop = "0";
+  mobilePromotion.classList.remove("show");
+  promotion.classList.remove("show");
+});
+
+mobileCloseBtn.addEventListener("click", () => {
+  sessionStorage.setItem("status", "hide");
+  header.style.top = "0";
+  main.style.paddingTop = "0";
+  mobilePromotion.classList.remove("show");
+  promotion.classList.remove("show");
+});
+
+
+window.addEventListener("resize", () => {
+    if (
+      document.documentElement.scrollWidth <= 576 ||
+      sessionStorage.getItem("status") == "hide"
+    ) {
+      header.style.top = "0";
+      main.style.paddingTop = "0";
+    } else {
+      header.style.top = "120px";
+      main.style.paddingTop = "120px";
+      promotion.classList.add("show");
+      mobilePromotion.classList.add("show");
+    }
+});
+
+  
+if (sessionStorage.getItem("status") !== "hide") {
+    promotion.classList.add("show");
+    mobilePromotion.classList.add("show");
+    if (!(document.documentElement.scrollWidth <= 576)) {
+      console.log("1");
+      header.style.top = "120px";
+      main.style.paddingTop = "120px";
+    }
+}

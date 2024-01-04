@@ -182,7 +182,7 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
   }
 }
 
-.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button, main #cards .short-form .card-form .form-bottom .fb-inner .order-button, main #laons .short-form .card-form .form-bottom .fb-inner .order-button, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
+.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button, main #cards .short-form .card-form .form-bottom .fb-inner .order-button, main #laons .short-form .card-form .form-bottom .fb-inner .order-button, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
   background-color: #FFC628;
   color: #000;
   border-radius: 10px;
@@ -191,7 +191,7 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .card-form .form-bottom .fb-inner .order-button:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
+.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .card-form .form-bottom .fb-inner .order-button:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
   background-color: #000;
   color: #fff;
 }
@@ -199,7 +199,7 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
 #main-title {
   text-align: center;
   margin-bottom: 50px;
-  padding-top: 120px;
+  padding: 120px 0 0;
 }
 #main-title h1 {
   margin-top: 20px;
@@ -2557,11 +2557,8 @@ header .header-bottom .navbar-right .login-button {
 header .header-bottom .navbar-right .login-button:hover {
   background-color: #000;
 }
-header .header-bottom .navbar-right .login-button:hover .button-content img.black-img {
-  display: none;
-}
-header .header-bottom .navbar-right .login-button:hover .button-content img.white-img {
-  display: block;
+header .header-bottom .navbar-right .login-button:hover .button-content img {
+  filter: brightness(0) invert(1);
 }
 header .header-bottom .navbar-right .login-button:hover .button-content span {
   color: #fff;
@@ -2573,19 +2570,11 @@ header .header-bottom .navbar-right .login-button .button-content {
   justify-content: center;
 }
 header .header-bottom .navbar-right .login-button .button-content img {
-  transform: translateY(0);
   margin-right: 0;
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-header .header-bottom .navbar-right .login-button .button-content img.black-img {
-  display: block;
-}
-header .header-bottom .navbar-right .login-button .button-content img.white-img {
-  display: none;
-}
 @media (min-width: 1000px) {
   header .header-bottom .navbar-right .login-button .button-content img {
-    transform: translateY(-2px);
     margin-right: 12px;
   }
 }
@@ -2593,6 +2582,7 @@ header .header-bottom .navbar-right .login-button .button-content span {
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
   color: #000;
   display: none;
+  transform: translateY(3px);
 }
 @media (min-width: 1000px) {
   header .header-bottom .navbar-right .login-button .button-content span {
@@ -2668,6 +2658,12 @@ header .hamburger-menu {
 header .hamburger-menu.active {
   opacity: 1;
   height: auto;
+  max-height: calc(100vh - 140px);
+}
+@media (min-width: 1096px) {
+  header .hamburger-menu.active {
+    max-height: calc(100vh - 150px);
+  }
 }
 header .hamburger-menu::-webkit-scrollbar {
   width: 4px;
@@ -4362,19 +4358,7 @@ main #exchange-rate .er-wrapper .er-table .table-inner table td .item-title {
   }
 }
 
-main #main-title {
-  padding-top: 150px;
-}
-main #main-title .main-title {
-  text-align: center;
-  margin: 0 auto 50px auto;
-}
-main #main-title .main-title h1 {
-  font-size: 54px;
-  font-family: "TTFirsNeue Medium";
-  margin-bottom: 10px;
-}
-main #main-title .main-title .add-news {
+main #main-title .add-news {
   font-size: 18px;
 }
 main #all-news .news .row .news-item {
