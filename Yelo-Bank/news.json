@@ -552,6 +552,31 @@
         "cash_sell": "2.2600"
       }
     }
-  }
-
+  },
+  "deposits": [
+    {
+      "name": "Yelo Sabit",
+      "description": "Pulunuz sizin üçün işləsin",
+      "spec_title_1": "Məbləğ",
+      "spec_title_1_desc": "min. 100 AZN/USD",
+      "spec_title_2": "Müddət",
+      "spec_title_2_desc": "12 / 18 / 24 ay",
+      "spec_title_3": "Faizlərin ödənişi",
+      "spec_title_3_desc": "aylıq və ya müddətin sonunda",
+      "url": "javascript:void(0)",
+      "img": "../public/img/lean_on_pillow.webp"
+    },
+    {
+      "name": "Yelo Yığım",
+      "description": "Pulunuz sizin üçün işləsin",
+      "spec_title_1": "Məbləğ",
+      "spec_title_1_desc": "100 AZN/USD",
+      "spec_title_2": "Müddət",
+      "spec_title_2_desc": "12 ay",
+      "spec_title_3": "Faizlərin ödənişi",
+      "spec_title_3_desc": "aylıq və ya müddətin sonunda",
+      "url": "javascript:void(0)",
+      "img": "../public/img/depositnew-pic.webp"
+    }
+  ]
 }

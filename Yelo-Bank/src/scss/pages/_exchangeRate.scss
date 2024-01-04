@@ -1,41 +1,122 @@
 main {
 
-    #main-title {
-        text-align: center;
-        .filter-cash {
-            display: inline-block;
-            height: 55px;
-            border: 1px solid #ECECEC;
-            border-radius: 10px;
-            white-space: nowrap;
-            margin: 10px 0 0 0;
-            .filter-inner {
+    #exchange-rate {
+        padding: 10px 0 40px;
+        .er-calculator {
+            position: relative;
+            display: block;
+            margin: 0 0 10px;
+            @media (min-width: 1000px) {
+                @include Flex($j-con:space-between);
+                margin: 0 0 50px;
+                
+            }
+            .er-line {
                 width: 100%;
-                display: flex;
-                .cash-button {
-                    height: 55px;
-                    display: block;
-                    font-family: "TT Commons Bold";
-                    font-size: 18px;
+                border-bottom: 3px solid $main-color;
+                font-family: "TT Commons Bold";
+                @include Flex($j-con:space-between);
+                padding: 10px 0 0 0;
+                @media (min-width: 1000px) {
+                    width: calc(50% - 50px);
+                    border-bottom: 6px solid $main-color;
+                }
+                .er-input {
+                    font-size: 30px;
                     width: 100%;
-                    padding: 15px 30px;
-                    box-sizing: border-box;
-                    color: black;
-                    transition: all 0.2s ease-out;
-                    background: transparent;
-                    text-align: center;
-                    &.active {
-                        background-color: $main-color;
+                    border: none;
+                    font-family: "TT Commons Bold";
+                    @media (min-width: 1000px) {
+                        font-size: 40px;
                     }
-                    &:hover {
-                        background-color: $main-color;
+                }
+                .er-output {
+                    font-size: 30px;
+                    width: 100%;
+                    @media (min-width: 1000px) {
+                        font-size: 40px;
                     }
-                    &:first-child {
-                        border-right: 1px solid #ECECEC;
-                        border-radius: 10px 0 0 10px;
+                }
+                select {
+                    font-family: "TT Commons Bold";
+                    font-size: 20px;
+                    padding: 0 12px 0 0;
+                    display: block;
+                    height: 30px;
+                    margin: 13px 0 0 0;
+                    border: none;
+                    appearance: none;
+                    background: url('../../public/img/currency-arrow.svg') no-repeat right 40%;
+                }
+            }
+
+            .change-sides {
+                display: none;
+                width: 100px;
+                height: 100%;
+                position: absolute;
+                left: 50%;
+                transform: translateX(-50%);
+                top: 0px;
+                background-repeat: no-repeat;
+                background-position: center;
+
+                @media (min-width: 1000px) {
+                    display: block;
+                }
+            }
+        }
+
+        .er-table {
+            .table-inner {
+                table {
+                    border-radius: 10px;
+                    border: 1px solid $main-border-color;
+                    width: 100%;
+                    margin: 20px 0;
+                    th {
+                        border-bottom: 1px solid $main-border-color;
+                        border-right: 1px solid $main-border-color;
+                        padding: 0 15px;
+                        height: 40px;
+                        @media (min-width: 768px) {
+                            height: 60px;
+                            padding: 0 35px;
+                            
+                        }
+                        &:last-child {
+                            border-right: none;
+                        }
+                        .table-title {
+                            font-family: "TT Commons Regular";
+                            font-weight: 400;
+                            font-size: 18px;
+                            display: block;
+                            color: $main-text-color;
+                            text-align: start;
+                        }
                     }
-                    &:last-child {
-                        border-radius: 0 10px 10px 0;
+                    
+                    td {
+                        border-right: 1px solid $main-border-color;
+                        &:last-child {
+                            border-right: none;
+                        }
+                        height: 25px;
+                        padding: 8px 15px 0;
+                        @media (min-width: 768px) {
+                            padding: 15px 35px 0;
+                            height: 40px;
+                        }
+                        .item-title {
+                            display: block;
+                            text-align: left;
+                            font-size: 16px;
+                            @media (min-width: 768px) {
+                                font-size: 22px;
+                                
+                            }
+                        }
                     }
                 }
             }
@@ -43,24 +124,28 @@ main {
     }
 
     #exchante-rate-info {
-        padding: 20px 0;
-        .partial-content {
-            display: inline;
-            p { 
-                display: inline;
-                color: $secondary-text-color;
-                a   {
-                    color: $blue-text-color;
-                }
-            }
+        @extend %info;
+    }
+}
+
+
+.laon-button {
+    position: fixed;
+    right: 0;
+    bottom: calc(50% - 50px);
+    z-index: 10;
+    animation: Opacity 5s infinite;
+    a {
+        background-repeat: no-repeat;
+        background-position: center;
+        background-size: contain;
+        display: block;
+        @media (min-width: 1000px) {
+            height: 150px;
+            width: 150px;
         }
-        .more-button {
-            display: inline;
-            color: $blue-text-color;
-            cursor: pointer;
-            span {
-                color: $secondary-text-color;
-            }
-        }
+        width: 75px;
+        height: 75px;
+        border-radius: 50%;
     }
 }

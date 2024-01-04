@@ -6,7 +6,6 @@ const closeMessagePopup = document.querySelector(".close-popup");
 const messageBtn = document.querySelector(".message-button");
 const messageModal = document.querySelector(".message-modal");
 const modal = document.querySelector(".modal-popup");
-const header = document.querySelector("header");
 const search = document.querySelector(".search");
 const searchInput = document.querySelector(".search-inner");
 const searchOpenBtn = document.querySelector(".search-icon");
@@ -16,10 +15,6 @@ const headerTop = document.querySelector('.header-top')
 const headerBottom = document.querySelector('.header-bottom')
 const loginBtn = document.querySelector('.login-button')
 const formContent = document.querySelectorAll(".form-content .content-inner");
-const promotion = document.querySelector(".mobile-app-promotion");
-const mobilePromotion = document.querySelector(".mobile-promotion");
-const mainTitle = document.querySelector('#main-title')
-const CloseBtn = document.querySelector(".close-img");
 
 
 const partialContent = document.querySelector('.partial-content')
@@ -51,40 +46,6 @@ let initalNumber = 0
 let dataLength,updateId,updateTitle,updateDate;
 let isPost = false
 
-
-CloseBtn.addEventListener("click", () => {
-  sessionStorage.setItem("status", "hide");
-  header.style.top = "0";
-  mainTitle.style.paddingTop = "120px";
-  mobilePromotion.classList.remove("show");
-  promotion.classList.remove("show");
-});
-
-window.addEventListener("resize", () => {
-  if (
-    document.documentElement.scrollWidth <= 576 ||
-    sessionStorage.getItem("status") == "hide"
-  ) {
-    header.style.top = "0";
-    mainTitle.style.paddingTop = "120px";
-  } else {
-    header.style.top = "120px";
-    mainTitle.style.paddingTop = "240px";
-    promotion.classList.add("show");
-    mobilePromotion.classList.add("show");
-  }
-});
-
-
-if (sessionStorage.getItem("status") !== "hide") {
-  promotion.classList.add("show");
-  mobilePromotion.classList.add("show");
-  if (!(document.documentElement.scrollWidth <= 576)) {
-    console.log("1");
-    header.style.top = "120px";
-    mainTitle.style.paddingTop = "240px";
-  }
-}
 
 languages.forEach((item) => {
   const langText = item.querySelector(".lang-text");
@@ -172,11 +133,195 @@ formContent.forEach((item) => {
   });
 });
 
-
-
-
 partialContent.innerHTML = firstContent
 moreBtn.addEventListener("click", () => {
     partialContent.innerHTML = originalContent;
     moreBtn.style.display = 'none';
 })
+
+
+const defaultRate = document.querySelector('.default-rate')
+const selectRates = document.querySelectorAll('.select-item')
+const currencyInput = document.querySelector('.er-input')
+const inputSelect = document.querySelector('.input-select')
+const outputSelect = document.querySelector('.output-select')
+
+
+
+
+currencyInput.addEventListener('input',(e)=> {
+  let inputValue = e.target.value;
+  inputValue = inputValue.replace(/[^0-9.]/g, '');
+  const dotIndex = inputValue.indexOf('.');
+    if (dotIndex !== -1) {
+        const afterDot = inputValue.substring(dotIndex + 1);
+        if (afterDot.includes('.')) {
+          inputValue = inputValue.substring(0, dotIndex + afterDot.indexOf('.') + 1);
+        }
+        console.log(dotIndex,afterDot,afterDot.indexOf('.'),dotIndex + afterDot.indexOf('.') + 1)
+      }
+  e.target.value = inputValue;
+
+  // renderExchange()
+})
+
+function renderExchange() {
+    const sellValue = currencyInput.value
+    const fromRate = inputSelect.value
+    const toRate = outputSelect.value
+    
+    if(sellValue.length != 0) {
+      fetch('https://v6.exchangerate-api.com/v6/4eef589dd05e5fdf436bcda4/latest/USD')
+      .then(res=> res.json())
+      .then(data=> {
+        let fromRateValue = data.conversion_rates[fromRate.toUpperCase()]
+        let toRateValue = data.conversion_rates[toRate.toUpperCase()]
+  
+        let conversion = (sellValue / fromRateValue) * toRateValue
+  
+        
+        document.querySelector('.er-output').innerText = conversion.toFixed(2)
+      })
+    } else {
+      
+      document.querySelector('.er-output').innerText = "Alıram" 
+    }
+
+}
+
+inputSelect.addEventListener('input',(e) => {
+  const selectedOption = e.target.value
+  if(selectedOption !== 'azn') {
+    outputSelect.innerHTML=""
+    outputSelect.innerHTML += `<option value="azn" selected class="output-option">AZN</option>`
+  } else {
+    outputSelect.innerHTML=""
+    outputSelect.innerHTML += ` <option value="usd" selected class="output-option">USD</option>
+    <option value="eur" class="output-option">EUR</option>
+    <option value="rub" class="output-option">RUB</option>
+    <option value="gbp" class="output-option">GBP</option>`
+  }
+
+  let inputValue = inputSelect.value
+  // renderExchange()
+  
+})
+
+//////////????????//////////////////////
+async function getValute() {
+  try {
+    const res = await fetch('http://localhost:3000/valute')
+    const data = await res.json()
+
+    const tableContainer = document.querySelector('.table-inner')
+
+    tableContainer.innerHTML += `<table>
+    <thead>
+        <tr>
+            <th>
+                <span class="table-title">Valyuta</span>
+            </th>
+
+            <th>
+                <span class="table-title">Alış</span>
+            </th>
+
+            <th>
+                <span class="table-title">Satış</span>
+            </th>
+
+            <th>
+                <span class="table-title">MB</span>
+            </th>
+
+        </tr>
+    </thead>
+
+    <tbody>
+        <tr>
+            <td>
+                <span class="item-title">USD</span>
+            </td>
+
+            <td>
+                <span class="item-title">${data.bank.USD.buy}</span>
+            </td>
+
+            <td>
+                <span class="item-title">${data.bank.USD.sell}</span>
+            </td>
+
+            <td>
+                <span class="item-title">${data.bank.USD.buy}</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <span class="item-title">EUR</span>
+            </td>
+
+            <td>
+                <span class="item-title">1.8300</span>
+            </td>
+
+            <td>
+                <span class="item-title">1.9200</span>
+            </td>
+
+            <td>
+                <span class="item-title">1.8766</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <span class="item-title">RUB*</span>
+            </td>
+
+            <td>
+                <span class="item-title">0.0170</span>
+            </td>
+
+            <td>
+                <span class="item-title">0.0210</span>
+            </td>
+
+            <td>
+                <span class="item-title">0.0188</span>
+            </td>
+        </tr>
+
+        <tr>
+            <td>
+                <span class="item-title">GBP</span>
+            </td>
+
+            <td>
+                <span class="item-title">2.0700</span>
+            </td>
+
+            <td>
+                <span class="item-title">2.2600</span>
+            </td>
+
+            <td>
+                <span class="item-title">2.1643</span>
+            </td>
+        </tr>
+
+
+    </tbody>
+</table>
+
+<span class="message-txt">
+    *Rubl valyutası üzrə məzənnə təcili pul köçürmələri üçün nəzərdə tutulub.
+</span>`
+
+    console.log(data.bank.USD.buy)
+  }
+  catch(error) {
+    console.error("Error fetching or processing news:", error)
+  }
+}
+getValute()

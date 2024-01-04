@@ -44,6 +44,23 @@ window.addEventListener("resize", () => {
   }
 });
 
+
+CloseBtn.addEventListener("click", () => {
+  sessionStorage.setItem("status", "hide");
+  headerOne.style.top = "0";
+  mainSlider.style.paddingTop = "0";
+  mobilePromotionOne.classList.remove("show");
+  promotionOne.classList.remove("show");
+});
+
+mobileCloseBtn.addEventListener("click", () => {
+  sessionStorage.setItem("status", "hide");
+  headerOne.style.top = "0";
+  mainSlider.style.paddingTop = "120px";
+  mobilePromotionOne.classList.remove("show");
+  promotionOne.classList.remove("show");
+});
+
 function handleRangeInput(rangeInput) {
   rangeInput.style.setProperty('--val', rangeInput.value);
   rangeInput.previousElementSibling.previousElementSibling.value = rangeInput.value;

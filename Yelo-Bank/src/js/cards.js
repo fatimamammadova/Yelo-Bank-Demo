@@ -1,40 +1,8 @@
-const promotionTwo = document.querySelector(".mobile-app-promotion");
-const mobilePromotionTwo = document.querySelector(".mobile-promotion");
-const mainTitle = document.querySelector('#main-title')
-const headerTwo = document.querySelector("header");
-
-
 const partialContent = document.querySelector('.partial-content')
 const originalContent = partialContent.innerHTML
 const firstContent = originalContent.slice(0,740)
 const secondContent = originalContent.slice(740)
 const moreBtn = document.querySelector('.more-button')
-
-
-window.addEventListener("resize", () => {
-  if (
-    document.documentElement.scrollWidth <= 576 ||
-    sessionStorage.getItem("status") == "hide"
-  ) {
-    headerTwo.style.top = "0";
-    mainTitle.style.paddingTop = "120px";
-  } else {
-    headerTwo.style.top = "120px";
-    mainTitle.style.paddingTop = "240px";
-    promotionTwo.classList.add("show");
-    mobilePromotionTwo.classList.add("show");
-  }
-});
-
-if (sessionStorage.getItem("status") !== "hide") {
-  promotionTwo.classList.add("show");
-  mobilePromotionTwo.classList.add("show");
-  if (!(document.documentElement.scrollWidth <= 576)) {
-    console.log("1");
-    headerTwo.style.top = "120px";
-    mainTitle.style.paddingTop = "240px";
-  }
-}
 
 async function getCards() {
     try {

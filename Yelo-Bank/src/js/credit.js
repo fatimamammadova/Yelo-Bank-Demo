@@ -1,40 +1,8 @@
-const promotionTwo = document.querySelector(".mobile-app-promotion");
-const mobilePromotionTwo = document.querySelector(".mobile-promotion");
-const mainTitle = document.querySelector('#main-title')
-const headerTwo = document.querySelector("header");
-
 const partialContent = document.querySelector('.partial-content')
 const originalContent = partialContent.innerHTML
 const firstContent = originalContent.slice(0,740)
 const secondContent = originalContent.slice(740)
 const moreBtn = document.querySelector('.more-button')
-
-
-
-window.addEventListener("resize", () => {
-    if (
-      document.documentElement.scrollWidth <= 576 ||
-      sessionStorage.getItem("status") == "hide"
-    ) {
-      headerTwo.style.top = "0";
-      mainTitle.style.paddingTop = "120px";
-    } else {
-      headerTwo.style.top = "120px";
-      mainTitle.style.paddingTop = "240px";
-      promotionTwo.classList.add("show");
-      mobilePromotionTwo.classList.add("show");
-    }
-  });
-  
-if (sessionStorage.getItem("status") !== "hide") {
-    promotionTwo.classList.add("show");
-    mobilePromotionTwo.classList.add("show");
-    if (!(document.documentElement.scrollWidth <= 576)) {
-      console.log("1");
-      headerTwo.style.top = "120px";
-      mainTitle.style.paddingTop = "240px";
-    }
-}
 
 partialContent.innerHTML = firstContent
 moreBtn.addEventListener("click", () => {
@@ -43,25 +11,25 @@ moreBtn.addEventListener("click", () => {
 })
 
 
-async function getLaons() {
+async function getcards() {
     try {
       const res = await fetch("http://localhost:3000/laons");
       const data = await res.json();
       data.forEach(item => {
-            const laonContainer = document.querySelector('.laons')
+            const cardContainer = document.querySelector('.laons')
 
             if(item.isTheCard) {
-                laonContainer.innerHTML += `
-                <div class="laon" style="background-image: url('./img/yelo_block.svg');">
-            <div class="laon-left">
-                <h2 class="laon-title">
+                cardContainer.innerHTML += `
+                <div class="card" style="background-image: url('./img/yelo_block.svg');">
+            <div class="card-left">
+                <h2 class="card-title">
                     ${item.name}
                 </h2>
                 <p>
                     ${item.description}
                 </p>
                 
-                <div class="laon-about">
+                <div class="card-about">
                     <div class="about-col">
                         <span>${item.spec_title_1}</span>
                         <p>${item.spec_title_1_desc}</p>
@@ -93,10 +61,10 @@ async function getLaons() {
                 </div>
             </div>
 
-            <div class="laon-right">
+            <div class="card-right">
             <div class="img">
                 <div class="img-container taksit">
-                    <div class="laon-img" style="background-image: url('${item.img}');">
+                    <div class="card-img" style="background-image: url('${item.img}');">
                     <div class="gradient-bg"></div>
                     </div>
                     
@@ -106,16 +74,16 @@ async function getLaons() {
             </div> 
                 </div>`
             } else if(!item.isTheCard && item.isOrder && !item.hasAForm) {
-                laonContainer.innerHTML += `<div class="laon" style="background-image: url('./img/yelo_block.svg');">
-            <div class="laon-left">
-                <h2 class="laon-title">
+                cardContainer.innerHTML += `<div class="card" style="background-image: url('./img/yelo_block.svg');">
+            <div class="card-left">
+                <h2 class="card-title">
                     ${item.name}
                 </h2>
                 <p>
                     ${item.description}
                 </p>
                 
-                <div class="laon-about">
+                <div class="card-about">
                     <div class="about-col">
                         <span>${item.spec_title_1}</span>
                         <p>${item.spec_title_1_desc}</p>
@@ -151,16 +119,16 @@ async function getLaons() {
             
                 </div>`
             } else if(!item.isOrder) {
-                laonContainer.innerHTML += `<div class="laon" style="background-image: url('./img/yelo_block.svg');">
-            <div class="laon-left">
-                <h2 class="laon-title">
+                cardContainer.innerHTML += `<div class="card" style="background-image: url('./img/yelo_block.svg');">
+            <div class="card-left">
+                <h2 class="card-title">
                     ${item.name}
                 </h2>
                 <p>
                     ${item.description}
                 </p>
                 
-                <div class="laon-about">
+                <div class="card-about">
                     <div class="about-col">
                         <span>${item.spec_title_1}</span>
                         <p>${item.spec_title_1_desc}</p>
@@ -190,19 +158,19 @@ async function getLaons() {
             
                 </div>`
             } else if (item.hasAForm && item.form_class == "call_short_form") {
-                laonContainer.innerHTML += `
+                cardContainer.innerHTML += `
                 <div class="has-form">
             
-                <div class="laon" style="background-image: url('./img/yelo_block.svg');">
-                <div class="laon-left">
-                    <h2 class="laon-title">
+                <div class="card" style="background-image: url('./img/yelo_block.svg');">
+                <div class="card-left">
+                    <h2 class="card-title">
                         ${item.name}
                     </h2>
                     <p>
                         ${item.description}
                     </p>
                     
-                    <div class="laon-about">
+                    <div class="card-about">
                         <div class="about-col">
                             <span>${item.spec_title_1}</span>
                             <p>${item.spec_title_1_desc}</p>
@@ -241,7 +209,7 @@ async function getLaons() {
                 
                 
                 <div class="short-form ${item.form_class} form">
-                <form class="laon-form">
+                <form class="card-form">
 
                     <div class="form-inputs">
                         <div class="form-input monthly-amount  padding-input">
@@ -317,19 +285,19 @@ async function getLaons() {
 
             </div>`
             } else if(item.hasAForm && item.form_class == "call_long_form") {
-                laonContainer.innerHTML += `
+                cardContainer.innerHTML += `
                 <div class="has-form">
             
-                <div class="laon" style="background-image: url('./img/yelo_block.svg');">
-                <div class="laon-left">
-                    <h2 class="laon-title">
+                <div class="card" style="background-image: url('./img/yelo_block.svg');">
+                <div class="card-left">
+                    <h2 class="card-title">
                         ${item.name}
                     </h2>
                     <p>
                         ${item.description}
                     </p>
                     
-                    <div class="laon-about">
+                    <div class="card-about">
                         <div class="about-col">
                             <span>${item.spec_title_1}</span>
                             <p>${item.spec_title_1_desc}</p>
@@ -370,7 +338,7 @@ async function getLaons() {
                 <div class="long-form ${item.form_class} form">
                 <div class="form-inner">
                     <h2>Kredit sifarişi</h2>
-                    <form class="laon-form">
+                    <form class="card-form">
     
                         <div class="form-inputs line-input">
                             <div class="form-input">
@@ -619,4 +587,4 @@ async function getLaons() {
       console.error("Error fetching or processing news:", error);
     }
 }
-getLaons();
+getcards();

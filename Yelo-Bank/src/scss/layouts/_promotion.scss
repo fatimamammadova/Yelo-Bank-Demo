@@ -2,8 +2,9 @@
     background-color: #F8F8F8;
     background-repeat: no-repeat;
     background-position: 100% 0;
-    height: 0;
     transition: all 0.3s linear;
+    height: 0;
+    display: none;
     overflow: hidden;
     position: fixed;
     z-index: 999;
@@ -11,9 +12,11 @@
     &.show {
         height: 120px;
     }
-    display: none;
     @media (min-width: 576px) {
-        display: block;
+        &.show {
+            display: block;
+        }
+
     }
     .promotion-inner {
         max-width: 1440px;

@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Bu Günə Olan Məzənnə - Online Valyuta Pul Məzənnəsi Kursları</title>
     <link rel="shortcut icon" href="https://www.yelo.az/site/templates/images/fav/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -197,6 +197,42 @@
         </section>
 
 
+
+        <section id="exchange-rate">
+            <div class="container">
+                <div class="er-calculator">
+                    
+                    <div class="er-line">
+                        <input type="text" name="" class="er-input cur-value" value="" placeholder="Satıram">
+                        <select name="input-select" class="input-select">
+                            <option value="azn" selected class="input-option">AZN</option>
+                            <option value="usd" class="input-option">USD</option>
+                            <option value="eur" class="input-option">EUR</option>
+                            <option value="rub" class="input-option">RUB</option>
+                            <option value="gbp" class="input-option">GBP</option>
+                        </select>
+                    </div>
+
+                    <a href="javascript:void(0)" class="change-sides" style="background-image: url('img/change_sides.svg');"></a>
+            
+                    <div class="er-line">
+                        <div class="er-output cur-value">Alıram</div>
+                        <select name="output-select" class="output-select">
+                            <option value="usd" selected class="output-option">USD</option>
+                            <option value="eur" class="output-option">EUR</option>
+                            <option value="rub" class="output-option">RUB</option>
+                            <option value="gbp" class="output-option">GBP</option>
+                        </select>
+                    </div>
+                </div>
+
+                <div class="er-table">
+                    <div class="table-inner">
+                        
+                    </div>
+                </div>
+            </div>
+        </section>
         
 
         <section id="exchante-rate-info">
@@ -213,6 +249,8 @@
             </div>
         </section>
     </main>
+
+
     <div class="message-modal">
         <div class="modal-popup">
             <div class="modal-inner">
@@ -356,6 +394,10 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="laon-button">
+        <a href="#" style="background-image: url('img/laon-btn.webp');"></a>
     </div>
 
     <footer>
@@ -519,6 +561,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/js/promotion.js"></script>
     <script src="../src/js/exchangeRate.js"></script>
     <script src="../src/js/swiper.js"></script>
 </body>

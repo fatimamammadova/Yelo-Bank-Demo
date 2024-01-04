@@ -9,11 +9,6 @@ const hamburgerMenuBtn = document.querySelector(".hm-button");
 const hamburgerMenuContent = document.querySelector(".hamburger-menu");
 const contentContainer = document.querySelector(".hamburger-menu .container");
 const headerBg = document.querySelector(".header-bottom");
-const CloseBtn = document.querySelector(".close-img");
-const promotion = document.querySelector(".mobile-app-promotion");
-const header = document.querySelector("header");
-const mobilePromotion = document.querySelector(".mobile-promotion");
-const mobileCloseBtn = document.querySelector(".mp-close-btn");
 const search = document.querySelector(".search");
 const searchInput = document.querySelector(".search-inner");
 const searchOpenBtn = document.querySelector(".search-icon");
@@ -110,22 +105,6 @@ window.addEventListener('scroll',() => {
   }
   windowScroll = scrollH
 })
-
-CloseBtn.addEventListener("click", () => {
-  sessionStorage.setItem("status", "hide");
-  header.style.top = "0";
-  mainTitle.style.paddingTop = "120px";
-  mobilePromotion.classList.remove("show");
-  promotion.classList.remove("show");
-});
-
-mobileCloseBtn.addEventListener("click", () => {
-  sessionStorage.setItem("status", "hide");
-  header.style.top = "0";
-  mainTitle.style.paddingTop = "120px";
-  mobilePromotion.classList.remove("show");
-  promotion.classList.remove("show");
-});
 
 searchOpenBtn.addEventListener("click", () => {
   search.classList.add("show");

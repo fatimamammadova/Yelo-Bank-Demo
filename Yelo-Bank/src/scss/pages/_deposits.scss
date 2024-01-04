@@ -1,10 +1,11 @@
 main {
 
-    #laons {
+
+    #deposits-cards {
         @extend %card;
     }
 
-    #credit-info {
+    #deposits-info {
         @extend %info;
     }
 }

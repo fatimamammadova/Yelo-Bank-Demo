@@ -180,3 +180,1073 @@
         color: $white-color;
     }
 }
+
+#main-title {
+    text-align: center;
+    margin-bottom: 50px;
+    padding-top: 120px;
+    h1 {
+        margin-top: 15px;
+        @media (min-width: 1000px) {
+            margin-top: 30px;
+        }
+        text-align: center;
+        font-size: 20px;
+        font-family: "TTFirsNeue Medium";
+        @media (min-width: 1000px) {
+            font-size: 54px;
+        }
+    }
+    p {
+        color: $main-text-color;
+        max-width: 840px;
+        margin: 0 auto;
+        padding: 0 0 20px;
+        line-height: 30px;
+        text-align: center;
+        font-size: 16px;
+        line-height: 20px;
+        @media (min-width: 1000px) {
+            line-height: 30px;
+            font-size: 22px;              
+        }
+    }
+    .filter-cash {
+        display: block;
+        @media (min-width: 1000px) {
+            display: inline-block;
+            height: 55px;
+        }
+        white-space: nowrap;
+        margin: 10px 0 0 0;
+        .filter-inner {
+            border-radius: 10px;
+            border: 1px solid $main-border-color;
+            width: 100%;
+            display: flex;
+            .cash-button {
+                display: block;
+                font-family: "TT Commons Bold";
+                width: 100%;
+                box-sizing: border-box;
+                color: black;
+                transition: all 0.2s ease-out;
+                background: transparent;
+                text-align: center;
+                padding: 10px 15px;
+                height: auto;
+                font-size: 16px;
+                @media (min-width: 1000px) {
+                    height: 55px;
+                    padding: 15px 30px;
+                    font-size: 18px;
+                    
+                }
+                &.active {
+                    background-color: $main-color;
+                }
+                &:hover {
+                    background-color: $main-color;
+                }
+                &:first-child {
+                    border-right: 1px solid #ECECEC;
+                    border-radius: 10px 0 0 10px;
+                }
+                &:last-child {
+                    border-radius: 0 10px 10px 0;
+                }
+            }
+        }
+    }
+}
+
+.news {
+    margin: 0 -15px;
+    .row {
+        justify-content: flex-start !important;
+        .news-item {
+            padding: 0 15px;
+            margin-bottom: 15px;
+            @media (min-width: 1000px) {
+                margin-bottom: 0;
+            }
+            .news-inner {
+                position: relative;
+                border-radius: 10px;
+                border: 1px solid $main-border-color;
+                padding: 30px 30px 20px 30px;
+                height: 100%;
+                
+                .news-heading {
+                    @include Flex(flex-start,space-between);
+                    h3 {
+                        display: inline-block;
+                        min-height: 72px;
+                        font-family: "TT Commons Bold";
+                        font-size: 20px;
+                        line-height: 24px;
+                        max-width: 270px;
+                    }
+                    .edit-news {
+                        position: relative;
+                        width: 30px;
+                        .edit-button {
+                            width: 100%;
+                            cursor: pointer;
+                            text-align: end;
+                            i {
+                                width: 100%;
+                                font-size: 20px;
+                                color: $main-text-color;
+                            }
+                        }
+                        .edit-dropdown {
+                            @include PositionR(absolute,0,0);
+                            z-index: 9;
+                            width: 120px;
+                            transform-origin: right top;
+                            background-color: $white-color;
+                            box-shadow: 0 2px 14px 0 rgba(0,0,0,0.17);
+                            transition: all 0.2s cubic-bezier(1.000, 0.000, 0.000, 1.000);
+                            padding: 10px 0;
+                            border-radius: 5px;
+                            transform: scale(0);
+                            opacity: 0;
+                            visibility: hidden;
+                            &.show {
+                                transform: scale(1);
+                                opacity: 1;
+                                visibility: visible;
+                            }
+                            .dropdown-item {
+                                font-size: 14px;
+                                color: $main-text-color;
+                                padding: 0 20px 0;
+                                cursor: pointer;
+                                transition: all 0.2s cubic-bezier(1.000, 0.000, 0.000, 1.000);
+                                &:first-child {
+                                    margin-bottom: 5px;
+                                }
+                                &:hover {
+                                    color: $secondary-color;
+                                }
+                                i {
+                                    width: 14px;
+                                }
+                                span {
+                                    display: inline-block;
+                                    padding-left: 5px;
+    
+                                }
+                            }
+                        }
+                    }
+                }
+                .news-footer {
+                    @include Flex(flex-start,space-between);
+                    
+                    .arrow-btn {
+                        display: inline-block;
+                        font-family: "TT Commons Bold";
+                        font-size: 16px;
+                        color: $blue-text-color;
+                        padding: 5px 38px 5px 0;
+                        margin-top: 10px;
+                        background: url("../../public/img/blue_arrow.svg") no-repeat right center;
+                        
+                    }
+                    .time {
+                        display: inline-block;
+                        margin: 13px 0 0;
+                        color: rgba(0,0,0, 0.6);
+                    }
+                }
+            }
+        }
+    }
+
+    .more-news-link {
+        text-align: center;
+        padding-top: 25px;
+        a {
+            display: inline-block;
+            height: 48px;
+            font-family: "TT Commons Bold";
+            padding: 0 54px 0 20px;
+            border-radius: 6px;
+            border: 1px solid $blue-text-color;
+            line-height: 50px;
+            color: $blue-text-color;
+            background: url('../../public/img/blue_arrow.svg') no-repeat calc(100% - 12px) 50%;
+            background-color: $white-color;
+            transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+
+            &:hover {
+                color: $white-color;
+                background: url('../../public/img/white-arrow.svg') no-repeat calc(100% - 12px) 50%;
+                background-color: $blue-text-color;
+            }
+        }
+    }
+}
+
+.edit-modal {
+    @include Position(fixed,0,0);
+    z-index: 999999;
+    width: 100%;
+    height: 100%;
+    background-color: $main-text-color;
+    overflow: hidden;
+    opacity: 0;
+    visibility: hidden;
+    transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+    &.show {
+        opacity: 1;
+        visibility: visible;
+    }
+    .modal {
+        @include Position(absolute,50%,50%,translate(-50%,-30%));
+        padding: 0 10px;
+        max-width: 705px;
+        width: 100%;
+        height: 350px;
+        transition: all 0.3s cubic-bezier(.52, .01, .16, 1);
+        &.show-modal {
+            transform: translate(-50%,-50%);
+        }
+        .modal-inner {
+            background-color: $white-color;
+            width: 100%;
+            height: 100%;
+            position: relative;
+            border-radius: 20px;
+            padding: 40px 10px 10px 10px; 
+            .close-edit-modal {
+                @include PositionR(absolute,0,0);
+                height: 50px;
+                width: 50px;
+                @media (min-width: 1000px) {
+                    @include PositionR(absolute,0,-50px);
+                }
+                .close-button {
+                    cursor: pointer;
+                    position: relative;
+                    width: 100%;
+                    height: 100%;
+                    img {
+                        @include Position(absolute,50%,50%,translate(-50%,-50%));
+                        height: 23px;
+                        width: 23px;
+
+                        &.mobile-close {
+                            display: block;
+                            @media (min-width: 992px) {
+                                display: none;
+                            }
+                        }
+                        &.desktop-close {
+                            display: none;
+                            @media (min-width: 992px) {
+                                display: block;
+                            }
+                        }
+                    }
+                }
+            }
+            .modal-content {
+                overflow-y: scroll;
+                height: 100%;
+                position: relative;
+                &::-webkit-scrollbar {
+                    width: 4px;
+                    &-thumb{
+                        background-color: #a8a8a8;
+                        border-radius: 3px;
+                    }
+                }
+                .content-title {
+                    text-align: center;
+                    h2 {
+                        font-family: "TT Commons Medium";
+                        font-size: 25px;
+                        margin: 0 0 25px 0;
+                    }
+                }
+                .content-text {
+                    form {
+                        max-width: 600px;
+                        margin: 0 auto;
+                        .content-item {
+                            &:first-child {
+                                padding-bottom: 40px;
+                            }
+                            label {
+                                display: block;
+                                line-height: 1;
+                            }
+                            .editinput {
+                                width: 100%;
+                                height: 55px;
+                                padding: 16px 10px;
+                                border-radius: 10px;
+                                border: 1px solid $main-border-color;
+                                font-size: 18px;
+                                @media (min-width: 1000px) {
+                                    height: 65px;
+                                    padding: 20px 16px;
+                                }
+                            }
+                            .item-button {
+                                width: 100%;
+                                text-align: end;
+                                padding: 30px 0 15px 0;
+                                border-top: 1px solid $main-border-color;
+                                .edit-news-button {
+                                    width: 100%;
+                                    font-size: 18px;
+                                    @extend %tertiary-button;
+                                    @media (min-width: 1000px) {
+                                        width: 33.333%;
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
+
+%info {
+    padding: 20px 0;
+        .partial-content {
+            display: inline;
+            h2 {
+                font-family: "TT Commons Bold";
+                color: $secondary-text-color;
+                font-size: 22.4px;
+            }
+            h3 {
+                color: $secondary-text-color;
+                font-size: 19.2px;
+            }
+            p { 
+                display: inline;
+                color: $secondary-text-color;
+                a   {
+                    color: $blue-text-color;
+                }
+            }
+            ul {
+                li {
+                    color: $secondary-text-color;
+                }
+            }
+            table {
+                border: 1px solid $main-border-color;
+                margin: 20px 0;
+                border-radius: 10px;
+                tr {
+                    td {
+                        padding: 5px 10px;
+                        &:first-child {
+                            border-right: 1px solid $main-border-color;
+                        }
+                        .table-title {
+                            font-family: "TT Commons Medium";
+                            color: $secondary-text-color; 
+                            padding: 0 15px;  
+                        }
+                        .table-amount {
+                            display: inline-block;
+                            padding: 0 15px;
+                        }
+                    }
+                }
+            }
+        }
+        .more-button {
+            display: inline;
+            color: $blue-text-color;
+            cursor: pointer;
+            span {
+                color: $secondary-text-color;
+            }
+        }
+}
+
+%card {
+    padding: 0 0 40px 0;    
+        .card {
+            position: relative;
+            border-radius: 10px;
+            border: 1px solid $main-border-color;
+            background: no-repeat 100px /cover;
+            background-color: $card-bg-color;
+            margin: 0 0 45px 0;
+            @media (min-width: 1000px) {
+                background: no-repeat 117% /contain;
+                background-color: $white-color;
+            }
+            .card-left {
+                background-color: $white-color;
+                margin-top: 160px;
+                padding: 20px;
+                width: 100%;
+                @media (min-width: 1000px) {
+                    margin-top: 0;
+                    padding: 45px 40px 45px 60px;
+                    width: calc(100% - 475px);
+                    background-color: transparent;
+                }
+                .card-title {
+                    padding: 0 0 10px;
+                    font-family: "TTFirsNeue Medium";
+                    font-size: 20px;
+                    line-height: 25px;
+                    @media (min-width: 1000px) {
+                        font-size: 34px;
+                        line-height: 40px;
+                    }
+                }
+                p {
+                    font-size: 16px;
+                    line-height: 20px;
+                    color: $main-text-color;
+                    @media (min-width: 1000px) {
+                        font-size: 18px;
+                    }
+                }
+    
+                .card-about {
+                    padding: 20px 0;
+                    @include Flex($j-con: flex-start,$f-dir:column);
+                    @media (min-width: 1000px) {
+                        padding: 40px 0 50px 0;
+                        @include Flex($j-con: flex-start,$f-dir:row);
+                        
+                    }
+                    .about-col {
+                        margin: 0 0 10px 0;
+                        @media (min-width: 1000px) {
+                            margin: 0 20px 0 0; 
+                        }
+                        span {
+                            font-size: 16px;
+                            color: $main-text-color;
+                        }
+                        p {
+                            color: $secondary-color;
+                            font-family: "TT Commons Medium";
+                            line-height: 26px;
+                            font-size: 18px;
+                            @media (min-width: 1000px) {
+                                font-size: 21px;
+                            }
+                        }
+                    }
+                }
+
+                .buttons {
+                    @include Flex($j-con: flex-start,$f-dir:column);
+                    @media (min-width: 1000px) {
+                        @include Flex($j-con: flex-start,$f-dir:row);
+                    }
+                    .order-button {
+                        @extend %main-button;
+                        width: 100%;
+                        @media (min-width: 1000px) {
+                            width: 225px;
+                        }
+                    }
+                    .link-button {
+                        margin: 0 0 0 20px;
+                        opacity: 0.5;
+                        transition: all 0.2s ease-out;
+                        @extend %secondary-button;
+                        &:hover {
+                            opacity: 1;  
+                        }
+                    }
+                }
+            }
+
+            .right-img {
+                width: 100%;
+                height: 170px;
+                position: absolute;
+                top: -10px;
+                right: 0px;
+                bottom: auto;
+                background-repeat: no-repeat;
+                background-size: contain;
+                background-position: bottom right;
+                @media (min-width: 1000px) {
+                    width: 40%;
+                    height: 110%;
+                    top: auto;
+                    bottom: 0px;
+                    background-position: bottom center;
+                    
+                }
+            }
+
+            .card-right {
+                display: none;
+                @media (min-width: 1000px) {
+                    display: block;
+                }
+                position: absolute;
+                top: 20px;
+                right: 135px;
+
+                .img {
+                    transform: perspective(630px);  
+                    .img-container {
+                        position: relative;
+                        width: 210px;
+                        height: 333px;
+                        border-radius: 15px;
+                        transform-style: preserve-3d;
+                        transition: all 0.1s ease-out;
+                        .card-img {
+                            position: relative;
+                            z-index: 2;
+                            width: 100%;
+                            height: 100%;
+                            background: no-repeat 117% /contain;
+                            
+                            .gradient-bg {
+                                position: absolute;
+                                top: 0;
+                                left: 0;
+                                width: 100%;
+                                height: 100%;
+                                background: linear-gradient(135deg, rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 60%);
+                            }
+                            
+                        }
+                        .shadow-bg {
+                            position: absolute;
+                            top: 5%;
+                            left: 5%;
+                            width: 90%;
+                            height: 90%;
+                            transition: all 0.2s ease-out;
+                            box-shadow: 0 8px 30px rgba(14,21,47,0.6);
+                        }
+                    }
+                }
+            }
+        }
+
+        .short-form {
+            display: none;
+            margin: 0 0 45px;
+            &.active {
+                display: block;
+            }
+            .card-form {
+                max-width: 600px;
+                margin: 0 auto;
+                .form-inputs {
+                    @media (min-width: 1000px) {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    &:first-child {
+                        border: 1px solid #E7E7E7;
+                        border-radius: 10px 10px 10px 0;
+                        margin-bottom: 40px;
+                    }
+                    &:nth-child(2) {
+                        border: 1px solid #E7E7E7;
+                        border-radius: 10px;
+                        margin-bottom: 20px;    
+                    }
+                    &:nth-child(3) {
+                        margin-bottom: 40px;
+                    }
+                    &.line-input {
+                        .form-input {
+                            &:first-child {
+                                margin: 0 0 15px 0;
+                                @media (min-width: 1000px) {
+                                    padding: 0 10px 0 0;
+                                    margin: 0;
+                                }
+                            }
+                            &:last-child {
+                                @media (min-width: 1000px) {
+                                    padding: 0 0 0 10px;
+                                }
+                            }
+                        }
+                    }
+                    .form-input {
+                        position: relative;
+                        width: 100%;
+                        .input-inner {
+                            width: 100%;
+                            position: relative;
+                            &.border-input {
+                                border-right: none;
+                                border-bottom: 1px solid #E7E7E7;
+                                @media (min-width: 1000px) {
+                                    border-right: 1px solid #E7E7E7;
+                                    border-bottom: none;
+                                    
+                                }
+                            }
+                            &.padding-input {
+                                padding: 10px;
+                            }
+                            span {
+                                color: rgba(0,0,0,0.5);
+                                font-size: 15px;
+                                line-height: 15px;
+                                display: block;
+                                margin: 0 0 4px 0;
+                            }
+                            .number-range {
+                                width: 100%;
+                                font-size: 26px;
+                                font-family: "TT Commons Medium";
+                                border: none;
+                                &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+                                    appearance: none;
+                                    margin: 0;
+                                }
+                            }
+                            .title-exponent {
+                                position: absolute;
+                                right: 17px;
+                                bottom: 10px;
+                                line-height: 15px;
+                                font-size: 15px;
+                                font-family: "TT Commons Bold";
+                                color: $main-text-color;
+                            }
+                            .range {
+                                appearance: none;
+                                width: 100%;
+                                position: absolute;
+                                left: 0px;
+                                bottom: 0px;
+                                background-color: rgba(0,0,0, 0.1);
+                                @media (min-width: 1000px) {
+                                    background-color: transparent;
+                                }
+                                --range: calc(var(--max) - var(--min));
+                                --ratio: calc((var(--val) - var(--min))/var(--range));
+                                --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em)); 
+                                &::-webkit-slider-runnable-track {
+                                    width: 100%;
+                                    height: 4px;
+                                    cursor: pointer;
+                                    background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
+                                }
+                                                    
+                                &::-webkit-slider-thumb {
+                                    height: 24px;
+                                    width: 24px;
+                                    border-radius: 50%;
+                                    background-color: #ffffff;
+                                    cursor: pointer;
+                                    appearance: none;
+                                    border: 5px solid #FFC628;
+                                    margin: -10px 0 0 0;
+                                }
+                                &::-moz-range-track {
+                                    width: 100%;
+                                    height: 3px;
+                                    cursor: pointer;
+                                    background-color: #FFC628;
+                                }
+                                &::-moz-range-thumb {
+                                    height: 20px;
+                                    width: 20px;
+                                    border-radius: 100%;
+                                    background-color: #ffffff;
+                                    cursor: pointer;
+                                    appearance: none;
+                                    border: 3px solid #FFC628;
+                                }
+                                &::-ms-track {
+                                    width: 100%;
+                                    height: 3px;
+                                    cursor: pointer;
+                                }
+                            }
+                            .user-info {
+                                width: 100%;
+                                font-size: 18px;
+                                box-sizing: border-box;
+                                padding: 0 20px;
+                                border: none;
+                                border-radius: 10px;
+                                height: 55px;
+                                @media (min-width: 1000px) {
+                                    height: 65px;
+                                }
+                            }
+                            .line-info {
+                                width: 100%;
+                                height: 65px;
+                                font-size: 18px;
+                                box-sizing: border-box;
+                                padding: 0 20px;
+                                border: none;
+                                border-radius: 10px;
+                                border: 1px solid #E7E7E7;
+                                height: 55px;
+                                @media (min-width: 1000px) {
+                                    height: 65px;
+                                }
+                            }
+                        }
+    
+                        .input-error {
+                            display: none;
+                            position: absolute;
+                            background: #ff7777;
+                            color: white;
+                            border-radius: 5px;
+                            z-index: 2;
+                            padding: 3px 10px 0;
+                            left: 20px;
+                            bottom: -10px;
+                            font-size: 14px;
+                        }
+                    }
+                }
+    
+    
+                .form-bottom {
+                    border-top: 1px solid #ECECEC;
+                    padding: 30px 0;
+                    .fb-inner {
+                        @media (min-width: 1000px) {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        .form-info {
+                            width: 100%;
+                            margin-bottom: 20px;
+                            @media (min-width: 1000px) {
+                                max-width: 360px;
+                                margin-bottom: 0;
+                            }
+                            p {
+                                font-size: 15px;
+                                color: $secondary-color;
+                                background-repeat: no-repeat;
+                                background-position: 0 0;
+                                background-image: url('../../public/img/shield_gray_icon.svg');
+                                padding: 0 0 0 50px;
+                                height: 50px;
+                            }
+                        }
+                        .order-button {
+                            @extend %tertiary-button;
+                            
+                            width: 100%;
+                            height: 50px;
+                            font-size: 16px;
+                            @media (min-width: 1000px) {
+                                height: 65px;
+                                font-size: 18px;
+                                width: 33.333%;
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    
+        .long-form {
+            display: none;
+            margin: 0 0 45px;
+            &.active {
+                display: block;
+            }
+            .form-inner {
+                border: 1px solid #ECECEC;
+                border-radius: 10px;
+                position: relative;
+                text-align: center;
+                padding: 30px 10px 0;
+    
+                h2 {
+                    font-family: "TT Commons Bold";
+                    font-size: 25px;
+                    margin: 0 0 25px 0;
+                }
+    
+                .card-form {
+                    max-width: 600px;
+                    margin: 0 auto;
+                    .form-inputs {
+                        margin-bottom: 20px;    
+                        @media (min-width: 1000px) {
+                            display: flex;
+                            justify-content: space-between;
+                        }
+                        &:nth-child(2) {
+                            margin-bottom: 0;
+                        }
+                        &.form-input-line {
+                            border: 1px solid #E7E7E7;
+                            border-radius: 10px;
+                        }
+                        &.line-input {
+                            .form-input {
+                                &:first-child {
+                                    margin: 0 0 15px 0;
+                                    @media (min-width: 1000px) {
+                                        padding: 0 10px 0 0;
+                                        margin: 0;
+                                    }
+                                }
+                                &:last-child {
+                                    @media (min-width: 1000px) {
+                                        padding: 0 0 0 10px;
+                                    }
+                                }
+                            }
+                        }
+                        .form-input {
+                            position: relative;
+                            width: 100%;
+                            &.form-inputs-tripl {
+                                @media (min-width: 1000px) {
+                                    width: 33.333%;
+                                    height: 70px;
+                                }
+                            }
+                            .input-inner {
+                                width: 100%;
+                                position: relative;
+                                &.border-input {
+                                    border-right: none;
+                                    border-bottom: 1px solid #E7E7E7;
+                                    @media (min-width: 1000px) {
+                                        border-right: 1px solid #E7E7E7;
+                                        border-bottom: none;
+                                        
+                                    }
+                                }
+                                &.padding-input {
+                                    padding: 10px;
+                                }
+                                span {
+                                    color: rgba(0,0,0,0.5);
+                                    font-size: 15px;
+                                    line-height: 15px;
+                                    display: block;
+                                    text-align: left;
+                                    margin: 0 0 4px 0;
+                                }
+                                .number-range {
+                                    width: 100%;
+                                    font-size: 26px;
+                                    font-family: "TT Commons Medium";
+                                    border: none;
+                                    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+                                        appearance: none;
+                                        margin: 0;
+                                    }
+                                }
+                                .title-exponent {
+                                    position: absolute;
+                                    right: 17px;
+                                    bottom: 10px;
+                                    line-height: 15px;
+                                    font-size: 15px;
+                                    font-family: "TT Commons Bold";
+                                    color: $main-text-color;
+                                }
+                                .range {
+                                    appearance: none;
+                                    width: 100%;
+                                    position: absolute;
+                                    left: 0px;
+                                    bottom: 0px;
+                                    background-color: rgba(0,0,0, 0.1);
+                                    @media (min-width: 1000px) {
+                                        background-color: transparent;
+                                    }
+                                    --range: calc(var(--max) - var(--min));
+                                    --ratio: calc((var(--val) - var(--min))/var(--range));
+                                    --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em)); 
+                                    &::-webkit-slider-runnable-track {
+                                        width: 100%;
+                                        height: 4px;
+                                        cursor: pointer;
+                                        background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
+                                    }
+                                                        
+                                    &::-webkit-slider-thumb {
+                                        height: 24px;
+                                        width: 24px;
+                                        border-radius: 50%;
+                                        background-color: #ffffff;
+                                        cursor: pointer;
+                                        appearance: none;
+                                        border: 5px solid #FFC628;
+                                        margin: -10px 0 0 0;
+                                    }
+                                    &::-moz-range-track {
+                                        width: 100%;
+                                        height: 3px;
+                                        cursor: pointer;
+                                        background-color: #FFC628;
+                                    }
+                                    &::-moz-range-thumb {
+                                        height: 20px;
+                                        width: 20px;
+                                        border-radius: 100%;
+                                        background-color: #ffffff;
+                                        cursor: pointer;
+                                        appearance: none;
+                                        border: 3px solid #FFC628;
+                                    }
+                                    &::-ms-track {
+                                        width: 100%;
+                                        height: 3px;
+                                        cursor: pointer;
+                                    }
+                                }
+                                .user-info {
+                                    width: 100%;
+                                    font-size: 18px;
+                                    box-sizing: border-box;
+                                    padding: 0 20px;
+                                    border: none;
+                                    border-radius: 10px;
+                                    height: 55px;
+                                    @media (min-width: 1000px) {
+                                        height: 65px;
+                                    }
+                                }
+                                .line-info {
+                                    width: 100%;
+                                    height: 65px;
+                                    font-size: 18px;
+                                    box-sizing: border-box;
+                                    padding: 0 20px;
+                                    border: none;
+                                    border-radius: 10px;
+                                    border: 1px solid #E7E7E7;
+                                    height: 55px;
+                                    @media (min-width: 1000px) {
+                                        height: 65px;
+                                    }
+                                }
+                            }
+        
+                            .input-error {
+                                display: none;
+                                position: absolute;
+                                background: #ff7777;
+                                color: white;
+                                border-radius: 5px;
+                                z-index: 2;
+                                padding: 3px 10px 0;
+                                left: 20px;
+                                bottom: -10px;
+                                font-size: 14px;
+                            }
+                            #form-select {
+                                font-family: "TT Commons Regular";
+                                color: $main-text-color;
+                                &.line-info {
+                                    padding: 0 10px;
+                                }
+                            }
+                        }
+                    }
+                    .credit-result {
+                        width: 100%;
+                        display: flex;
+                        justify-content: center;
+                        padding: 30px 0;
+                        .result-item {
+                            &:first-child {
+                                width: 33.3333%;
+                                text-align: right;
+                                padding: 0 20px 0 0;
+                                border-right: 1px solid #E7E7E7;
+                                @media (min-width: 1000px) {
+                                    width: 50%;
+                                }
+                            }
+                            &:nth-child(2) {
+                                padding-left: 20px;
+                                width: 33.3333%;
+                                @media (min-width: 1000px) {
+                                    width: 25%;
+                                }
+                            }
+                            &:last-child {
+                                padding-left: 20px;
+                                border-left: 1px solid #E7E7E7;
+                                margin-left: 12px;
+                                text-align: left;
+                                padding: 0 0 0 20px;
+                                width: 33.3333%;
+                                @media (min-width: 1000px) {
+                                    width: 50%;
+                                }
+                            }
+                            p {
+                                color: $main-text-color;
+                            }
+                        }
+                    }
+        
+        
+                    .form-bottom {
+                        border-top: 1px solid #ECECEC;
+                        padding: 30px 0;
+                        .fb-inner {
+                            @media (min-width: 1000px) {
+                                display: flex;
+                                justify-content: space-between;
+                            }
+                            .form-info {
+                                width: 100%;
+                                margin-bottom: 20px;
+                                @media (min-width: 1000px) {
+                                    max-width: 360px;
+                                    margin-bottom: 0;
+                                }
+                                p {
+                                    text-align: left;
+                                    font-size: 15px;
+                                    color: $secondary-color;
+                                    background-repeat: no-repeat;
+                                    background-position: 0 0;
+                                    background-image: url('../../public/img/shield_gray_icon.svg');
+                                    padding: 0 0 0 50px;
+                                    height: 50px;
+                                }
+                            }
+                            .order-button {
+                                @extend %tertiary-button;
+                                width: 100%;
+                                height: 50px;
+                                font-size: 16px;
+                                @media (min-width: 1000px) {
+                                    height: 65px;
+                                    font-size: 18px;
+                                    width: 33.333%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+}
