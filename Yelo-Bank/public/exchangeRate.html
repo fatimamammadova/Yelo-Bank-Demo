@@ -76,9 +76,7 @@
         </div>
     </div>
 
-   
     <header>
-
         <div class="header-top">
             <div class="container">
                 <div class="row">
@@ -179,7 +177,6 @@
 
     </header>
 
-
     <main>
 
         <section id="main-title">
@@ -189,52 +186,80 @@
 
                 <div class="filter-cash">
                     <div class="filter-inner">
-                        <a href="javascript:void(0)" class="cash-button active">Nağd</a>
-                        <a href="javascript:void(0)" class="cash-button">Nağdsız</a>
+                        <a href="javascript:void(0)" data-cash="1" class="cash-button active">Nağd</a>
+                        <a href="javascript:void(0)" data-cash="0" class="cash-button">Nağdsız</a>
                     </div>
                 </div>
             </div>
         </section>
 
-
-
         <section id="exchange-rate">
             <div class="container">
-                <div class="er-calculator">
-                    
-                    <div class="er-line">
-                        <input type="text" name="" class="er-input cur-value" value="" placeholder="Satıram">
-                        <select name="input-select" class="input-select">
-                            <option value="azn" selected class="input-option">AZN</option>
-                            <option value="usd" class="input-option">USD</option>
-                            <option value="eur" class="input-option">EUR</option>
-                            <option value="rub" class="input-option">RUB</option>
-                            <option value="gbp" class="input-option">GBP</option>
-                        </select>
-                    </div>
 
-                    <a href="javascript:void(0)" class="change-sides" style="background-image: url('img/change_sides.svg');"></a>
-            
-                    <div class="er-line">
-                        <div class="er-output cur-value">Alıram</div>
-                        <select name="output-select" class="output-select">
-                            <option value="usd" selected class="output-option">USD</option>
-                            <option value="eur" class="output-option">EUR</option>
-                            <option value="rub" class="output-option">RUB</option>
-                            <option value="gbp" class="output-option">GBP</option>
-                        </select>
-                    </div>
-                </div>
-
-                <div class="er-table">
-                    <div class="table-inner">
+                <div class="er-wrapper">
+                    <div class="er-calculator">
                         
+                        <div class="er-line">
+                            <input type="text" name="" class="er-input cur-value" value="" placeholder="Satıram">
+                            <select name="input-select" class="input-select">
+                                <option value="azn" selected class="input-option">AZN</option>
+                                <option value="usd" class="input-option">USD</option>
+                                <option value="eur" class="input-option">EUR</option>
+                                <option value="rub" class="input-option">RUB</option>
+                                <option value="gbp" class="input-option">GBP</option>
+                            </select>
+                        </div>
+    
+                        <a href="javascript:void(0)" class="change-sides" style="background-image: url('img/change_sides.svg');"></a>
+                
+                        <div class="er-line">
+                            <div class="er-output cur-value">Alıram</div>
+                            <select name="output-select" class="output-select">
+                                <option value="usd" selected class="output-option">USD</option>
+                                <option value="eur" class="output-option">EUR</option>
+                                <option value="rub" class="output-option">RUB</option>
+                                <option value="gbp" class="output-option">GBP</option>
+                            </select>
+                        </div>
+                    </div>
+    
+                    <div class="er-table">
+                        <div class="table-inner">
+                            <table>
+                                <thead>
+                                    <tr>
+                                        <th>
+                                            <span class="table-title">Valyuta</span>
+                                        </th>
+                            
+                                        <th>
+                                            <span class="table-title">Alış</span>
+                                        </th>
+                            
+                                        <th>
+                                            <span class="table-title">Satış</span>
+                                        </th>
+                            
+                                        <th>
+                                            <span class="table-title">MB</span>
+                                        </th>
+                            
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    
+                                </tbody>
+                            </table>
+
+                            <span class="message-txt">
+                                *Rubl valyutası üzrə məzənnə təcili pul köçürmələri üçün nəzərdə tutulub.
+                            </span>
+                        </div>
                     </div>
                 </div>
             </div>
         </section>
         
-
         <section id="exchante-rate-info">
             <div class="container">
                 <div class="partial-content">
@@ -248,8 +273,8 @@
                 <button class="more-button"><span>...</span> Daha çox</button>
             </div>
         </section>
-    </main>
 
+    </main>
 
     <div class="message-modal">
         <div class="modal-popup">
@@ -561,6 +586,7 @@
     </footer>
 
     <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+    <script src="../src/js/main.js"></script>
     <script src="../src/js/promotion.js"></script>
     <script src="../src/js/exchangeRate.js"></script>
     <script src="../src/js/swiper.js"></script>

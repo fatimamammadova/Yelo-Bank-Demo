@@ -186,9 +186,9 @@
     margin-bottom: 50px;
     padding-top: 120px;
     h1 {
-        margin-top: 15px;
+        margin-top: 20px;
         @media (min-width: 1000px) {
-            margin-top: 30px;
+            margin-top: 40px;
         }
         text-align: center;
         font-size: 20px;
@@ -196,6 +196,25 @@
         @media (min-width: 1000px) {
             font-size: 54px;
         }
+    }
+    h2 {
+        margin-top: 20px;
+        @media (min-width: 1000px) {
+            margin-top: 40px;
+        }
+        padding: 0 0 10px;
+        font-size: 27px;
+        line-height: 1.2;
+        font-weight: 600;
+        @media (min-width: 1000px) {
+            padding: 0 0 30px;
+            font-size: 36px;
+            line-height: 57.6px;
+        }
+    }
+    .success-txt {
+        font-size: 18px;
+        color: $secondary-color;
     }
     p {
         color: $main-text-color;
@@ -256,6 +275,16 @@
                     border-radius: 0 10px 10px 0;
                 }
             }
+        }
+    }
+
+    .icon-img {
+        margin: 30px auto 0;
+        width: 64px;
+        img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
         }
     }
 }

@@ -202,20 +202,43 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
   padding-top: 120px;
 }
 #main-title h1 {
-  margin-top: 15px;
+  margin-top: 20px;
   text-align: center;
   font-size: 20px;
   font-family: "TTFirsNeue Medium";
 }
 @media (min-width: 1000px) {
   #main-title h1 {
-    margin-top: 30px;
+    margin-top: 40px;
   }
 }
 @media (min-width: 1000px) {
   #main-title h1 {
     font-size: 54px;
   }
+}
+#main-title h2 {
+  margin-top: 20px;
+  padding: 0 0 10px;
+  font-size: 27px;
+  line-height: 1.2;
+  font-weight: 600;
+}
+@media (min-width: 1000px) {
+  #main-title h2 {
+    margin-top: 40px;
+  }
+}
+@media (min-width: 1000px) {
+  #main-title h2 {
+    padding: 0 0 30px;
+    font-size: 36px;
+    line-height: 57.6px;
+  }
+}
+#main-title .success-txt {
+  font-size: 18px;
+  color: #000;
 }
 #main-title p {
   color: rgba(0, 0, 0, 0.5019607843);
@@ -282,6 +305,16 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
 }
 #main-title .filter-cash .filter-inner .cash-button:last-child {
   border-radius: 0 10px 10px 0;
+}
+#main-title .icon-img {
+  margin: 30px auto 0;
+  width: 64px;
+}
+#main-title .icon-img img {
+  width: 100%;
+  height: 100%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }
 
 .news {
@@ -1357,6 +1390,7 @@ main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .o
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  transition: all 0.3s ease;
 }
 
 body {
@@ -4163,22 +4197,33 @@ main #news .news-wrapper .news-title h2 {
   font-weight: 400;
 }
 
+main #main-title {
+  margin: 0 auto 50px auto;
+}
 main #exchange-rate {
+  padding: 120px 0 0;
+}
+main #exchange-rate .er-wrapper {
   padding: 10px 0 40px;
 }
-main #exchange-rate .er-calculator {
+@media (min-width: 1000px) {
+  main #exchange-rate .er-wrapper {
+    padding: 30px 0 60px;
+  }
+}
+main #exchange-rate .er-wrapper .er-calculator {
   position: relative;
   display: block;
   margin: 0 0 10px;
 }
 @media (min-width: 1000px) {
-  main #exchange-rate .er-calculator {
+  main #exchange-rate .er-wrapper .er-calculator {
     display: flex;
     justify-content: space-between;
     margin: 0 0 50px;
   }
 }
-main #exchange-rate .er-calculator .er-line {
+main #exchange-rate .er-wrapper .er-calculator .er-line {
   width: 100%;
   border-bottom: 3px solid #FFC628;
   font-family: "TT Commons Bold";
@@ -4187,32 +4232,32 @@ main #exchange-rate .er-calculator .er-line {
   padding: 10px 0 0 0;
 }
 @media (min-width: 1000px) {
-  main #exchange-rate .er-calculator .er-line {
+  main #exchange-rate .er-wrapper .er-calculator .er-line {
     width: calc(50% - 50px);
     border-bottom: 6px solid #FFC628;
   }
 }
-main #exchange-rate .er-calculator .er-line .er-input {
+main #exchange-rate .er-wrapper .er-calculator .er-line .er-input {
   font-size: 30px;
   width: 100%;
   border: none;
   font-family: "TT Commons Bold";
 }
 @media (min-width: 1000px) {
-  main #exchange-rate .er-calculator .er-line .er-input {
+  main #exchange-rate .er-wrapper .er-calculator .er-line .er-input {
     font-size: 40px;
   }
 }
-main #exchange-rate .er-calculator .er-line .er-output {
+main #exchange-rate .er-wrapper .er-calculator .er-line .er-output {
   font-size: 30px;
   width: 100%;
 }
 @media (min-width: 1000px) {
-  main #exchange-rate .er-calculator .er-line .er-output {
+  main #exchange-rate .er-wrapper .er-calculator .er-line .er-output {
     font-size: 40px;
   }
 }
-main #exchange-rate .er-calculator .er-line select {
+main #exchange-rate .er-wrapper .er-calculator .er-line select {
   font-family: "TT Commons Bold";
   font-size: 20px;
   padding: 0 12px 0 0;
@@ -4225,7 +4270,7 @@ main #exchange-rate .er-calculator .er-line select {
           appearance: none;
   background: url("../../public/img/currency-arrow.svg") no-repeat right 40%;
 }
-main #exchange-rate .er-calculator .change-sides {
+main #exchange-rate .er-wrapper .er-calculator .change-sides {
   display: none;
   width: 100px;
   height: 100%;
@@ -4237,32 +4282,32 @@ main #exchange-rate .er-calculator .change-sides {
   background-position: center;
 }
 @media (min-width: 1000px) {
-  main #exchange-rate .er-calculator .change-sides {
+  main #exchange-rate .er-wrapper .er-calculator .change-sides {
     display: block;
   }
 }
-main #exchange-rate .er-table .table-inner table {
+main #exchange-rate .er-wrapper .er-table .table-inner table {
   border-radius: 10px;
   border: 1px solid #ECECEC;
   width: 100%;
   margin: 20px 0;
 }
-main #exchange-rate .er-table .table-inner table th {
+main #exchange-rate .er-wrapper .er-table .table-inner table th {
   border-bottom: 1px solid #ECECEC;
   border-right: 1px solid #ECECEC;
   padding: 0 15px;
   height: 40px;
 }
 @media (min-width: 768px) {
-  main #exchange-rate .er-table .table-inner table th {
+  main #exchange-rate .er-wrapper .er-table .table-inner table th {
     height: 60px;
     padding: 0 35px;
   }
 }
-main #exchange-rate .er-table .table-inner table th:last-child {
+main #exchange-rate .er-wrapper .er-table .table-inner table th:last-child {
   border-right: none;
 }
-main #exchange-rate .er-table .table-inner table th .table-title {
+main #exchange-rate .er-wrapper .er-table .table-inner table th .table-title {
   font-family: "TT Commons Regular";
   font-weight: 400;
   font-size: 18px;
@@ -4270,27 +4315,27 @@ main #exchange-rate .er-table .table-inner table th .table-title {
   color: rgba(0, 0, 0, 0.5019607843);
   text-align: start;
 }
-main #exchange-rate .er-table .table-inner table td {
+main #exchange-rate .er-wrapper .er-table .table-inner table td {
   border-right: 1px solid #ECECEC;
   height: 25px;
   padding: 8px 15px 0;
 }
-main #exchange-rate .er-table .table-inner table td:last-child {
+main #exchange-rate .er-wrapper .er-table .table-inner table td:last-child {
   border-right: none;
 }
 @media (min-width: 768px) {
-  main #exchange-rate .er-table .table-inner table td {
+  main #exchange-rate .er-wrapper .er-table .table-inner table td {
     padding: 15px 35px 0;
     height: 40px;
   }
 }
-main #exchange-rate .er-table .table-inner table td .item-title {
+main #exchange-rate .er-wrapper .er-table .table-inner table td .item-title {
   display: block;
   text-align: left;
   font-size: 16px;
 }
 @media (min-width: 768px) {
-  main #exchange-rate .er-table .table-inner table td .item-title {
+  main #exchange-rate .er-wrapper .er-table .table-inner table td .item-title {
     font-size: 22px;
   }
 }
@@ -4500,4 +4545,145 @@ main #all-news .news .more-news-link a:hover {
   .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button {
     width: 33.333%;
   }
+}
+
+main #get-app .ga-wrapper {
+  text-align: center;
+  padding: 40px 0 160px;
+}
+@media (min-width: 1000px) {
+  main #get-app .ga-wrapper {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+}
+main #get-app .ga-wrapper .download-app {
+  max-width: 420px;
+  margin: 0 auto;
+}
+@media (min-width: 1000px) {
+  main #get-app .ga-wrapper .download-app {
+    text-align: left;
+    margin: 0;
+  }
+}
+main #get-app .ga-wrapper .download-app h2 {
+  font-family: "TT Commons Medium";
+  font-size: 32px;
+  line-height: 1.4;
+  padding: 0 0 16px;
+}
+@media (min-width: 1000px) {
+  main #get-app .ga-wrapper .download-app h2 {
+    font-size: 40px;
+    padding: 0 0 32px;
+  }
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #fff;
+  border: 1px solid rgba(0, 0, 0, 0.15);
+  border-radius: 5px;
+  padding: 10px 0;
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li {
+  position: relative;
+  padding: 0 16px;
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: 50%;
+  transform: translateY(-50%);
+  display: block;
+  width: 1px;
+  height: 60%;
+  background-color: rgba(0, 0, 0, 0.15);
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li:first-child::before {
+  display: none;
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li a {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li a img {
+  width: 16px;
+  margin-right: 10px;
+}
+@media (min-width: 576px) {
+  main #get-app .ga-wrapper .download-app .app-links .download-app-links li a img {
+    width: 24px;
+  }
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li a .content {
+  line-height: 1;
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li a .content span {
+  font-size: 10px;
+}
+@media (min-width: 768px) {
+  main #get-app .ga-wrapper .download-app .app-links .download-app-links li a .content span {
+    font-size: 12px;
+  }
+}
+main #get-app .ga-wrapper .download-app .app-links .download-app-links li a .content p {
+  letter-spacing: -0.4px;
+  font-family: "TT Commons Medium";
+  font-size: 12px;
+}
+@media (min-width: 768px) {
+  main #get-app .ga-wrapper .download-app .app-links .download-app-links li a .content p {
+    font-size: 16px;
+  }
+}
+main #get-app .ga-wrapper .app-qr-code {
+  margin: 50px auto 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 8px;
+  background-color: #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.1);
+  border-radius: 16px;
+}
+@media (min-width: 1000px) {
+  main #get-app .ga-wrapper .app-qr-code {
+    margin: 0;
+  }
+}
+main #get-app .ga-wrapper .app-qr-code span {
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 25px 0;
+  width: -moz-fit-content;
+  width: fit-content;
+  height: -moz-fit-content;
+  height: fit-content;
+  border-radius: 24px;
+  background-color: #FFC628;
+}
+main #get-app .ga-wrapper .app-qr-code span::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 100%;
+  left: calc(50% - 32px);
+  border-style: solid;
+  border-width: 32px 32px 0 32px;
+  border-color: #FFC628 transparent transparent transparent;
+}
+main #get-app .ga-wrapper .app-qr-code span img {
+  max-width: 80%;
+  -o-object-fit: cover;
+     object-fit: cover;
 }/*# sourceMappingURL=style.css.map */

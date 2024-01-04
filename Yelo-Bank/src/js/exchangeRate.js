@@ -1,153 +1,52 @@
-const langSelectionHeader = document.querySelector(".ls-header");
-const langSelectionContent = document.querySelector(".ls-content");
-const language = document.querySelector(".language");
-const languages = document.querySelectorAll(".lang");
-const closeMessagePopup = document.querySelector(".close-popup");
-const messageBtn = document.querySelector(".message-button");
-const messageModal = document.querySelector(".message-modal");
-const modal = document.querySelector(".modal-popup");
-const search = document.querySelector(".search");
-const searchInput = document.querySelector(".search-inner");
-const searchOpenBtn = document.querySelector(".search-icon");
-const searchBtn = document.querySelector(".search-btn");
-const searchCloseBtn = document.querySelector(".search-close-btn");
-const headerTop = document.querySelector('.header-top')
-const headerBottom = document.querySelector('.header-bottom')
-const loginBtn = document.querySelector('.login-button')
-const formContent = document.querySelectorAll(".form-content .content-inner");
-
-
-const partialContent = document.querySelector('.partial-content')
-const originalContent = partialContent.innerHTML
-const firstContent = originalContent.slice(0,740)
-const secondContent = originalContent.slice(740)
-const moreBtn = document.querySelector('.more-button')
-
-const cashBtns = document.querySelectorAll('.cash-button')
-
-function removeActiveCashBtns() {
-    cashBtns.forEach(cashBtn => {
-        cashBtn.classList.remove('active')
-    })
-}
-
-cashBtns.forEach(cashBtn => {
-    cashBtn.addEventListener("click", () => {
-        if(!cashBtn.classList.contains('active')) {
-            removeActiveCashBtns()
-            cashBtn.classList.add('active')
-        } 
-    })
-})
-
-let windowScroll = window.scrollY
-let number = 15
-let initalNumber = 0
-let dataLength,updateId,updateTitle,updateDate;
-let isPost = false
-
-
-languages.forEach((item) => {
-  const langText = item.querySelector(".lang-text");
-
-  item.addEventListener("click", () => {
-    language.innerText = langText.innerText;
-    removeActiveLanguage();
-    langText.classList.add("active-lang");
-  });
-});
-
-function removeActiveLanguage() {
-  languages.forEach((item) => {
-    const lang = item.querySelector("span");
-    lang.classList.remove("active-lang");
-  });
-}
-
-langSelectionHeader.addEventListener("click", () => {
-  langSelectionContent.classList.add("show");
-});
-
-window.addEventListener("click", (e) => {
-  if (
-    e.target != langSelectionHeader &&
-    e.target != langSelectionHeader.firstElementChild &&
-    e.target != langSelectionHeader.firstElementChild.firstElementChild
-  ) {
-    langSelectionContent.classList.remove("show");
-  }
-});
-
-window.addEventListener('scroll',() => {
-  let scrollH = window.scrollY
-  if(scrollH > windowScroll && scrollH > 20) {
-    headerTop.classList.add('scrolling')
-    headerBottom.classList.add('main-header')
-    loginBtn.classList.add('scroll-btn')
-  } else {
-    headerTop.classList.remove('scrolling')
-    headerBottom.classList.remove('main-header')
-    loginBtn.classList.remove('scroll-btn')
-  }
-
-  if(window.scrollY > 20) {
-    headerBottom.classList.add('main-header')
-  } else {
-    headerBottom.classList.remove('main-header')
-
-  }
-  windowScroll = scrollH
-})
-
-searchOpenBtn.addEventListener("click", () => {
-  search.classList.add("show");
-});
-
-searchCloseBtn.addEventListener("click", () => {
-  search.classList.remove("show");
-});
-
-messageBtn.addEventListener("click", () => {
-  messageModal.classList.add("show-popup");
-  modal.classList.add("show-modal");
-});
-
-closeMessagePopup.addEventListener("click", () => {
-  messageModal.classList.remove("show-popup");
-  modal.classList.remove("show-modal");
-});
-
-formContent.forEach((item) => {
-  item.addEventListener("click", () => {
-    const itemBtn = item.querySelectorAll(".form-item");
-    itemBtn.forEach((button) => {
-      button.addEventListener("click", () => {
-        if (!button.classList.contains("active-btn")) {
-          for (let el of itemBtn) {
-            el.classList.remove("active-btn");
-          }
-          button.classList.add("active-btn");
-        }
-      });
-    });
-  });
-});
-
-partialContent.innerHTML = firstContent
-moreBtn.addEventListener("click", () => {
-    partialContent.innerHTML = originalContent;
-    moreBtn.style.display = 'none';
-})
-
-
 const defaultRate = document.querySelector('.default-rate')
 const selectRates = document.querySelectorAll('.select-item')
 const currencyInput = document.querySelector('.er-input')
 const inputSelect = document.querySelector('.input-select')
 const outputSelect = document.querySelector('.output-select')
 
+const partialContent = document.querySelector('.partial-content')
+const originalContent = partialContent.innerHTML
+const firstContent = originalContent.slice(0,740)
+const secondContent = originalContent.slice(740)
+const moreBtn = document.querySelector('.more-button')
+const cashBtns = document.querySelectorAll('.cash-button')
+const changeSides = document.querySelector('.change-sides')
 
+changeSides.addEventListener('click', ()=> {
+  changeSides.classList.toggle('change')
+  if(changeSides.classList.contains('change')) {
+    outputSelect.innerHTML=""
+    outputSelect.innerHTML += `<option value="azn" selected class="output-option">AZN</option>`
 
+    inputSelect.innerHTML=""
+    inputSelect.innerHTML += ` <option value="usd" selected class="output-option">USD</option>
+    <option value="eur" class="output-option">EUR</option>
+    <option value="rub" class="output-option">RUB</option>
+    <option value="gbp" class="output-option">GBP</option>`
+  } else {
+    outputSelect.innerHTML=""
+    outputSelect.innerHTML += ` <option value="usd" selected class="output-option">USD</option>
+    <option value="eur" class="output-option">EUR</option>
+    <option value="rub" class="output-option">RUB</option>
+    <option value="gbp" class="output-option">GBP</option>`
+
+    inputSelect.innerHTML=""
+    inputSelect.innerHTML += `<option value="azn" selected class="input-option">AZN</option>
+    <option value="usd" class="input-option">USD</option>
+    <option value="eur" class="input-option">EUR</option>
+    <option value="rub" class="input-option">RUB</option>
+    <option value="gbp" class="input-option">GBP</option>`
+  }
+
+})
+
+let activeRate = 1
+partialContent.innerHTML = firstContent
+
+moreBtn.addEventListener("click", () => {
+    partialContent.innerHTML = originalContent;
+    moreBtn.style.display = 'none';
+})
 
 currencyInput.addEventListener('input',(e)=> {
   let inputValue = e.target.value;
@@ -201,127 +100,119 @@ inputSelect.addEventListener('input',(e) => {
     <option value="rub" class="output-option">RUB</option>
     <option value="gbp" class="output-option">GBP</option>`
   }
-
-  let inputValue = inputSelect.value
-  // renderExchange()
   
 })
 
-//////////????????//////////////////////
-async function getValute() {
+async function getValute(rate) {
   try {
     const res = await fetch('http://localhost:3000/valute')
     const data = await res.json()
 
-    const tableContainer = document.querySelector('.table-inner')
+    const tableBody = document.querySelector('tbody')
 
-    tableContainer.innerHTML += `<table>
-    <thead>
-        <tr>
-            <th>
-                <span class="table-title">Valyuta</span>
-            </th>
+    tableBody.innerHTML = ''
 
-            <th>
-                <span class="table-title">Alış</span>
-            </th>
+    tableBody.innerHTML += `
+      <tr>
+          <td>
+              <span class="item-title">USD</span>
+          </td>
 
-            <th>
-                <span class="table-title">Satış</span>
-            </th>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.USD.cash_buy : +data.bank.USD.buy}</span>
+          </td>
 
-            <th>
-                <span class="table-title">MB</span>
-            </th>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.USD.cash_sell : +data.bank.USD.sell}</span>
+          </td>
 
-        </tr>
-    </thead>
+          <td>
+              <span class="item-title">${data.mb.USD.buy}</span>
+          </td>
+      </tr>
 
-    <tbody>
-        <tr>
-            <td>
-                <span class="item-title">USD</span>
-            </td>
+      <tr>
+          <td>
+              <span class="item-title">EUR</span>
+          </td>
 
-            <td>
-                <span class="item-title">${data.bank.USD.buy}</span>
-            </td>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.EUR.cash_buy : +data.bank.EUR.buy}</span>
+          </td>
 
-            <td>
-                <span class="item-title">${data.bank.USD.sell}</span>
-            </td>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.EUR.cash_sell : +data.bank.EUR.sell}</span>
+          </td>
 
-            <td>
-                <span class="item-title">${data.bank.USD.buy}</span>
-            </td>
-        </tr>
+          <td>
+              <span class="item-title">${data.bank.EUR.buy}</span>
+          </td>
+      </tr>
 
-        <tr>
-            <td>
-                <span class="item-title">EUR</span>
-            </td>
+      <tr>
+          <td>
+              <span class="item-title">RUB*</span>
+          </td>
 
-            <td>
-                <span class="item-title">1.8300</span>
-            </td>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.RUB.cash_buy : +data.bank.RUB.buy}</span>
+          </td>
 
-            <td>
-                <span class="item-title">1.9200</span>
-            </td>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.RUB.cash_sell : +data.bank.RUB.sell}</span>
+          </td>
 
-            <td>
-                <span class="item-title">1.8766</span>
-            </td>
-        </tr>
+          <td>
+              <span class="item-title">${data.bank.RUB.buy}</span>
+          </td>
+      </tr>
 
-        <tr>
-            <td>
-                <span class="item-title">RUB*</span>
-            </td>
+      <tr>
+          <td>
+              <span class="item-title">GBP</span>
+          </td>
 
-            <td>
-                <span class="item-title">0.0170</span>
-            </td>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.GBP.cash_buy : +data.bank.GBP.buy}</span>
+          </td>
 
-            <td>
-                <span class="item-title">0.0210</span>
-            </td>
+          <td>
+              <span class="item-title">${rate == 1 ? +data.bank.GBP.cash_sell : +data.bank.GBP.sell}</span>
+          </td>
 
-            <td>
-                <span class="item-title">0.0188</span>
-            </td>
-        </tr>
-
-        <tr>
-            <td>
-                <span class="item-title">GBP</span>
-            </td>
-
-            <td>
-                <span class="item-title">2.0700</span>
-            </td>
-
-            <td>
-                <span class="item-title">2.2600</span>
-            </td>
-
-            <td>
-                <span class="item-title">2.1643</span>
-            </td>
-        </tr>
-
-
-    </tbody>
-</table>
-
-<span class="message-txt">
-    *Rubl valyutası üzrə məzənnə təcili pul köçürmələri üçün nəzərdə tutulub.
-</span>`
-
-    console.log(data.bank.USD.buy)
+          <td>
+              <span class="item-title">${data.mb.GBP.buy}</span>
+          </td>
+    </tr>`
   }
   catch(error) {
     console.error("Error fetching or processing news:", error)
   }
 }
-getValute()
+
+function removeActiveCashBtns() {
+  cashBtns.forEach(cashBtn => {
+    cashBtn.classList.remove('active');
+  });
+}
+
+function updateActiveRate(rate) {
+  activeRate = rate;
+  getValute(activeRate);
+}
+
+async function initialize() {
+  await getValute(activeRate);
+}
+
+initialize();
+
+cashBtns.forEach(cashBtn => {
+  cashBtn.addEventListener("click", () => {
+    if (!cashBtn.classList.contains('active')) {
+      removeActiveCashBtns();
+      cashBtn.classList.add('active');
+      updateActiveRate(cashBtn.dataset.cash);
+    }
+  });
+});

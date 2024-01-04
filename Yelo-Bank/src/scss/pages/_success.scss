@@ -1,0 +1,128 @@
+main {
+
+
+    #get-app {
+        .ga-wrapper {
+            text-align: center;
+            padding: 40px 0 160px;
+            @media (min-width: 1000px) {
+                @include Flex(center,space-between);
+            }
+            .download-app {
+                max-width: 420px;
+                margin: 0 auto;
+                @media (min-width: 1000px) {
+                    text-align: left;
+                    margin: 0;
+                }
+                h2 {
+                    font-family: "TT Commons Medium";
+                    font-size: 32px;
+                    line-height: 1.4;
+                    padding: 0 0 16px;
+                    @media (min-width: 1000px) {
+                        font-size: 40px;
+                        padding: 0 0 32px;
+                    }
+                }
+                .app-links {
+                    .download-app-links {
+                        @include Flex(center,center,null,null);
+                        background-color: $white-color;
+                        border: 1px solid rgba(0,0,0, 0.15);
+                        border-radius: 5px;
+                        padding: 10px 0;
+                        li {
+                            position: relative;
+                            padding: 0 16px;
+                            &::before {
+                                content: "";
+                                position: absolute;
+                                left: 0;
+                                top: 50%;
+                                transform: translateY(-50%);
+                                display: block;
+                                width: 1px;
+                                height: 60%;
+                                background-color: rgba(0,0,0, 0.15);
+                            }
+                            &:first-child {
+                                &::before {
+                                    display: none;
+                                }
+                            }
+                            a {
+                                @include Flex(center,center,null,null);
+                                img {
+                                    width: 16px;
+                                    margin-right: 10px;
+                                    @media (min-width: 576px) {
+                                        width: 24px;
+                                    }
+                                }
+
+                                .content {
+                                    line-height: 1;
+                                    span {
+                                        font-size: 10px;
+                                        @media (min-width: 768px) {
+                                            font-size: 12px;
+                                        }
+                                    }
+                                    p {
+                                        letter-spacing: -0.4px;
+                                        font-family: "TT Commons Medium";
+                                        font-size: 12px;
+                                        @media (min-width: 768px) {
+                                            font-size: 16px;
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+
+            .app-qr-code {
+                margin: 50px auto 0;
+                @media (min-width: 1000px) {
+                    margin: 0;
+                }
+                width: fit-content;
+                @include Flex(center,center);
+                padding: 8px;
+                background-color: #fff;
+                box-shadow: 0 1px 4px 0 rgba(0,0,0, .1);
+                border-radius: 16px;
+                span {
+                    position: relative;
+                    @include Flex(center,center);
+                    padding: 25px 0;
+                    width: fit-content;
+                    height: fit-content;
+                    border-radius: 24px;
+                    background-color: $main-color;
+                    &::before {
+                        content: "";
+                        display: block;
+                        position: absolute;
+                        top: 100%;
+                        left: calc(50% - 32px);
+                        border-style: solid;
+                        border-width: 32px 32px 0 32px;
+                        border-color: $main-color transparent transparent transparent;
+                    }
+                    img {
+                        max-width: 80%;
+                        object-fit: cover;
+                    }
+                }
+            }
+            
+        }
+    }
+
+
+
+}

@@ -3,13 +3,13 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bank Xəbərləri - Son Xəbərlər</title>
+    <title>success</title>
     <link rel="shortcut icon" href="https://www.yelo.az/site/templates/images/fav/favicon-16x16.png" type="image/x-icon">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
     <link rel="stylesheet" href="../src/scss/style.css">
 </head>
 <body>
-
     <div class="mobile-app-promotion" style="background-image: url('img/modal_bg.webp');">
         <div class="promotion-inner">
             <div class="app-logo app-col">
@@ -76,15 +76,13 @@
         </div>
     </div>
 
-   
     <header>
-
         <div class="header-top">
             <div class="container">
                 <div class="row">
                     <div class="ht-left col">
                         <ul class="category-menu">
-                            <li><a href="#" class="active">Fərdi</a></li>
+                            <li><a href="#">Fərdi</a></li>
                             <li><a href="#">Biznes</a></li>
                             <li><a href="#">Bank haqqında</a></li>
                         </ul>
@@ -178,6 +176,71 @@
         </div>
 
     </header>
+
+    <main>
+
+        <section id="main-title">
+            <div class="container">
+                <h2>Təşəkkür edirik</h2>
+                <p class="success-txt">
+                    Ən qısa zamanda əməkdaşlarmız tərəfindən sorğunuza baxılacaq..
+                </p>
+                <div class="icon-img">
+                    <img src="img/success_letter_icon.svg" alt="">
+                </div>
+            </div>
+        </section>
+
+        <section id="get-app">
+            <div class="container">
+
+                <div class="ga-wrapper">
+                    <div class="download-app">
+                        <h2>Mobil tətbiqi indi yüklə</h2>
+                        <div class="app-links">
+                            <ul class="download-app-links">
+                                <li>
+                                    <a href="#">
+                                        <img src="img/apple_black.svg" alt="">
+                                        <div class="content">
+                                            <span>Download on the</span>
+                                            <p>App Store</p>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <li>
+                                    <a href="#">
+                                        <img src="img/google_play_black.svg" alt="">
+                                        <div class="content">
+                                            <span>Get it on</span>
+                                            <p>Google Play</p>
+                                        </div>
+                                    </a>
+                                </li>
+            
+                                <li>
+                                    <a href="#">
+                                        <img src="img/huawei_play_black.svg" alt="">
+                                        <div class="content">
+                                            <span>Get it on</span>
+                                            <p>AppGallery</p>
+                                        </div>
+                                    </a>
+                                </li>
+                            </ul>
+                        </div>
+                    </div>
+                    
+                    <div class="app-qr-code">
+                        <span>
+                            <img src="img/qr_code.svg" alt="">
+                        </span>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
 
     <div class="message-modal">
         <div class="modal-popup">
@@ -300,70 +363,6 @@
             </div>
         </div>
     </div>
-
-    <main>
-        <section id="main-title">
-            <div class="container">
-                <div class="main-title">
-                    <h1>Xəbərlər</h1>
-                    <button class="add-news">
-                        Xəbər Əlavə et
-                    </button>
-                </div>
-            </div>
-        </section>
-
-        <section id="all-news">
-            <div class="container">
-                <div class="news">
-                    <div class="row">
-
-                    </div>
-
-                    <div class="more-news-link more-news-button">
-                        <a href="javascript:void(0)">
-                            Daha çox
-                        </a>
-                    </div>
-                </div>
-            </div>
-        </section>
-    </main>
-
-    <div class="news-modal">
-        <div class="modal">
-            <div class="modal-inner">
-                <div class="close-news-modal">
-                    <button type="button" class="close-button">
-                        <img src="img/close.svg" alt="" class="desktop-close">
-                        <img src="img/close_black.svg" alt="" class="mobile-close">
-                    </button>
-                </div>
-                <div class="modal-content">
-                    <div class="content-title">
-                        <h2>Xəbər Əlavə et</h2>
-                    </div>
-                    <div class="content-text">
-                        <form>
-                            <div class="content-item">
-                                <label for="newsname">Xəbər başlığı</label>
-                                <input type="text" id="newsname" class="nameinput" placeholder="Xəbərin adı" value="">
-                            </div>
-                            
-                            <div class="content-item">
-                                <div class="item-button">
-                                    <button type="button" class="add-button">
-                                        Əlavə et
-                                    </button>
-                                </div>
-                            </div>
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
 
     <div class="mobile-promotion">
         <div class="promotion-inner">
@@ -548,43 +547,9 @@
         </div>
     </footer>
 
-    <div class="edit-modal">
-        <div class="modal">
-            <div class="modal-inner">
-                <div class="close-edit-modal">
-                    <button type="button" class="close-button">
-                        <img src="img/close.svg" alt="" class="desktop-close">
-                        <img src="img/close_black.svg" alt="" class="mobile-close">
-                    </button>
-                </div>
-                <div class="modal-content">
-                    <div class="content-title">
-                        <h2>Düzəliş et</h2>
-                    </div>
-                    <div class="content-text">
-                        <form>
-                            <div class="content-item">
-                                <label for="newsname">Xəbər başlığı</label>
-                                <input type="text" id="newsname" class="editinput" placeholder="Xəbərin adı" value="">
-                            </div>
-                            <div class="content-item">
-                                <div class="item-button">
-                                    <button class="edit-news-button">
-                                        Saxla
-                                    </button>
-                                </div>
-                            </div>
-                            
-                        </form>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-
+    <script src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
     <script src="../src/js/main.js"></script>
-    <script src="../src/js/news.js"></script>
     <script src="../src/js/promotion.js"></script>
+    <script src="../src/js/swiper.js"></script>
 </body>
 </html>
