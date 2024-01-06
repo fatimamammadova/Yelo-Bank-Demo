@@ -4,7 +4,6 @@ const currencyInput = document.querySelector('.er-input')
 const currencyOutput = document.querySelector('.er-output')
 const inputSelect = document.querySelector('.input-select')
 const outputSelect = document.querySelector('.output-select')
-
 const partialContent = document.querySelector('.partial-content')
 const originalContent = partialContent.innerHTML
 const firstContent = originalContent.slice(0,740)
@@ -12,57 +11,27 @@ const secondContent = originalContent.slice(740)
 const moreBtn = document.querySelector('.more-button')
 const cashBtns = document.querySelectorAll('.cash-button')
 const changeSides = document.querySelector('.change-sides')
-
-changeSides.addEventListener('click', ()=> {
-  changeSides.classList.toggle('change')
-  if(changeSides.classList.contains('change')) {
-    outputSelect.innerHTML=""
-    outputSelect.innerHTML += `<option value="azn" selected class="output-option">AZN</option>`
-
-    inputSelect.innerHTML=""
-    inputSelect.innerHTML += ` <option value="usd" selected class="output-option">USD</option>
-    <option value="eur" class="output-option">EUR</option>
-    <option value="rub" class="output-option">RUB</option>
-    <option value="gbp" class="output-option">GBP</option>`
-  } else {
-    outputSelect.innerHTML=""
-    outputSelect.innerHTML += ` <option value="usd" selected class="output-option">USD</option>
-    <option value="eur" class="output-option">EUR</option>
-    <option value="rub" class="output-option">RUB</option>
-    <option value="gbp" class="output-option">GBP</option>`
-
-    inputSelect.innerHTML=""
-    inputSelect.innerHTML += `<option value="azn" selected class="input-option">AZN</option>
-    <option value="usd" class="input-option">USD</option>
-    <option value="eur" class="input-option">EUR</option>
-    <option value="rub" class="input-option">RUB</option>
-    <option value="gbp" class="input-option">GBP</option>`
-  }
-
-})
-
 let activeRate = 1
 partialContent.innerHTML = firstContent
 
 moreBtn.addEventListener("click", () => {
-    partialContent.innerHTML = originalContent;
-    moreBtn.style.display = 'none';
+    partialContent.innerHTML = originalContent
+    moreBtn.style.display = 'none'
 })
 
 currencyInput.addEventListener('input',(e)=> {
-  let inputValue = e.target.value;
-  inputValue = inputValue.replace(/[^0-9.]/g, '');
-  const dotIndex = inputValue.indexOf('.');
+  let inputValue = e.target.value
+  inputValue = inputValue.replace(/[^0-9.]/g, '')
+  const dotIndex = inputValue.indexOf('.')
     if (dotIndex !== -1) {
-        const afterDot = inputValue.substring(dotIndex + 1);
+        const afterDot = inputValue.substring(dotIndex + 1)
         if (afterDot.includes('.')) {
-          inputValue = inputValue.substring(0, dotIndex + afterDot.indexOf('.') + 1);
+          inputValue = inputValue.substring(0, dotIndex + afterDot.indexOf('.') + 1)
         }
         console.log(dotIndex,afterDot,afterDot.indexOf('.'),dotIndex + afterDot.indexOf('.') + 1)
       }
-  e.target.value = inputValue;
+  e.target.value = inputValue
 
-  // renderExchange()
 })
 
 async function renderExchange() {
@@ -73,16 +42,16 @@ async function renderExchange() {
       case 'azn':
         switch(outputSelect.value) {
           case 'usd':
-            calculate(1/(activeRate==1 ? +data.bank.USD.cash_sell : +data.bank.USD.sell));
+            calculate(1/(activeRate==1 ? +data.bank.USD.cash_sell : +data.bank.USD.sell))
             break;
           case 'eur':
-            calculate(1/(activeRate==1 ? +data.bank.EUR.cash_sell : +data.bank.EUR.sell));
+            calculate(1/(activeRate==1 ? +data.bank.EUR.cash_sell : +data.bank.EUR.sell))
             break;
           case 'rub':
-            calculate(1/(activeRate==1 ? +data.bank.RUB.cash_sell : +data.bank.RUB.sell));
+            calculate(1/(activeRate==1 ? +data.bank.RUB.cash_sell : +data.bank.RUB.sell))
             break;
           case 'gbp':
-            calculate(1/(activeRate==1 ? +data.bank.GBP.cash_sell : +data.bank.GBP.sell));
+            calculate(1/(activeRate==1 ? +data.bank.GBP.cash_sell : +data.bank.GBP.sell))
             break;
         }
         break;
@@ -124,20 +93,47 @@ currencyInput.addEventListener('input', () => {
   }
 })
 
+changeSides.addEventListener('click', () => {
+  let value = inputSelect.value
+  inputSelect.value=outputSelect.value
+  changeRates()
+  outputSelect.value=value
+  renderExchange()
+  
+})
+
+function changeRates() {
+  const rates = outputSelect.querySelectorAll('option')
+
+  if(inputSelect.value!='azn') {
+    rates.forEach(rate => {
+      if(rate.value!='azn') {
+        rate.style.display = 'none'
+      } else {
+        rate.style.display = 'block'
+      }
+    })
+    outputSelect.value = rates[0].value
+  } else {
+    rates.forEach(rate => {
+      if(rate.value!='azn') {
+        rate.style.display = 'block'
+      } else {
+        rate.style.display = 'none'
+      }
+    })
+    outputSelect.value = rates[1].value
+  }
+}
 
 inputSelect.addEventListener('input',(e) => {
-  const selectedOption = e.target.value
-  if(selectedOption !== 'azn') {
-    outputSelect.innerHTML=""
-    outputSelect.innerHTML += `<option value="azn" selected class="output-option">AZN</option>`
-  } else {
-    outputSelect.innerHTML=""
-    outputSelect.innerHTML += ` <option value="usd" selected class="output-option">USD</option>
-    <option value="eur" class="output-option">EUR</option>
-    <option value="rub" class="output-option">RUB</option>
-    <option value="gbp" class="output-option">GBP</option>`
-  }
+  changeRates()
+  renderExchange()
   
+})
+
+outputSelect.addEventListener('input',(e) => {
+  renderExchange()
 })
 
 async function getValute(rate) {
@@ -170,12 +166,12 @@ async function getValute(rate) {
     for (let bank in data) {
       for (let currency in data[bank]) {
         if(bank !== 'mb') {
-          tableBody += "<tr>";
-          tableBody += "<td>" + currency + "</td>";
-          tableBody += "<td>" + `<span class="item-title">${rate == 1 ? +data[bank][currency].cash_buy : +data[bank][currency].buy}</span>` + "</td>";
-          tableBody += "<td>" + `<span class="item-title">${rate == 1 ? +data[bank][currency].cash_sell : +data[bank][currency].sell}</span>` + "</td>";
-          tableBody += "<td>" + `<span class="item-title">${data['mb'][currency].buy}</span>` + "</td>";
-          tableBody += "</tr>";
+          tableBody += "<tr>"
+          tableBody += "<td>" + currency + "</td>"
+          tableBody += "<td>" + `<span class="item-title">${rate == 1 ? +data[bank][currency].cash_buy : +data[bank][currency].buy}</span>` + "</td>"
+          tableBody += "<td>" + `<span class="item-title">${rate == 1 ? +data[bank][currency].cash_sell : +data[bank][currency].sell}</span>` + "</td>"
+          tableBody += "<td>" + `<span class="item-title">${data['mb'][currency].buy}</span>` + "</td>"
+          tableBody += "</tr>"
         }
       }
     }
@@ -190,27 +186,27 @@ async function getValute(rate) {
 
 function removeActiveCashBtns() {
   cashBtns.forEach(cashBtn => {
-    cashBtn.classList.remove('active');
-  });
+    cashBtn.classList.remove('active')
+  })
 }
 
 function updateActiveRate(rate) {
-  activeRate = rate;
-  getValute(activeRate);
+  activeRate = rate
+  getValute(activeRate)
+  renderExchange()
 }
 
 async function initialize() {
-  await getValute(activeRate);
+  await getValute(activeRate)
 }
-
-initialize();
+initialize()
 
 cashBtns.forEach(cashBtn => {
   cashBtn.addEventListener("click", () => {
     if (!cashBtn.classList.contains('active')) {
-      removeActiveCashBtns();
-      cashBtn.classList.add('active');
-      updateActiveRate(cashBtn.dataset.cash);
+      removeActiveCashBtns()
+      cashBtn.classList.add('active')
+      updateActiveRate(cashBtn.dataset.cash)
     }
-  });
-});
+  })
+})
