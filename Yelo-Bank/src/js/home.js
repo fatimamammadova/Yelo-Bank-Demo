@@ -113,7 +113,6 @@ currencyInput.addEventListener('input',(e)=> {
       }
   e.target.value = inputValue;
 
-  // renderExchange()
 })
 
 function renderExchange() {
@@ -150,10 +149,6 @@ inputSelect.addEventListener('input',(e) => {
     outputSelect.innerHTML += `<option value="usd" selected class="output-option">USD</option>
     <option value="eur" class="output-option">EUR</option>`
   }
-
-  let inputValue = inputSelect.value
-  // renderExchange()
-  
 })
 
 function formatDate(time) {
