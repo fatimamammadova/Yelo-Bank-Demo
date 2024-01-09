@@ -1,192 +1,129 @@
 main {
-    #main-slider {
-        margin-bottom: 50px;
-        padding-top: 0px;
-        padding-left: 15px;
-        padding-right: 15px;
-        @media (min-width: 1000px) {
-            padding-left: 0;
-            padding-right: 0;
-        }
-        .main-slider {
-            .swiper {
-                position: relative;
-                margin: 110px 0 30px;
-                border-radius: 10px;
-                @media (min-width: 1000px) {
-                    margin: 0;
-                    padding: 0;
-                    border-radius: 0;
-                }
-                .swiper-wrapper {
-                    .swiper-slide {
-                        position: relative;
-                        height: 400px;
-                        @media (min-width: 1000px) {
-                            height: 505px;                
-                        }
+    #cashback-lists {
+        .cl-wrapper {
+            .cashback-search {
+                margin-bottom: 50px;
+                .cs-inner {
+                    @include Flex(flex-start,space-between,column);
+                    @media (min-width: 1000px) {
+                        flex-direction: row;
+                    }
+                    padding: 20px 0;
+                    .search-bar {
                         width: 100%;
-                        .slider-inner {
-                            height: 400px;
-                            @media (min-width: 1000px) {
-                                height: 505px;
-                            }
-                            width: 100%;
-                            @include Flex(center,space-between,column);
-                            @media (min-width: 1000px) {
-                                flex-direction: row;
-                            }
-                            .slider-left {
-                                position: relative;
-                                background-color: $main-color;
-                                height: 100%;
+                        @media (min-width: 1000px) {
+                            width: calc(100% - 340px);
+                        }
+                        .sb-input {
+                            input {
                                 width: 100%;
+                                height: 55px;
+                                font-size: 18px;
+                                padding: 0 25px;
+                                border: 1px solid $secondary-border-color;
+                                border-radius: 10px;
+                                background: url('../../public/img/search.svg') no-repeat right center;
                                 @media (min-width: 1000px) {
-                                    width: 55%;
-                                }
-                                &::after {
-                                    content: '';
-                                    width: 0;
-                                    height: 0;
-                                    position: absolute;
-                                    top: 0px;
-                                    right: -10.3%;
-                                    transform: skew(-12.7deg, 0);
-                                    z-index: 1;
-                                    background: $main-color;
-                                    display: block;
-                                    @media (min-width: 1000px) {
-                                        width: 50%;
-                                        height: 100%;
-                                    }
-                                }
-                            }
-                            .slider-right {
-                                @include PositionR(absolute,0,0);
-                                height: 50%;
-                                width: 100%;
-                                @media (min-width: 1000px) {
-                                    width: 50%;
-                                    height: 100%;
-                                }
-                                .slider-bg-img {
-                                    height: 190px;
-                                    @media (min-width: 1000px) {
-                                        height: 505px;
-                                    }
-                                    background-position: right center;
-                                    background-repeat: no-repeat;
-                                    background-size: cover;
+                                    height: 65px;
                                 }
                             }
                         }
-                        .slider-content {
-                            position: absolute;
-                            top: 50%;
-                            left: 0;
-                            z-index: 10;
-                            width: 100%;
-                            padding: 20px 30px;
+                        .sb-buttons {
+                            display: none;
                             @media (min-width: 1000px) {
-                                height: 100%;
-                                top: 0;
-    
+                                display: block;
                             }
-                            .container {
-                                @include Flex(center,space-between);
-                                @media (min-width: 1000px) {
-                                    height: 505px;
+                            ul {
+                                margin-top: 15px;
+                                li {
+                                    display: inline-block;
+                                    margin-right: 10px;
+                                    a {
+                                        display: block;
+                                        font-size: 18px;
+                                        padding: 5px 20px;
+                                        border-radius: 30px;
+                                        background-color: $main-color;
+                                    }
                                 }
+                            }
+                        }
+                    }
+
+                    .category-filter {
+                        margin-top: 15px;
+                        width: 100%;
+                        @media (min-width: 1000px) {
+                            margin-top: 0px;
+                            width: 315px;
+                        }
+                        .cf-inner {
+                            select {
+                                appearance: none;
                                 position: relative;
-                                .content {
-                                    h3 {
-                                        font-family: "TTFirsNeue Medium";
-                                        font-weight: 400;
-                                        color: $secondary-color;
-                                        margin-bottom: 10px;
-                                        font-size: 20px;
-                                        line-height: normal;
-                                        @media (min-width: 1000px) {
-                                            line-height: 55px;
-                                            font-size: 40px;
-                                        }
-                                    }
-                                    p {
-                                        color: $secondary-color;
-                                        letter-spacing: 0.2px;
-                                        font-size: 16px;
-                                        line-height: normal;
-                                        @media (min-width: 1000px) {
-                                            line-height: 26px;
-                                            font-size: 19px;
-                                        }
-                                    }
-                                    .slider-button {
-                                        position: absolute;
-                                        left: 20px;
-                                        bottom: auto;
-                                        margin: 20px 0;
-                                        @media (min-width: 1000px) {
-                                            bottom: 60px;
-                                            width: 230px;
-                                            height: 60px;
-                                            margin: 0 30px 0 0;
-                                        }
-                                        .order-btn {
-                                            width: 100%;
-                                            height: 100%;
-                                            padding: 13px 20px;
-                                            @media (min-width: 1000px) {
-                                                padding: 0;
-                                            }
-                                            cursor: pointer;
-                                            &:hover {
-                                                span {
-                                                    color: $secondary-color;
-                                                }
-                                                &::after {
-                                                    background-color: $white-color;
-                                                }
-                                            }
-                                            span {
-                                                color: $white-color;
-                                                width: 100%;
-                                                height: 100%;
-                                                font-size: 16px;
-                                                @media (min-width: 1000px) {
-                                                    font-size: 20px;    
-                                                }
-                                                font-family: "TT Commons Bold";
-                                                color: $white-color;
-                                                transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-                                            }
-                                            &::after {
-                                                content: "";
-                                                width: 100%;
-                                                height: 100%;
-                                                position: absolute;
-                                                top: 0px;
-                                                left: 0px;
-                                                z-index: -1;
-                                                background-color: $secondary-color;
-                                                display: block;
-                                                transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-                                                transform: skew(0deg, 0);
-                                                border-radius: 6px;
-                                                @media (min-width: 1000px) {
-                                                    border-radius: 0;
-                                                    transform: skew(-14deg, 0);
-                                                }
-                                            }
-                                        }
-                                    }
+                                width: 100%;
+                                height: 55px;
+                                font-size: 18px;
+                                padding: 0 50px 0 25px;
+                                border: 1px solid $secondary-border-color;
+                                border-radius: 10px;
+                                background: url('../../public/img/s_curr.svg') no-repeat 96% 49%/12px;
+                                @media (min-width: 1000px) {
+                                    background-position: 92% 49%;
+                                    height: 65px;
                                 }
                             }
                         }
                     }
                 }
             }
+
+            .brand-lists {
+                margin: 0 -15px;
+                .row {
+                    .brand-item {
+                        padding: 0 15px;
+                        margin-bottom: 30px;
+                        a {
+                            display: block;
+                            border: 1px solid $main-border-color;
+                            border-radius: 10px;
+                            .brand-bg {
+                                height: 160px;
+                                background-position: center;
+                                background-repeat: no-repeat;
+                                background-size: 80%;
+                            }
+                            .item-content {
+                                padding: 20px 30px;
+                                @include Flex(center,space-between);
+                                h3 {
+                                    font-size: 20px;
+                                    font-family: "TT Commons Bold";
+                                }
+                                p {
+                                    font-size: 18px;
+                                    color: $main-text-color;
+                                }
+                                .discount {
+                                    display: inline-block;
+                                    font-size: 28px;
+                                    border-radius: 5px;
+                                    background-color: $main-color;
+                                    color: $secondary-color;
+                                    height: 50px;
+                                    width: 50px;
+                                    padding: 5px 10px;
+                                    text-align: center;
+                                    span {  
+                                        font-size: 19px;
+                                    }
+                                }
+                            }
+                        }
+                    } 
+                }
+            }
         }
     }
-
 }

@@ -46,15 +46,15 @@ main {
                                 }
                                 &::after {
                                     content: '';
-                                    width: 0;
-                                    height: 0;
+                                    display: block;
                                     position: absolute;
                                     top: 0px;
-                                    right: -10.3%;
-                                    transform: skew(-12.7deg, 0);
                                     z-index: 1;
+                                    right: -10.3%;
+                                    width: 0;
+                                    height: 0;
+                                    transform: skew(-12.7deg, 0);
                                     background: $main-color;
-                                    display: block;
                                     @media (min-width: 1000px) {
                                         width: 50%;
                                         height: 100%;
@@ -66,7 +66,7 @@ main {
                                 height: 50%;
                                 width: 100%;
                                 @media (min-width: 1000px) {
-                                    width: 50%;
+                                    width: 55%;
                                     height: 100%;
                                 }
                                 .slider-bg-img {
@@ -88,131 +88,103 @@ main {
                             width: 100%;
                             padding: 20px 30px;
                             @media (min-width: 1000px) {
+                                padding: 0 30px 20px;
                                 height: 100%;
                                 top: 0;
     
                             }
                             .container {
-                                @include Flex(center,space-between);
-                                @media (min-width: 1000px) {
-                                    height: 505px;
-                                }
-                                position: relative;
                                 .content {
-                                    h3 {
-                                        font-family: "TTFirsNeue Medium";
-                                        font-weight: 400;
-                                        color: $secondary-color;
-                                        margin-bottom: 10px;
-                                        font-size: 20px;
-                                        line-height: normal;
-                                        @media (min-width: 1000px) {
-                                            line-height: 55px;
-                                            font-size: 40px;
-                                        }
+                                    position: relative;
+                                    width: 60%;
+                                    @include Flex(center,center);
+                                    @media (min-width: 1000px) {
+                                        height: 505px;
                                     }
-                                    p {
-                                        color: $secondary-color;
-                                        letter-spacing: 0.2px;
-                                        font-size: 16px;
-                                        line-height: normal;
-                                        @media (min-width: 1000px) {
-                                            line-height: 26px;
-                                            font-size: 19px;
-                                        }
-                                    }
-                                    .slider-button {
-                                        position: absolute;
-                                        left: 20px;
-                                        bottom: auto;
-                                        margin: 20px 0;
-                                        @media (min-width: 1000px) {
-                                            bottom: 60px;
-                                            width: 230px;
-                                            height: 60px;
-                                            margin: 0 30px 0 0;
-                                        }
-                                        .order-btn {
-                                            width: 100%;
-                                            height: 100%;
-                                            padding: 13px 20px;
+                                    .content-inner {
+                                        width: 100%;
+                                        h3 {
+                                            font-family: "TTFirsNeue Medium";
+                                            font-weight: 400;
+                                            color: $secondary-color;
+                                            margin-bottom: 10px;
+                                            font-size: 20px;
+                                            line-height: normal;
                                             @media (min-width: 1000px) {
-                                                padding: 0;
-                                            }
-                                            cursor: pointer;
-                                            &:hover {
-                                                span {
-                                                    color: $secondary-color;
-                                                }
-                                                &::after {
-                                                    background-color: $white-color;
-                                                }
-                                            }
-                                            span {
-                                                color: $white-color;
-                                                width: 100%;
-                                                height: 100%;
-                                                font-size: 16px;
-                                                @media (min-width: 1000px) {
-                                                    font-size: 20px;    
-                                                }
-                                                font-family: "TT Commons Bold";
-                                                color: $white-color;
-                                                transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-                                            }
-                                            &::after {
-                                                content: "";
-                                                width: 100%;
-                                                height: 100%;
-                                                position: absolute;
-                                                top: 0px;
-                                                left: 0px;
-                                                z-index: -1;
-                                                background-color: $secondary-color;
-                                                display: block;
-                                                transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-                                                transform: skew(0deg, 0);
-                                                border-radius: 6px;
-                                                @media (min-width: 1000px) {
-                                                    border-radius: 0;
-                                                    transform: skew(-14deg, 0);
-                                                }
+                                                line-height: 55px;
+                                                font-size: 40px;
                                             }
                                         }
-                                        .link-btn {
-                                            width: 100%;
-                                            height: 100%;
-                                            padding: 15px 20px 15px 0;
-                                            span {
-                                                position: relative;
-                                                display: inline-block;
-                                                font-size: 16px;
-                                                font-family: "TT Commons Bold";
-                                                padding: 0 30px 0 0 ;
-                                                @media (min-width: 1000px) {
-                                                    padding: 0 45px 0 0;
-                                                    font-size: 20px;
-                                                }
+                                        p {
+                                            color: $secondary-color;
+                                            letter-spacing: 0.2px;
+                                            font-size: 16px;
+                                            line-height: normal;
+                                            @media (min-width: 1000px) {
+                                                line-height: 26px;
+                                                font-size: 19px;
+                                            }
+                                        }
+                                        .slider-button {
+                                            position: absolute;
+                                            bottom: auto;
+                                            margin: 20px 0;
+                                            @media (min-width: 1000px) {
+                                                bottom: 60px;
+                                                width: 230px;
+                                                height: 60px;
+                                                margin: 0 30px 0 0;
+                                            }
+                                            .order-btn {
+                                                width: 100%;
+                                                @extend %main-button;
                                                 &:hover {
+                                                    span {
+                                                        color: $secondary-color;
+                                                    }
                                                     &::after {
-                                                        transform: translate(5px,-50%);
-                                                        @media (min-width: 1000px) {
-                                                            transform: translate(10px,-50%);
-                                                            
-                                                        }
+                                                        background-color: $white-color;
                                                     }
                                                 }
-                                                &::after {
-                                                    content: "";
-                                                    display: block;
-                                                    width: 35px;
-                                                    height: 16px;
-                                                    @include PositionR(absolute,50%,0,translate(0,-50%));
-                                                    background: url("../../public/img/arrow-btn.svg") no-repeat right center;
-                                                    background-size: 20px;
-                                                    transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
-                                                    @media (min-width:1000px) {
-                                                        background-size: auto;
+                                                span {
+                                                    color: $white-color;
+                                                }
+                                            }
+                                            .link-btn {
+                                                width: 100%;
+                                                height: 100%;
+                                                padding: 15px 20px 15px 0;
+                                                span {
+                                                    position: relative;
+                                                    display: inline-block;
+                                                    font-size: 16px;
+                                                    font-family: "TT Commons Bold";
+                                                    padding: 0 30px 0 0 ;
+                                                    @media (min-width: 1000px) {
+                                                        padding: 0 45px 0 0;
+                                                        font-size: 20px;
+                                                    }
+                                                    &:hover {
+                                                        &::after {
+                                                            transform: translate(5px,-50%);
+                                                            @media (min-width: 1000px) {
+                                                                transform: translate(10px,-50%);
+                                                                
+                                                            }
+                                                        }
+                                                    }
+                                                    &::after {
+                                                        content: "";
+                                                        display: block;
+                                                        width: 35px;
+                                                        height: 16px;
+                                                        @include PositionR(absolute,50%,0,translate(0,-50%));
+                                                        background: url("../../public/img/arrow-btn.svg") no-repeat right center;
+                                                        background-size: 20px;
+                                                        transition: all 0.2s cubic-bezier(.52, .01, .16, 1);
+                                                        @media (min-width:1000px) {
+                                                            background-size: auto;
+                                                        }
                                                     }
                                                 }
                                             }

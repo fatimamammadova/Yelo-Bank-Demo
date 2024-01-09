@@ -75,7 +75,7 @@
   }
 }
 
-main #deposits-cards .card .card-left .buttons .order-button, main #cards .card .card-left .buttons .order-button, main #laons .card .card-left .buttons .order-button {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn, main #deposits-cards .card .card-left .buttons .order-button, main #cards .card .card-left .buttons .order-button, main #laons .card .card-left .buttons .order-button {
   position: relative;
   display: inline-block;
   padding: 13px 20px;
@@ -85,12 +85,12 @@ main #deposits-cards .card .card-left .buttons .order-button, main #cards .card 
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #deposits-cards .card .card-left .buttons .order-button, main #cards .card .card-left .buttons .order-button, main #laons .card .card-left .buttons .order-button {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn, main #deposits-cards .card .card-left .buttons .order-button, main #cards .card .card-left .buttons .order-button, main #laons .card .card-left .buttons .order-button {
     height: 60px;
     padding: 15px 20px;
   }
 }
-main #deposits-cards .card .card-left .buttons .order-button span, main #cards .card .card-left .buttons .order-button span, main #laons .card .card-left .buttons .order-button span {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn span, main #deposits-cards .card .card-left .buttons .order-button span, main #cards .card .card-left .buttons .order-button span, main #laons .card .card-left .buttons .order-button span {
   position: relative;
   z-index: 2;
   font-size: 16px;
@@ -99,11 +99,11 @@ main #deposits-cards .card .card-left .buttons .order-button span, main #cards .
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #deposits-cards .card .card-left .buttons .order-button span, main #cards .card .card-left .buttons .order-button span, main #laons .card .card-left .buttons .order-button span {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn span, main #deposits-cards .card .card-left .buttons .order-button span, main #cards .card .card-left .buttons .order-button span, main #laons .card .card-left .buttons .order-button span {
     font-size: 20px;
   }
 }
-main #deposits-cards .card .card-left .buttons .order-button::after, main #cards .card .card-left .buttons .order-button::after, main #laons .card .card-left .buttons .order-button::after {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn::after, main #deposits-cards .card .card-left .buttons .order-button::after, main #cards .card .card-left .buttons .order-button::after, main #laons .card .card-left .buttons .order-button::after {
   content: "";
   display: block;
   position: absolute;
@@ -117,16 +117,15 @@ main #deposits-cards .card .card-left .buttons .order-button::after, main #cards
   border-radius: 6px;
 }
 @media (min-width: 1000px) {
-  main #deposits-cards .card .card-left .buttons .order-button::after, main #cards .card .card-left .buttons .order-button::after, main #laons .card .card-left .buttons .order-button::after {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn::after, main #deposits-cards .card .card-left .buttons .order-button::after, main #cards .card .card-left .buttons .order-button::after, main #laons .card .card-left .buttons .order-button::after {
     border-radius: 0px;
     transform: skew(-14deg, 0);
-    border-radius: none;
   }
 }
-main #deposits-cards .card .card-left .buttons .order-button:hover span, main #cards .card .card-left .buttons .order-button:hover span, main #laons .card .card-left .buttons .order-button:hover span {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn:hover span, main #deposits-cards .card .card-left .buttons .order-button:hover span, main #cards .card .card-left .buttons .order-button:hover span, main #laons .card .card-left .buttons .order-button:hover span {
   color: #000;
 }
-main #deposits-cards .card .card-left .buttons .order-button:hover::after, main #cards .card .card-left .buttons .order-button:hover::after, main #laons .card .card-left .buttons .order-button:hover::after {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn:hover::after, main #deposits-cards .card .card-left .buttons .order-button:hover::after, main #cards .card .card-left .buttons .order-button:hover::after, main #laons .card .card-left .buttons .order-button:hover::after {
   background-color: #FFC628;
 }
 
@@ -1421,7 +1420,7 @@ input:focus, textarea:focus, select:focus {
   outline: none;
 }
 
-input, button, textarea {
+input, button, textarea, select {
   font-family: "TT Commons Regular";
 }
 
@@ -2546,6 +2545,7 @@ header .header-bottom .navbar-right .login-button {
   padding: 0;
   margin-left: 10px;
   cursor: pointer;
+  font-family: "TT Commons Medium";
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
@@ -3354,15 +3354,15 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inn
 }
 main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-left::after {
   content: "";
-  width: 0;
-  height: 0;
+  display: block;
   position: absolute;
   top: 0px;
-  right: -10.3%;
-  transform: skew(-12.7deg, 0);
   z-index: 1;
+  right: -10.3%;
+  width: 0;
+  height: 0;
+  transform: skew(-12.7deg, 0);
   background: #FFC628;
-  display: block;
 }
 @media (min-width: 1000px) {
   main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-left::after {
@@ -3379,7 +3379,7 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inn
 }
 @media (min-width: 1000px) {
   main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-right {
-    width: 50%;
+    width: 55%;
     height: 100%;
   }
 }
@@ -3404,22 +3404,27 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
 }
 @media (min-width: 1000px) {
   main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content {
+    padding: 0 30px 20px;
     height: 100%;
     top: 0;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content {
+  position: relative;
+  width: 60%;
   display: flex;
   align-items: center;
-  justify-content: space-between;
-  position: relative;
+  justify-content: center;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content {
     height: 505px;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content h3 {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner {
+  width: 100%;
+}
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner h3 {
   font-family: "TTFirsNeue Medium";
   font-weight: 400;
   color: #000;
@@ -3428,94 +3433,54 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
   line-height: normal;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content h3 {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner h3 {
     line-height: 55px;
     font-size: 40px;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content p {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner p {
   color: #000;
   letter-spacing: 0.2px;
   font-size: 16px;
   line-height: normal;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content p {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner p {
     line-height: 26px;
     font-size: 19px;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button {
   position: absolute;
-  left: 20px;
   bottom: auto;
   margin: 20px 0;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button {
     bottom: 60px;
     width: 230px;
     height: 60px;
     margin: 0 30px 0 0;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn {
   width: 100%;
-  height: 100%;
-  padding: 13px 20px;
-  cursor: pointer;
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn {
-    padding: 0;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn:hover span {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn:hover span {
   color: #000;
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn:hover::after {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn:hover::after {
   background-color: #fff;
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn span {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .order-btn span {
   color: #fff;
-  width: 100%;
-  height: 100%;
-  font-size: 16px;
-  font-family: "TT Commons Bold";
-  color: #fff;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn span {
-    font-size: 20px;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
-  background-color: #000;
-  display: block;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-  transform: skew(0deg, 0);
-  border-radius: 6px;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn::after {
-    border-radius: 0;
-    transform: skew(-14deg, 0);
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn {
   width: 100%;
   height: 100%;
   padding: 15px 20px 15px 0;
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn span {
   position: relative;
   display: inline-block;
   font-size: 16px;
@@ -3523,20 +3488,20 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
   padding: 0 30px 0 0;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn span {
     padding: 0 45px 0 0;
     font-size: 20px;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span:hover::after {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn span:hover::after {
   transform: translate(5px, -50%);
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span:hover::after {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn span:hover::after {
     transform: translate(10px, -50%);
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span::after {
+main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn span::after {
   content: "";
   display: block;
   width: 35px;
@@ -3550,7 +3515,7 @@ main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-con
   transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .link-btn span::after {
+  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .content-inner .slider-button .link-btn span::after {
     background-size: auto;
   }
 }
@@ -4672,224 +4637,137 @@ main #get-app .ga-wrapper .app-qr-code span img {
      object-fit: cover;
 }
 
-main #main-slider {
+main #cashback-lists .cl-wrapper .cashback-search {
   margin-bottom: 50px;
-  padding-top: 0px;
-  padding-left: 15px;
-  padding-right: 15px;
 }
-@media (min-width: 1000px) {
-  main #main-slider {
-    padding-left: 0;
-    padding-right: 0;
-  }
-}
-main #main-slider .main-slider .swiper {
-  position: relative;
-  margin: 110px 0 30px;
-  border-radius: 10px;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper {
-    margin: 0;
-    padding: 0;
-    border-radius: 0;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide {
-  position: relative;
-  height: 400px;
-  width: 100%;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide {
-    height: 505px;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner {
-  height: 400px;
-  width: 100%;
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner {
   display: flex;
-  align-items: center;
+  align-items: flex-start;
   justify-content: space-between;
   flex-direction: column;
+  padding: 20px 0;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner {
-    height: 505px;
-  }
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner {
+  main #cashback-lists .cl-wrapper .cashback-search .cs-inner {
     flex-direction: row;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-left {
-  position: relative;
-  background-color: #FFC628;
-  height: 100%;
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar {
   width: 100%;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-left {
-    width: 55%;
+  main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar {
+    width: calc(100% - 340px);
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-left::after {
-  content: "";
-  width: 0;
-  height: 0;
-  position: absolute;
-  top: 0px;
-  right: -10.3%;
-  transform: skew(-12.7deg, 0);
-  z-index: 1;
-  background: #FFC628;
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-input input {
+  width: 100%;
+  height: 55px;
+  font-size: 18px;
+  padding: 0 25px;
+  border: 1px solid #E7E7E7;
+  border-radius: 10px;
+  background: url("../../public/img/search.svg") no-repeat right center;
+}
+@media (min-width: 1000px) {
+  main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-input input {
+    height: 65px;
+  }
+}
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-buttons {
+  display: none;
+}
+@media (min-width: 1000px) {
+  main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-buttons {
+    display: block;
+  }
+}
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-buttons ul {
+  margin-top: 15px;
+}
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-buttons ul li {
+  display: inline-block;
+  margin-right: 10px;
+}
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-buttons ul li a {
   display: block;
+  font-size: 18px;
+  padding: 5px 20px;
+  border-radius: 30px;
+  background-color: #FFC628;
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-left::after {
-    width: 50%;
-    height: 100%;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-right {
-  position: absolute;
-  top: 0;
-  right: 0;
-  height: 50%;
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .category-filter {
+  margin-top: 15px;
   width: 100%;
 }
 @media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-right {
-    width: 50%;
-    height: 100%;
+  main #cashback-lists .cl-wrapper .cashback-search .cs-inner .category-filter {
+    margin-top: 0px;
+    width: 315px;
   }
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-right .slider-bg-img {
-  height: 190px;
-  background-position: right center;
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .category-filter .cf-inner select {
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  position: relative;
+  width: 100%;
+  height: 55px;
+  font-size: 18px;
+  padding: 0 50px 0 25px;
+  border: 1px solid #E7E7E7;
+  border-radius: 10px;
+  background: url("../../public/img/s_curr.svg") no-repeat 96% 49%/12px;
+}
+@media (min-width: 1000px) {
+  main #cashback-lists .cl-wrapper .cashback-search .cs-inner .category-filter .cf-inner select {
+    background-position: 92% 49%;
+    height: 65px;
+  }
+}
+main #cashback-lists .cl-wrapper .brand-lists {
+  margin: 0 -15px;
+}
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item {
+  padding: 0 15px;
+  margin-bottom: 30px;
+}
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a {
+  display: block;
+  border: 1px solid #ECECEC;
+  border-radius: 10px;
+}
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .brand-bg {
+  height: 160px;
+  background-position: center;
   background-repeat: no-repeat;
-  background-size: cover;
+  background-size: 80%;
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-inner .slider-right .slider-bg-img {
-    height: 505px;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content {
-  position: absolute;
-  top: 50%;
-  left: 0;
-  z-index: 10;
-  width: 100%;
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content {
   padding: 20px 30px;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content {
-    height: 100%;
-    top: 0;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  position: relative;
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container {
-    height: 505px;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content h3 {
-  font-family: "TTFirsNeue Medium";
-  font-weight: 400;
-  color: #000;
-  margin-bottom: 10px;
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content h3 {
   font-size: 20px;
-  line-height: normal;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content h3 {
-    line-height: 55px;
-    font-size: 40px;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content p {
-  color: #000;
-  letter-spacing: 0.2px;
-  font-size: 16px;
-  line-height: normal;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content p {
-    line-height: 26px;
-    font-size: 19px;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button {
-  position: absolute;
-  left: 20px;
-  bottom: auto;
-  margin: 20px 0;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button {
-    bottom: 60px;
-    width: 230px;
-    height: 60px;
-    margin: 0 30px 0 0;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn {
-  width: 100%;
-  height: 100%;
-  padding: 13px 20px;
-  cursor: pointer;
-}
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn {
-    padding: 0;
-  }
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn:hover span {
-  color: #000;
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn:hover::after {
-  background-color: #fff;
-}
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn span {
-  color: #fff;
-  width: 100%;
-  height: 100%;
-  font-size: 16px;
   font-family: "TT Commons Bold";
-  color: #fff;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn span {
-    font-size: 20px;
-  }
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content p {
+  font-size: 18px;
+  color: rgba(0, 0, 0, 0.5019607843);
 }
-main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn::after {
-  content: "";
-  width: 100%;
-  height: 100%;
-  position: absolute;
-  top: 0px;
-  left: 0px;
-  z-index: -1;
-  background-color: #000;
-  display: block;
-  transition: all 0.2s cubic-bezier(0.52, 0.01, 0.16, 1);
-  transform: skew(0deg, 0);
-  border-radius: 6px;
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content .discount {
+  display: inline-block;
+  font-size: 28px;
+  border-radius: 5px;
+  background-color: #FFC628;
+  color: #000;
+  height: 50px;
+  width: 50px;
+  padding: 5px 10px;
+  text-align: center;
 }
-@media (min-width: 1000px) {
-  main #main-slider .main-slider .swiper .swiper-wrapper .swiper-slide .slider-content .container .content .slider-button .order-btn::after {
-    border-radius: 0;
-    transform: skew(-14deg, 0);
-  }
+main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content .discount span {
+  font-size: 19px;
 }/*# sourceMappingURL=style.css.map */
