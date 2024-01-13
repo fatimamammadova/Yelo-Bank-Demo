@@ -123,6 +123,16 @@ main {
                         }
                     } 
                 }
+
+                .more-button {
+                    text-align: center;
+                    button {
+                        @extend %tertiary-button;
+                        width: calc(33.333% - 20px);
+                        height: 55px;
+                        font-size: 18px;
+                    }
+                }
             }
         }
     }

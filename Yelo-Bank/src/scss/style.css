@@ -181,7 +181,7 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
   }
 }
 
-.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button, main #cards .short-form .card-form .form-bottom .fb-inner .order-button, main #laons .short-form .card-form .form-bottom .fb-inner .order-button, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
+main #cashback-lists .cl-wrapper .brand-lists .more-button button, .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button, main #cards .short-form .card-form .form-bottom .fb-inner .order-button, main #laons .short-form .card-form .form-bottom .fb-inner .order-button, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
   background-color: #FFC628;
   color: #000;
   border-radius: 10px;
@@ -190,7 +190,7 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-.news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .card-form .form-bottom .fb-inner .order-button:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
+main #cashback-lists .cl-wrapper .brand-lists .more-button button:hover, .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .card-form .form-bottom .fb-inner .order-button:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
   background-color: #000;
   color: #fff;
 }
@@ -4770,4 +4770,12 @@ main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content .
 }
 main #cashback-lists .cl-wrapper .brand-lists .row .brand-item a .item-content .discount span {
   font-size: 19px;
+}
+main #cashback-lists .cl-wrapper .brand-lists .more-button {
+  text-align: center;
+}
+main #cashback-lists .cl-wrapper .brand-lists .more-button button {
+  width: calc(33.333% - 20px);
+  height: 55px;
+  font-size: 18px;
 }/*# sourceMappingURL=style.css.map */
