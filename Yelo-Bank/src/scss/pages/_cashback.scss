@@ -81,6 +81,7 @@ main {
             .brand-lists {
                 margin: 0 -15px;
                 .row {
+                    justify-content: flex-start;
                     .brand-item {
                         padding: 0 15px;
                         margin-bottom: 30px;

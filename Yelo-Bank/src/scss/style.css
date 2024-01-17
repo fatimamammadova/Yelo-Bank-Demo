@@ -4728,6 +4728,9 @@ main #cashback-lists .cl-wrapper .cashback-search .cs-inner .category-filter .cf
 main #cashback-lists .cl-wrapper .brand-lists {
   margin: 0 -15px;
 }
+main #cashback-lists .cl-wrapper .brand-lists .row {
+  justify-content: flex-start;
+}
 main #cashback-lists .cl-wrapper .brand-lists .row .brand-item {
   padding: 0 15px;
   margin-bottom: 30px;

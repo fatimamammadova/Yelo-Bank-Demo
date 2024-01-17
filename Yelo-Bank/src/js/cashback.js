@@ -9,102 +9,72 @@ async function getBrands() {
         const brandContainer = document.querySelector('.brand-lists .row')
         const moreBtn = document.querySelector('.more-button button')
 
-        let index=30
-        let k=60
-        moreBtn.addEventListener('click',() => {
-            showMoreBrands(data)
-           
-        })
-        
-        function showMoreBrands(dataName) {
-            for(let i=index;i<k;i++) {
-                if(dataName[i]) {
-                    if(i<=k) {
+        let index = 30
+        let k = 60
+        let isClickedMoreBtn = false
+        let filteredData = []
+
+        function showBrands(first,two,data) {
+            for(let i=first;i<two;i++) {
+                if(data[i]) {
+                    if(i<=two) {
                         brandContainer.innerHTML += `<div class="brand-item col-3">
                         <a href="javascript:void(0)">
-                            <div class="brand-bg" style="background-image: url('${dataName[i].img}');"></div>
+                            <div class="brand-bg" style="background-image: url('${data[i].img}');"></div>
                             <div class="item-content">
                                 <div class="content">
-                                    <h3>${dataName[i].name.length > 20 ? dataName[i].name.slice(0,20) + `...` : dataName[i].name}</h3>
-                                    <p>${dataName[i].category.length > 25 ? dataName[i].category.slice(0,25) + `...` : dataName[i].category}</p>
+                                    <h3>${data[i].name.length > 20 ? data[i].name.slice(0,20) + `...` : data[i].name}</h3>
+                                    <p>${data[i].category.length > 25 ? data[i].category.slice(0,25) + `...` : data[i].category}</p>
                                 </div>
                                 <div class="discount">
-                                    ${dataName[i].discount}<span>%</span>
+                                    ${data[i].discount}<span>%</span>
                                 </div>
                             </div>
                         </a>
                         </div>`
                     } else {
-                        i=k
+                        i=two
                         brandContainer.innerHTML += ``
                     }
                 } else {
-                    brandContainer.innerHTML += ``
+                    break
                 }
-            }
-            index=k
-            k+=30
-        }
-        
-        function shownBrands(dataName) {
-            for(let i=0;i<30;i++) {
-                brandContainer.innerHTML += `<div class="brand-item col-3">
-                <a href="javascript:void(0)">
-                    <div class="brand-bg" style="background-image: url('${dataName[i].img}');"></div>
-                    <div class="item-content">
-                        <div class="content">
-                            <h3>${dataName[i].name.length > 20 ? dataName[i].name.slice(0,20) + `...` : dataName[i].name}</h3>
-                            <p>${dataName[i].category.length > 25 ? dataName[i].category.slice(0,25) + `...` : dataName[i].category}</p>
-                        </div>
-                        <div class="discount">
-                            ${dataName[i].discount}<span>%</span>
-                        </div>
-                    </div>
-                </a>
-                </div>`  
             }
         }
 
-        shownBrands(data)
+        showBrands(0, 30,data)
+
+        moreBtn.addEventListener('click', () => {
+            if(searchInputs.value==="") {
+                showBrands(index, k,data)
+                index=k
+                k+=30
+                isClickedMoreBtn = true
+            }
+        })
+
 
         searchInputs.addEventListener("input", () => {
             let inputValue = searchInputs.value
-            brandContainer.innerHTML=''
-            if(inputValue=="") {
-                shownBrands(data)
-                showMoreBrands(data)
-            }
-            const arr=[]
-            data.forEach(item => {
-                if(item.name.toLowerCase().includes(inputValue) && inputValue!=="") {
-                    if(brandContainer.children.length<=30) {
-                        brandContainer.innerHTML += `<div class="brand-item col-3">
-                            <a href="javascript:void(0)">
-                                <div class="brand-bg" style="background-image: url('${item.img}');"></div>
-                                <div class="item-content">
-                                    <div class="content">
-                                        <h3>${item.name.length > 20 ? item.name.slice(0,20) + `...` : item.name}</h3>
-                                        <p>${item.category.length > 25 ? item.category.slice(0,25) + `...` : item.category}</p>
-                                    </div>
-                                    <div class="discount">
-                                        ${item.discount}<span>%</span>
-                                    </div>
-                                </div>
-                            </a>
-                        </div>`
-                    } else {
-                        arr.push(item)
-                    }
-                }
-            })
+            brandContainer.innerHTML = ''
 
-            if(arr.length>0) {
-                console.log(arr.length)
-                shownBrands(arr)
-                showMoreBrands(arr)
+            if (inputValue === "") {
+                showBrands(0, 30,data)
+            } else {
+                const filteredData = data.filter(item => item.name.toLowerCase().includes(inputValue))
+                console.log(filteredData)   
+
+                if(filteredData.length<=30) {
+                    showBrands(0,filteredData.length,filteredData)
+                } 
+                // else {
+                //     if(isClickedMoreBtn) {
+                //         index=k
+                //         k+=30
+                //     }
+                //     showBrands(index,k,filteredData)
+                // }
             }
-           
-            
         })
 
     }
