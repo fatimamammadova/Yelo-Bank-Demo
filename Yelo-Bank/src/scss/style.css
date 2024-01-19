@@ -1389,7 +1389,6 @@ main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .o
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  transition: all 0.3s ease;
 }
 
 body {
@@ -4693,8 +4692,12 @@ main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-butt
   display: block;
   font-size: 18px;
   padding: 5px 20px;
+  border: none;
   border-radius: 30px;
   background-color: #FFC628;
+}
+main #cashback-lists .cl-wrapper .cashback-search .cs-inner .search-bar .sb-buttons ul li a.active {
+  border: 1px solid rgba(0, 0, 0, 0.1019607843);
 }
 main #cashback-lists .cl-wrapper .cashback-search .cs-inner .category-filter {
   margin-top: 15px;

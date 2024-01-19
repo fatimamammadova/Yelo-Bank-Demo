@@ -42,8 +42,12 @@ main {
                                         display: block;
                                         font-size: 18px;
                                         padding: 5px 20px;
+                                        border: none;
                                         border-radius: 30px;
                                         background-color: $main-color;
+                                        &.active {
+                                            border: 1px solid #0000001a;
+                                        }
                                     }
                                 }
                             }
