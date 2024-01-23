@@ -1,88 +1,106 @@
 * {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
 }
+
 body {
-    font-size: 16px;
-    line-height: 1.6;
-    font-family: "TT Commons Regular";
+  font-size: 16px;
+  line-height: 1.6;
+  font-family: "TT Commons Regular";
 }
+
 a {
-    text-decoration: none;
-    color: #000;
+  text-decoration: none;
+  color: #000;
 }
+
 ul {
-    list-style: none;
+  list-style: none;
 }
-h1,h2,h3,h4,h5,h6 {
-    font-weight: 400;
+
+h1, h2, h3, h4, h5, h6 {
+  font-weight: 400;
 }
+
 button {
-    background-color: transparent;
-    border: none;
+  background-color: transparent;
+  border: none;
 }
-input:focus,textarea:focus,select:focus {
-    outline:none;
-} 
-input,button,textarea,select {
-    font-family: "TT Commons Regular";
+
+input:focus, textarea:focus, select:focus {
+  outline: none;
 }
+
+input, button, textarea, select {
+  font-family: "TT Commons Regular";
+}
+
 main {
-    transition: all .3s linear;
+  transition: all 0.3s linear;
+  section {
+    &:first-child {
+        margin-top: 142px;
+    }
+  }
 }
 
 .container {
-    max-width: 1140px;
-    margin: 0 auto;
-    padding: 0 20px;
-    
-    .row {
-        width: 100%;
-        display: flex;
-        justify-content: space-between;
-        flex-wrap: wrap;
-        &.mobile-row {
-            flex-direction: column;
-            @media (min-width: 1000px) {
-                flex-direction: row;
-            }
-        }
+  max-width: 1140px;
+  margin: 0 auto;
+  padding: 0 20px;
+
+  .row {
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+    &.mobile-row {
+      flex-direction: column;
+      align-items: center;
+      @media (min-width: 1000px) {
+        flex-direction: row;
+      }
     }
+  }
 }
 
 .col-2 {
-    width: 100%;
-    @media (min-width: 1000px) {
-        width: 50%;  
-    }
+  width: 100%;
+  @media (min-width: 1000px) {
+    width: 50%;
+  }
 }
+
 .col-3 {
-    width: 100%;
-    @media (min-width: 1000px) {
-        width: 33.333%;  
-    }
+  width: 100%;
+  @media (min-width: 1000px) {
+    width: 33.333%;
+  }
 }
 
 @font-face {
-    font-family: "TT Commons Medium";
-    src: url("../fonts/subset-TTCommons-Medium.woff2");
-}  
-@font-face {
-    font-family: "TT Commons Regular";
-    src: url("../fonts/subset-TTCommons-Regular.woff2") ;
-    font-weight: normal;
-    font-style: normal;
+  font-family: "TT Commons Medium";
+  src: url("../fonts/subset-TTCommons-Medium.woff2");
 }
+
 @font-face {
-    font-family: "TT Commons Bold";
-    src: url("../fonts/subset-TTCommons-DemiBold.woff2");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "TT Commons Regular";
+  src: url("../fonts/subset-TTCommons-Regular.woff2");
+  font-weight: normal;
+  font-style: normal;
 }
+
 @font-face {
-    font-family: "TTFirsNeue Medium";
-    src: url("../fonts/subset-TTFirsNeue-Medium.woff2");
-    font-weight: normal;
-    font-style: normal;
+  font-family: "TT Commons Bold";
+  src: url("../fonts/subset-TTCommons-DemiBold.woff2");
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: "TTFirsNeue Medium";
+  src: url("../fonts/subset-TTFirsNeue-Medium.woff2");
+  font-weight: normal;
+  font-style: normal;
 }

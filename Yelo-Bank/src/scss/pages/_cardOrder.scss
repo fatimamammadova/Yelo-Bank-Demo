@@ -1,0 +1,64 @@
+main {
+    #page-about {
+        padding: 48px 0;
+        @media (min-width: 660px) {
+            padding: 64px 0;
+        }
+        @media (min-width: 1000px) {
+            padding: 100px 0 90px;
+        }
+        background-color: #F9F9F9;
+        .about-image {
+            width: 70%;
+            @media (min-width: 1000px) {
+                width: calc(40% - 24px);
+            }
+            img {
+                width: 100%;
+            }
+        }
+        .about-content {
+            font-family: "TTFirsNeue Medium";
+            width: 100%;
+            @media (min-width: 1000px) {
+                width: calc(60% - 24px);
+            }
+            h2 {
+                font-size: 24px;
+                line-height: 1.2;
+                padding: 0 0 24px;
+                @media (min-width: 660px) {
+                    font-size: 32px;
+                }
+                @media (min-width: 1000px) {
+                    font-size: 40px;
+                }
+            }
+            .laon-advantages {
+                padding-bottom: 64px;
+                ul {
+                    display: grid;
+                    grid-template-columns: 1fr;
+                    grid-gap: 32px 32px;
+                    @media (min-width: 600px) {
+                        grid-template-columns: repeat(2,1fr);
+                        gap: 64px 32px;
+                    }
+                    li {
+                        @include Flex(center,$j-con:space-between);
+                        img {
+                            width: 56px;
+                            height: 56px;
+                        }
+                        span {
+                            display: inline-block;
+                            width: calc(100% - 80px);
+                            font-size: 17px;
+                        }
+
+                    }
+                }
+            }
+        }
+    }
+}
