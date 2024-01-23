@@ -3,6 +3,15 @@ const originalContent = partialContent.innerHTML
 const firstContent = originalContent.slice(0,740)
 const secondContent = originalContent.slice(740)
 const moreBtn = document.querySelector('.more-button')
+const storyClose = document.querySelector(".story-close");
+const modalContainer = document.querySelector(".story-modal");
+const storyModal = document.querySelector(".story-modal .modal");
+let scrollBar = hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
+
+storyClose.addEventListener("click", () => {
+  modalContainer.classList.remove("show");
+  storyModal.classList.remove("show-modal");
+});
 
 async function getCards() {
     try {

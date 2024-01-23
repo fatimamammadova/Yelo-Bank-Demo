@@ -4,6 +4,17 @@ const firstContent = originalContent.slice(0,780)
 const secondContent = originalContent.slice(780)
 const moreBtn = document.querySelector('.more-button')
 
+const storyClose = document.querySelector(".story-close");
+const modalContainer = document.querySelector(".story-modal");
+const storyModal = document.querySelector(".story-modal .modal");
+
+
+storyClose.addEventListener("click", () => {
+    modalContainer.classList.remove("show");
+    storyModal.classList.remove("show-modal");
+});
+
+
 partialContent.innerHTML = firstContent
 moreBtn.addEventListener("click", () => {
     partialContent.innerHTML = originalContent;

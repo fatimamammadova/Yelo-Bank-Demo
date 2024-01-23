@@ -2,13 +2,10 @@ const langSelectionHeader = document.querySelector(".ls-header");
 const langSelectionContent = document.querySelector(".ls-content");
 const language = document.querySelector(".language");
 const languages = document.querySelectorAll(".lang");
+const mainNavbar = document.querySelector('.main-navbar')
 const headerBottom = document.querySelector('.header-bottom')
 const headerTop = document.querySelector('.header-top')
 const loginBtn = document.querySelector('.login-button')
-const hamburgerMenuBtn = document.querySelector(".hm-button");
-const hamburgerMenuContent = document.querySelector(".hamburger-menu");
-const contentContainer = document.querySelector(".hamburger-menu .container");
-const headerBg = document.querySelector(".header-bottom");
 const search = document.querySelector(".search");
 const searchInput = document.querySelector(".search-inner");
 const searchOpenBtn = document.querySelector(".search-icon");
@@ -19,20 +16,47 @@ const messageBtn = document.querySelector(".message-button");
 const messageModal = document.querySelector(".message-modal");
 const modal = document.querySelector(".modal-popup");
 const formContent = document.querySelectorAll(".form-content .content-inner");
-const storyClose = document.querySelector(".story-close");
-const modalContainer = document.querySelector(".story-modal");
-const storyModal = document.querySelector(".story-modal .modal");
-const bgColor = document.querySelector(".bg-color");
-
 let windowScroll = window.scrollY
-let scrollBar = hamburgerMenuContent.offsetWidth - hamburgerMenuContent.clientWidth;
-
 const promotion = document.querySelector(".mobile-app-promotion");
 const mobilePromotion = document.querySelector(".mobile-promotion");
 const header = document.querySelector("header");
 const CloseBtn = document.querySelector(".close-img");
 const mobileCloseBtn = document.querySelector(".mp-close-btn");
 const main = document.querySelector('main')
+const hamburgerMenuBtn = document.querySelector(".hm-button");
+const hamburgerMenuContent = document.querySelector(".hamburger-menu");
+const contentContainer = document.querySelector(".hamburger-menu .container");
+
+hamburgerMenuBtn.addEventListener("click", () => {
+    hamburgerMenuBtn.classList.toggle("close-active");
+    if (!hamburgerMenuBtn.classList.contains("close-active")) {
+      hamburgerMenuContent.classList.remove('active')
+      headerBottom.classList.remove('active')
+      window.addEventListener('scroll',() => {
+        if(window.scrollY <= 20) {
+          mainNavbar.style.backgroundColor = "transparent";
+        } else {
+          mainNavbar.style.backgroundColor = "#fff";
+        }
+      })
+      if(mainNavbar.classList.contains('main-header')) {
+        mainNavbar.style.backgroundColor = "#fff";
+      } else {
+        mainNavbar.style.backgroundColor = "transparent";
+      }
+    } else {
+      mainNavbar.style.backgroundColor = "#fff";
+      hamburgerMenuContent.classList.add('active')
+      headerBottom.classList.add('active')
+
+      window.addEventListener('scroll',() => {
+        if(window.scrollY <= 20) {
+          mainNavbar.style.backgroundColor = "#fff";
+        }
+      })
+    }
+});
+
 
 CloseBtn.addEventListener("click", () => {
   sessionStorage.setItem("status", "hide");
@@ -109,51 +133,23 @@ window.addEventListener("click", (e) => {
   }
 });
 
-hamburgerMenuBtn.addEventListener("click", () => {
-  hamburgerMenuBtn.classList.toggle("close-active");
-  if (!hamburgerMenuBtn.classList.contains("close-active")) {
-    hamburgerMenuContent.classList.remove('active')
-    bgColor.classList.remove('active')
-    window.addEventListener('scroll',() => {
-      if(window.scrollY <= 20) {
-        headerBg.style.backgroundColor = "transparent";
-      } else {
-        headerBg.style.backgroundColor = "#fff";
-      }
-    })
-    if(headerBg.classList.contains('main-header')) {
-      headerBg.style.backgroundColor = "#fff";
-    } else {
-      headerBg.style.backgroundColor = "transparent";
-    }
-  } else {
-    headerBg.style.backgroundColor = "#fff";
-    hamburgerMenuContent.classList.add('active')
-    bgColor.classList.add('active')
-    window.addEventListener('scroll',() => {
-      if(window.scrollY <= 20) {
-        headerBg.style.backgroundColor = "#fff";
-      }
-    })
-  }
-});
 
 window.addEventListener('scroll',() => {
   let scrollH = window.scrollY
   if(scrollH > windowScroll && scrollH > 20) {
     headerTop.classList.add('scrolling')
-    headerBottom.classList.add('main-header')
+    mainNavbar.classList.add('main-header')
     loginBtn.classList.add('scroll-btn')
   } else {
     headerTop.classList.remove('scrolling')
-    headerBottom.classList.remove('main-header')
+    mainNavbar.classList.remove('main-header')
     loginBtn.classList.remove('scroll-btn')
   }
 
   if(window.scrollY > 20) {
-    headerBottom.classList.add('main-header')
+    mainNavbar.classList.add('main-header')
   } else {
-    headerBottom.classList.remove('main-header')
+    mainNavbar.classList.remove('main-header')
   }
   windowScroll = scrollH
 })
@@ -192,7 +188,3 @@ formContent.forEach((item) => {
   });
 });
 
-storyClose.addEventListener("click", () => {
-    modalContainer.classList.remove("show");
-    storyModal.classList.remove("show-modal");
-});

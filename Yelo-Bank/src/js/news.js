@@ -9,6 +9,8 @@ const editInput = document.querySelector('.editinput')
 const addButton = document.querySelector('.add-button')
 const moreNewsBtn = document.querySelector('.more-news-button')
 const saveBtn = document.querySelector('.edit-news-button')
+let number = 15;
+let initalNumber = 0;
 
 newsAddBtn.addEventListener("click",() => {
   newsModalBg.classList.add('show')

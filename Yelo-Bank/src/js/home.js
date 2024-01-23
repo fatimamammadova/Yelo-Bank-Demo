@@ -14,6 +14,14 @@ const inputSelect = document.querySelector('.input-select')
 const outputSelect = document.querySelector('.output-select')
 const selectBoxRate = document.querySelector('.rate-select-box')
 const news = document.querySelector('.news .row')
+const storyClose = document.querySelector(".story-close");
+const modalContainer = document.querySelector(".story-modal");
+const storyModal = document.querySelector(".story-modal .modal");
+
+storyClose.addEventListener("click", () => {
+    modalContainer.classList.remove("show");
+    storyModal.classList.remove("show-modal");
+});
 
 function handleRangeInput(rangeInput) {
   rangeInput.style.setProperty('--val', rangeInput.value);

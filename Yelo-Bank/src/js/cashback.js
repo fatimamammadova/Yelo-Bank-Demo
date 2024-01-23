@@ -2,10 +2,17 @@ const searchInputs = document.querySelector('.search-input')
 const brandContainer = document.querySelector('.brand-lists .row')
 const moreBtn = document.querySelector('.more-button button')
 const categorySelect = document.querySelector('#filter')
-const categoryBtns = document.querySelectorAll('.category-btns a')
+const categoryBtns = document.querySelectorAll('.category-btns a');
+
+const storyClose = document.querySelector(".story-close");
+const modalContainer = document.querySelector(".story-modal");
+const storyModal = document.querySelector(".story-modal .modal");
 let index = 30
 let k = 60
-let filteredArr = []
+let filteredArr = [];
+
+
+
 
 async function getBrands() {
     try {
@@ -133,3 +140,8 @@ async function getBrands() {
 }
 
 getBrands()
+
+storyClose.addEventListener("click", () => {
+    modalContainer.classList.remove("show");
+    storyModal.classList.remove("show-modal");
+});

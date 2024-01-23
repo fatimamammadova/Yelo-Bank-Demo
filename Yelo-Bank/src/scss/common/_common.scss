@@ -28,6 +28,9 @@ input:focus,textarea:focus,select:focus {
 input,button,textarea,select {
     font-family: "TT Commons Regular";
 }
+main {
+    transition: all .3s linear;
+}
 
 .container {
     max-width: 1140px;
