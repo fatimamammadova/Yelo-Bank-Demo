@@ -59,6 +59,128 @@ main {
                     }
                 }
             }
+            .buttons {
+                display: grid;
+                gap: 10px;
+                grid-template-columns: repeat(1,1fr);
+                @media (min-width:600px) {
+                    grid-template-columns: repeat(2,1fr);
+                    gap: 40px;
+                }
+                .order-button {
+                    display: block;
+                    padding: 14px 0;
+                    font-size: 17px;
+                    border-radius: 8px;
+                    text-align: center;
+                    background-color: $main-color;
+                    transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+                }
+                .go-to-rates-btn {
+                    display: block;
+                    padding: 14px 0;
+                    font-size: 17px;
+                    border-radius: 8px;
+                    text-align: center;
+                    border: 1px solid #000;
+                    transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+                    &::after {
+                        content: "";
+                        display: inline-block;
+                        width: 24px;
+                        height: 24px;
+                        background-image: url('../../public/img/right_black_arrow_thin.svg');
+                        background-repeat: no-repeat;
+                        background-position: 50%;
+                        margin-left: 8px;
+                        vertical-align: text-bottom;
+                    }
+                    &:hover {
+                        background-color: #000;
+                        color: #fff;
+                        &::after {
+                            filter: brightness(0) invert(1);
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    #card-services {
+        padding: 64px 0;
+        @media (min-width:600px)  {
+            padding: 110px 0;
+        }
+        font-family: "TTFirsNeue Medium";
+        .cs-title {
+            padding-bottom: 60px;
+            h2 {
+                font-size: 24px;
+                color: #939393;
+                text-align: center;
+            }
+        }
+        .cs-services {
+            display: grid;
+            grid-template-columns: repeat(1,1fr);
+            gap: 20px;
+            @media (min-width:600px) {
+                gap: 30px;
+                grid-template-columns: repeat(2,1fr);
+            }
+            @media (min-width:1000px) {
+                gap: 50px;
+                grid-template-columns: repeat(3,1fr);
+
+            }
+            .cs-service {
+                padding: 48px 32px;
+                border-radius: 8px;
+                text-align: center;
+                &:nth-child(1) {
+                    border: 2px solid #6CC24A;
+                }
+                &:nth-child(2) {
+                    border: 2px solid #7879F1;
+                }
+                &:nth-child(3) {
+                    border: 2px solid #0072CE;
+                }
+                img {
+                    padding-bottom: 24px;
+                }
+                span {
+                    display: block;
+                    font-size: 17px;
+                    padding-bottom: 16px;
+                    letter-spacing: -0.078px;
+                }
+            }
+        }
+        .extra-info {
+            padding: 64px 0 0;
+            .ei-title {
+                padding: 0 0 16px;
+                @media (min-width:1000px)  {
+                    padding: 0 0 20px;
+                }
+                h2 {
+                    font-size: 40px;
+                    text-align: center;
+                }
+            }
+            .ei-content {
+                padding: 40px;
+                border: 1px solid #E2E2E2;
+                border-radius: 8px;
+                li,p {
+                    font-size: 14px;
+                    line-height: 1.33;
+                    letter-spacing: -0.078px;
+                    color: #939393;
+                }
+            }
         }
     }
 }

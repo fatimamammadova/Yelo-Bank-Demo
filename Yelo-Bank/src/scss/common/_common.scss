@@ -37,7 +37,7 @@ input, button, textarea, select {
 }
 
 main {
-  transition: all 0.3s linear;
+  transition: all 0.3s cubic-bezier(.52, .01, .16, 1);
   section {
     &:first-child {
         margin-top: 142px;

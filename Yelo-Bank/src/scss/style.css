@@ -1417,7 +1417,7 @@ input, button, textarea, select {
 }
 
 main {
-  transition: all 0.3s linear;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 main section:first-child {
   margin-top: 142px;
@@ -2223,7 +2223,7 @@ header {
   left: 0;
   z-index: 999999;
   width: 100%;
-  transition: all 0.3s linear;
+  transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 header .header-top {
   height: 100%;
@@ -2561,6 +2561,9 @@ header .header-bottom .main-navbar .navbar-right .login-button {
   overflow: hidden;
   font-size: 18px;
   background-color: #FFC628;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   height: 45px;
   width: 45px;
   border: 1px solid rgba(0, 0, 0, 0.1);
@@ -2580,35 +2583,29 @@ header .header-bottom .main-navbar .navbar-right .login-button {
 header .header-bottom .main-navbar .navbar-right .login-button:hover {
   background-color: #000;
 }
-header .header-bottom .main-navbar .navbar-right .login-button:hover .button-content img {
+header .header-bottom .main-navbar .navbar-right .login-button:hover img {
   filter: brightness(0) invert(1);
 }
-header .header-bottom .main-navbar .navbar-right .login-button:hover .button-content span {
+header .header-bottom .main-navbar .navbar-right .login-button:hover span {
   color: #fff;
 }
-header .header-bottom .main-navbar .navbar-right .login-button .button-content {
-  width: 100%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-header .header-bottom .main-navbar .navbar-right .login-button .button-content img {
+header .header-bottom .main-navbar .navbar-right .login-button img {
   margin-right: 0;
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
 @media (min-width: 1000px) {
-  header .header-bottom .main-navbar .navbar-right .login-button .button-content img {
+  header .header-bottom .main-navbar .navbar-right .login-button img {
     margin-right: 12px;
   }
 }
-header .header-bottom .main-navbar .navbar-right .login-button .button-content span {
+header .header-bottom .main-navbar .navbar-right .login-button span {
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
   color: #000;
   display: none;
   transform: translateY(3px);
 }
 @media (min-width: 1000px) {
-  header .header-bottom .main-navbar .navbar-right .login-button .button-content span {
+  header .header-bottom .main-navbar .navbar-right .login-button span {
     display: block;
   }
 }
@@ -2622,12 +2619,12 @@ header .header-bottom .main-navbar .navbar-right .login-button.scroll-btn {
     width: 55px;
   }
 }
-header .header-bottom .main-navbar .navbar-right .login-button.scroll-btn .button-content img {
+header .header-bottom .main-navbar .navbar-right .login-button.scroll-btn img {
   transform: translateY(0);
   margin-right: 0;
   width: 15px;
 }
-header .header-bottom .main-navbar .navbar-right .login-button.scroll-btn .button-content span {
+header .header-bottom .main-navbar .navbar-right .login-button.scroll-btn span {
   display: none;
 }
 header .header-bottom .main-navbar .navbar-right .hm-button {
@@ -3296,6 +3293,7 @@ footer .footer-bottom .site-by a:hover {
 }
 
 main #main-slider {
+  margin-top: 0;
   margin-bottom: 50px;
   padding-top: 0px;
   padding-left: 15px;
@@ -4165,7 +4163,7 @@ main #news .news-wrapper .news-title h2 {
 }
 
 main #main-title {
-  margin: 0 auto 50px auto;
+  margin-bottom: 50px;
 }
 main #exchange-rate {
   padding: 120px 0 0;
@@ -4719,6 +4717,136 @@ main #page-about .about-content .laon-advantages ul li span {
   display: inline-block;
   width: calc(100% - 80px);
   font-size: 17px;
+}
+main #page-about .about-content .buttons {
+  display: grid;
+  gap: 10px;
+  grid-template-columns: repeat(1, 1fr);
+}
+@media (min-width: 600px) {
+  main #page-about .about-content .buttons {
+    grid-template-columns: repeat(2, 1fr);
+    gap: 40px;
+  }
+}
+main #page-about .about-content .buttons .order-button {
+  display: block;
+  padding: 14px 0;
+  font-size: 17px;
+  border-radius: 8px;
+  text-align: center;
+  background-color: #FFC628;
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #page-about .about-content .buttons .go-to-rates-btn {
+  display: block;
+  padding: 14px 0;
+  font-size: 17px;
+  border-radius: 8px;
+  text-align: center;
+  border: 1px solid #000;
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #page-about .about-content .buttons .go-to-rates-btn::after {
+  content: "";
+  display: inline-block;
+  width: 24px;
+  height: 24px;
+  background-image: url("../../public/img/right_black_arrow_thin.svg");
+  background-repeat: no-repeat;
+  background-position: 50%;
+  margin-left: 8px;
+  vertical-align: text-bottom;
+}
+main #page-about .about-content .buttons .go-to-rates-btn:hover {
+  background-color: #000;
+  color: #fff;
+}
+main #page-about .about-content .buttons .go-to-rates-btn:hover::after {
+  filter: brightness(0) invert(1);
+}
+main #card-services {
+  padding: 64px 0;
+  font-family: "TTFirsNeue Medium";
+}
+@media (min-width: 600px) {
+  main #card-services {
+    padding: 110px 0;
+  }
+}
+main #card-services .cs-title {
+  padding-bottom: 60px;
+}
+main #card-services .cs-title h2 {
+  font-size: 24px;
+  color: #939393;
+  text-align: center;
+}
+main #card-services .cs-services {
+  display: grid;
+  grid-template-columns: repeat(1, 1fr);
+  gap: 20px;
+}
+@media (min-width: 600px) {
+  main #card-services .cs-services {
+    gap: 30px;
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+@media (min-width: 1000px) {
+  main #card-services .cs-services {
+    gap: 50px;
+    grid-template-columns: repeat(3, 1fr);
+  }
+}
+main #card-services .cs-services .cs-service {
+  padding: 48px 32px;
+  border-radius: 8px;
+  text-align: center;
+}
+main #card-services .cs-services .cs-service:nth-child(1) {
+  border: 2px solid #6CC24A;
+}
+main #card-services .cs-services .cs-service:nth-child(2) {
+  border: 2px solid #7879F1;
+}
+main #card-services .cs-services .cs-service:nth-child(3) {
+  border: 2px solid #0072CE;
+}
+main #card-services .cs-services .cs-service img {
+  padding-bottom: 24px;
+}
+main #card-services .cs-services .cs-service span {
+  display: block;
+  font-size: 17px;
+  padding-bottom: 16px;
+  letter-spacing: -0.078px;
+}
+main #card-services .extra-info {
+  padding: 64px 0 0;
+}
+main #card-services .extra-info .ei-title {
+  padding: 0 0 16px;
+}
+@media (min-width: 1000px) {
+  main #card-services .extra-info .ei-title {
+    padding: 0 0 20px;
+  }
+}
+main #card-services .extra-info .ei-title h2 {
+  font-size: 40px;
+  text-align: center;
+}
+main #card-services .extra-info .ei-content {
+  padding: 40px;
+  border: 1px solid #E2E2E2;
+  border-radius: 8px;
+}
+main #card-services .extra-info .ei-content li, main #card-services .extra-info .ei-content p {
+  font-size: 14px;
+  line-height: 1.33;
+  letter-spacing: -0.078px;
+  color: #939393;
 }
 
 main #cashback-lists .cl-wrapper .cashback-search {

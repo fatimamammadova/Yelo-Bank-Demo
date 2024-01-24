@@ -69,7 +69,7 @@ header {
     left: 0;
     z-index: 999999;
     width: 100%;
-    transition: all .3s linear;
+    transition: all 0.3s cubic-bezier(.52, .01, .16, 1);
     
     .header-top {
         height: 100%;
@@ -382,6 +382,7 @@ header {
                     overflow: hidden;
                     font-size: 18px;
                     background-color: $main-color;
+                    @include Flex(center,center);
                     height: 45px;
                     width: 45px;
                     border: 1px solid rgba(0,0,0,0.1);
@@ -395,35 +396,30 @@ header {
                         width: 175px;
                         height: 55px;
                     }
+                    
                     &:hover {
                         background-color: $secondary-color;
-                        .button-content {
-                            img {
-                                filter: brightness(0) invert(1);
-                            }
-                            span {
-                                color: $white-color;
-                            }
-                        }
-                    }
-                    .button-content {
-                        width: 100%;
-                        @include Flex(center,center);
                         img {
-                            margin-right: 0;
-                            transition: all .3s cubic-bezier(.52, .01, .16, 1);
-                            @media (min-width: 1000px) {
-                                margin-right: 12px;
-                            }
+                            filter: brightness(0) invert(1);
                         }
                         span {
-                            transition: all .3s cubic-bezier(.52, .01, .16, 1);
-                            color: $secondary-color;
-                            display: none;
-                            transform: translateY(3px);
-                            @media (min-width: 1000px) {
-                                display: block;
-                            }
+                            color: $white-color;
+                        }
+                    }
+                    img {
+                        margin-right: 0;
+                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                        @media (min-width: 1000px) {
+                            margin-right: 12px;
+                        }
+                    }
+                    span {
+                        transition: all .3s cubic-bezier(.52, .01, .16, 1);
+                        color: $secondary-color;
+                        display: none;
+                        transform: translateY(3px);
+                        @media (min-width: 1000px) {
+                            display: block;
                         }
                     }
                     &.scroll-btn {
@@ -433,15 +429,13 @@ header {
                             height: 55px;
                             width: 55px;
                         }
-                        .button-content {
-                            img {
-                                transform: translateY(0);
-                                margin-right: 0;
-                                width: 15px;
-                            }
-                            span {
-                                display: none;
-                            }
+                        img {
+                            transform: translateY(0);
+                            margin-right: 0;
+                            width: 15px;
+                        }
+                        span {
+                            display: none;
                         }
                     }
                 }
