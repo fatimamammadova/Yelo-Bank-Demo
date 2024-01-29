@@ -93,3 +93,152 @@ function removeActives() {
         content.style.maxHeight = `0px`
     })
 }
+
+
+async function getServices()  {
+    try {
+        const res = await fetch('http://localhost:3000/service')
+        const data = await res.json()
+    
+        const carouselContainer = document.querySelector('.carousel-inner')
+        const modalContent = document.querySelector('.sm-left')
+        const slideNavbar = document.querySelector('.slide-navbar')
+        const leftBtn =document.getElementById('left')
+        const rightBtn =document.getElementById('right')
+        let isDragging = false
+        let prevScrollLeft,prevPageX
+
+        data.forEach(item => {
+            carouselContainer.innerHTML += `<div class="slide-item" data-id="${item.id}">
+            <div class="si-wrapper">
+                <div class="slide-content">
+                    <div class="slide-left">
+                        <h3>${item.title}</h3>
+                        <p>
+                            ${item.text}
+                        </p>
+                        <a href="#" class="more-btn">Daha ətraflı</a>
+                    </div>
+                    <div class="slide-right" style="background-image: url('${item.img}');">
+                    </div>
+                    </div>
+                    <a href="javascript:void(0);" class="item-link" data-id="${item.id}">
+                    </a>    
+            </div>
+            </div>`
+        })
+
+        data.forEach(item => {
+            modalContent.innerHTML += `<div class="sm-item" data-id="${item.id}">
+            <div class="sm_i-top">
+                <div class="sm_i-text">${item.title}</div>
+                <div class="sm_i-bg" style="background-image: url('${item.bg}');"></div>
+            </div>
+            <div class="sm_i-bottom">
+                ${item.paragraph}
+            </div>
+            </div>`
+        })
+
+        data.forEach(item => {
+            slideNavbar.innerHTML += `<li><a href="javascript:void(0)" data-id="${item.id}">${item.title}</a></li>`
+        });
+        
+        const paginations = slideNavbar.querySelectorAll('a')
+        const modalSlides = modalContent.querySelectorAll('.sm-item')
+        const modalParent = document.getElementById('slide-modal')
+        const modal = document.querySelector('.modal')
+        const slideItems = document.querySelectorAll('.item-link')
+        const closeBtn = document.querySelector('.close-btn')
+
+        closeBtn.addEventListener('click', () => {
+            modal.classList.remove('show')
+            modalParent.classList.remove('show')
+        })
+
+        slideItems.forEach(item => {
+            item.addEventListener("click", () => {
+                modal.classList.add('show')
+                modalParent.classList.add('show')
+                paginations.forEach(pagination => {
+                    if(item.dataset.id===pagination.dataset.id) {
+                        pagination.click()
+                    }
+                })
+            })
+        })
+
+        paginations.forEach(pagination => {
+            pagination.addEventListener('click', () => {
+                let paginationID;
+                if(!pagination.classList.contains('active')) {
+                    removeActivePagination()
+                    pagination.classList.add('active')
+                    paginationID=pagination.dataset.id
+                    modalSlides.forEach(item => {
+                        if(paginationID===item.dataset.id) {
+                            removeSlides()
+                            item.classList.add('active')
+                        }
+                    })
+                }
+            })
+        })
+
+        function removeActivePagination() {
+            paginations.forEach(pagination => {
+                pagination.classList.remove('active')
+            })
+        }
+
+        function removeSlides() {
+            modalSlides.forEach(item => {
+                item.classList.remove('active')
+            })
+        }
+
+        const dragLength = carouselContainer.querySelector('.slide-item')
+
+        leftBtn.addEventListener("click", () => {
+            carouselContainer.scrollLeft -= (dragLength.clientWidth + 15)
+        })
+
+        rightBtn.addEventListener("click", () => {
+            carouselContainer.scrollLeft += (dragLength.clientWidth + 15)
+        })
+
+        const dragStart= (e) => {
+            isDragging=true;
+            prevPageX = e.pageX || e.touches[0].pageX
+            prevScrollLeft = carouselContainer.scrollLeft
+        }
+
+        const dragging = (e) => {
+            if(!isDragging) return;
+            e.preventDefault()
+            carouselContainer.classList.add('dragging')
+            let diffBetweenPosition = (e.pageX || e.touches[0].pageX) - prevPageX
+            carouselContainer.scrollLeft = prevScrollLeft - diffBetweenPosition
+        }
+
+        const dragStop = () => {
+            isDragging = false;
+            carouselContainer.classList.remove('dragging')
+        }
+
+        carouselContainer.addEventListener('mousemove', dragging)
+        carouselContainer.addEventListener('touchmove', dragging)
+
+        carouselContainer.addEventListener('mousedown', dragStart)
+        carouselContainer.addEventListener('touchstart', dragStart)
+
+        carouselContainer.addEventListener('mouseup', dragStop)
+        carouselContainer.addEventListener('mouseleave', dragStop)
+        carouselContainer.addEventListener('touchend', dragStop)
+
+    } catch(err) {
+
+    }
+}
+
+getServices() 

@@ -1952,5 +1952,104 @@
       "discount": 5,
       "img": "../public/img/zeka--stationary-template.webp"
     }
+  ],
+
+  "service": [
+    {
+      "id": 1,
+      "title": "Google Pay",
+      "text": "Google Pay, Google şirkəti tərəfindən yaradılan və Android əməliyyat sistemli cihazlarda keçərli olan çevik, rahat və təhlükəsiz ödəmə üsuludur.",
+      "img": "../public/img/gpay3.webp",
+      "paragraph": "<p>Üstündə pulqabı gəzdirməyi unut. Google Pay ilə istədiyin zaman təmassız ödəniş keçərli olan hər yerdə ani ödəniş edə biləcəksən! Bunun üçün Google Wallet tətbiqini elektron cihaza yüklə, kartı əlavə et və ödəməyə başla!<br> İstədiyin qədər kartı əlavə edə bilərsən<br> Kart məlumatları maksimum qorunur<br> Xidmət tamamilə ödənişsizdir<br> Gpay və təmassız nişanlı hər yerdə keçərlidir<br> <br> Sual-cavab:<br> <br> <strong>Google Pay nədir?</strong><br> Google Pay – 11 sentyabr, 2015-ci ildə Google şirkəti tərəfindən yaradılmış, Android əməliyyat sistemi ilə çalışan smartfonlarda tətbiq olunan innovativ, elektron ödəniş sistemidir.<br> <br> <strong>Google Pay ilə harada ödəniş edə bilərəm?</strong><br> Google Pay-i dəstəkləyən bütün mağazalarda, vebsaytlarda və tətbiqlərdə ödəniş edə bilərsiniz. Bu cür yerlərdə adətən təmassız ödəniş və ya Gpay nişanı olur.<br> <br> <strong>Xidmət haqqı nə qədərdir?</strong><br> Google Pay xidməti tamamilə ödənişsizdir.<br> <br> <strong>Yelo Bank-ın hansı kartlarını Google Wallet-ə əlavə edə bilərəm?</strong><br> Yelo Bank-a məxsus istənilən növ Visa kartını.<br> <br> <strong>Google Pay ilə ödəmə qaydası necədir?</strong><br> Ödəniş etmək üçün:</p><ul> <li>Smartfonunuzun kilidini açın və tənzimləmələrdə NFC-i aktivləşdirin;</li> <li>Smartfonun arxa hissəsini POS-terminala yaxınlaşdırın;</li> <li>Ödəniş tamamlanadək gözləyin.</li> </ul> <p><br> <strong>Google Wallet-ə bir neçə kart əlavə edə bilərəm?</strong><br> Bəli, mümkündür. Kartınızı Google Wallet-ə əlavə etmək üçün:</p> <ul> <li>Google Wallet tətbiqini açın;</li> <li>Kart əlavə et düyməsinə klikləyib, əlavə etmək istədiyiniz kartı seçin, sonra \"+\" düyməsini basın;</li> <li>Kart məlumatlarını daxil etdikdən sonra yaddaşda saxlayın;</li> <li>Xidmətdən istifadə şərtlərini qəbul edin;</li> <li>Yelo Bank-dan SMS və ya zəng ilə məlumatı təsdiqləyib, prosesi yekunlaşdırın.</li> </ul> <p><br> <strong>Google Pay ilə ödənişlər təhlükəsizdirmi?</strong><br> Google Pay ödənişlər təhlükəsiz və etibarlı ödəniş vasitəsidir.&nbsp;Xüsusi tokenizasiya texnologiyası sayəsində ödəniş zamanı kartın nömrəsi və ya kart sahibinin digər məlumatları deyil, virtual kartın, yəni token məlumatları ötürülür. Bu texnologiya kart sahibinin şəxsi məlumatlarını qorumağa imkan verir və telefonun itirilməsi və ya oğurlanması halında təhlükəsizliyinizi təmin edir. Hətta smartfon itirildiyi zaman “Cihazımı Tap” funksionallığı sayəsində dünyanın istənilən yerindən smartfonunuzu dərhal bloklaşdırıb, yeni şifrə ilə qoruya və ya şəxsi məlumatlarınızı tam silə bilərsiniz.<br> <br> <strong>Google Pay-dən istifadə etmək üçün internet bağlantısı olmalıdır?</strong><br> İnternet bağlantısı olmadan belə Google Pay xidmətindən istifadə etmək mümkündür.</p>",
+      "bg": ""
+    },
+    {
+      "id": 2,
+      "title": "Apple Pay",
+      "text": "Yelo kart sahibləri Apple Pay vasitəsilə alış-verişlərini çox rahat və təmassız şəkildə həyata keçirə bilərlər.",
+      "img": "../public/img/apple-pay.webp",
+      "paragraph": "<p>Apple Pay təmassız ödəmə üsulunu Yelo kart istifadəçiləri üçün əlçatandır. Bunun üçün sadəcə iPhone smartfonu,&nbsp;Apple Watch saatını&nbsp;və ya iPad planşetini&nbsp;ödəmə terminalına yaxınlaşdırmaq kifayətdir. Apple Pay ilə təmassız ödəmə nişanı olan istənilən market, aptek, taksi, kafe, restoran, pərakəndə satış mağazaları və bir çox digər yerlərdə ödənişlər etmək mümkündür.&nbsp;<br> <br> Apple Pay-in əsas üstünlüyü onun təhlükəsizliyi və məxfiliyindədir. Bu üsulla həyata keçirilən hər bir əməliyyat etibarlı qorunur, çünki istifadəçi ödənişi Face ID, Touch ID və ya cihazın parolu ilə təsdiq etməlidir.&nbsp;Apple Pay-ə əlavə edilmiş kart məlumatları nə cihazda, nə də Apple serverlərində saxlanılmır.&nbsp;Əvəzində karta unikal cihaz qeydiyyat nömrəsi verilərək&nbsp;şifrələnir və cihazın yüksək standartlara cavab verən sertifikasiya edilmiş “Təhlükəsiz element” çipində əminliklə saxlanılır.&nbsp;&nbsp;&nbsp;<br> <br> Yelo kartı Apple Pay-də aktivləşdirmək çox asandır:</p> <p>·&nbsp; &nbsp; &nbsp; &nbsp;Yelo mobil tətbiqinə daxil olub, istədiyiniz kartı seçin;</p> <p>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Apple Wallet”ə əlavə etmək üçün müvafiq təlimatları yerinə yetirin;</p> <p>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobil nömrənizə SMS ilə göndəriləcək birdəfəlik şifrəni&nbsp;(OTP)&nbsp;daxil edin.</p> <p>Prosesi yekunlaşdırdıqda seçdiyiniz&nbsp;kartı iPhone, Apple Watch, iPad&nbsp;cihazları vasitəsilə Apple Pay ödənişlərində istifadə edə biləcəksiniz.&nbsp;</p> <p>Apple Pay xidmətinə qoşulmuş Yelo kart sahibləri Bankın təklif etdiyi cashback və endirimlərdən faydalanmağa davam edə biləcəklər.&nbsp;</p>",      
+      "bg": ""
+    },
+    {
+      "id": 3,
+      "title": "Onlayn PIN SET",
+      "text": "Yeni Yelo kart sifariş vermisən və PIN (ŞEN) kodu onlayn təyin etmək istəyirsən? O zaman PIN Set web xidmətimizdən faydalana bilərsən.",
+      "img": "../public/img/pin-kod-3.webp",
+      "paragraph": "<p>PIN Set web</p><p>Yeni Yelo kart sifariş vermisən və PIN (ŞEN) kodu onlayn təyin etmək istəyirsən? O zaman PIN Set web xidmətimizdən faydalana bilərsən. Bunun üçün xidmət səhifəsinə <strong><a href=\"javascript:void(0)\" target=\"_blank\">daxil ol</a></strong> və aşağıda yazılmış addımlarla get: &nbsp; <ul><li>Xidmət səhifəsində kart nömrəsini, bitmə müddətini və CVV kodunu daxil et</li><li>Karta bağlı olan mobil nömrənə SMS-lə kod gələcək&nbsp;</li><li>Kodu səhifəyə daxil et. Məsələn, SMS-lə 981<strong>***</strong>0<strong>*</strong>0 kodu gəlibsə və təyin etmək istədiyin PIN <strong>5555</strong>-dirsə, saytdakı xanaya 981<strong>555</strong>0<strong>5</strong>0 yazmaq kifayətdir.&nbsp;</li><li>Təbrik edirik, PIN kod təyin edildi.&nbsp;Çalış yaddan çıxarma.&nbsp;</li></ul><p>Xidmət ödənişsizdir.</p>",
+      "bg": ""
+    },
+    {
+      "id": 4,
+      "title": "Cashback",
+      "text": "Yelo kart ilə partnyor şəbəkəmizdə etdiyin ödənişlərə görə partnyordan asılı olaraq 30%-dək cashback əldə edə bilərsən.",
+      "img": "../public/img/cashback-pic.webp",
+      "paragraph": "<p>Yelo kart&nbsp;ilə <a href=\"javascript:void(0)\" target=\"_blank\">partnyor şəbəkəmizdə</a> etdiyin ödənişlərə görə partnyordan asılı olaraq 30%-dək cashback əldə edə bilərsən.</p>",
+      "bg": "../public/img/cashback-cover.webp"
+    },
+    {
+      "id": 5,
+      "title": "PIN Reset",
+      "text": "Bu xidmət kartının PIN kodunu unudanlar üçün çox faydalıdır.",
+      "img": "../public/img/pin-reset.webp",
+      "paragraph": "<p>Kartın PIN kodunu&nbsp;unutmusan? İstər&nbsp;Yelo App vasitəsilə PIN Reset xidmətindən faydalanaraq&nbsp;yeni kod əldə et,&nbsp;istərsə də:</p><p>- Sənə yaxın Yelo Bank filialına yaxınlaş;<br>- Filialda şifrənin bərpa olunması üçün xüsusi ərizə formasını doldur;<br>- Müraciətinə əsasən köhnə şifrən silinəcək;<br>- POS-terminal vasitəsilə yeni şifrə təyin ediləcək.<br><br>Xidməthaqqı 3 AZN təşkil edir və kart hesabından çıxılır.</p>",
+      "bg": "../public/img/pin-reset-cover.webp"
+    },
+    {
+      "id": 6,
+      "title": "PIN kodun dəyişdirilməsi",
+      "text": "Əgər kartının PIN kodunu dəyişdirmək istəyirsənsə, istənilən Yelo Bank ATM-ə yaxınlaşa bilərsən.",
+      "img": "../public/img/pinchange-img.webp",
+      "paragraph": "<p>Əgər kartının PIN kodunu dəyişdirmək istəyirsənsə, istənilən <a href=\"javascript:void(0)\" target=\"_blank\">Yelo Bank ATM</a>-ə yaxınlaşa bilərsən. Yeni şifrə 4 rəqəmdən ibarət olmalıdır və istədiyin qədər dəyişə bilərsən. Dəyişmək isə çox rahatdır:</p><ul><li>Kartı ATM-ə daxil edib köhnə şifrəni yığ</li><li>Menyudan “Xidmətlər”-i seç</li><li>Çıxan menyudan «PIN Change»-i seç</li><li>Açılan pəncərədə öz yeni şifrəni daxil et</li><li>Növbəti pəncərədə yeni şifrəni təsdiq et</li><li>Əgər yeni şifrəni yanlış təsdiq etsən, ekranda aşağıdakı səhv çıxacaq: “PIN nömrəsi səhv yığılıb”</li><li>Belə halda “Təkrar yığmaq üçün bu düyməni basın”-ı seç</li><li>Yeni şifrəni iki dəfə yığ</li><li>Təbrik edirik, PIN kod&nbsp;dəyişdi. Unutmamağa çalış.</li></ul><p>Xidmət haqqı 2&nbsp;AZN təşkil edir.</p><p>Qeyd: Təkrar olunan (5555), bir birinin ardınca gələn (1234) rəqəmləri və ya sizin bütün kartlarınıza eyni şifrəni seçmək təhlükəsizlik baxımından məsləhət görülmür.</p>",
+      "bg": "../public/img/pin-change-cover.webp"
+    },
+    {
+      "id": 7,
+      "title": "SMS məlumatlandırma",
+      "text": "Bu xidmət kart sahiblərinə mobil nömrə vasitəsilə hesablarına nəzarət etmək üçün əla fürsət yaradır.",
+      "img": "../public/img/sms-not.webp",
+      "paragraph": "<p>Bu xidmət sənə 24/7&nbsp;kart hesablarınla apardığın&nbsp;əməliyyatlara&nbsp;nəzarət imkanı yaradır. Ödənişin həyata keçirilməsi, vəsait kifayət etmədikdə əməliyyatın həyata keçirilməsi cəhdi, kartın qüvvədə olma müddətinin başa çatması və digər bu kimi hallarla bağlı SMS-lər dərhal mobil nömrənə gələcək.&nbsp;Xidmətə qoşulmaq üçün&nbsp;ya Yelo App yükləyərək bir neçə kliklə tətbiqdən aktivləşdirmək, ya da:</p><ul><li>Kartı <a href=\"javascript:void(0)\" target=\"_blank\">Yelo Bank ATM</a>-nə daxil edərək əsas menyuda “Xidmətlər” bölməsini, sonra isə “SMS NOTIFICATIONS” düyməsini seç;</li><li>Daha sonra iki dəfə öz mobil nömrəni daxil et;</li><li>Təsdiq əməliyyatından sonra mobil nömrəyə xidmətə qoşulmaq haqda SMS gəlir.</li></ul><p>Xidmətdən aylıq istifadə haqqı 5 AZN təşkil edir.&nbsp;</p>",
+      "bg": "../public/img/sms-not-cover.webp"
+    },
+    {
+      "id": 8,
+      "title": "Premium kart xidmətləri",
+      "text": "Yelo Premium Visa kartınla hər yerdə hər zaman öz yüksək statusunu vurğula. Böyük üstünlükləri olan bu kart həyatının bir parçasına çevriləcək.",
+      "img": "../public/img/premium-xidmetler-1.webp",
+      "paragraph": "<p>Yelo Premium Visa kartınla hər yerdə hər zaman öz yüksək statusunu vurğula. Böyük    üstünlükləri olan bu kart həyatının bir parçasına çevriləcək.<br> -&nbsp; &nbsp;&nbsp;<a href=\"javascript:void(0)\">Hava Limanına pulsuz transfer</a><br> -&nbsp;&nbsp; &nbsp;<a href=\"javascript:void(0)\">Pulsuz Fast Track keçidləri</a><br> -&nbsp; &nbsp;&nbsp;<a href=\"javascript:void(0)\">Fast&nbsp;Line xidməti</a><br> -&nbsp;&nbsp; &nbsp;<a href=\"javascript:void(0)\">Premium Lounge Key</a><br> -&nbsp;&nbsp;&nbsp; <a href=\"javascript:void(0)\">Azercell Rouminq</a><br> -&nbsp;&nbsp; &nbsp;<a href=\"javascript:void(0)\">Sağlam Ailə mərkəzlərində xüsusi təkliflər</a><br> Bu xidmətlərin hamısını 24/7 Visa Konsyerj çatbotu vasitəsilə aktivləşdirə və sifariş edə bilərsən. Bunun üçün xidmətləri istifadə etməzdən qabaq son 35 gün ərzində Yelo Premium kartınla smartfon, yaxud ağıllı saat vasitəsilə min.&nbsp;100 AZN-lik alış-veriş etmək lazımdır (01.09.2023-dən etibarən).&nbsp;Premium Lounge Key xidməti üçün isə 01.06.23 tarixindən etibarən.</p> <p>Visa Konsyerj -&nbsp;<a href=\"javascript:void(0)\">bit.ly/visaconcierge&nbsp;</a></p> <p>&nbsp;</p>",
+      "bg": ""
+    },
+    {
+      "id": 9,
+      "title": "3D secure",
+      "text": "Yelo Bank internet ödənişlərin təhlükəsiz həyata keçirilməsini təmin etmək üçün 3D Secure xidmətini təqdim edir. Xidmət ödənişsizdir.",
+      "img": "../public/img/3d-secure-img.webp",
+      "paragraph": "<p style=\"margin-bottom: 15px;\">Onlayn ödənişlər çoxlarının gündəlik həyatının ayrılmaz hissəsinə çevrilib. Yelo Bank daim müştərilərinin qayğısına qalır və bu internet ödənişlərinin təhlükəsiz həyata keçirilməsini təmin etmək məqsədilə 3D Secure xidmətini təqdim edir. Bu xidmət online ödənişlərin təhlükəsizliyini artırır və pullarınızı internet fırıldaqçılardan qoruyaraq, alış-veriş prosesini daha xoş və rahat edir. Xidmətə qoşulmaq üçün filiala gəlməyə və ya banka zəng etməyə ehtiyac yoxdur. Xidmət hər yeni alınan Yelo kartlarda avtomatik qaydada aktivləşdirilir. Onlayn ödəniş həyata keçirərkən bütün lazımi kart rekvizitləri qeyd etdikdən sonra, əgər sayt 3D Secure xidmətini dəstəkləyirsə, şifrəni qeyd etmək üçün xüsusi səhifəyə yönləndirilir. Qeydiyyat zamanı daimi şifrə seçilməyibsə, birdəfəlik şifrə mobil nömrəyə SMS formasında göndərilir. Həmin şifrəni səhifədəki xüsusi xanaya qeyd edərək ödənişi təsdiq etmək lazımdır. Şifrə bilavasitə ödəniş həyata keçirilən zaman göndərilir və təsdiq üçün yalnız bir dəfə istifadə oluna bilər. Beləliklə internet üzərindən kart sahibindən xəbərsiz heç bir ödəniş həyata keçirmək mümkün olmur. Qeyd edək ki, 3D Secure xidməti ödənişsizdir. Xoş alış-verişlər!</p>",
+      "bg": "../public/img/3dsecure-cover.webp"
+    },
+    {
+      "id": 10,
+      "title": "Cash by code",
+      "text": "Bu xidmət Yelo Bank kart sahiblərinə bank kartı olmayan şəxslərə günün istənilən vaxtı pul vəsaiti göndərmək imkanı verir.",
+      "img": "../public/img/cash-by-code-fin.webp",
+      "paragraph": "<p>Bu xidmət Yelo Bank kart sahiblərinə bank kartı olmayan şəxslərə pul vəsaitlərinin göndərilməsinə və ya günün istənilən vaxtı fiziki kart olmadan tətbiq sayəsində ATM-dən nağdlaşdırmaya imkan verir. Xidməti yalnız Yelo Bank ATM-ləri&nbsp;vasitəsilə həyata keçirmək mümkündür. Xidmətdən istifadə çox rahatdır:&nbsp;&nbsp;&nbsp;</p><p>ATM vasitəsilə:</p><ul><li>Kartı ATM-ə daxil edərək əsas menyuda «CashByCode» düyməsini seç</li><li>Daha sonra valyutanı, məbləği və pul vəsaitini alanın mobil nömrəsini daxil et</li><li>Sistem iki hissədən ibarət şifrə formalaşdırır, şifrənin birinci hissəsi qəbz şəkilində çap olunaraq göndərəndə qalır, ikinci hissəsi isə pul vəsaitini alana SMS şəklində göndərilir,</li><li>Göndərən istədiyi formada şifrənin qəbz (birinci) hissəsini pulu alana ötürür;</li><li>Pulu alan ATM-ə şifrənin əvvəlcə birinci, sonra ikinci hissəsini daxil edir və kartdan istifadə etməməklə pul vəsaitini alır</li></ul><p>Yelo App vasitəsilə:</p><ul><li>Tətbiqin Əsas menyusunda Köçürmələrə daxil ol</li><li>Cash by Code menyusunu seçmək</li><li>Vəsaiti ATM-dən nağdlaşdırmaq üçün Kodu əldə et, qarşı tərəfə göndərmək üçün Dosta göndər menyusunu seç</li><li>Tətbiqdə yaranacaq şifrəni ATM-ə daxil etməklə vəsaiti nağdlaşdır.</li><li>Dosta göndər seçimində isə qarşı tərəfin nömrəsini qeyd et. 10 rəqəmli kodun ilk 5 rəqəmi tətbiqdə əks olunacaq, sonrakı 5 rəqəm isə SMS-lə qarşı tərəfə göndəriləcək. Pulu alan ATM-ə şifrənin əvvəlcə birinci, sonra ikinci hissəsini daxil edir və kartdan istifadə etməməklə pul vəsaitini alır</li></ul><p>Cash by code xidmətindən istifadə zamanı kart sahibindən 2% komissiya tutulur (min. 2 AZN). Bu xidmət yalnız fiziki şəxslərin AZN valyutalı Yelo Bank kartlarında keçərlidir. Əməliyyat üçün minimal məbləğ 10 AZN təşkil edir. Gündəlik maksimal limit 1000 AZN-dir. ATM-dən nağdlaşdırılacaq vəsait 0 sonluqlu olmalıdır (məs: 10, 20, 30, 110, 450 və s.)</p>",
+      "bg": "../public/img/cash_by_code-7_1.webp"
+    },
+    {
+      "id": 11,
+      "title": "Card to Card",
+      "text": "Bu xidmət kart sahiblərinə həm Yelo App, həm də ATM şəbəkəsi vasitəsilə bir kartdan digər karta tez və rahat köçürmə imkanı verir.",
+      "img": "../public/img/card-to-card-img.webp ",
+      "paragraph": "<p>Ani pul köçürmələri üçün Yelo App tətbiqini və ya İnternet Bankinq xidmətlərindən faydalana bilərsən. Həmçinin, bu xidmət plastik kart sahiblərinə Yelo Bank və AzeriCard şəbəkəsinə aid digər bankomatlardan istifadə edərək pul köçürməsi imkanı da yaradır. Xidmətdən istifadə çox rahatdır:</p><p>Bankomat vasitəsilə «Card-to-Card» xidmətindən istifadə aşağıdakı şəkildə həyata keçirilir:</p><ul><li>Kartı ATM-ə daxil edərək əsas menyuda «Card-to-Card» düyməsini seç</li><li>Daha sonra valyutanı seçərək, köçürmə alanın iki dəfə 16 rəqəmli kart nömrəsini və köçürmə məbləğini daxil et</li></ul><p>Köçürmə komissiyası:</p><ul><li>Ölkədaxili - 0,7 % (min. 0.70 AZN)</li></ul><p>Vəsaitin digər kartdan qəbulu - \"Card to Card\":</p><ul><li>Beynəlxalq və ölkədaxili köçürmələr üzrə - 0 % / Grace kartları üzrə 1,5 % (min. 2 AZN/USD/EUR)</li></ul><p>&nbsp;</p>",
+      "bg": "../public/img/cardtocard-cover.webp"
+    },
+    {
+      "id": 12,
+      "title": "ATM PIN SET",
+      "text": "Bu xidmət vasitəsilə ATM-dən PIN kodu təyin etmək çox asandır.",
+      "img": "../public/img/atm_pinset.webp",
+      "paragraph": "<p>PİN kodun ATM vasitəsilə təyin olunması üçün: Kart hazır olduqdan sonra SMS vasitəsilə sifariş zamanı qeyd etdiyin nömrəyə birdəfəlik PİN kod göndərilir. Kodun istifadə müddəti 6 gündür. Kartı əldə etdikdən sonra ATM-ə daxil edib e-PİN bölməsinə keçid et. Növbəti pəncərədə əvvəlcə SMS-lə göndərilmiş birdəfəlik PİN kodu, sonra isə öz istədiyin PİN-i daxil edirsən. Təyin etdiyin PİN kodu təkrar daxil et. Təbrik edirik, PIN kod təyin edildi, unutmamağa çalış. Qeyd: Təkrar olunan (5555), bir birinin ardınca gələn (1234) rəqəmləri və ya sizin bütün kartlarınıza eyni şifrəni təyin etmək təhlükəsizlik baxımından məsləhət görülmür. &nbsp;</p>",
+      "bg": "../public/img/atm_pinset-1.webp"
+    }
   ]
 }

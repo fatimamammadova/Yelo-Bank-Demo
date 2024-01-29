@@ -6,7 +6,7 @@
   "scripts": {
     "db": "npx json-server db.json --port 3000"
   },
-  "author": "Fatima",
+  "author": "Fatima'm<3",
   "license": "ISC",
   "dependencies": {
     "json-server": "^0.17.4"
