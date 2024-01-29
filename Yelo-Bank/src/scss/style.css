@@ -181,7 +181,7 @@ main #deposits-cards .card .card-left .buttons .link-button:hover span::after, m
   }
 }
 
-main #cashback-lists .cl-wrapper .brand-lists .more-button button, .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button, main #cards .short-form .card-form .form-bottom .fb-inner .order-button, main #laons .short-form .card-form .form-bottom .fb-inner .order-button, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
+main #cashback-lists .cl-wrapper .brand-lists .more-button button, main #order-form .wrapper form .continue-btn, .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button, main #main-title .add-news, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button, main #cards .short-form .card-form .form-bottom .fb-inner .order-button, main #laons .short-form .card-form .form-bottom .fb-inner .order-button, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button {
   background-color: #FFC628;
   color: #000;
   border-radius: 10px;
@@ -190,7 +190,7 @@ main #cashback-lists .cl-wrapper .brand-lists .more-button button, .news-modal .
   cursor: pointer;
   transition: all 0.3s cubic-bezier(0.52, 0.01, 0.16, 1);
 }
-main #cashback-lists .cl-wrapper .brand-lists .more-button button:hover, .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .card-form .form-bottom .fb-inner .order-button:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
+main #cashback-lists .cl-wrapper .brand-lists .more-button button:hover, main #order-form .wrapper form .continue-btn:hover, .news-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .add-button:hover, main #main-title .add-news:hover, main #credit-calculator .container .row .calculator-right .cr-wrapper .cr-content .cr-result .order-button:hover, main #credit-calculator .container .row .calculator-left .cl-wrapper .cl-left .order-button:hover, .message-modal .modal-popup .modal-inner .modal .modal-content form .form-col .submit-button .message-submit:hover, main #deposits-cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #cards .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #laons .long-form .form-inner .card-form .form-bottom .fb-inner .order-button:hover, main #deposits-cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #cards .short-form .card-form .form-bottom .fb-inner .order-button:hover, main #laons .short-form .card-form .form-bottom .fb-inner .order-button:hover, .edit-modal .modal .modal-inner .modal-content .content-text form .content-item .item-button .edit-news-button:hover {
   background-color: #000;
   color: #fff;
 }
@@ -4776,11 +4776,15 @@ main #card-services {
 }
 main #card-services .cs-title {
   padding-bottom: 60px;
+  text-align: center;
 }
 main #card-services .cs-title h2 {
+  font-size: 40px;
+  padding-bottom: 20px;
+}
+main #card-services .cs-title h3 {
   font-size: 24px;
   color: #939393;
-  text-align: center;
 }
 main #card-services .cs-services {
   display: grid;
@@ -4796,7 +4800,7 @@ main #card-services .cs-services {
 @media (min-width: 1000px) {
   main #card-services .cs-services {
     gap: 50px;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: repeat(4, 1fr);
   }
 }
 main #card-services .cs-services .cs-service {
@@ -4813,14 +4817,39 @@ main #card-services .cs-services .cs-service:nth-child(2) {
 main #card-services .cs-services .cs-service:nth-child(3) {
   border: 2px solid #0072CE;
 }
-main #card-services .cs-services .cs-service img {
-  padding-bottom: 24px;
+main #card-services .cs-services .cs-service:nth-child(4) {
+  border: 2px solid #FF9E1F;
 }
-main #card-services .cs-services .cs-service span {
+main #card-services .cs-services .cs-service .icon-img {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding-bottom: 24px;
+  font-family: "TTFirsNeue Medium";
+}
+main #card-services .cs-services .cs-service .icon-img span {
   display: block;
+  width: 64px;
+  height: 64px;
+  line-height: 56px;
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 50%;
+  margin-left: -12px;
+  background-color: #FFC72C;
+  border: 4px solid #fff;
+  box-shadow: 0 1px 4px 0 rgba(0, 0, 0, 0.15);
+}
+main #card-services .cs-services .cs-service h4 {
   font-size: 17px;
   padding-bottom: 16px;
-  letter-spacing: -0.078px;
+  text-align: center;
+  font-weight: 300;
+  color: #000;
+}
+main #card-services .cs-services .cs-service p {
+  font-size: 13px;
+  color: #939393;
 }
 main #card-services .extra-info {
   padding: 64px 0 0;
@@ -4842,11 +4871,388 @@ main #card-services .extra-info .ei-content {
   border: 1px solid #E2E2E2;
   border-radius: 8px;
 }
-main #card-services .extra-info .ei-content li, main #card-services .extra-info .ei-content p {
+main #card-services .extra-info .ei-content h3 {
+  font-size: 24px;
+  padding-bottom: 16px;
+  line-height: 1;
+  letter-spacing: -0.408px;
+}
+main #card-services .extra-info .ei-content p {
   font-size: 14px;
   line-height: 1.33;
   letter-spacing: -0.078px;
   color: #939393;
+}
+main #order-form {
+  background-color: #f9f9f9;
+  padding: 110px 0 60px;
+}
+main #order-form .wrapper {
+  max-width: 700px;
+  margin: 0 auto;
+  padding: 10px 20px 0;
+}
+main #order-form .wrapper .of-title {
+  margin-bottom: 36px;
+}
+main #order-form .wrapper .of-title h2 {
+  text-align: center;
+  font-size: 32px;
+  padding-bottom: 36px;
+}
+main #order-form .wrapper .of-title .of-img {
+  position: relative;
+  text-align: center;
+}
+main #order-form .wrapper .of-title .of-img span {
+  position: relative;
+  z-index: 3;
+  display: inline-block;
+  padding: 0 36px;
+  background-color: #f9f9f9;
+}
+main #order-form .wrapper .of-title .of-img span img {
+  width: 67px;
+  height: 105px;
+}
+main #order-form .wrapper .of-title .of-img::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 50%;
+  background-color: #CCC;
+  width: 100%;
+  height: 1px;
+}
+main #order-form .wrapper form .col2-input.payment-method {
+  display: none;
+}
+main #order-form .wrapper form .col2-input.payment-method.active {
+  display: block;
+}
+@media (min-width: 600px) {
+  main #order-form .wrapper form .col2-input.payment-method.active {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+main #order-form .wrapper form .col2-input.payment-method .col-input input {
+  cursor: pointer;
+}
+main #order-form .wrapper form .col2-input.payment-method .col-input input:checked {
+  border-color: #6CC24A;
+  background-color: rgba(108, 194, 74, 0.1);
+}
+@media (min-width: 600px) {
+  main #order-form .wrapper form .col2-input {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 24px;
+  }
+}
+main #order-form .wrapper form .col2-input .col-input {
+  position: relative;
+  width: 100%;
+  margin-bottom: 24px;
+  height: 55px;
+}
+@media (min-width: 1000px) {
+  main #order-form .wrapper form .col2-input .col-input {
+    height: 65px;
+  }
+}
+@media (min-width: 600px) {
+  main #order-form .wrapper form .col2-input .col-input {
+    width: 50%;
+  }
+}
+main #order-form .wrapper form .col2-input .col-input input, main #order-form .wrapper form .col2-input .col-input select {
+  height: 100%;
+  padding: 0 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  font-size: 17px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+  background-color: #fff;
+}
+main #order-form .wrapper form .col2-input .col-input input#fin, main #order-form .wrapper form .col2-input .col-input select#fin {
+  background: url("../../public/img/fin-icon.svg") no-repeat calc(100% - 16px) 50% #fff;
+}
+main #order-form .wrapper form .col2-input .col-input select {
+  background: url("../../public/img/select-arrow.svg") no-repeat calc(100% - 16px) 50% #fff;
+}
+main #order-form .wrapper form .col2-input .col-input span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  font-size: 17px;
+  color: #CCC;
+  letter-spacing: -0.408px;
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #order-form .wrapper form .col2-input .col-input span.active {
+  font-size: 12px;
+  top: 12px;
+}
+@media (min-width: 1000px) {
+  main #order-form .wrapper form .col2-input .col-input span.active {
+    top: 20px;
+  }
+}
+main #order-form .wrapper form .col2-input .col-input input[type=radio] + span {
+  font-size: 18px;
+  color: #000;
+  position: absolute;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+main #order-form .wrapper form .message-box {
+  display: none;
+  padding: 12px 12px 8px 64px;
+  box-shadow: inset 0 0 0 1px rgb(150, 150, 150);
+  margin-bottom: 24px;
+  border-radius: 12px;
+  background: url("../../public/img/fin-icon.svg") no-repeat 20px 50% rgba(217, 217, 214, 0.1);
+}
+main #order-form .wrapper form .message-box.active {
+  display: block;
+}
+main #order-form .wrapper form .message-box p {
+  font-size: 13px;
+  color: #303030;
+  line-height: 1.38;
+  letter-spacing: -0.078px;
+}
+main #order-form .wrapper form .of-line {
+  position: relative;
+  text-align: center;
+  margin-bottom: 24px;
+}
+main #order-form .wrapper form .of-line span {
+  position: relative;
+  z-index: 3;
+  background-color: #f9f9f9;
+  font-size: 14px;
+  padding: 0 12px;
+  color: #939393;
+}
+main #order-form .wrapper form .of-line::before {
+  content: "";
+  position: absolute;
+  top: 50%;
+  display: block;
+  background-color: #CCC;
+  width: 100%;
+  height: 1px;
+}
+main #order-form .wrapper form .col1-input.delivery {
+  display: none;
+}
+main #order-form .wrapper form .col1-input.delivery.active {
+  display: block;
+}
+main #order-form .wrapper form .col1-input.branch {
+  display: none;
+}
+main #order-form .wrapper form .col1-input.branch.active {
+  display: block;
+}
+main #order-form .wrapper form .col1-input .input-title {
+  display: inline-block;
+  font-size: 14px;
+  color: #CCC;
+  padding-bottom: 8px;
+}
+main #order-form .wrapper form .col1-input .col-input {
+  width: 100%;
+  margin-bottom: 24px;
+  position: relative;
+  height: 55px;
+}
+@media (min-width: 1000px) {
+  main #order-form .wrapper form .col1-input .col-input {
+    height: 65px;
+  }
+}
+main #order-form .wrapper form .col1-input .col-input input, main #order-form .wrapper form .col1-input .col-input select {
+  height: 100%;
+  padding: 0 16px;
+  border: 1px solid #EAEAEA;
+  border-radius: 8px;
+  font-size: 17px;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  width: 100%;
+}
+main #order-form .wrapper form .col1-input .col-input select {
+  background: url("../../public/img/select-arrow.svg") no-repeat calc(100% - 16px) 50% #fff;
+}
+main #order-form .wrapper form .col1-input .col-input span {
+  position: absolute;
+  top: 50%;
+  transform: translateY(-50%);
+  left: 16px;
+  font-size: 17px;
+  color: #CCC;
+  letter-spacing: -0.408px;
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #order-form .wrapper form .col1-input .col-input span.active {
+  font-size: 12px;
+  top: 12px;
+}
+@media (min-width: 1000px) {
+  main #order-form .wrapper form .col1-input .col-input span.active {
+    top: 20px;
+  }
+}
+main #order-form .wrapper form .col1-input input[type=checkbox] {
+  cursor: pointer;
+  vertical-align: text-bottom;
+  -webkit-appearance: none;
+     -moz-appearance: none;
+          appearance: none;
+  border: 1px solid rgba(0, 0, 0, 0.2);
+  border-radius: 50%;
+  width: 20px;
+  height: 20px;
+}
+main #order-form .wrapper form .col1-input input[type=checkbox]:checked {
+  background: url("../../public/img/checked-icon.svg") no-repeat center;
+}
+main #order-form .wrapper form .col1-input .agreement-txt {
+  display: inline-block;
+  margin-left: 10px;
+  font-size: 14px;
+  color: #939393;
+}
+main #order-form .wrapper form .continue-btn {
+  font-family: "TT Commons Bold";
+  margin-top: 16px;
+  width: 100%;
+  height: 55px;
+  font-size: 18px;
+}
+main #faq-accordion .faq-wrapper {
+  max-width: 720px;
+  padding: 40px 20px 0;
+  margin: 0 auto;
+}
+main #faq-accordion .faq-wrapper .faq-title h2 {
+  text-align: center;
+  font-weight: 500;
+  font-size: 32px;
+  padding-bottom: 40px;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item {
+  border-radius: 8px;
+  background-color: #fff;
+  box-shadow: 0px 2px 10px rgba(122, 122, 122, 0.12), 2px 0px 10px rgba(216, 216, 216, 0.0784313725);
+  margin-bottom: 16px;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner {
+  position: relative;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner::before {
+  content: "";
+  display: block;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 5px;
+  height: 100%;
+  border-bottom-left-radius: 8px;
+  border-top-left-radius: 8px;
+  background-color: #FFC72C;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title {
+  width: 100%;
+  line-height: 1.6;
+  cursor: pointer;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title .title-inner {
+  position: relative;
+  padding: 12px 64px 12px 24px;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title .title-inner h2 {
+  text-align: left;
+  font-weight: 500;
+  font-size: 20px;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title .title-inner span {
+  display: block;
+  width: 12px;
+  height: 12px;
+  position: absolute;
+  right: 28px;
+  top: calc(50% - 6px);
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title .title-inner span.active::after {
+  transform: rotate(0deg);
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title .title-inner span::before {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1px);
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-title .title-inner span::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  top: calc(50% - 1px);
+  display: block;
+  height: 2px;
+  width: 100%;
+  background-color: #000;
+  transform: rotate(90deg);
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-content {
+  max-height: 0;
+  overflow: hidden;
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-content .content-inner {
+  padding: 8px 24px 20px;
+  font-size: 18px;
+  color: #939393;
+  letter-spacing: -0.408px;
+  transition: 0.2s cubic-bezier(0.39, 0.575, 0.565, 1);
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-content .content-inner p {
+  padding-bottom: 8px;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-content .content-inner ul li {
+  position: relative;
+  padding-left: 16px;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-content .content-inner ul li::before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 4px;
+  top: 12px;
+  width: 3px;
+  height: 3px;
+  background-color: #939393;
+  border-radius: 50%;
+}
+main #faq-accordion .faq-wrapper .accordion .accordion-wrapper .accordion-item .ai-inner .ai-content .content-inner a {
+  color: #0091FE;
 }
 
 main #cashback-lists .cl-wrapper .cashback-search {

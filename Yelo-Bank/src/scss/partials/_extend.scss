@@ -601,195 +601,425 @@
 
 %card {
     padding: 0 0 40px 0;    
-        .card {
-            position: relative;
-            border-radius: 10px;
-            border: 1px solid $main-border-color;
-            background: no-repeat 100px /cover;
-            background-color: $card-bg-color;
-            margin: 0 0 45px 0;
+    .card {
+        position: relative;
+        border-radius: 10px;
+        border: 1px solid $main-border-color;
+        background: no-repeat 100px /cover;
+        background-color: $card-bg-color;
+        margin: 0 0 45px 0;
+        @media (min-width: 1000px) {
+            background: no-repeat 117% /contain;
+            background-color: $white-color;
+        }
+        .card-left {
+            background-color: $white-color;
+            margin-top: 160px;
+            padding: 20px;
+            width: 100%;
             @media (min-width: 1000px) {
-                background: no-repeat 117% /contain;
-                background-color: $white-color;
+                margin-top: 0;
+                padding: 45px 40px 45px 60px;
+                width: calc(100% - 475px);
+                background-color: transparent;
             }
-            .card-left {
-                background-color: $white-color;
-                margin-top: 160px;
-                padding: 20px;
-                width: 100%;
+            .card-title {
+                padding: 0 0 10px;
+                font-family: "TTFirsNeue Medium";
+                font-size: 20px;
+                line-height: 25px;
                 @media (min-width: 1000px) {
-                    margin-top: 0;
-                    padding: 45px 40px 45px 60px;
-                    width: calc(100% - 475px);
-                    background-color: transparent;
+                    font-size: 34px;
+                    line-height: 40px;
                 }
-                .card-title {
-                    padding: 0 0 10px;
-                    font-family: "TTFirsNeue Medium";
-                    font-size: 20px;
-                    line-height: 25px;
-                    @media (min-width: 1000px) {
-                        font-size: 34px;
-                        line-height: 40px;
-                    }
+            }
+            p {
+                font-size: 16px;
+                line-height: 20px;
+                color: $main-text-color;
+                @media (min-width: 1000px) {
+                    font-size: 18px;
                 }
-                p {
-                    font-size: 16px;
-                    line-height: 20px;
-                    color: $main-text-color;
-                    @media (min-width: 1000px) {
-                        font-size: 18px;
-                    }
-                }
+            }
     
-                .card-about {
-                    padding: 20px 0;
-                    @include Flex($j-con: flex-start,$f-dir:column);
-                    @media (min-width: 1000px) {
-                        padding: 40px 0 50px 0;
-                        @include Flex($j-con: flex-start,$f-dir:row);
-                        
-                    }
-                    .about-col {
-                        margin: 0 0 10px 0;
-                        @media (min-width: 1000px) {
-                            margin: 0 20px 0 0; 
-                        }
-                        span {
-                            font-size: 16px;
-                            color: $main-text-color;
-                        }
-                        p {
-                            color: $secondary-color;
-                            font-family: "TT Commons Medium";
-                            line-height: 26px;
-                            font-size: 18px;
-                            @media (min-width: 1000px) {
-                                font-size: 21px;
-                            }
-                        }
-                    }
-                }
-
-                .buttons {
-                    @include Flex($j-con: flex-start,$f-dir:column);
-                    @media (min-width: 1000px) {
-                        @include Flex($j-con: flex-start,$f-dir:row);
-                    }
-                    .order-button {
-                        @extend %main-button;
-                        width: 100%;
-                        @media (min-width: 1000px) {
-                            width: 225px;
-                        }
-                    }
-                    .link-button {
-                        margin: 0 0 0 20px;
-                        opacity: 0.5;
-                        transition: all 0.2s ease-out;
-                        @extend %secondary-button;
-                        &:hover {
-                            opacity: 1;  
-                        }
-                    }
-                }
-            }
-
-            .right-img {
-                width: 100%;
-                height: 170px;
-                position: absolute;
-                top: -10px;
-                right: 0px;
-                bottom: auto;
-                background-repeat: no-repeat;
-                background-size: contain;
-                background-position: bottom right;
+            .card-about {
+                padding: 20px 0;
+                @include Flex($j-con: flex-start,$f-dir:column);
                 @media (min-width: 1000px) {
-                    width: 40%;
-                    height: 110%;
-                    top: auto;
-                    bottom: 0px;
-                    background-position: bottom center;
+                    padding: 40px 0 50px 0;
+                    @include Flex($j-con: flex-start,$f-dir:row);
                     
                 }
-            }
-
-            .card-right {
-                display: none;
-                @media (min-width: 1000px) {
-                    display: block;
+                .about-col {
+                    margin: 0 0 10px 0;
+                    @media (min-width: 1000px) {
+                        margin: 0 20px 0 0; 
+                    }
+                    span {
+                        font-size: 16px;
+                        color: $main-text-color;
+                    }
+                    p {
+                        color: $secondary-color;
+                        font-family: "TT Commons Medium";
+                        line-height: 26px;
+                        font-size: 18px;
+                        @media (min-width: 1000px) {
+                            font-size: 21px;
+                        }
+                    }
                 }
-                position: absolute;
-                top: 20px;
-                right: 135px;
-
-                .img {
-                    transform: perspective(630px);  
-                    .img-container {
+            }
+    
+            .buttons {
+                @include Flex($j-con: flex-start,$f-dir:column);
+                @media (min-width: 1000px) {
+                    @include Flex($j-con: flex-start,$f-dir:row);
+                }
+                .order-button {
+                    @extend %main-button;
+                    width: 100%;
+                    @media (min-width: 1000px) {
+                        width: 225px;
+                    }
+                }
+                .link-button {
+                    margin: 0 0 0 20px;
+                    opacity: 0.5;
+                    transition: all 0.2s ease-out;
+                    @extend %secondary-button;
+                    &:hover {
+                        opacity: 1;  
+                    }
+                }
+            }
+        }
+    
+        .right-img {
+            width: 100%;
+            height: 170px;
+            position: absolute;
+            top: -10px;
+            right: 0px;
+            bottom: auto;
+            background-repeat: no-repeat;
+            background-size: contain;
+            background-position: bottom right;
+            @media (min-width: 1000px) {
+                width: 40%;
+                height: 110%;
+                top: auto;
+                bottom: 0px;
+                background-position: bottom center;
+                
+            }
+        }
+    
+        .card-right {
+            display: none;
+            @media (min-width: 1000px) {
+                display: block;
+            }
+            position: absolute;
+            top: 20px;
+            right: 135px;
+    
+            .img {
+                transform: perspective(630px);  
+                .img-container {
+                    position: relative;
+                    width: 210px;
+                    height: 333px;
+                    border-radius: 15px;
+                    transform-style: preserve-3d;
+                    transition: all 0.1s ease-out;
+                    .card-img {
                         position: relative;
-                        width: 210px;
-                        height: 333px;
-                        border-radius: 15px;
-                        transform-style: preserve-3d;
-                        transition: all 0.1s ease-out;
-                        .card-img {
-                            position: relative;
-                            z-index: 2;
+                        z-index: 2;
+                        width: 100%;
+                        height: 100%;
+                        background: no-repeat 117% /contain;
+                        
+                        .gradient-bg {
+                            position: absolute;
+                            top: 0;
+                            left: 0;
                             width: 100%;
                             height: 100%;
-                            background: no-repeat 117% /contain;
-                            
-                            .gradient-bg {
-                                position: absolute;
-                                top: 0;
-                                left: 0;
-                                width: 100%;
-                                height: 100%;
-                                background: linear-gradient(135deg, rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 60%);
-                            }
-                            
+                            background: linear-gradient(135deg, rgba(255,255,255,.25) 0%,rgba(255,255,255,0) 60%);
                         }
-                        .shadow-bg {
+                        
+                    }
+                    .shadow-bg {
+                        position: absolute;
+                        top: 5%;
+                        left: 5%;
+                        width: 90%;
+                        height: 90%;
+                        transition: all 0.2s ease-out;
+                        box-shadow: 0 8px 30px rgba(14,21,47,0.6);
+                    }
+                }
+            }
+        }
+    }    
+    .short-form {
+        display: none;
+        margin: 0 0 45px;
+        &.active {
+            display: block;
+        }
+        .card-form {
+            max-width: 600px;
+            margin: 0 auto;
+            .form-inputs {
+                @media (min-width: 1000px) {
+                    display: flex;
+                    justify-content: space-between;
+                }
+                &:first-child {
+                    border: 1px solid #E7E7E7;
+                    border-radius: 10px 10px 10px 0;
+                    margin-bottom: 40px;
+                }
+                &:nth-child(2) {
+                    border: 1px solid #E7E7E7;
+                    border-radius: 10px;
+                    margin-bottom: 20px;    
+                }
+                &:nth-child(3) {
+                    margin-bottom: 40px;
+                }
+                &.line-input {
+                    .form-input {
+                        &:first-child {
+                            margin: 0 0 15px 0;
+                            @media (min-width: 1000px) {
+                                padding: 0 10px 0 0;
+                                margin: 0;
+                            }
+                        }
+                        &:last-child {
+                            @media (min-width: 1000px) {
+                                padding: 0 0 0 10px;
+                            }
+                        }
+                    }
+                }
+                .form-input {
+                    position: relative;
+                    width: 100%;
+                    .input-inner {
+                        width: 100%;
+                        position: relative;
+                        &.border-input {
+                            border-right: none;
+                            border-bottom: 1px solid #E7E7E7;
+                            @media (min-width: 1000px) {
+                                border-right: 1px solid #E7E7E7;
+                                border-bottom: none;
+                                
+                            }
+                        }
+                        &.padding-input {
+                            padding: 10px;
+                        }
+                        span {
+                            color: rgba(0,0,0,0.5);
+                            font-size: 15px;
+                            line-height: 15px;
+                            display: block;
+                            margin: 0 0 4px 0;
+                        }
+                        .number-range {
+                            width: 100%;
+                            font-size: 26px;
+                            font-family: "TT Commons Medium";
+                            border: none;
+                            &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
+                                appearance: none;
+                                margin: 0;
+                            }
+                        }
+                        .title-exponent {
                             position: absolute;
-                            top: 5%;
-                            left: 5%;
-                            width: 90%;
-                            height: 90%;
-                            transition: all 0.2s ease-out;
-                            box-shadow: 0 8px 30px rgba(14,21,47,0.6);
+                            right: 17px;
+                            bottom: 10px;
+                            line-height: 15px;
+                            font-size: 15px;
+                            font-family: "TT Commons Bold";
+                            color: $main-text-color;
+                        }
+                        .range {
+                            appearance: none;
+                            width: 100%;
+                            position: absolute;
+                            left: 0px;
+                            bottom: 0px;
+                            background-color: rgba(0,0,0, 0.1);
+                            @media (min-width: 1000px) {
+                                background-color: transparent;
+                            }
+                            --range: calc(var(--max) - var(--min));
+                            --ratio: calc((var(--val) - var(--min))/var(--range));
+                            --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em)); 
+                            &::-webkit-slider-runnable-track {
+                                width: 100%;
+                                height: 4px;
+                                cursor: pointer;
+                                background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
+                            }
+                                                
+                            &::-webkit-slider-thumb {
+                                height: 24px;
+                                width: 24px;
+                                border-radius: 50%;
+                                background-color: #ffffff;
+                                cursor: pointer;
+                                appearance: none;
+                                border: 5px solid #FFC628;
+                                margin: -10px 0 0 0;
+                            }
+                            &::-moz-range-track {
+                                width: 100%;
+                                height: 3px;
+                                cursor: pointer;
+                                background-color: #FFC628;
+                            }
+                            &::-moz-range-thumb {
+                                height: 20px;
+                                width: 20px;
+                                border-radius: 100%;
+                                background-color: #ffffff;
+                                cursor: pointer;
+                                appearance: none;
+                                border: 3px solid #FFC628;
+                            }
+                            &::-ms-track {
+                                width: 100%;
+                                height: 3px;
+                                cursor: pointer;
+                            }
+                        }
+                        .user-info {
+                            width: 100%;
+                            font-size: 18px;
+                            box-sizing: border-box;
+                            padding: 0 20px;
+                            border: none;
+                            border-radius: 10px;
+                            height: 55px;
+                            @media (min-width: 1000px) {
+                                height: 65px;
+                            }
+                        }
+                        .line-info {
+                            width: 100%;
+                            height: 65px;
+                            font-size: 18px;
+                            box-sizing: border-box;
+                            padding: 0 20px;
+                            border: none;
+                            border-radius: 10px;
+                            border: 1px solid #E7E7E7;
+                            height: 55px;
+                            @media (min-width: 1000px) {
+                                height: 65px;
+                            }
+                        }
+                    }
+    
+                    .input-error {
+                        display: none;
+                        position: absolute;
+                        background: #ff7777;
+                        color: white;
+                        border-radius: 5px;
+                        z-index: 2;
+                        padding: 3px 10px 0;
+                        left: 20px;
+                        bottom: -10px;
+                        font-size: 14px;
+                    }
+                }
+            }
+    
+    
+            .form-bottom {
+                border-top: 1px solid #ECECEC;
+                padding: 30px 0;
+                .fb-inner {
+                    @media (min-width: 1000px) {
+                        display: flex;
+                        justify-content: space-between;
+                    }
+                    .form-info {
+                        width: 100%;
+                        margin-bottom: 20px;
+                        @media (min-width: 1000px) {
+                            max-width: 360px;
+                            margin-bottom: 0;
+                        }
+                        p {
+                            font-size: 15px;
+                            color: $secondary-color;
+                            background-repeat: no-repeat;
+                            background-position: 0 0;
+                            background-image: url('../../public/img/shield_gray_icon.svg');
+                            padding: 0 0 0 50px;
+                            height: 50px;
+                        }
+                    }
+                    .order-button {
+                        @extend %tertiary-button;
+                        
+                        width: 100%;
+                        height: 50px;
+                        font-size: 16px;
+                        @media (min-width: 1000px) {
+                            height: 65px;
+                            font-size: 18px;
+                            width: 33.333%;
                         }
                     }
                 }
             }
         }
-
-        .short-form {
-            display: none;
-            margin: 0 0 45px;
-            &.active {
-                display: block;
+    }
+    .long-form {
+        display: none;
+        margin: 0 0 45px;
+        &.active {
+            display: block;
+        }
+        .form-inner {
+            border: 1px solid #ECECEC;
+            border-radius: 10px;
+            position: relative;
+            text-align: center;
+            padding: 30px 10px 0;
+    
+            h2 {
+                font-family: "TT Commons Bold";
+                font-size: 25px;
+                margin: 0 0 25px 0;
             }
+    
             .card-form {
                 max-width: 600px;
                 margin: 0 auto;
                 .form-inputs {
+                    margin-bottom: 20px;    
                     @media (min-width: 1000px) {
                         display: flex;
                         justify-content: space-between;
                     }
-                    &:first-child {
-                        border: 1px solid #E7E7E7;
-                        border-radius: 10px 10px 10px 0;
-                        margin-bottom: 40px;
-                    }
                     &:nth-child(2) {
+                        margin-bottom: 0;
+                    }
+                    &.form-input-line {
                         border: 1px solid #E7E7E7;
                         border-radius: 10px;
-                        margin-bottom: 20px;    
-                    }
-                    &:nth-child(3) {
-                        margin-bottom: 40px;
                     }
                     &.line-input {
                         .form-input {
@@ -810,6 +1040,12 @@
                     .form-input {
                         position: relative;
                         width: 100%;
+                        &.form-inputs-tripl {
+                            @media (min-width: 1000px) {
+                                width: 33.333%;
+                                height: 70px;
+                            }
+                        }
                         .input-inner {
                             width: 100%;
                             position: relative;
@@ -830,6 +1066,7 @@
                                 font-size: 15px;
                                 line-height: 15px;
                                 display: block;
+                                text-align: left;
                                 margin: 0 0 4px 0;
                             }
                             .number-range {
@@ -942,6 +1179,51 @@
                             bottom: -10px;
                             font-size: 14px;
                         }
+                        #form-select {
+                            font-family: "TT Commons Regular";
+                            color: $main-text-color;
+                            &.line-info {
+                                padding: 0 10px;
+                            }
+                        }
+                    }
+                }
+                .credit-result {
+                    width: 100%;
+                    display: flex;
+                    justify-content: center;
+                    padding: 30px 0;
+                    .result-item {
+                        &:first-child {
+                            width: 33.3333%;
+                            text-align: right;
+                            padding: 0 20px 0 0;
+                            border-right: 1px solid #E7E7E7;
+                            @media (min-width: 1000px) {
+                                width: 50%;
+                            }
+                        }
+                        &:nth-child(2) {
+                            padding-left: 20px;
+                            width: 33.3333%;
+                            @media (min-width: 1000px) {
+                                width: 25%;
+                            }
+                        }
+                        &:last-child {
+                            padding-left: 20px;
+                            border-left: 1px solid #E7E7E7;
+                            margin-left: 12px;
+                            text-align: left;
+                            padding: 0 0 0 20px;
+                            width: 33.3333%;
+                            @media (min-width: 1000px) {
+                                width: 50%;
+                            }
+                        }
+                        p {
+                            color: $main-text-color;
+                        }
                     }
                 }
     
@@ -962,6 +1244,7 @@
                                 margin-bottom: 0;
                             }
                             p {
+                                text-align: left;
                                 font-size: 15px;
                                 color: $secondary-color;
                                 background-repeat: no-repeat;
@@ -973,7 +1256,6 @@
                         }
                         .order-button {
                             @extend %tertiary-button;
-                            
                             width: 100%;
                             height: 50px;
                             font-size: 16px;
@@ -987,289 +1269,5 @@
                 }
             }
         }
-    
-        .long-form {
-            display: none;
-            margin: 0 0 45px;
-            &.active {
-                display: block;
-            }
-            .form-inner {
-                border: 1px solid #ECECEC;
-                border-radius: 10px;
-                position: relative;
-                text-align: center;
-                padding: 30px 10px 0;
-    
-                h2 {
-                    font-family: "TT Commons Bold";
-                    font-size: 25px;
-                    margin: 0 0 25px 0;
-                }
-    
-                .card-form {
-                    max-width: 600px;
-                    margin: 0 auto;
-                    .form-inputs {
-                        margin-bottom: 20px;    
-                        @media (min-width: 1000px) {
-                            display: flex;
-                            justify-content: space-between;
-                        }
-                        &:nth-child(2) {
-                            margin-bottom: 0;
-                        }
-                        &.form-input-line {
-                            border: 1px solid #E7E7E7;
-                            border-radius: 10px;
-                        }
-                        &.line-input {
-                            .form-input {
-                                &:first-child {
-                                    margin: 0 0 15px 0;
-                                    @media (min-width: 1000px) {
-                                        padding: 0 10px 0 0;
-                                        margin: 0;
-                                    }
-                                }
-                                &:last-child {
-                                    @media (min-width: 1000px) {
-                                        padding: 0 0 0 10px;
-                                    }
-                                }
-                            }
-                        }
-                        .form-input {
-                            position: relative;
-                            width: 100%;
-                            &.form-inputs-tripl {
-                                @media (min-width: 1000px) {
-                                    width: 33.333%;
-                                    height: 70px;
-                                }
-                            }
-                            .input-inner {
-                                width: 100%;
-                                position: relative;
-                                &.border-input {
-                                    border-right: none;
-                                    border-bottom: 1px solid #E7E7E7;
-                                    @media (min-width: 1000px) {
-                                        border-right: 1px solid #E7E7E7;
-                                        border-bottom: none;
-                                        
-                                    }
-                                }
-                                &.padding-input {
-                                    padding: 10px;
-                                }
-                                span {
-                                    color: rgba(0,0,0,0.5);
-                                    font-size: 15px;
-                                    line-height: 15px;
-                                    display: block;
-                                    text-align: left;
-                                    margin: 0 0 4px 0;
-                                }
-                                .number-range {
-                                    width: 100%;
-                                    font-size: 26px;
-                                    font-family: "TT Commons Medium";
-                                    border: none;
-                                    &::-webkit-outer-spin-button,&::-webkit-inner-spin-button {
-                                        appearance: none;
-                                        margin: 0;
-                                    }
-                                }
-                                .title-exponent {
-                                    position: absolute;
-                                    right: 17px;
-                                    bottom: 10px;
-                                    line-height: 15px;
-                                    font-size: 15px;
-                                    font-family: "TT Commons Bold";
-                                    color: $main-text-color;
-                                }
-                                .range {
-                                    appearance: none;
-                                    width: 100%;
-                                    position: absolute;
-                                    left: 0px;
-                                    bottom: 0px;
-                                    background-color: rgba(0,0,0, 0.1);
-                                    @media (min-width: 1000px) {
-                                        background-color: transparent;
-                                    }
-                                    --range: calc(var(--max) - var(--min));
-                                    --ratio: calc((var(--val) - var(--min))/var(--range));
-                                    --sx: calc(.5*1.5em + var(--ratio)*(100% - 1.5em)); 
-                                    &::-webkit-slider-runnable-track {
-                                        width: 100%;
-                                        height: 4px;
-                                        cursor: pointer;
-                                        background: linear-gradient(#FFC628, #FFC628) 0/var(--sx) 100% no-repeat;
-                                    }
-                                                        
-                                    &::-webkit-slider-thumb {
-                                        height: 24px;
-                                        width: 24px;
-                                        border-radius: 50%;
-                                        background-color: #ffffff;
-                                        cursor: pointer;
-                                        appearance: none;
-                                        border: 5px solid #FFC628;
-                                        margin: -10px 0 0 0;
-                                    }
-                                    &::-moz-range-track {
-                                        width: 100%;
-                                        height: 3px;
-                                        cursor: pointer;
-                                        background-color: #FFC628;
-                                    }
-                                    &::-moz-range-thumb {
-                                        height: 20px;
-                                        width: 20px;
-                                        border-radius: 100%;
-                                        background-color: #ffffff;
-                                        cursor: pointer;
-                                        appearance: none;
-                                        border: 3px solid #FFC628;
-                                    }
-                                    &::-ms-track {
-                                        width: 100%;
-                                        height: 3px;
-                                        cursor: pointer;
-                                    }
-                                }
-                                .user-info {
-                                    width: 100%;
-                                    font-size: 18px;
-                                    box-sizing: border-box;
-                                    padding: 0 20px;
-                                    border: none;
-                                    border-radius: 10px;
-                                    height: 55px;
-                                    @media (min-width: 1000px) {
-                                        height: 65px;
-                                    }
-                                }
-                                .line-info {
-                                    width: 100%;
-                                    height: 65px;
-                                    font-size: 18px;
-                                    box-sizing: border-box;
-                                    padding: 0 20px;
-                                    border: none;
-                                    border-radius: 10px;
-                                    border: 1px solid #E7E7E7;
-                                    height: 55px;
-                                    @media (min-width: 1000px) {
-                                        height: 65px;
-                                    }
-                                }
-                            }
-        
-                            .input-error {
-                                display: none;
-                                position: absolute;
-                                background: #ff7777;
-                                color: white;
-                                border-radius: 5px;
-                                z-index: 2;
-                                padding: 3px 10px 0;
-                                left: 20px;
-                                bottom: -10px;
-                                font-size: 14px;
-                            }
-                            #form-select {
-                                font-family: "TT Commons Regular";
-                                color: $main-text-color;
-                                &.line-info {
-                                    padding: 0 10px;
-                                }
-                            }
-                        }
-                    }
-                    .credit-result {
-                        width: 100%;
-                        display: flex;
-                        justify-content: center;
-                        padding: 30px 0;
-                        .result-item {
-                            &:first-child {
-                                width: 33.3333%;
-                                text-align: right;
-                                padding: 0 20px 0 0;
-                                border-right: 1px solid #E7E7E7;
-                                @media (min-width: 1000px) {
-                                    width: 50%;
-                                }
-                            }
-                            &:nth-child(2) {
-                                padding-left: 20px;
-                                width: 33.3333%;
-                                @media (min-width: 1000px) {
-                                    width: 25%;
-                                }
-                            }
-                            &:last-child {
-                                padding-left: 20px;
-                                border-left: 1px solid #E7E7E7;
-                                margin-left: 12px;
-                                text-align: left;
-                                padding: 0 0 0 20px;
-                                width: 33.3333%;
-                                @media (min-width: 1000px) {
-                                    width: 50%;
-                                }
-                            }
-                            p {
-                                color: $main-text-color;
-                            }
-                        }
-                    }
-        
-        
-                    .form-bottom {
-                        border-top: 1px solid #ECECEC;
-                        padding: 30px 0;
-                        .fb-inner {
-                            @media (min-width: 1000px) {
-                                display: flex;
-                                justify-content: space-between;
-                            }
-                            .form-info {
-                                width: 100%;
-                                margin-bottom: 20px;
-                                @media (min-width: 1000px) {
-                                    max-width: 360px;
-                                    margin-bottom: 0;
-                                }
-                                p {
-                                    text-align: left;
-                                    font-size: 15px;
-                                    color: $secondary-color;
-                                    background-repeat: no-repeat;
-                                    background-position: 0 0;
-                                    background-image: url('../../public/img/shield_gray_icon.svg');
-                                    padding: 0 0 0 50px;
-                                    height: 50px;
-                                }
-                            }
-                            .order-button {
-                                @extend %tertiary-button;
-                                width: 100%;
-                                height: 50px;
-                                font-size: 16px;
-                                @media (min-width: 1000px) {
-                                    height: 65px;
-                                    font-size: 18px;
-                                    width: 33.333%;
-                                }
-                            }
-                        }
-                    }
-                }
-            }
-        }
+    }
 }
