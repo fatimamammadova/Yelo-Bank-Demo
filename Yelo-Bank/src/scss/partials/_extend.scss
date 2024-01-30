@@ -931,6 +931,9 @@
     
                     .input-error {
                         display: none;
+                        &.active {
+                            display: block;
+                        }
                         position: absolute;
                         background: #ff7777;
                         color: white;
@@ -1178,6 +1181,9 @@
                             left: 20px;
                             bottom: -10px;
                             font-size: 14px;
+                            &.active {
+                                display: block;
+                            }
                         }
                         #form-select {
                             font-family: "TT Commons Regular";

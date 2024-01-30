@@ -7,7 +7,6 @@ const paymentSelect = document.querySelector('.col-input #pay-method')
 const paymentMethod = document.querySelector('.payment-method')
 const messageBox = document.querySelector('.message-box')
 const accordionItem = document.querySelectorAll('.accordion-item')
-// const accordionIcons = document.querySelectorAll('.title-inner span')
 const accordionItemBtn = document.querySelectorAll('.ai-title')
 
 
@@ -24,13 +23,13 @@ formSelect.forEach(item => {
             selectTxt.classList.remove('active')
         }
 
-        if(item.value=='delivery') {
+        if(item.value=='Çatdırılma ilə - Pulsuz') {
             deliveryInputs.forEach(el => {
                 el.classList.add('active')
             })
             branchInput.classList.remove('active')
 
-        } else if (item.value==="branch") {
+        } else if (item.value==="Bankın filialından") {
             deliveryInputs.forEach(el => {
                 el.classList.remove('active')
             })
@@ -56,11 +55,11 @@ formInput.forEach(item => {
 
 paymentSelect.addEventListener('change', () => {
     if(currencySelect.value) {
-        if(paymentSelect.value==='prepayment') {
+        if(paymentSelect.value==='Kartın qiymətini ödəməklə') {
             paymentMethod.classList.add('active')
             messageBox.classList.remove('active')
 
-        } else if(paymentSelect.value==="postpayment") {
+        } else if(paymentSelect.value==="İlkin mədaxil ilə") {
             paymentMethod.classList.remove('active')
             messageBox.classList.add('active')
         }
@@ -237,8 +236,110 @@ async function getServices()  {
         carouselContainer.addEventListener('touchend', dragStop)
 
     } catch(err) {
-
+        console.error("Error fetching or processing news:", err);
     }
 }
 
 getServices() 
+
+const form = document.getElementById('form')
+const radioBtns = document.querySelectorAll('.payMethod')
+const customerName= document.getElementById('name')
+const customerSurname= document.getElementById('surname') 
+const customerPhoneNumber= document.getElementById('phone-number') 
+const customerFin= document.getElementById('fin')
+const customerCardType= document.getElementById('typeofcard')
+const customerCurrency= document.getElementById('currency-select')
+const customerPayMethod= document.getElementById('pay-method')
+const customerPrivateMessage= document.getElementById('privateMessage') 
+const customerDeliveryMethod= document.getElementById('deliveryMethod') 
+const customerCity= document.getElementById('city') 
+const customerDeliveryAddress=  document.getElementById('deliveryAddress') 
+const customerBranch= document.getElementById('branch') 
+const customerPaymentWay= document.getElementById('paymentWay')
+
+
+let payment;
+radioBtns.forEach(item => {
+    item.addEventListener('click', () => {
+        payment = item.nextElementSibling.innerText
+    })
+})
+
+form.addEventListener('submit', (e) => {
+    
+    e.preventDefault()
+    if(customerName.value && customerSurname.value && customerCardType && customerCurrency.value && customerFin && customerPhoneNumber.value && customerPayMethod.value && customerDeliveryMethod.value) {
+        fetch('http://localhost:3000/order-card', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                name: customerName.value ? customerName.value : '-',
+                surname: customerSurname.value ? customerSurname.value : '-',
+                phoneNumber: customerPhoneNumber.value ? customerPhoneNumber.value : '-',
+                fin: customerFin.value ? customerFin.value : '-',
+                cardType: customerCardType.value ? customerCardType.value : '-',
+                currency: customerCurrency.value ? customerCurrency.value : '-',
+                paymentMethod: customerPayMethod.value ? 
+                (customerPayMethod.value=="Kartın qiymətini ödəməklə" ? customerPayMethod.value + `(${payment ? payment: ''})`: customerPayMethod.value) : '-',
+                privateMessage: customerPrivateMessage.value ? customerPrivateMessage.value : '-',
+                deliveryMethod: customerDeliveryMethod.value ? customerDeliveryMethod.value : '-',
+                city: customerCity.value ? customerCity.value : '-',
+                deliveryAddress:  customerDeliveryAddress.value ? customerDeliveryAddress.value : '-',
+                branch: customerBranch.value ? customerBranch.value : '-',
+                paymentWay: customerPaymentWay.value ? customerPaymentWay.value : '-'
+            })
+        })
+        .then(res => res.json())
+        .then(data => {
+            console.log(data)
+        })
+        customerName.classList.remove('alert')
+        customerSurname.classList.remove('alert')
+        customerCardType.classList.remove('alert')
+        customerCurrency.classList.remove('alert')
+        customerFin.classList.remove('alert')
+        customerPhoneNumber.classList.remove('alert')
+        customerPayMethod.classList.remove('alert')
+        customerDeliveryMethod.classList.remove('alert')
+        customerPaymentWay.classList.remove('alert')
+        customerBranch.classList.remove('alert')
+        customerPrivateMessage.classList.remove('alert')
+        customerCity.classList.remove('alert')
+        customerDeliveryAddress.classList.remove('alert')
+
+        window.location.href = "orderTable.html"
+
+        customerName.value = ""
+        customerSurname.value = ""
+        customerCardType.value = ""
+        customerCurrency.value = ""
+        customerFin.value = ""
+        customerPhoneNumber.value = ""
+        customerPayMethod.value = ""
+        customerDeliveryMethod.value = ""
+        customerPaymentWay.value = ""
+        customerBranch.value = ""
+        customerPrivateMessage.value = ""
+        customerCity.value = ""
+        customerDeliveryAddress.value = ""
+
+    } else {
+        customerName.classList.add('alert')
+        customerSurname.classList.add('alert')
+        customerCardType.classList.add('alert')
+        customerCurrency.classList.add('alert')
+        customerFin.classList.add('alert')
+        customerPhoneNumber.classList.add('alert')
+        customerPayMethod.classList.add('alert')
+        customerDeliveryMethod.classList.add('alert')
+        customerPaymentWay.classList.add('alert')
+        customerBranch.classList.add('alert')
+        customerPrivateMessage.classList.add('alert')
+        customerCity.classList.add('alert')
+        customerDeliveryAddress.classList.add('alert')
+    }
+})
+

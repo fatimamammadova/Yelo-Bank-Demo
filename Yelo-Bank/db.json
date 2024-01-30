@@ -364,9 +364,13 @@
       "id": 73,
       "title": "Yelo Bank-da 10-dan sərfəli kredit var!",
       "date": "2023-11-01T20:00:00.000Z"
+    },
+    {
+      "title": "salam YELOOOO",
+      "date": "2024-01-29T20:00:00.000Z",
+      "id": 74
     }
   ],
-
   "cards": [
     {
       "name": "Yelo Light",
@@ -409,10 +413,10 @@
       "img": "../public/img/yelo_digital-210x333.webp"
     }
   ],
-
   "laons": [
     {
       "name": "İstehlak krediti",
+      "form_id": "consumption",
       "description": "Daha yaxşı həyat üçün",
       "spec_title_1": "Məbləğ",
       "spec_title_1_desc": "400 - 50 000 AZN",
@@ -429,6 +433,7 @@
     },
     {
       "name": "Biznes krediti",
+      "form_id": "business",
       "description": "",
       "spec_title_1": "Məbləğ",
       "spec_title_1_desc": "50 000 - 5 000 000 AZN",
@@ -445,6 +450,7 @@
     },
     {
       "name": "Onlayn kredit",
+      "form_id": "online",
       "description": "Banka gəlmədən, tam onlayn",
       "spec_title_1": "İllik faiz dərəcəsi",
       "spec_title_1_desc": "9.9%-dən başlayaraq",
@@ -461,6 +467,7 @@
     },
     {
       "name": "Daşınmaz əmlak girov krediti",
+      "form_id": "real-estate",
       "description": "Sərfəli şərtlər ilə istənilən daşınmaz əmlak ilə girovlu pul krediti",
       "spec_title_1": "Məbləğ",
       "spec_title_1_desc": "5 000 - 100 000 AZN",
@@ -477,6 +484,7 @@
     },
     {
       "name": "Əmanət təminatlı kredit",
+      "form_id": "deposit",
       "description": "Əminliklə istifadən üçün",
       "spec_title_1": "Müddət",
       "spec_title_1_desc": "Əmanət müddətinin sonunadək",
@@ -493,6 +501,7 @@
     },
     {
       "name": "İpoteka krediti",
+      "form_id": "mortgage",
       "description": "Arzuladığın ev üçün sərfəli kredit şərtləri",
       "spec_title_1": "Məbləğ",
       "spec_title_1_desc": "150 000 AZN-ə dək",
@@ -509,6 +518,7 @@
     },
     {
       "name": "Yelo kredit/taksit kartı",
+      "form_id": "yelo-card",
       "description": "Yelo kredit kartı ilə istədiyin ödənişləri his-sə-lə!",
       "spec_title_1": "Müddət",
       "spec_title_1_desc": "5 il",
@@ -524,7 +534,6 @@
       "img": "../public/img/yelo.webp"
     }
   ],
-
   "valute": {
     "bank": {
       "USD": {
@@ -571,7 +580,6 @@
       }
     }
   },
-
   "deposits": [
     {
       "name": "Yelo Sabit",
@@ -598,7 +606,6 @@
       "img": "../public/img/depositnew-pic.webp"
     }
   ],
-
   "cashback": [
     {
       "id": 1,
@@ -1953,7 +1960,6 @@
       "img": "../public/img/zeka--stationary-template.webp"
     }
   ],
-
   "service": [
     {
       "id": 1,
@@ -1968,7 +1974,7 @@
       "title": "Apple Pay",
       "text": "Yelo kart sahibləri Apple Pay vasitəsilə alış-verişlərini çox rahat və təmassız şəkildə həyata keçirə bilərlər.",
       "img": "../public/img/apple-pay.webp",
-      "paragraph": "<p>Apple Pay təmassız ödəmə üsulunu Yelo kart istifadəçiləri üçün əlçatandır. Bunun üçün sadəcə iPhone smartfonu,&nbsp;Apple Watch saatını&nbsp;və ya iPad planşetini&nbsp;ödəmə terminalına yaxınlaşdırmaq kifayətdir. Apple Pay ilə təmassız ödəmə nişanı olan istənilən market, aptek, taksi, kafe, restoran, pərakəndə satış mağazaları və bir çox digər yerlərdə ödənişlər etmək mümkündür.&nbsp;<br> <br> Apple Pay-in əsas üstünlüyü onun təhlükəsizliyi və məxfiliyindədir. Bu üsulla həyata keçirilən hər bir əməliyyat etibarlı qorunur, çünki istifadəçi ödənişi Face ID, Touch ID və ya cihazın parolu ilə təsdiq etməlidir.&nbsp;Apple Pay-ə əlavə edilmiş kart məlumatları nə cihazda, nə də Apple serverlərində saxlanılmır.&nbsp;Əvəzində karta unikal cihaz qeydiyyat nömrəsi verilərək&nbsp;şifrələnir və cihazın yüksək standartlara cavab verən sertifikasiya edilmiş “Təhlükəsiz element” çipində əminliklə saxlanılır.&nbsp;&nbsp;&nbsp;<br> <br> Yelo kartı Apple Pay-də aktivləşdirmək çox asandır:</p> <p>·&nbsp; &nbsp; &nbsp; &nbsp;Yelo mobil tətbiqinə daxil olub, istədiyiniz kartı seçin;</p> <p>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Apple Wallet”ə əlavə etmək üçün müvafiq təlimatları yerinə yetirin;</p> <p>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobil nömrənizə SMS ilə göndəriləcək birdəfəlik şifrəni&nbsp;(OTP)&nbsp;daxil edin.</p> <p>Prosesi yekunlaşdırdıqda seçdiyiniz&nbsp;kartı iPhone, Apple Watch, iPad&nbsp;cihazları vasitəsilə Apple Pay ödənişlərində istifadə edə biləcəksiniz.&nbsp;</p> <p>Apple Pay xidmətinə qoşulmuş Yelo kart sahibləri Bankın təklif etdiyi cashback və endirimlərdən faydalanmağa davam edə biləcəklər.&nbsp;</p>",      
+      "paragraph": "<p>Apple Pay təmassız ödəmə üsulunu Yelo kart istifadəçiləri üçün əlçatandır. Bunun üçün sadəcə iPhone smartfonu,&nbsp;Apple Watch saatını&nbsp;və ya iPad planşetini&nbsp;ödəmə terminalına yaxınlaşdırmaq kifayətdir. Apple Pay ilə təmassız ödəmə nişanı olan istənilən market, aptek, taksi, kafe, restoran, pərakəndə satış mağazaları və bir çox digər yerlərdə ödənişlər etmək mümkündür.&nbsp;<br> <br> Apple Pay-in əsas üstünlüyü onun təhlükəsizliyi və məxfiliyindədir. Bu üsulla həyata keçirilən hər bir əməliyyat etibarlı qorunur, çünki istifadəçi ödənişi Face ID, Touch ID və ya cihazın parolu ilə təsdiq etməlidir.&nbsp;Apple Pay-ə əlavə edilmiş kart məlumatları nə cihazda, nə də Apple serverlərində saxlanılmır.&nbsp;Əvəzində karta unikal cihaz qeydiyyat nömrəsi verilərək&nbsp;şifrələnir və cihazın yüksək standartlara cavab verən sertifikasiya edilmiş “Təhlükəsiz element” çipində əminliklə saxlanılır.&nbsp;&nbsp;&nbsp;<br> <br> Yelo kartı Apple Pay-də aktivləşdirmək çox asandır:</p> <p>·&nbsp; &nbsp; &nbsp; &nbsp;Yelo mobil tətbiqinə daxil olub, istədiyiniz kartı seçin;</p> <p>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;“Apple Wallet”ə əlavə etmək üçün müvafiq təlimatları yerinə yetirin;</p> <p>·&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Mobil nömrənizə SMS ilə göndəriləcək birdəfəlik şifrəni&nbsp;(OTP)&nbsp;daxil edin.</p> <p>Prosesi yekunlaşdırdıqda seçdiyiniz&nbsp;kartı iPhone, Apple Watch, iPad&nbsp;cihazları vasitəsilə Apple Pay ödənişlərində istifadə edə biləcəksiniz.&nbsp;</p> <p>Apple Pay xidmətinə qoşulmuş Yelo kart sahibləri Bankın təklif etdiyi cashback və endirimlərdən faydalanmağa davam edə biləcəklər.&nbsp;</p>",
       "bg": ""
     },
     {
@@ -2050,6 +2056,120 @@
       "img": "../public/img/atm_pinset.webp",
       "paragraph": "<p>PİN kodun ATM vasitəsilə təyin olunması üçün: Kart hazır olduqdan sonra SMS vasitəsilə sifariş zamanı qeyd etdiyin nömrəyə birdəfəlik PİN kod göndərilir. Kodun istifadə müddəti 6 gündür. Kartı əldə etdikdən sonra ATM-ə daxil edib e-PİN bölməsinə keçid et. Növbəti pəncərədə əvvəlcə SMS-lə göndərilmiş birdəfəlik PİN kodu, sonra isə öz istədiyin PİN-i daxil edirsən. Təyin etdiyin PİN kodu təkrar daxil et. Təbrik edirik, PIN kod təyin edildi, unutmamağa çalış. Qeyd: Təkrar olunan (5555), bir birinin ardınca gələn (1234) rəqəmləri və ya sizin bütün kartlarınıza eyni şifrəni təyin etmək təhlükəsizlik baxımından məsləhət görülmür. &nbsp;</p>",
       "bg": "../public/img/atm_pinset-1.webp"
+    }
+  ],
+  "order-card": [
+    {
+      "name": "Fatima",
+      "surname": "Mammadova",
+      "phoneNumber": "+994553017895",
+      "fin": "4FGT567",
+      "cardType": "VISA",
+      "currency": "USD",
+      "paymentMethod": "Kartın qiymətini ödəməklə(3 illik / 15₼)",
+      "privateMessage": "-",
+      "deliveryMethod": "Bankın filialından",
+      "city": "-",
+      "deliveryAddress": "-",
+      "branch": "28 may filialı",
+      "paymentWay": "terminal",
+      "id": 1
+    },
+    {
+      "name": "Huseyn",
+      "surname": "Mammadov",
+      "phoneNumber": "+994553457689",
+      "fin": "4FGA532",
+      "cardType": "Mastercard",
+      "currency": "USD",
+      "paymentMethod": "İlkin mədaxil ilə",
+      "privateMessage": "HELLO",
+      "deliveryMethod": "Çatdırılma ilə - Pulsuz",
+      "city": "Bakı",
+      "deliveryAddress": "Masazir",
+      "branch": "-",
+      "paymentWay": "terminal",
+      "id": 2
+    },
+    {
+      "name": "Fatima",
+      "surname": "Mammadova",
+      "phoneNumber": "+9943456789",
+      "fin": "4FGT567",
+      "cardType": "VISA",
+      "currency": "EUR",
+      "paymentMethod": "İlkin mədaxil ilə",
+      "privateMessage": "qerewt",
+      "deliveryMethod": "Çatdırılma ilə - Pulsuz",
+      "city": "Bakı",
+      "deliveryAddress": "ffdsd",
+      "branch": "-",
+      "paymentWay": "terminal",
+      "id": 3
+    },
+    {
+      "name": "fosje",
+      "surname": "wqwbhqoihiad",
+      "phoneNumber": "123456789",
+      "fin": "ewtqrw",
+      "cardType": "Mastercard",
+      "currency": "AZN",
+      "paymentMethod": "Kartın qiymətini ödəməklə(1 illik / 10₼)",
+      "privateMessage": "eeryhd",
+      "deliveryMethod": "Çatdırılma ilə - Pulsuz",
+      "city": "Bakı",
+      "deliveryAddress": "Masazir",
+      "branch": "-",
+      "paymentWay": "terminal",
+      "id": 4
+    },
+    {
+      "name": "qwerty",
+      "surname": "qwerty",
+      "phoneNumber": "345tyu",
+      "fin": "asdfgbnbf",
+      "cardType": "VISA",
+      "currency": "AZN",
+      "paymentMethod": "Kartın qiymətini ödəməklə(1 illik / 10₼)",
+      "privateMessage": "sdfgdfh",
+      "deliveryMethod": "Çatdırılma ilə - Pulsuz",
+      "city": "Bakı",
+      "deliveryAddress": "awertyu",
+      "branch": "-",
+      "paymentWay": "terminal",
+      "id": 5
+    },
+    {
+      "name": "qwerty",
+      "surname": "qwerty",
+      "phoneNumber": "345tyu",
+      "fin": "asdfgbnbf",
+      "cardType": "VISA",
+      "currency": "AZN",
+      "paymentMethod": "Kartın qiymətini ödəməklə()",
+      "privateMessage": "sdfgdfh",
+      "deliveryMethod": "Çatdırılma ilə - Pulsuz",
+      "city": "Bakı",
+      "deliveryAddress": "awertyu",
+      "branch": "-",
+      "paymentWay": "terminal",
+      "id": 6
+    },
+    {
+      "name": "Fatima",
+      "surname": "Mammadova",
+      "phoneNumber": "+994553017895",
+      "fin": "qwert",
+      "cardType": "VISA",
+      "currency": "AZN",
+      "paymentMethod": "Kartın qiymətini ödəməklə(3 illik / 15₼)",
+      "privateMessage": "erty",
+      "deliveryMethod": "Bankın filialından",
+      "city": "-",
+      "deliveryAddress": "-",
+      "branch": "Salyan filialı",
+      "paymentWay": "terminal",
+      "id": 7
     }
   ]
 }

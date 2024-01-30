@@ -3,7 +3,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Yelo Taksit Kartı Sifarisi - 70 Günədək güzəşt - 10000 AZN</title>
+    <title>Pulsuz Debet Kart Sifarisi: Qalıq məbləğə faiz, Ödənişdən cashback qazan</title>
     <link rel="shortcut icon" href="https://www.yelo.az/site/templates/images/fav/favicon-16x16.png" type="image/x-icon">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css" integrity="sha512-z3gLpd7yknf1YoNbCzqRKc4qyor8gaKU1qmn+CShxbuBusANI9QpRohGBreCFkKxLhei6S9CQXFEbbKuqLg0DA==" crossorigin="anonymous" referrerpolicy="no-referrer" />
@@ -496,13 +496,13 @@
                         </span>
                     </div>
                 </div>
-                <form>
+                <form id="form">
                     <div class="col2-input">
                         <div class="col-input">
                             <select id="typeofcard">
                                 <option value="" disabled selected></option>
-                                <option value="visa">VISA</option>
-                                <option value="mcard">Mastercard</option>
+                                <option value="VISA">VISA</option>
+                                <option value="Mastercard">Mastercard</option>
                             </select>
                             <span>Kart növü</span>
                         </div>
@@ -510,26 +510,26 @@
                         <div class="col-input">
                             <select id="currency-select">
                                 <option value="" disabled selected></option>
-                                <option value="azn">AZN</option>
-                                <option value="usd">USD</option>
-                                <option value="eur">EUR</option>
+                                <option value="AZN">AZN</option>
+                                <option value="USD">USD</option>
+                                <option value="EUR">EUR</option>
                             </select>
                             <span>Valyuta</span>
                         </div>
                     </div>
                     <div class="col2-input">
                         <div class="col-input">
-                            <input type="text" id="">
+                            <input type="text" id="name">
                             <span>Ad</span>
                         </div>
                         <div class="col-input">
-                            <input type="text" id="">
+                            <input type="text" id="surname">
                             <span>Soyad</span>
                         </div>
                     </div>
                     <div class="col2-input">
                         <div class="col-input">
-                            <input type="tel" id="">
+                            <input type="tel" id="phone-number">
                             <span>Mobil nömrə</span>
                         </div>
                         <div class="col-input">
@@ -541,25 +541,25 @@
                         <div class="col-input">
                             <select id="pay-method">
                                 <option value="" disabled selected></option>
-                                <option value="prepayment">Kartın qiymətini ödəməklə</option>
-                                <option value="postpayment">İlkin mədaxil ilə</option>
+                                <option value="Kartın qiymətini ödəməklə">Kartın qiymətini ödəməklə</option>
+                                <option value="İlkin mədaxil ilə">İlkin mədaxil ilə</option>
                             </select>
                             <span>Ödəniş üsulu</span>
                         </div>
 
                         <div class="col-input">
-                            <input type="text">
+                            <input type="text" id="privateMessage">
                             <span>Məxfi söz</span>
                         </div>
                     </div>
 
                     <div class="col2-input payment-method">
                         <div class="col-input">
-                            <input type="radio" name="pay_method">
+                            <input type="radio" name="pay_method" class="payMethod">
                             <span>1 illik / 10₼</span>
                         </div>
                         <div class="col-input">
-                            <input type="radio" name="pay_method">
+                            <input type="radio" name="pay_method" class="payMethod">
                             <span>3 illik / 15₼</span>
                         </div>
                     </div>
@@ -574,20 +574,19 @@
 
                     <div class="col1-input">
                         <div class="col-input">
-                            <select name="" id="">
+                            <select name="" id="deliveryMethod">
                                 <option value="" disabled selected></option>
-                                <option value="delivery">Çatdırılma ilə - Pulsuz</option>
-                                <option value="branch">Bankın filialından</option>
+                                <option value="Çatdırılma ilə - Pulsuz">Çatdırılma ilə - Pulsuz</option>
+                                <option value="Bankın filialından">Bankın filialından</option>
                             </select>
                             <span>Əldə etmə üsulu</span>
                         </div>
                     </div>
-
                     <div class="col1-input delivery">
                         <div class="col-input">
-                            <select>
+                            <select id="city">
                                 <option value="" disabled selected></option>
-                                <option value="baki">Bakı</option>
+                                <option value="Bakı">Bakı</option>
                             </select>
                             <span>Şəhəri seçin</span>
                         </div>
@@ -595,34 +594,34 @@
 
                     <div class="col1-input delivery">
                         <div class="col-input">
-                            <input type="text">
+                            <input type="text" id="deliveryAddress">
                             <span>Çatdırılma ünvanı</span>
                         </div>
                     </div>
 
                     <div class="col1-input branch">
                         <div class="col-input">
-                            <select>
+                            <select id="branch">
                                 <option value="" disabled selected></option>
-                                <option value="34">Masallı filialı</option>
-                                <option value="33">Tovuz filialı</option>
-                                <option value="3">28 may filialı</option> 
-                                <option value="32">Xaçmaz filialı</option> 
-                                <option value="36">Qəbələ filialı</option> 
-                                <option value="4">Sumqayıt filialı</option> 
-                                <option value="6">Baş ofis</option> 
-                                <option value="10">Gəncə filialı</option> 
-                                <option value="11">Xalqlar Dostluğu</option> 
-                                <option value="12">Bərdə filialı</option> 
-                                <option value="13">Lənkəran filialı</option> 
-                                <option value="15">Sahil filialı</option> 
-                                <option value="20">Mərkəz filialı</option> 
-                                <option value="22">Nərimanov filialı</option> 
-                                <option value="23">Elmlər Akademiyası filialı</option> 
-                                <option value="28">Sədərək TM filialı</option> 
-                                <option value="29">Mərdəkan filialı</option> 
-                                <option value="30">Salyan filialı</option> 
-                                <option value="31">Ağcabədi filialı</option>
+                                <option value="Masallı filialı">Masallı filialı</option>
+                                <option value="Tovuz filialı">Tovuz filialı</option>
+                                <option value="28 may filialı">28 may filialı</option> 
+                                <option value="Xaçmaz filialı">Xaçmaz filialı</option> 
+                                <option value="Qəbələ filialı">Qəbələ filialı</option> 
+                                <option value="Sumqayıt filialı">Sumqayıt filialı</option> 
+                                <option value="Baş ofis">Baş ofis</option> 
+                                <option value="Gəncə filialı">Gəncə filialı</option> 
+                                <option value="Xalqlar Dostluğu">Xalqlar Dostluğu</option> 
+                                <option value="Bərdə filialı">Bərdə filialı</option> 
+                                <option value="Lənkəran filialı">Lənkəran filialı</option> 
+                                <option value="Sahil filialı">Sahil filialı</option> 
+                                <option value="Mərkəz filialı">Mərkəz filialı</option> 
+                                <option value="Nərimanov filialı">Nərimanov filialı</option> 
+                                <option value="Elmlər Akademiyası filialı">Elmlər Akademiyası filialı</option> 
+                                <option value="Sədərək TM filialı">Sədərək TM filialı</option> 
+                                <option value="Mərdəkan filialı">Mərdəkan filialı</option> 
+                                <option value="Salyan filialı">Salyan filialı</option> 
+                                <option value="Ağcabədi filialı">Ağcabədi filialı</option>
                             </select>
                             <span>Filial</span>
                         </div>
@@ -631,7 +630,7 @@
                     <div class="col1-input">
                         <span class="input-title">Ödənişi necə etmək istəyirsən?</span>
                         <div class="col-input">
-                            <select name="" id="">
+                            <select name="" id="paymentWay">
                                 <option value="" disabled selected></option>
                                 <option value="terminal">Terminaldan</option>
                             </select>

@@ -217,7 +217,7 @@ async function getcards() {
                 
                 
                 <div class="short-form ${item.form_class} form">
-                <form class="card-form">
+                <form class="card-form" id="${item.form_id}">
 
                     <div class="form-inputs">
                         <div class="form-input monthly-amount  padding-input">
@@ -285,7 +285,7 @@ async function getcards() {
                             <div class="form-info">
                                 <p>“Sifariş et” basmaqla Azərbaycan Kredit Bürosundan kredit tarixçəsi və Asan finansdan fərdi məlumatların alınmasına razılıq verirəm.</p>
                             </div>
-                            <button type="submit" class="order-button">Sifariş et</button>
+                            <button id="orderButton" type="submit" class="order-button">Sifariş et</button>
                         </div>
                     </div>
                 </form>
@@ -346,7 +346,7 @@ async function getcards() {
                 <div class="long-form ${item.form_class} form">
                 <div class="form-inner">
                     <h2>Kredit sifarişi</h2>
-                    <form class="card-form">
+                    <form class="card-form" id="${item.form_id}">
     
                         <div class="form-inputs line-input">
                             <div class="form-input">
@@ -475,8 +475,115 @@ async function getcards() {
       })
         
 
+
+      function submitForm() {
+        event.preventDefault()
+      }
+      
+
     const orderBtns = document.querySelectorAll('.order-button')
     const forms = document.querySelectorAll('.form')
+
+    const mortgageForm = document.getElementById('mortgage')
+    const mortgageFormInputs = mortgageForm.querySelectorAll('input') 
+    const mortgageFormBtn = mortgageForm.querySelector('.order-button')
+
+
+    mortgageFormBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        let k=0;
+        const errors = mortgageForm.querySelectorAll('.input-error')
+        errors.forEach(err => {
+            if(err.classList.contains('active')) {
+                k++
+            }
+        })
+        mortgageFormInputs.forEach(input => {
+            let parentElement = input.closest(".form-input")
+            const error = parentElement.querySelector('.input-error')
+
+            if(error) {
+                if(!input.value) {
+                    error.classList.add('active')
+                    k=4
+                } else {
+                    error.classList.remove('active')
+                }
+            }
+        })
+        console.log(k)
+
+        if(k==0) {
+            window.location.href = "success.html"
+        }
+    })
+
+    const consumptionForm = document.getElementById('consumption')
+    const consumptionFormInputs = consumptionForm.querySelectorAll('input') 
+    const consumptionFormBtn = consumptionForm.querySelector('.order-button')
+
+    consumptionFormBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        let k=0;
+        const errors = consumptionForm.querySelectorAll('.input-error')
+        errors.forEach(err => {
+            if(err.classList.contains('active')) {
+                k++
+            }
+        })
+        consumptionFormInputs.forEach(input => {
+            let parentElement = input.closest(".form-input")
+            const error = parentElement.querySelector('.input-error')
+
+            if(error) {
+                if(!input.value) {
+                    error.classList.add('active')
+                    k=4
+                } else {
+                    error.classList.remove('active')
+                }
+            }
+        })
+        console.log(k)
+
+        if(k==0) {
+            window.location.href = "success.html"
+        }
+    })
+
+    const onlineForm = document.getElementById('online')
+    const onlineFormInputs = onlineForm.querySelectorAll('input') 
+    const onlineFormBtn = onlineForm.querySelector('.order-button')
+
+    onlineFormBtn.addEventListener('click', (e) => {
+        e.preventDefault()
+        let k=0;
+        const errors = onlineForm.querySelectorAll('.input-error')
+        errors.forEach(err => {
+            if(err.classList.contains('active')) {
+                k++
+            }
+        })
+        onlineFormInputs.forEach(input => {
+            let parentElement = input.closest(".form-input")
+            const error = parentElement.querySelector('.input-error')
+
+            if(error) {
+                if(!input.value) {
+                    error.classList.add('active')
+                    k=4
+                } else {
+                    error.classList.remove('active')
+                }
+            }
+        })
+        console.log(k)
+
+        if(k==0) {
+            window.location.href = "success.html"
+        }
+    })
+    
 
     function removeActives() {
         forms.forEach(form => {

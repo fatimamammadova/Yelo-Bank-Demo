@@ -2,6 +2,7 @@ main {
     
     #main-title {
         .add-news {
+            margin: 20px 0;
             font-size: 18px;
             @extend %tertiary-button;
         }

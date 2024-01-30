@@ -1013,6 +1013,9 @@ main #deposits-cards .short-form .card-form .form-inputs .form-input .input-erro
   bottom: -10px;
   font-size: 14px;
 }
+main #deposits-cards .short-form .card-form .form-inputs .form-input .input-error.active, main #cards .short-form .card-form .form-inputs .form-input .input-error.active, main #laons .short-form .card-form .form-inputs .form-input .input-error.active {
+  display: block;
+}
 main #deposits-cards .short-form .card-form .form-bottom, main #cards .short-form .card-form .form-bottom, main #laons .short-form .card-form .form-bottom {
   border-top: 1px solid #ECECEC;
   padding: 30px 0;
@@ -1259,6 +1262,9 @@ main #deposits-cards .long-form .form-inner .card-form .form-inputs .form-input 
   left: 20px;
   bottom: -10px;
   font-size: 14px;
+}
+main #deposits-cards .long-form .form-inner .card-form .form-inputs .form-input .input-error.active, main #cards .long-form .form-inner .card-form .form-inputs .form-input .input-error.active, main #laons .long-form .form-inner .card-form .form-inputs .form-input .input-error.active {
+  display: block;
 }
 main #deposits-cards .long-form .form-inner .card-form .form-inputs .form-input #form-select, main #cards .long-form .form-inner .card-form .form-inputs .form-input #form-select, main #laons .long-form .form-inner .card-form .form-inputs .form-input #form-select {
   font-family: "TT Commons Regular";
@@ -4328,6 +4334,7 @@ main #exchange-rate .er-wrapper .er-table .table-inner table td .item-title {
 }
 
 main #main-title .add-news {
+  margin: 20px 0;
   font-size: 18px;
 }
 main #all-news .news .row .news-item {
@@ -4984,6 +4991,9 @@ main #order-form .wrapper form .col2-input .col-input input, main #order-form .w
 main #order-form .wrapper form .col2-input .col-input input#fin, main #order-form .wrapper form .col2-input .col-input select#fin {
   background: url("../../public/img/fin-icon.svg") no-repeat calc(100% - 16px) 50% #fff;
 }
+main #order-form .wrapper form .col2-input .col-input input.alert, main #order-form .wrapper form .col2-input .col-input select.alert {
+  box-shadow: inset 0 0 0 1px #f00;
+}
 main #order-form .wrapper form .col2-input .col-input select {
   background: url("../../public/img/select-arrow.svg") no-repeat calc(100% - 16px) 50% #fff;
 }
@@ -5092,6 +5102,9 @@ main #order-form .wrapper form .col1-input .col-input input, main #order-form .w
      -moz-appearance: none;
           appearance: none;
   width: 100%;
+}
+main #order-form .wrapper form .col1-input .col-input input.alert, main #order-form .wrapper form .col1-input .col-input select.alert {
+  box-shadow: inset 0 0 0 1px #f00;
 }
 main #order-form .wrapper form .col1-input .col-input select {
   background: url("../../public/img/select-arrow.svg") no-repeat calc(100% - 16px) 50% #fff;
@@ -5562,6 +5575,37 @@ main #services-slides .ss-carousel .carousel-inner .slide-item .si-wrapper .item
 }
 #slide-modal .modal .modal-inner .slide-modal .sm-right ul li a.active {
   background-color: #FFC628;
+}
+
+main #order-table .ot-container {
+  padding: 0 10px;
+  overflow-x: scroll;
+}
+main #order-table .ot-container::-webkit-scrollbar {
+  height: 7px;
+  background: #f1f1f1;
+  border-radius: 10px;
+}
+main #order-table .ot-container::-webkit-scrollbar-thumb {
+  background-color: #a8a8a8;
+  border-radius: 4px;
+}
+main #order-table .ot-container table {
+  width: 2500px;
+  padding-bottom: 20px;
+}
+main #order-table .ot-container table thead tr th {
+  text-align: left;
+  padding: 5px 13px 5px 5px;
+  font-size: 20px;
+}
+main #order-table .ot-container table tbody tr:nth-child(odd) {
+  background-color: #eae2b7;
+}
+main #order-table .ot-container table tbody tr td {
+  text-align: left;
+  padding: 3px 13px 3px 5px;
+  font-size: 17px;
 }
 
 main #cashback-lists .cl-wrapper .cashback-search {

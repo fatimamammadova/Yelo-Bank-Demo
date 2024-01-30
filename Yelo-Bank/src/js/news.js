@@ -115,6 +115,42 @@ async function getData() {
     const editModal = document.querySelector('.edit-modal .modal')
     const newsItem = document.querySelectorAll('.news-item')
     const deleteButtons = document.querySelectorAll('.delete-item')
+    const editButtons = document.querySelectorAll('.edit-item')
+
+    let editBtnID;
+    editButtons.forEach(editButton => {
+      editButton.addEventListener("click", () => {
+        editBtnID=editButton.dataset.id
+        const parentElement = editButton.closest('.news-item')
+        
+        editInput.value = parentElement.querySelector('.heading-title').innerText
+      })
+    })
+
+
+
+    saveBtn.addEventListener("click", async (e) => {
+      e.preventDefault()
+      const curDate =  new Date()
+      console.log(formatDate(curDate))
+      try {
+        const response = await fetch(`http://localhost:3000/NEWS/${editBtnID}`, {
+          method: 'PUT',
+          headers: {
+            'Content-Type': 'application/json'
+          },
+          body: JSON.stringify({
+            title: editInput.value,
+            date: convertToISOFormat(formatDate(curDate))
+          })
+        })
+        setInterval(()=> getData(),1000)
+      }
+      catch(err) {
+        console.log('PUT request error: ', err)
+      }
+      editInput.value=''
+    })
 
 
     deleteButtons.forEach(deleteButton => {
@@ -150,7 +186,6 @@ async function getData() {
       editItem.addEventListener("click",() => {
         editModalBg.classList.add('show')
         editModal.classList.add('show-modal')
-        editInput.value = data[editItem.dataset.id-1].title
       })
       
       closeEditModal.addEventListener("click", () => {

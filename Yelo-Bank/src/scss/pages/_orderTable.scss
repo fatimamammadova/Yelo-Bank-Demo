@@ -1,0 +1,43 @@
+main {
+    #order-table {
+        .ot-container {
+            padding: 0 10px;
+            overflow-x: scroll;
+            &::-webkit-scrollbar {
+                height: 7px;
+                background: #f1f1f1; 
+                border-radius: 10px;
+                &-thumb{
+                    background-color: #a8a8a8;
+                    border-radius: 4px;
+                }
+            }
+            table {
+                width: 2500px;
+                padding-bottom: 20px;
+                thead {
+                    tr {
+                        th {
+                            text-align: left;
+                            padding: 5px 13px 5px 5px;
+                            font-size: 20px;
+                        }
+                    }
+                }
+                tbody {
+                    tr {
+                        &:nth-child(odd) {
+                            background-color: #eae2b7;
+                        }
+                        td {
+                            text-align: left;
+                            padding: 3px 13px 3px 5px;    
+                            font-size: 17px;
+                        }
+                    }
+                }
+            }
+        }
+
+    }
+}
