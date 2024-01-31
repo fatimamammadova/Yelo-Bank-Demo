@@ -380,7 +380,8 @@
       "currency": "AZN / USD / EUR",
       "type": "Cashback",
       "typeText": "30%-dək",
-      "img": "../public/img/yelo.webp"
+      "img": "../public/img/yelo.webp",
+      "cardID": "yeloLight"
     },
     {
       "name": "Yelo Premium",
@@ -400,7 +401,8 @@
       "currency": "AZN",
       "type": "Güzəşt müddəti",
       "typeText": "70 günədək",
-      "img": "../public/img/yelo_light-visa.webp"
+      "img": "../public/img/yelo_light-visa.webp",
+      "cardID": ""
     },
     {
       "name": "Yelo Digital Card",
@@ -410,7 +412,8 @@
       "currency": "AZN",
       "type": "Qiyməti",
       "typeText": "Pulsuz",
-      "img": "../public/img/yelo_digital-210x333.webp"
+      "img": "../public/img/yelo_digital-210x333.webp",
+      "cardID": ""
     }
   ],
   "laons": [
@@ -429,7 +432,8 @@
       "form_class": "call_short_form",
       "isTheCard": false,
       "url": "javascript:void(0)",
-      "img": "../public/img/consumer-loan-pic.webp"
+      "img": "../public/img/consumer-loan-pic.webp",
+      "cardID": ""
     },
     {
       "name": "Biznes krediti",

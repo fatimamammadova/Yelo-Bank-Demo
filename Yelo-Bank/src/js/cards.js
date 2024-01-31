@@ -15,8 +15,8 @@ storyClose.addEventListener("click", () => {
 
 async function getCards() {
     try {
-      const res = await fetch("http://localhost:3000/cards");
-      const data = await res.json();
+      const res = await fetch("http://localhost:3000/cards")
+      const data = await res.json()
       data.forEach(card => {
 
         const cardContainer = document.querySelector('.cards')
@@ -48,7 +48,7 @@ async function getCards() {
             </div>
 
             <div class="buttons">
-                <button type="button" class="main-button order-button">
+                <button type="button" id="${card.cardID}" class="main-button order-button">
                     <span>
                         Sifariş et
                     </span>
@@ -81,6 +81,12 @@ async function getCards() {
     const premium = document.querySelector(".premium");
     const taksit = document.querySelector(".taksit");
     const digital = document.querySelector(".digital");
+    const yeloLightOrderBtn = document.getElementById('yeloLight')
+
+    yeloLightOrderBtn.addEventListener("click", () => {
+        window.location.href = "cardOrder.html?#order-form"
+    })
+    
 
     function handleMouseMove(event) {
         const boundingRect = this.getBoundingClientRect();

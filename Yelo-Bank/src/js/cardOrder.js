@@ -258,7 +258,6 @@ const customerDeliveryAddress=  document.getElementById('deliveryAddress')
 const customerBranch= document.getElementById('branch') 
 const customerPaymentWay= document.getElementById('paymentWay')
 
-
 let payment;
 radioBtns.forEach(item => {
     item.addEventListener('click', () => {
